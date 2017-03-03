@@ -18,6 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "change-case": "^3.0.1",
+    "uuid": "^3.0.1",
     "xml2js-parser": "^1.1.1"
   },
   "devDependencies": {

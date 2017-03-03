@@ -1,4 +1,5 @@
 const changeCase = require('change-case')
+const uuid = require('uuid/v4')
 
 const statuses = {
     passed: 'pass',
@@ -31,6 +32,7 @@ const Builder = (previousBuilder = null, parentSuite = null) => {
             suite.name = suite.name || 'No Name'
             suite.name = changeCase.title(suite.name)
             suite.status = defaultStatus(suite.status)
+            suite._uuid = uuid()
 
             if (currentSuite !== null) data.push(currentSuite)
             currentSuite = suite
@@ -50,6 +52,7 @@ const Builder = (previousBuilder = null, parentSuite = null) => {
             test.name = test.name || 'No Name'
             test.name = changeCase.title(test.name)
             test.status = defaultStatus(test.status)
+            test._uuid = uuid()
 
             if (currentSuite === null) builder.suite({ name: 'no matching suite'})
 
@@ -61,6 +64,7 @@ const Builder = (previousBuilder = null, parentSuite = null) => {
             if (currentSuite === null) builder.suite({ name: 'no matching suite'})
 
             currentSuite.properties = currentSuite.properties || {}
+            if (!currentSuite.properties.hasOwnProperty('_uuid')) currentSuite.properties._uuid = uuid()
             Object.keys(properties).forEach(key => {
                 currentSuite.properties[key] = properties[key]
             })
