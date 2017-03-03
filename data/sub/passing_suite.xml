@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite tests="2" failures="1" time="0.0160106">
+    <testcase name="It Is A Pass" classname="Passing Sub" time="0.000625"></testcase>
+</testsuite>

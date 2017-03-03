@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite tests="1" failures="1" time="0.0160106">
+    <properties>
+        <property name="flag-type" value="bug" />
+        <property name="flag-content" value="APPLICATION DEFECT" />
+        <property name="Has a name" value="true" />
+        <property name="URL" value="/test/data.com" />
+    </properties>
+    <testcase name="Is An Error" classname="Defect" time="0">
+        <error message="There was a error" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error</error>
+    </testcase>
+</testsuite>

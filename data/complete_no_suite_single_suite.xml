@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <!-- standard test suite -->
+    <testsuite name="suite name" errors="666" tests="777" failures="888" time="0.021">
+        <!-- standard props -->
+        <properties>
+            <property name="x" value="y" />
+            <property name="a" value="b" />
+        </properties>
+        <!-- props with single value -->
+        <properties>
+            <property name="c" value="d" />
+        </properties>
+        <!-- Props with no values -->
+        <properties>
+        </properties>
+        <!-- each kind of test case with a full message -->
+        <testcase assertions="0" classname="suite name" name="test name" time="0.001">
+            <passed message="message" type="type">inner massage</passed>
+        </testcase>
+        <testcase assertions="0" classname="suite name" name="test name" time="0.001">
+            <error message="message" type="type">inner massage</error>
+        </testcase>
+        <testcase assertions="0" classname="suite name" name="test name" time="0.001">
+            <skipped message="message" type="type">inner massage</error>
+        </testcase>
+        <testcase assertions="0" classname="suite name" name="test name" time="0.001">
+            <failure message="message" type="type">inner massage</error>
+        </testcase>
+        <!-- test case with something on the inside but not in a wrapper-->
+        <testcase assertions="0" classname="SUITE ONE" name="test name" time="0.001">inner message</testcase>
+        <!-- test case with nothing on the inside -->
+        <testcase assertions="0" classname="SUITE ONE" name="test name" time="0.001"></testcase>
+        <!-- test case no keys but inner message-->
+        <testcase>inner message</testcase>
+        <!-- test case no keys or inner message-->
+        <testcase></testcase>
+        <!-- test case with multiple messages -->
+        <testcase name="test name">
+            <error message="message" type="type">inner massage</error>
+            <error message="message" type="type">inner massage</error>
+        </testcase>
+        <!-- test case with no inner message but has a message and a type -->
+        <testcase name="test name">
+            <failure message="message" type="type"></failure>
+        </testcase>
+        <!-- test case with no inner message but has only message -->
+        <testcase name="test name">
+            <skipped message="message"></skipped>
+        </testcase>
+        <!-- test case with no inner message but has only type -->
+        <testcase name="test name">
+            <skipped type="type"></skipped>
+        </testcase>
+        <!-- test case with html on the inside -->
+        <testcase>
+            <error>&lt;i&gt;inner&lt;/i&gt;&lt;b&gt;message&lt;/b&gt;</error>
+        </testcase>
+        <!-- test case with html in the message and type -->
+        <testcase>
+            <failure message="<b>message</b>" type="<i>type</i>"></failure>
+        </testcase>
+    </testsuite>

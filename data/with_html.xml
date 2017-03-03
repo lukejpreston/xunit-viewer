@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite tests="3" failures="1" time="0.0160106">
+    <testcase name="has html" classname="HTML" time="0.00075">
+        <error message="<b>BOO</b>" type="<i>ARGH</i>">
+        &lt;i&gt;ARGG&lt;/i&gt;&lt;b&gt;BOO&lt;/b&gt; </error>
+    </testcase>
+</testsuite>

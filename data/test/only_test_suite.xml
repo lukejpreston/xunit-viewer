@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <testsuite name="only test suite">
+        <testcase name="in suite but no int suites"></testcase>
+    </testsuite>

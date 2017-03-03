@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <testsuites>
+        <testsuite name="first suite" suite_property="prop_value">
+            <properties>
+                <property name="first_name" value="first_value" />
+                <property name="second_name" value="second_name" />
+            </properties>
+            <testcase name="random test name">
+                <passed></passed>
+            </testcase>
+        </testsuite>
+        <testsuite name="suite with no properties">
+            <testcase name="passing">
+                <passed></passed>
+            </testcase>
+            <testcase name="failing">
+                <failure></failure>
+            </testcase>
+            <testcase name="error">
+                <error></error>
+            </testcase>
+            <testcase name="skipped">
+                <skipped></skipped>
+            </testcase>
+            <testcase name="with prop" test_property="prop_value">
+                <passed></passed>
+            </testcase>
+            <testcase name="with inner message as HTML">
+                <error>&lt;i&gt;inner&lt;/i&gt;&lt;b&gt;message&lt;/b&gt;</error>
+            </testcase>
+            <testcase name="with inner message as message and type as HTML">
+                <failure message="<b>message</b>" type="<i>type</i>"></failure>
+            </testcase>
+            <testcase name="with inner multiple messages">
+                <skipped>message one</skipped>
+                <skipped>message two</skipped>
+            </testcase>
+        </testsuite>
+    </testsuites>

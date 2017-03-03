@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <testsuites>
+        <testsuite 
+            name="SUITE ONE"
+            errors="7"
+            tests="10"
+            failures="2"
+            time="0.021">
+            <testcase
+              assertions="0"
+              classname="SUITE ONE" 
+              name="the first test"
+              time="0.001">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE ONE" 
+              name="the second test"
+              time="0.001">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE ONE" 
+              name="the third test"
+              time="0.012">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE ONE" 
+              name="the fouth test"
+              time="0.001">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE ONE" 
+              name="the fifth test"
+              time="0.002">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE ONE" 
+              name="the sixt test"
+              time="0.001">
+            </testcase>
+        </testsuite>
+        <testsuite 
+            name="SUITE TWO"
+            errors="0"
+            tests="6"
+            failures="0"
+            time="0.021">
+            <testcase
+              assertions="0"
+              classname="SUITE TWO" 
+              name="the first test"
+              time="0.001">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE TWO" 
+              name="the second test"
+              time="0.001">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE TWO" 
+              name="the third test"
+              time="0.012">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE TWO" 
+              name="the fouth test"
+              time="0.001">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE TWO" 
+              name="the fifth test"
+              time="0.002">
+            </testcase>
+            <testcase
+              assertions="0"
+              classname="SUITE TWO" 
+              name="the sixt test"
+              time="0.001">
+            </testcase>
+        </testsuite>
+    </testsuites>

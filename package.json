@@ -1,0 +1,26 @@
+{
+  "name": "xunit-viewer",
+  "version": "5.0.0",
+  "description": "parses xunit xml into xunit viewer",
+  "main": "src/index.js",
+  "bin": "cli/bin/xunit-viewer",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "test",
+    "junit",
+    "xunit",
+    "viewer",
+    "parser"
+  ],
+  "author": "lukejpreston <lukejpreston@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "change-case": "^3.0.1",
+    "xml2js-parser": "^1.1.1"
+  },
+  "devDependencies": {
+    "jest": "^19.0.2"
+  }
+}

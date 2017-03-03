@@ -1,0 +1,113 @@
+:root {
+  --fail: #E74C3C;
+  --pass: #23D160;
+  --error: #FFDD57;
+  --skipped: #ECF0F1;
+  --unknown: #3273DC;
+}
+
+.suites {
+  & .fa {
+    padding-right: 5px;
+  }
+
+  & .suite,
+  & .test {
+    margin-bottom: 10px;
+  }
+
+  & .suite,
+  & .test,
+  & .properties {
+    &.is-collapsed {
+      & .card-content,
+      & .table {
+        display: none !important;
+      }
+
+      & .icon {
+        transform: rotate(-90deg) translateX(3px) !important;
+      }
+    }
+
+    & .properties.is-collapsed {
+      margin-bottom: 10px;
+    }
+
+    &.is-expanded {
+      & .card-content {
+        display: block;
+      }
+
+      & .table {
+        display: table;
+      }
+
+      & .icon {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  & .properties {
+    & .card-header {
+      background-color: var(--skipped);
+
+      &:hover {
+        background-color: color(var(--skipped) b(15%));
+      }
+    }
+  }
+
+  & .card-header {
+    color: #666;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &-icon {
+      color: #666;
+    }
+  }
+
+
+  & .is-fail {
+    background-color: var(--fail);
+
+    &:hover {
+      background-color: color(var(--fail) b(15%));
+    }
+  }
+
+  & .is-pass {
+    background-color: var(--pass);
+
+    &:hover {
+      background-color: color(var(--pass) b(15%));
+    }
+  }
+
+  & .is-error {
+    background-color: var(--error);
+
+    &:hover {
+      background-color: color(var(--error) b(15%));
+    }
+  }
+
+  & .is-skipped {
+    background-color: var(--skipped);
+
+    &:hover {
+      background-color: color(var(--skipped) b(15%));
+    }
+  }
+
+  & .is-unknown {
+    background-color: color(var(--unknown) tint(50%));
+
+    &:hover {
+      background-color: color(var(--unknown) b(15%));
+    }
+  }
+
+}

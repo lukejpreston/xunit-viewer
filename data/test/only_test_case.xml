@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <testcase classname="only a test case" name="not in suite or suites and no classname">
+        <passed></passed>
+    </testcase>

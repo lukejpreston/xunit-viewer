@@ -1,0 +1,212 @@
+{
+    "title": "Data",
+    "suites": {
+        "Defect": {
+            "name": "Defect",
+            "tests": [{
+                "name": "Is an error",
+                "type": "error",
+                "message": "java.lang.RuntimeException: There was an error",
+                "time": "0"
+            }],
+            "properties": {
+                "flag-type": "bug",
+                "flag-content": "APPLICATION DEFECT",
+                "Has a name": "true",
+                "URL": "/test/data.com"
+            },
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "Error": {
+            "name": "Error",
+            "tests": [{
+                "name": "Is an error",
+                "type": "error",
+                "message": "java.lang.RuntimeException: There was an error",
+                "time": "0.00075"
+            }],
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "Failing": {
+            "name": "Failing",
+            "tests": [{
+                "name": "It is failure",
+                "type": "failure",
+                "message": "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
+                "time": "0.012011200000000001"
+            }],
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "invalid.xml": {
+            "name": "/Users/prestl02/Projects/junit_viewer/__tests__/data/invalid.xml",
+            "type": "failure",
+            "tests": [{
+                "name": "/Users/prestl02/Projects/junit_viewer/__tests__/data/invalid.xml",
+                "message": "Error: Non-whitespace before first tag.\nLine: 0\nColumn: 1\nChar: b",
+                "time": 0
+            }]
+        },
+        "Multi": {
+            "name": "Multi",
+            "tests": [{
+                "name": "Is an error",
+                "type": "error",
+                "message": "java.lang.RuntimeException: There was an error",
+                "time": "0.00075"
+            }, {
+                "name": "It is failure",
+                "type": "failure",
+                "message": "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
+                "time": "0.012011200000000001"
+            }, {
+                "name": "It is pass",
+                "type": "passed",
+                "time": "0.000625"
+            }, {
+                "name": "It is skipped",
+                "type": "skipped",
+                "time": "0"
+            }],
+            "properties": {
+                "flag-type": "bug",
+                "flag-content": "APPLICATION DEFECT",
+                "Has a name": "true",
+                "URL": "/hunter/overall_test.go"
+            },
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "H A S D O T": {
+            "name": "H A S D O T",
+            "tests": [{
+                "name": "It is pass",
+                "type": "passed",
+                "time": "0.000625"
+            }],
+            "time": "0.0160106",
+            "type": "passed"
+        },
+        "No Class Name": {
+            "name": "No Class Name",
+            "tests": [{
+                "name": "It is pass",
+                "type": "passed",
+                "time": "0.000625"
+            }],
+            "time": "0.0160106",
+            "type": "passed"
+        },
+        "Passing": {
+            "name": "Passing",
+            "tests": [{
+                "name": "It is pass",
+                "type": "passed",
+                "time": "0.000625"
+            }],
+            "time": "0.0160106",
+            "type": "passed"
+        },
+        "Skipped": {
+            "name": "Skipped",
+            "tests": [{
+                "name": "It is skipped",
+                "type": "skipped",
+                "time": "0"
+            }],
+            "time": "0.0",
+            "type": "passed"
+        },
+        "Defect Sub": {
+            "name": "Defect Sub",
+            "tests": [{
+                "name": "Is an error",
+                "type": "error",
+                "message": "java.lang.RuntimeException: There was an error",
+                "time": "0"
+            }],
+            "properties": {
+                "flag-type": "bug",
+                "flag-content": "APPLICATION DEFECT",
+                "Has a name": "true",
+                "URL": "/test/data.com"
+            },
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "Error Sub": {
+            "name": "Error Sub",
+            "tests": [{
+                "name": "Is an error",
+                "type": "error",
+                "message": "java.lang.RuntimeException: There was an error",
+                "time": "0.00075"
+            }],
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "Failing Sub": {
+            "name": "Failing Sub",
+            "tests": [{
+                "name": "It is failure",
+                "type": "failure",
+                "message": "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
+                "time": "0.012011200000000001"
+            }],
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "Multi Sub": {
+            "name": "Multi Sub",
+            "tests": [{
+                "name": "Is an error",
+                "type": "error",
+                "message": "java.lang.RuntimeException: There was an error",
+                "time": "0.00075"
+            }, {
+                "name": "It is failure",
+                "type": "failure",
+                "message": "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
+                "time": "0.012011200000000001"
+            }, {
+                "name": "It is pass",
+                "type": "passed",
+                "time": "0.000625"
+            }, {
+                "name": "It is skipped",
+                "type": "skipped",
+                "time": "0"
+            }],
+            "properties": {
+                "flag-type": "bug",
+                "flag-content": "APPLICATION DEFECT",
+                "Has a name": "true",
+                "URL": "/hunter/overall_test.go"
+            },
+            "time": "0.0160106",
+            "type": "failure"
+        },
+        "Passing Sub": {
+            "name": "Passing Sub",
+            "tests": [{
+                "name": "It is pass",
+                "type": "passed",
+                "time": "0.000625"
+            }],
+            "time": "0.0160106",
+            "type": "passed"
+        },
+        "Skipped Sub": {
+            "name": "Skipped Sub",
+            "tests": [{
+                "name": "It is skipped",
+                "type": "skipped",
+                "time": "0"
+            }],
+            "time": "0.0",
+            "type": "passed"
+        }
+    }
+}
