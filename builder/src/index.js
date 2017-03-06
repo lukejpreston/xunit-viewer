@@ -30,22 +30,29 @@ const Builder = (previousBuilder = null, parentSuite = null) => {
             }
 
             suite.name = suite.name || 'No Name'
+
             suite.name = changeCase.title(suite.name)
             suite.status = defaultStatus(suite.status)
             suite._uuid = uuid()
+
 
             if (currentSuite !== null) data.push(currentSuite)
             currentSuite = suite
             currentSuite.tests = []
 
+            if (parentSuite) {
+                parentSuite.suites = parentSuite.suites || []
+                parentSuite.suites.push(currentSuite)
+            }
+
             return builder
         },
         endSuite () {
             if (previousBuilder) {
-                parentSuite.suites = parentSuite.suites || []
-                parentSuite.suites.push(currentSuite)
                 return previousBuilder
             }
+            if (currentSuite !== null) data.push(currentSuite)
+            currentSuite = null
             return builder
         },
         test (test = {}) {
@@ -74,6 +81,12 @@ const Builder = (previousBuilder = null, parentSuite = null) => {
         build () {
             if (currentSuite !== null) data.push(currentSuite)
             return data
+        },
+        json () {
+            return data
+        },
+        current () {
+            return currentSuite
         }
     }
 

@@ -1,5 +1,5 @@
 const parseString = require('xml2js-parser').parseStringSync
-const Builder = require('../../builder/src')
+const changeCase = require('change-case')
 
 const xml2js = (xml) => {
     let data = parseString(xml)
@@ -30,27 +30,172 @@ const xml2js = (xml) => {
     return suites
 }
 
-const build = (suites) => {
-    let builder = Builder()
+const expandMeta = (thing) => {
+    let meta = thing['$']
+    if (meta) {
+        Object.keys(meta).forEach(key => {
+            thing[key] = meta[key]
+        })
+        delete thing['$']
+    }
+}
 
-    suites.forEach(suite => {
-        if (suite['$']) {
-            builder.suite(suite['$'])
+const buildProperties = (suite) => {
+    let properties = {}
+    if (suite.properties) {
+        suite.properties
+            .filter(property => {
+                return typeof property !== 'string'
+            })
+            .forEach(property => {
+                property.property.forEach(prop => {
+                    let meta = prop['$']
+                    properties[meta.name] = meta.value
+                })
+            })
+    }
+    return properties
+}
+
+const extactMessage = (thing) => {
+    thing.message = ''
+    if (thing['_']) {
+        thing.message = thing['_']
+        delete thing['_']
+    }
+}
+
+const extractTestCore = (test, type, status) => {
+    if (test[type]) {
+        test.status = status
+
+        let core = test[type][0]
+        extactMessage(core)
+
+        if (test.message === '') {
+            if (core.message) {
+                test.message = core.message
+            } else if (core['$']) {
+                test.message = ''
+                if (core['$'].message) test.message += core['$'].message
+                if (core['$'].type) test.message += core['$'].type
+            }
         }
 
-        if (suite['$'] && suite['$'].name === 'parent') {
-            console.log(suite)
-        }
-    })
+        delete test[type]
+    }
+}
 
-    return builder.build()
+const buildTest = (test) => {
+    test.status = 'unknown'
+    test.name = 'no name'
+
+    expandMeta(test)
+
+    test.name = changeCase.title(test.name)
+
+    extactMessage(test)
+
+    extractTestCore(test, 'passed', 'pass')
+    extractTestCore(test, 'passing', 'pass')
+    extractTestCore(test, 'pass', 'pass')
+
+    extractTestCore(test, 'failure', 'fail')
+    extractTestCore(test, 'failed', 'fail')
+    extractTestCore(test, 'failint', 'fail')
+    extractTestCore(test, 'fail', 'fail')
+
+    extractTestCore(test, 'errored', 'error')
+    extractTestCore(test, 'erroring', 'error')
+    extractTestCore(test, 'error', 'error')
+
+    extractTestCore(test, 'skipped', 'skip')
+    extractTestCore(test, 'skipping', 'skip')
+    extractTestCore(test, 'skip', 'skip')
+
+    return test
+}
+
+const buildTests = (suite) => {
+    suite.tests = suite.testcase
+        .filter(test => {
+            if (typeof test === 'string') return test.trim() !== ''
+            return true
+        })
+        .map(test => {
+            if (typeof test === 'string') return buildTest({'_': test})
+            else return buildTest(test)
+        })
+    delete suite.testcase
+}
+
+const buildSuites = (suites) => {
+    return suites
+        .filter(suite => {
+            if (typeof suite === 'string') return suite.trim() !== ''
+            return true
+        })
+        .map(suite => {
+            expandMeta(suite)
+            suite.properties = buildProperties(suite)
+
+            delete suite.tests
+            delete suite.failures
+            delete suite.errors
+            delete suite.skipped
+
+            suite.name = suite.name || 'No Name'
+            suite.name = changeCase.title(suite.name)
+
+            if (suite.testcase) buildTests(suite)
+
+            if (suite.testsuite) {
+                if (Array.isArray(suite.testsuite)) suite.suites = buildSuites(suite.testsuite)
+                else  suite.suites = buildSuites([suite.testsuite])
+                delete suite.testsuite
+            }
+
+            suite.status = suite.status || 'unknown'
+            let fail = false
+            if (Array.isArray(suite.tests)) {
+                const testsFailed = suite.tests.filter(test => {
+                    return test.status !== 'pass'
+                }).length > 0
+                if (testsFailed) fail = true
+            }
+
+            if (fail) suite.status = 'fail'
+
+            suite.count = {
+                tests: 0,
+                pass: 0,
+                fail: 0,
+                error: 0,
+                skip: 0,
+                unknown: 0
+            }
+
+            if (suite.tests) {
+                suite.tests.forEach(test => {
+                    suite.count.tests += 1
+                    suite.count[test.status] += 1
+                })
+            }
+
+            suite.status = 'fail'
+            if (suite.count.tests > 0 && suite.count.tests === suite.count.pass) suite.status = 'pass'
+            if (suite.count.tests > 0 && suite.count.tests === suite.count.error) suite.status = 'error'
+            if (suite.count.tests > 0 && suite.count.tests === suite.count.skip) suite.status = 'skip'
+            if (suite.count.tests > 0 && suite.count.tests === suite.count.unknown) suite.status = 'unknown'
+
+            return suite
+        })
 }
 
 module.exports = {
     parse (xml) {
         let suites = xml2js(xml)
-        build(suites)
-        return ''
+        return buildSuites(suites)
     }
 }
 
