@@ -21,10 +21,10 @@
             <error message="message" type="type">inner massage</error>
         </testcase>
         <testcase assertions="0" classname="suite name" name="test name" time="0.001">
-            <skipped message="message" type="type">inner massage</error>
+            <skipped message="message" type="type">inner massage</skipped>
         </testcase>
         <testcase assertions="0" classname="suite name" name="test name" time="0.001">
-            <failure message="message" type="type">inner massage</error>
+            <failure message="message" type="type">inner massage</failure>
         </testcase>
         <!-- test case with something on the inside but not in a wrapper-->
         <testcase assertions="0" classname="SUITE ONE" name="test name" time="0.001">inner message</testcase>
