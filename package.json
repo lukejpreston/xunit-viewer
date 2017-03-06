@@ -40,13 +40,6 @@
     "chalk": "^1.1.3",
     "change-case": "^3.0.1",
     "detect-port": "^1.1.0",
-    "eslint": "^3.17.0",
-    "eslint-config-standard": "^7.0.0",
-    "eslint-config-standard-react": "^4.2.0",
-    "eslint-plugin-jasmine": "^2.2.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^6.10.0",
-    "eslint-plugin-standard": "^2.1.1",
     "express": "^4.15.2",
     "fs-extra": "^2.0.0",
     "mustache": "^2.3.0",
@@ -64,7 +57,14 @@
     "xml2js-parser": "^1.1.1"
   },
   "devDependencies": {
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "eslint": "^3.17.0",
+    "eslint-config-standard": "^7.0.0",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-jasmine": "^2.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-standard": "^2.1.1"
   },
   "jest": {
     "testPathIgnorePatterns": [
