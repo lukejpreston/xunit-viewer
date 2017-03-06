@@ -31,9 +31,9 @@
     "parser": "parser"
   },
   "scripts": {
-    "test": "jest && eslint bin cli component config data parser scripts index.js",
+    "test": "npm run eslint && jest",
     "jest": "jest",
-    "eslint": "eslint bin cli component config data parser scripts index.js"
+    "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
