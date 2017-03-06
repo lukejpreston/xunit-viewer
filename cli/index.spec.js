@@ -1,7 +1,7 @@
 const cli = require('.')
 
 describe('cli', () => {
-    it('works', () => {
-        cli.run({})
-    })
+  it('works', () => {
+    cli.run({})
+  })
 })

@@ -32,7 +32,7 @@
   },
   "scripts": {
     "test": "jest",
-    "eslint": "eslint"
+    "eslint": "eslint bin cli component config data parser scripts index.js"
   },
   "dependencies": {
     "babel-core": "^6.23.1",

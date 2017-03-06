@@ -76,10 +76,10 @@ const extractTestCore = (test, type, status) => {
       if (core.message) {
         test.message = core.message
       } else if (core['$']) {
-          test.message = ''
-          if (core['$'].message) test.message += core['$'].message
-          if (core['$'].type) test.message += core['$'].type
-        }
+        test.message = ''
+        if (core['$'].message) test.message += core['$'].message
+        if (core['$'].type) test.message += core['$'].type
+      }
     }
 
     delete test[type]
