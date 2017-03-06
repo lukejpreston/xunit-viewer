@@ -31,7 +31,8 @@
     "parser": "parser"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest && eslint bin cli component config data parser scripts index.js",
+    "jest": "jest",
     "eslint": "eslint bin cli component config data parser scripts index.js"
   },
   "dependencies": {
