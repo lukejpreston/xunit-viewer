@@ -65,5 +65,11 @@
   },
   "devDependencies": {
     "jest": "^19.0.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](node_modules|scripts)[/\\\\]",
+      "<rootDir>/component/suites/test.jsx"
+    ]
   }
 }

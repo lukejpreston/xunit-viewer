@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const parser = require('./')
 
-const data = path.resolve(__dirname, '../../data')
+const data = path.resolve(__dirname, '../data')
 const output = require(path.join(data, 'output.json'))
 
 const getInput = (name) => {
