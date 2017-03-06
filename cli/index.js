@@ -69,8 +69,7 @@ module.exports = {
         console.log(results)
       })
       .catch(err => {
-        console.error(err.file)
-        console.error(err.message)
+        console.error(err.file, '\n', err.message)
       })
 
     // console.log('x read the xml or folder of xml')
