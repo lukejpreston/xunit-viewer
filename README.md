@@ -104,19 +104,6 @@ const XunitViewerParser = require('xunit-viewer/parser')
 XunitViewerParser.parse('xml string')
 ```
 
-## Builder
-
-If you want to build the JSON yourself instead of using the parser you can use the builder
-
-```js
-const XunitViewerBuilder = require('xunit-viewer/builder')
-let suites = XunitViewerBuilder()
-    .suite({ name: '', sttaus: '' })
-    .test({ name: '', status: '' })
-    .property({ key0: 'value0' })
-    .build()
-```
-
 ## Junit Viewer
 
 Junit Viewer is now deprecated and is being replaced with this.
