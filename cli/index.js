@@ -3,6 +3,7 @@ const detectPort = require('detect-port')
 const recursive = require('recursive-readdir')
 const path = require('path')
 const parseFiles = require('./parse-files')
+const fs = require('fs-extra')
 
 const resolvePort = (port) => {
   if (port === false) {
@@ -17,13 +18,25 @@ const resolvePort = (port) => {
 
 const resolveFiles = (results, ignore) => {
   results = results || process.cwd()
+
   if (!path.isAbsolute(results)) results = path.resolve(process.cwd(), results)
+
   ignore.push('!*.xml')
+
   return new Promise((resolve, reject) => {
-    recursive(results, ignore, (err, files) => {
-      if (err) reject(err)
-      resolve(files)
-    })
+    try {
+      recursive(results, ignore, (err, files) => {
+        if (err) {
+          try {
+            resolve([results])
+          } catch (err) {
+            reject(err)
+          }
+        }
+        resolve(files)
+      })
+    } catch (e) {
+    }
   })
 }
 
