@@ -2,12 +2,15 @@
   "name": "xunit-viewer",
   "version": "5.0.0",
   "description": "parses xunit xml into xunit viewer",
-  "main": "src/index.js",
-  "bin": "cli/bin/xunit-viewer",
-  "scripts": {
-    "test": "jest"
+  "repository": {
+    "url": "https://github.com/lukejpreston/xunit-viewer.git",
+    "type": "git"
   },
-  "keywords": [
+  "bugs": {
+    "url": "https://github.com/lukejpreston/xunit-viewer.git"
+  },
+  "homepage": "lukejpreston.github.io/xunit-viewer",
+    "keywords": [
     "test",
     "junit",
     "xunit",
@@ -16,6 +19,20 @@
   ],
   "author": "lukejpreston <lukejpreston@gmail.com>",
   "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "xunit-viewer": "bin/xunit-viewer"
+  },
+  "directories": {
+    "bin": "bin",
+    "cli": "cli",
+    "component": "component",
+    "config": "config",
+    "parser": "parser"
+  },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "change-case": "^3.0.1",
     "uuid": "^3.0.1",
