@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/lukejpreston/xunit-viewer.git"
   },
-  "homepage": "lukejpreston.github.io/xunit-viewer",
+  "homepage": "https://lukejpreston.github.io/xunit-viewer",
   "keywords": [
     "test",
     "junit",
@@ -40,6 +40,7 @@
     "babel-core": "^6.23.1",
     "babel-preset-react-app": "^2.1.1",
     "browserify": "^14.1.0",
+    "bulma": "^0.3.2",
     "chalk": "^1.1.3",
     "change-case": "^3.0.1",
     "detect-port": "^1.1.0",
@@ -47,6 +48,7 @@
     "fs-extra": "^2.0.0",
     "mustache": "^2.3.0",
     "node-watch": "^0.4.1",
+    "normalize.css": "^5.0.0",
     "postcss": "^5.2.15",
     "postcss-cssnext": "^2.9.0",
     "promise": "^7.1.1",
