@@ -32,8 +32,8 @@
   },
   "scripts": {
     "test": "npm run eslint && jest",
-    "build": "node scripts/build.js",
-    "jest": "npm run build && jest",
+    "component": "node scripts/component.js",
+    "jest": "npm run component && jest",
     "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass"
   },
   "dependencies": {

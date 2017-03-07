@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(
-  <div>hellow</div>,
+  <section className='section'>
+    <div className='container'>You?</div>
+  </section>,
   document.getElementById('root')
 )

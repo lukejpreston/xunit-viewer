@@ -9,7 +9,8 @@ describe('cli', () => {
         'invalid.xml',
         'blank_file.xml'
       ],
-      watch: false
+      watch: false,
+      save: 'index.html'
     })
   })
 })

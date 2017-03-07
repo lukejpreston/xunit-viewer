@@ -70,7 +70,7 @@ XunitViewer.run({
     results: file | folder,
     ignore: [],
     save: file,
-    title: '',
+    title: file | folder | false,
     watch: false
 })
 ```
