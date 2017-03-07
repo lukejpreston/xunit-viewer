@@ -1,51 +1,14 @@
 const changeCase = require('change-case')
-const detectPort = require('detect-port')
-const recursive = require('recursive-readdir')
-const path = require('path')
 const parseFiles = require('./parse-files')
-const fs = require('fs-extra')
+const resolveFiles = require('./resolve-files')
+const nodeWatch = require('node-watch')
+const path = require('path')
 
-const resolvePort = (port) => {
-  if (port === false) {
-    return new Promise((resolve) => {
-      resolve(port)
-    })
-  }
-
-  if (typeof port === 'number') return detectPort(port)
-  return detectPort()
-}
-
-const resolveFiles = (results, ignore) => {
-  results = results || process.cwd()
-
-  if (!path.isAbsolute(results)) results = path.resolve(process.cwd(), results)
-
-  ignore.push('!*.xml')
-
-  return new Promise((resolve, reject) => {
-    try {
-      recursive(results, ignore, (err, files) => {
-        if (err) {
-          try {
-            resolve([results])
-          } catch (err) {
-            reject(err)
-          }
-        }
-        resolve(files)
+const getResults = (results, ignore) => {
+  return resolveFiles(results, ignore)
+      .then(files => {
+        return parseFiles(files)
       })
-    } catch (e) {
-    }
-  })
-}
-
-const concat = (port, results, ignore) => {
-  return resolveFiles(results, ignore).then(files => {
-    return new Promise(resolve => {
-      resolve({files, port})
-    })
-  })
 }
 
 module.exports = {
@@ -54,28 +17,24 @@ module.exports = {
         results = '',
         ignore = [],
         save = '',
-        title = 'Xunit Viewer'
+        title = 'Xunit Viewer',
+        watch = false
     }) {
     title = changeCase.title(title)
+    results = results || process.cwd()
+    if (!path.isAbsolute(results)) results = path.resolve(process.cwd(), results)
 
-    resolvePort(port)
-      .then(port => {
-        return concat(port, results, ignore)
+    if (watch) {
+      watch = nodeWatch(results)
+      watch.on('change', (filename) => {
+        getResults(results, ignore)
+          .then(results => {
+            console.log(results)
+          })
+          .catch(err => {
+            console.error(err.file, '\n', err.message)
+          })
       })
-      .then(obj => {
-        return parseFiles(obj.files)
-      })
-      .then(results => {
-        console.log(results)
-      })
-      .catch(err => {
-        console.error(err.file, '\n', err.message)
-      })
-
-    // console.log('x read the xml or folder of xml')
-    // console.log('x parse the xml')
-    // console.log('x render the html')
-    // console.log('x save html')
-    // console.log('x listen to xml or folder of xml - push changes using sockets')
+    }
   }
 }

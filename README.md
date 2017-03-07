@@ -68,8 +68,10 @@ const XunitViewer = require('xunit-viewer/cli')
 XunitViewer.run({
     port: false | 7123,
     results: file | folder,
+    ignore: [],
     save: file,
-    title: ''
+    title: '',
+    watch: false
 })
 ```
 
@@ -83,7 +85,7 @@ This is the view which you can reuse
 
 ```js
 import React from 'react'
-import XunitViewer from 'xunit-viewer/component'
+import XunitViewer from 'xunit-viewer/component/xunit-viewer'
 import 'xunit-viewer/component/index.css'
 
 let MyWrapper = () => {
