@@ -11,6 +11,10 @@ build
 dist
 ./main.js
 ./main.css
+index.html
+component/index.js
+component/index.min.js
+component/unbundled.js
 
 # misc
 .DS_Store
