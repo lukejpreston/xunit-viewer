@@ -29,6 +29,10 @@ const extractWatch = (watch = false) => {
   return watch !== false
 }
 
+const extractDev = (dev = false) => {
+  return dev !== false
+}
+
 const extractFilter = (filter = {}) => {
   if (Array.isArray(filter)) return {}
   if (filter !== Object(filter)) return {}
@@ -46,11 +50,12 @@ const extarctTitle = (title = 'Xunit Viewer') => {
   return title
 }
 
-module.exports = ({ results, ignore, output, title, port, watch, filter }) => {
+module.exports = ({ results, ignore, output, title, port, watch, filter, dev }) => {
   results = extractResults(results)
   output = extractOutput(output)
   ignore = extractIgnore(ignore)
   watch = extractWatch(watch)
+  dev = extractDev(dev)
   filter = extractFilter(filter)
   port = extractPort(port)
   title = extarctTitle(title)

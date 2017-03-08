@@ -1,9 +1,10 @@
 const resolveOptions = require('./resolve-options')
+const startServer = require('./start-server')
 
 module.exports = (options) => {
   resolveOptions(options)
-    .then(({ results, ignore, output, title, port, watch, filter }) => {
-      console.log({ results, ignore, output, title, port, watch, filter })
+    .then(options => {
+      if (options.port) startServer(options)
     })
     .catch(err => {
       console.error(err)
