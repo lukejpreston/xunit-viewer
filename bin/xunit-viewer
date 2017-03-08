@@ -1,3 +1,8 @@
 #!/usr/bin/env node
 
-
+require('../cli')({
+  results: 'data',
+  output: 'data/output.html',
+  port: 9999,
+  watch: true
+})

@@ -12,47 +12,24 @@ First install it
 
 Then run it
 
-```bash
-xunit-viewer
-```
+`xunit-viewer`
 
-It will by default read the current directory and then save to `xunit-viewer-TIMESTAMP.html`
-
-If you want to specify a file or folder of XMl
+you can also run it with these optional params, see the next section for what they default to
 
 ```bash
-xunit-viewer --results=file_or_folder
-```
-
-If you want to specify where the file should be saved
-
-```bash
-xunit-viewer --save=file
-```
-
-By default the title of the output will be
-    1. The folder where the command was run
-    2. the file or folder specified using `--results`
-    3. The file specified using `--save`
-
-but this can be overridden
-
-```bash
-xunit-viewer --title="My Title"
-```
-
-It also supprots running a server with websockets which will listen to any file change and then update the page
-
-for default port 7123
-
-```bash
-xunit-viewer --port
-```
-
-or if you want to specify the port
-
-```bash
-xunit-viewer --port=8080
+--results=file_or_folder
+--ignore=pattern_a,pattern_b,pattern_c
+--output=file_or_folder_or_console
+--title="The title"
+--port=8080
+--watch
+--color=false
+--filter.suites.value="Suite names matching this value"
+--filter.suites.types=all,pass,fail,skip,error,unknown
+--filter.tests.value="Test names matching this value"
+--filter.tests.types=all,pass,fail,skip,error,unknown
+--filter.properties.value="Properties matching with key or value matching this value"
+--filter.properties.types=all
 ```
 
 ## Node
@@ -64,15 +41,44 @@ If you want to run this from a node script instead of command line first install
 Then from your scripts do the following
 
 ```js
-const XunitViewer = require('xunit-viewer/cli')
-XunitViewer.run({
-    port: false | 7123,
-    results: file | folder,
+const XunitViewerCli = require('xunit-viewer/cli')
+XunitViewerCli({
+    results: '',
     ignore: [],
-    save: file,
-    title: file | folder | false,
-    watch: false
+    output: false,
+    title: 'Xunit Viewer',
+    port: false,
+    watch: false,
+    color: true,
+    filter: {}
 })
+```
+
+all are optional, those are default values
+
+* `results` the file or folder where the results are, defaults to where the cli is running from i.e. `process.cwd()`
+* `ignore` an array of patterns to ignore
+* `output` if folder will save a file `xunit-viewer.html` to that folder, if a file will save to that file if `'console'` then it will spit out the results to the console
+* `title` title for the HTML
+* `port` if `false` it will not start a server, otherwise it will start serving the output and not save not save a file unless you also provide `output`
+* `watch` will re run the cli when anything in `results` changes, if you have a port it will also update that via websockets
+* `color` if `output === 'console'` then it will either be in color or not
+* `filter` will filter out `suites`, `tests` and `properties` from the console output example
+```json
+{
+    "suites": {
+        value: "Suite names matching this value",
+        type: ["all", "pass", "fail", "skip", "error", "unknown"],
+    },
+    "tests": {
+        value: "Test names matching this value",
+        type: ["all", "pass", "fail", "skip", "error", "unknown"],
+    },
+    "properties": {
+        value: "Properties matching with key or value matching this value",
+        type: ["all"]
+    },
+}
 ```
 
 ## Component
@@ -116,7 +122,6 @@ Better API
 Better View
 Uses React
 Nested Suites
+Using sockets and lighter
 
-No longer supports hosting the page, this was not needed in the first place
 
-Now replaced with web sockets which will update the data when files change

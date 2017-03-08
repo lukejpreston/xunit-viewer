@@ -2,7 +2,7 @@ const cli = require('.')
 
 describe('cli', () => {
   it('works', () => {
-    cli.run({
+    cli({
       results: 'data',
       ignore: [
         'node_modules',
