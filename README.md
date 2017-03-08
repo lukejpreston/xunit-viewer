@@ -57,7 +57,7 @@ XunitViewerCli({
 all are optional, those are default values
 
 * `results` the file or folder where the results are, defaults to where the cli is running from i.e. `process.cwd()`
-* `ignore` an array of patterns to ignore
+* `ignore` an array of patterns to ignore or a single string with a pattern to ignore
 * `output` if folder will save a file `xunit-viewer.html` to that folder, if a file will save to that file if `'console'` then it will spit out the results to the console
 * `title` title for the HTML
 * `port` if `false` it will not start a server, otherwise it will start serving the output and not save not save a file unless you also provide `output`

@@ -2,33 +2,76 @@ const fs = require('fs')
 const path = require('path')
 const detectPort = require('detect-port')
 
-module.exports = ({ results = '', ignore = [], save = false, title = 'Xunit Viewer', port = false, watch = false, terminal = false, filter = {}, hide = {} }) => {
-  if (results === '') results = process.cwd()
-  else if (!path.isAbsolute(results)) results = path.resolve(process.cwd(), results)
+const extractResults = (results = process.cwd()) => {
+  if (typeof results !== 'string') results = process.cwd()
+  if (!path.isAbsolute(results)) results = path.resolve(process.cwd(), results)
+  return results
+}
 
-  if (save !== false && save !== '') {
-    if (!path.isAbsolute(save)) save = path.resolve(process.cwd(), save)
-
-    if (fs.existsSync(save) && fs.lstatSync(save).isDirectory()) save = path.join(save, 'xunit-viewer.html')
+const extractOutput = (output = false) => {
+  if (output !== false && typeof output !== 'string') output = false
+  if (output !== false && output !== '' && output !== 'console') {
+    if (!path.isAbsolute(output)) output = path.resolve(process.cwd(), output)
+    if (fs.existsSync(output) && fs.lstatSync(output).isDirectory()) output = path.join(output, 'xunit-viewer.html')
   }
+  return output
+}
 
+const extractIgnore = (ignore = []) => {
+  if (typeof ignore === 'string') ignore = [ignore]
+  if (!Array.isArray(ignore)) ignore = []
+  if (ignore.some(element => { return typeof element !== 'string' })) throw new Error('ignore needs to be either an Array(<string>)')
   ignore.push('!*.xml')
+  return ignore
+}
+
+const extractWatch = (watch = false) => {
+  return watch !== false
+}
+
+const extractFilter = (filter = {}) => {
+  if (Array.isArray(filter)) return {}
+  if (filter !== Object(filter)) return {}
+  return filter
+}
+
+const extractPort = (port = false) => {
+  if (typeof port !== 'boolean' && typeof port !== 'number') return false
+  return port
+}
+
+const extarctTitle = (title = 'Xunit Viewer') => {
+  if (typeof title !== 'string' && typeof title !== 'number') return 'Xunit Viewer'
+  if (typeof title === 'number') return '' + title
+  return title
+}
+
+module.exports = ({ results, ignore, output, title, port, watch, filter }) => {
+  results = extractResults(results)
+  output = extractOutput(output)
+  ignore = extractIgnore(ignore)
+  watch = extractWatch(watch)
+  filter = extractFilter(filter)
+  port = extractPort(port)
+  title = extarctTitle(title)
 
   let options = (port) => {
     return new Promise(resolve => {
-      resolve({ results, ignore, save, title, port, watch, terminal, filter, hide })
+      resolve({ results, ignore, output, title, port, watch, filter })
     })
   }
 
   if (port !== false) {
     if (typeof port === 'number') {
-      return detectPort(port).then(port => {
+      return detectPort(port)
+        .then(port => {
+          return options(port)
+        })
+    }
+    return detectPort()
+      .then(port => {
         return options(port)
       })
-    }
-    return detectPort().then(port => {
-      return options(port)
-    })
   }
 
   return options(port)

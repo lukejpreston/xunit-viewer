@@ -1,7 +1,12 @@
 const resolveOptions = require('./resolve-options')
 
 module.exports = (options) => {
-  resolveOptions(options).then(({ results, ignore, save, title, port, watch, terminal, filter, hide }) => {
-    console.log({ results, ignore, save, title, port, watch, terminal, filter, hide })
-  })
+  resolveOptions(options)
+    .then(({ results, ignore, output, title, port, watch, filter }) => {
+      console.log({ results, ignore, output, title, port, watch, filter })
+    })
+    .catch(err => {
+      console.error(err)
+      process.exit(666)
+    })
 }
