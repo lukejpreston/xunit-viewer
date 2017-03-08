@@ -81,6 +81,8 @@ all are optional, those are default values
 }
 ```
 
+if any value is invalid it will try and use default
+
 ## Component
 
 You will need to bring in React if you are using the component
