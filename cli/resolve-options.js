@@ -63,7 +63,7 @@ module.exports = ({ results, ignore, output, title, port, watch, filter, dev }) 
 
   let options = (port) => {
     return new Promise(resolve => {
-      resolve({ results, ignore, output, title, port, watch, filter })
+      resolve({ results, ignore, output, title, port, watch, filter, dev })
     })
   }
 

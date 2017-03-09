@@ -11,6 +11,8 @@ const uglify = require('uglify-js')
 const component = path.resolve(__dirname, '../component')
 
 const distribute = () => {
+  console.log('creating dist')
+
   const dist = path.resolve(__dirname, '../dist')
 
   fs.removeSync(dist)

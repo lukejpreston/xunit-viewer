@@ -4,14 +4,14 @@ const postcss = require('postcss')
 const ccsnext = require('postcss-cssnext')
 const uglifycss = require('uglifycss')
 
-let bulma = require.resolve('bulma').replace('bulma.sass', 'css/bulma.css')
-let normalize = require.resolve('normalize.css')
-let header = path.resolve(__dirname, '../component/header/header.css')
-let suites = path.resolve(__dirname, '../component/suites/suites.css')
+const bulmaFile = require.resolve('bulma').replace('bulma.sass', 'css/bulma.css')
+const normalizeFile = require.resolve('normalize.css')
+const headerFile = path.resolve(__dirname, '../component/header/header.css')
+const suitesFile = path.resolve(__dirname, '../component/suites/suites.css')
 
 module.exports = () => {
-  suites = fs.readFileSync(suites).toString()
-  header = fs.readFileSync(header).toString()
+  let suites = fs.readFileSync(suitesFile).toString()
+  let header = fs.readFileSync(headerFile).toString()
   return postcss([ccsnext])
     .process(suites)
     .then(result => {
@@ -26,11 +26,11 @@ module.exports = () => {
         })
     })
     .then((css) => {
-      normalize = fs.readFileSync(normalize).toString()
-      bulma = fs.readFileSync(bulma).toString()
+      let normalize = fs.readFileSync(normalizeFile).toString()
+      let bulma = fs.readFileSync(bulmaFile).toString()
       const style = normalize + '\n' + bulma + '\n' + css
       return new Promise((resolve, reject) => {
-        resolve(style)
+        resolve(uglifycss.processString(style))
       })
     })
 }
