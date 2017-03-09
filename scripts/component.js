@@ -11,7 +11,9 @@ const uglify = require('uglify-js')
 const component = path.resolve(__dirname, '../component')
 
 const distribute = () => {
-  console.log('creating dist')
+  const start = new Date().getTime()
+  console.log()
+  console.log('start', new Date())
 
   const dist = path.resolve(__dirname, '../dist')
 
@@ -57,7 +59,10 @@ const distribute = () => {
         code = code.toString()
         fs.writeFileSync(index, code)
         fs.writeFileSync(min, uglify.minify(index).code)
+        const end = new Date().getTime()
         console.log('done', new Date())
+        console.log('time taken', (end - start) / 1000, 's')
+        console.log()
       })
   })
 }
