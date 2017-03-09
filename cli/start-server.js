@@ -1,27 +1,13 @@
 const express = require('express')
 const http = require('http')
-const socketIo = require('socket.io')
+const startSockets = require('./start-sockets')
 const render = require('./render')
-const resolveFiles = require('./resolve-files')
-const parseFiles = require('./parse-files')
 
 module.exports = (options) => {
   const app = express()
   var server = http.createServer(app)
 
-  if (options.watch) {
-    const io = socketIo(server)
-
-    io.on('connection', (socket) => {
-      resolveFiles(options)
-        .then(files => {
-          parseFiles(files)
-            .then(suites => {
-              socket.emit('suites', suites)
-            })
-        })
-    })
-  }
+  if (options.watch) startSockets(server, options)
 
   if (options.dev) {
     app.get('/', (req, res) => {

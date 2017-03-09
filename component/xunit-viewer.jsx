@@ -8,6 +8,7 @@ const knownStatuses = ['pass', 'fail', 'error', 'skipped']
 class XunitViewer extends React.Component {
   constructor (props) {
     super(props)
+    console.log('change 17')
 
     let uuids = {
       suites: {},

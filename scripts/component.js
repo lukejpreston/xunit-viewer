@@ -76,6 +76,7 @@ if (!shouldWatch) {
 } else {
   console.log('watching')
   distribute()
-  let watch = nodeWatch(component)
-  watch.on('change', distribute)
+  nodeWatch(component, (file) => {
+    if (!file.includes('css')) distribute()
+  })
 }
