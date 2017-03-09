@@ -25,12 +25,15 @@ module.exports = (server, options) => {
       if (file.includes('css')) {
         postcss()
           .then(style => {
-            socket.emit('reload:style', style)
+            socket.emit('reload', {style})
           })
-      }
-
-      if (file.includes('index.min.js') && fs.existsSync(file)) {
-        socket.emit('reload:all')
+      } else {
+        let interval = setInterval(() => {
+          if (fs.existsSync(path.join(dist, 'index.min.js'))) {
+            socket.emit('reload', {})
+            clearInterval(interval)
+          }
+        }, 500)
       }
     })
   })

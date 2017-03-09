@@ -7,12 +7,9 @@ export default (setState) => {
     setState(suites)
   })
 
-  socket.on('reload:all', () => {
-    console.log('all')
-    window.location.reload()
-  })
-
-  socket.on('reload:style', (style) => {
-    document.querySelector('style').innerHTML = style
+  socket.on('reload', ({style}) => {
+    console.log('here')
+    if (style) document.querySelector('style').innerHTML = style
+    else window.location.reload()
   })
 }
