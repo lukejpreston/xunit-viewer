@@ -21,14 +21,14 @@ module.exports = () => {
         .then(result => {
           const headerCss = result.css
           return new Promise(resolve => {
-            resolve(suitesCss, headerCss)
+            resolve(headerCss + '\n' + suitesCss)
           })
         })
     })
-    .then((suitesCss, headerCss) => {
+    .then((css) => {
       normalize = fs.readFileSync(normalize).toString()
       bulma = fs.readFileSync(bulma).toString()
-      const style = uglifycss.processString(normalize + '\n' + bulma + '\n' + headerCss + '\n' + suitesCss)
+      const style = normalize + '\n' + bulma + '\n' + css
       return new Promise((resolve, reject) => {
         resolve(style)
       })

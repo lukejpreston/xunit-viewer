@@ -1,5 +1,9 @@
 import clone from 'clone'
-import fuzzysearch from 'fuzzysearch'
+// import fuzzysearch from 'fuzzysearch'
+
+let fuzzysearch = () => {
+  return true
+}
 
 let matches = (str, match) => {
   return fuzzysearch(str.toLowerCase(), match.toLowerCase())

@@ -1,6 +1,6 @@
 const recursive = require('recursive-readdir')
 
-module.exports = (results, ignore) => {
+module.exports = ({results, ignore}) => {
   ignore.push('!*.xml')
 
   return new Promise((resolve, reject) => {

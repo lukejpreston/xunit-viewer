@@ -2,5 +2,11 @@
 
 require('../cli')({
   results: 'data',
-  port: true
+  ignore: [
+    'invalid.xml',
+    'blank_file.xml'
+  ],
+  port: 8080,
+  watch: true,
+  dev: true
 })

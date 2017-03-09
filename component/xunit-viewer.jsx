@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react'
 import Header from './header'
 import Suites from './suites'
+import sockets from './sockets'
 
 const knownStatuses = ['pass', 'fail', 'error', 'skipped']
 
@@ -33,6 +34,8 @@ class XunitViewer extends React.Component {
     })
 
     this.state = {
+      title: props.title,
+      suites: props.suites,
       uuids,
       header: {
         active: true,
@@ -55,11 +58,16 @@ class XunitViewer extends React.Component {
       }
     }
   }
+  componentDidMount () {
+    sockets((suites) => {
+      this.setState({suites})
+    })
+  }
   render () {
     return <div>
       <Header
-        title={this.props.title}
-        suites={this.props.suites}
+        title={this.state.title}
+        suites={this.state.suites}
         search={this.state.search}
         onSearch={(value, type) => {
           let search = this.state.search
@@ -168,7 +176,7 @@ class XunitViewer extends React.Component {
         statsStatus={this.state.header.statsStatus}
       />
       <Suites
-        suites={this.props.suites}
+        suites={this.state.suites}
         search={this.state.search}
         hidden={this.state.hidden}
         collapsed={this.state.collapsed}
