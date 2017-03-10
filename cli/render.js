@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const mustache = require('mustache')
 const postcss = require('./postcss')
+const component = require('./component')
 
 let template = fs.readFileSync(path.resolve(__dirname, './template.html')).toString()
 mustache.parse(template)
@@ -17,8 +18,18 @@ module.exports = (options) => {
         })
     })
     .then(({style, files}) => {
+      return new Promise((resolve, reject) => {
+        component()
+          .then(code => {
+            resolve({style, files, script: code})
+          })
+        .catch(err => {
+          reject(new Error(err))
+        })
+      })
+    })
+    .then(({style, files, script}) => {
       const title = options.title
-      const script = fs.readFileSync(path.resolve(__dirname, '../dist/index.min.js'))
       const renderOptions = {title, style, script}
       renderOptions.suites = JSON.stringify([])
       renderOptions.sockets = ''
