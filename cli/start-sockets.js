@@ -11,16 +11,18 @@ module.exports = (server, options) => {
   const io = socketIo(server)
   io.emit('reload', {style: true})
 
-  nodeWatch([componet], (file) => {
-    if (file.includes('css')) {
-      postcss()
+  if (options.dev) {
+    nodeWatch([componet], (file) => {
+      if (file.includes('css')) {
+        postcss()
         .then(style => {
           io.emit('reload', {style, code: false})
         })
-    } else {
-      io.emit('reload', {style: false, code: true})
-    }
-  })
+      } else {
+        io.emit('reload', {style: false, code: true})
+      }
+    })
+  }
 
   io.on('connection', (socket) => {
     resolveFiles(options)
