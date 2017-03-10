@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const startSockets = require('./start-sockets')
 const render = require('./render')
+const chalk = require('chalk')
 
 module.exports = (options) => {
   const app = express()
@@ -36,6 +37,7 @@ module.exports = (options) => {
   }
 
   server.listen(options.port, () => {
-    console.log(`started listening http://localhost:${options.port}`)
+    console.log('started listening')
+    console.log(chalk.underline.bold.blue(`http://localhost:${options.port}`))
   })
 }

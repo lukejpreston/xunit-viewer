@@ -5,6 +5,6 @@ import XunitViewer from './xunit-viewer'
 ReactDOM.render(
   <XunitViewer
     suites={window.suites}
-    title='bacon 22' />,
+    title={document.querySelector('title').innerText} />,
   document.getElementById('root')
 )
