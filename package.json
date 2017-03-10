@@ -32,9 +32,9 @@
   },
   "scripts": {
     "test": "npm run eslint && jest",
-    "component": "node scripts/component.js",
     "jest": "npm run component && jest",
-    "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass"
+    "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass",
+    "start": "nodemon --watch cli ./bin/xunit-viewer --dev --watch --results=data --ignore=invalid.xml,blank_file.xml --port=8080"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
