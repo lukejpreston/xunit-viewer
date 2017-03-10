@@ -4,13 +4,23 @@ const parseFiles = require('./parse-files')
 const nodeWatch = require('node-watch')
 const path = require('path')
 const postcss = require('./postcss')
-const fs = require('fs-extra')
 
 const componet = path.resolve(__dirname, '../component')
-const dist = path.resolve(__dirname, '../dist')
 
 module.exports = (server, options) => {
   const io = socketIo(server)
+  io.emit('reload', {style: true})
+
+  nodeWatch([componet], (file) => {
+    if (file.includes('css')) {
+      postcss()
+        .then(style => {
+          io.emit('reload', {style, code: false})
+        })
+    } else {
+      io.emit('reload', {style: false, code: true})
+    }
+  })
 
   io.on('connection', (socket) => {
     resolveFiles(options)
@@ -20,21 +30,5 @@ module.exports = (server, options) => {
             socket.emit('suites', suites)
           })
       })
-
-    nodeWatch([componet, dist], (file) => {
-      if (file.includes('css')) {
-        postcss()
-          .then(style => {
-            socket.emit('reload', {style})
-          })
-      } else {
-        let interval = setInterval(() => {
-          if (fs.existsSync(path.join(dist, 'index.min.js'))) {
-            socket.emit('reload', {})
-            clearInterval(interval)
-          }
-        }, 500)
-      }
-    })
   })
 }
