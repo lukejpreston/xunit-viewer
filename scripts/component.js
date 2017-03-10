@@ -9,13 +9,16 @@ const browserify = require('browserify')
 const uglify = require('uglify-js')
 
 const component = path.resolve(__dirname, '../component')
+const dist = path.resolve(__dirname, '../dist')
+
+const app = path.join(dist, 'app.js')
+const index = path.join(dist, 'index.js')
+const min = path.resolve(dist, 'index.min.js')
 
 const distribute = () => {
   const start = new Date().getTime()
   console.log()
   console.log('start', new Date())
-
-  const dist = path.resolve(__dirname, '../dist')
 
   fs.removeSync(dist)
   fs.mkdirSync(dist)
@@ -23,48 +26,53 @@ const distribute = () => {
   fs.mkdirSync(path.join(dist, 'suites'))
 
   const copy = () => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       recursive(component, ['*.css'], (err, files) => {
         if (err) {
-          console.error(err)
-          process.exit(666)
+          reject(err)
+        } else {
+          files.forEach(file => {
+            const transformed = babel.transformFileSync(file)
+            const newFile = file.replace(component, dist).replace('.jsx', '.js')
+            try {
+              fs.removeSync(newFile)
+            } catch (ignoreError) { }
+            fs.writeFileSync(newFile, transformed.code)
+          })
+          resolve(reject)
         }
-
-        files.forEach(file => {
-          const transformed = babel.transformFileSync(file)
-
-          const newFile = file.replace(component, dist).replace('.jsx', '.js')
-
-          try {
-            fs.removeSync(newFile)
-          } catch (ignoreError) {}
-          fs.writeFileSync(newFile, transformed.code)
-        })
-        resolve()
       })
     })
   }
 
-  copy().then(() => {
-    let app = path.join(dist, 'app.js')
-    let index = path.join(dist, 'index.js')
-    let min = path.resolve(dist, 'index.min.js')
+  const condense = () => {
+    return new Promise((resolve, reject) => {
+      browserify(app)
+        .bundle((err, code) => {
+          if (err !== null) {
+            reject(err)
+          } else {
+            code = code.toString()
+            fs.writeFileSync(index, code)
+            fs.writeFileSync(min, uglify.minify(index).code)
+          }
+        })
+    })
+  }
 
-    browserify(app)
-      .bundle((err, code) => {
-        if (err !== null) {
-          console.error(err)
-          process.exit(666)
-        }
-        code = code.toString()
-        fs.writeFileSync(index, code)
-        fs.writeFileSync(min, uglify.minify(index).code)
-        const end = new Date().getTime()
-        console.log('done', new Date())
-        console.log('time taken', (end - start) / 1000, 's')
-        console.log()
-      })
-  })
+  copy()
+    .then(() => {
+      return condense()
+    })
+    .then(() => {
+      const end = new Date().getTime()
+      console.log('done', new Date())
+      console.log('time taken', (end - start) / 1000, 's')
+      console.log()
+    })
+    .catch(err => {
+      console.log(err.stack)
+    })
 }
 
 let shouldWatch = process.argv.some(arg => {

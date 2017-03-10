@@ -4,7 +4,7 @@
 node_modules
 
 # production
-dist
+yarn-error.log
 
 # misc
 .DS_Store
