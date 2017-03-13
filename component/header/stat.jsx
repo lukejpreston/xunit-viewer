@@ -1,4 +1,16 @@
 import React, {PropTypes} from 'react'
+import ChevronLeft from '../icons/chevron-left'
+import Expand from '../icons/expand'
+import Compress from '../icons/compress'
+import Eye from '../icons/eye'
+import EyeSlash from '../icons/eye-slash'
+import Search from '../icons/search'
+
+let Icon = ({children}) => {
+  return <i className='icon is-small'>
+    {children}
+  </i>
+}
 
 let Count = ({icon, name, total, type, category, onStatToggle}) => {
   category = name || category
@@ -8,7 +20,7 @@ let Count = ({icon, name, total, type, category, onStatToggle}) => {
       onClick={() => {
         onStatToggle({name: category, type})
       }}>
-      <span className='icon is-small'><i className={`fa fa-${icon}`} /></span>
+      {icon}
       <span>{name} <b>{total}</b></span>
     </a>
   </li>
@@ -33,7 +45,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       onClick={() => {
         onStatToggle({name: category, type})
       }}>
-      <span className='icon is-small'><i className={`fa fa-chevron-left`} /></span>
+      <Icon><ChevronLeft /></Icon>
     </a>
     <a
       title='exapnd'
@@ -41,7 +53,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       onClick={() => {
         onExpand({name: category, type})
       }}>
-      <span className='icon is-small'><i className={`fa fa-expand`} /></span>
+      <Icon><Expand /></Icon>
     </a>
     <a
       title='contract'
@@ -49,7 +61,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       onClick={() => {
         onCollapse({name: category, type})
       }}>
-      <span className='icon is-small'><i className={`fa fa-compress`} /></span>
+      <Icon><Compress /></Icon>
     </a>
     <a
       title='show'
@@ -57,7 +69,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       onClick={() => {
         onShow({name: category, type})
       }}>
-      <span className='icon is-small'><i className={`fa fa-eye`} /></span>
+      <Icon><Eye /></Icon>
     </a>
     <a
       title='hide'
@@ -65,7 +77,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       onClick={() => {
         onHide({name: category, type})
       }}>
-      <span className='icon is-small'><i className={`fa fa-eye-slash`} /></span>
+      <Icon><EyeSlash /></Icon>
     </a>
   </li>
 }
@@ -131,9 +143,7 @@ let Stat = ({icon, name, total, type, data = [], onSearch, onStatToggle, onExpan
               onChange={evt => {
                 onSearch(evt.target.value, type)
               }} />
-            <span className='icon is-small'>
-              <i className='fa fa-search' />
-            </span>
+            <Icon><Search /></Icon>
           </p>
         </li>
         <Toggle

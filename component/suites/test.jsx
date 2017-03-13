@@ -33,7 +33,7 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
         })
       }}>
       <p className='card-header-title'>
-        <i className={`fa fa-${iconMap[status]}`} />
+        {iconMap[status]}
         {name}
       </p>
       {Icon}

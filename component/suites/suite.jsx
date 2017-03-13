@@ -25,7 +25,7 @@ let Suite = ({
       }}
       >
       <p className='card-header-title'>
-        <i className={`fa fa-${iconMap[status]}`} />
+        {iconMap[status]}
         {name}
       </p>
       <a className='card-header-icon'>
