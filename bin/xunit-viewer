@@ -1,12 +1,5 @@
 #!/usr/bin/env node
 
-require('../cli')({
-  results: 'data',
-  ignore: [
-    'invalid.xml',
-    'blank_file.xml'
-  ],
-  port: 8080,
-  watch: true,
-  dev: true
-})
+let options = require('../cli/resolve-argv')()
+
+require('../cli')(options)

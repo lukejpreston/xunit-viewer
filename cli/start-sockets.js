@@ -9,9 +9,9 @@ const componet = path.resolve(__dirname, '../component')
 
 module.exports = (server, options) => {
   const io = socketIo(server)
-  io.emit('reload', {style: true})
 
   if (options.dev) {
+    io.emit('reload', {style: false, code: true})
     nodeWatch([componet], (file) => {
       if (file.includes('css')) {
         postcss()

@@ -34,7 +34,8 @@
     "test": "npm run eslint && jest",
     "jest": "npm run component && jest",
     "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass",
-    "start": "nodemon --watch cli ./bin/xunit-viewer --dev --watch --results=data --ignore=invalid.xml,blank_file.xml --port=8080"
+    "start": "nodemon --watch cli --exec npm run xunit-viewer",
+    "xunit-viewer": "./bin/xunit-viewer --results=data --dev --watch  --ignore=invalid.xml,blank_file.xml --port=8080"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
@@ -47,6 +48,7 @@
     "detect-port": "^1.1.0",
     "express": "^4.15.2",
     "fs-extra": "^2.0.0",
+    "fuzzysearch": "^1.0.3",
     "mustache": "^2.3.0",
     "node-watch": "^0.4.1",
     "nodemon": "^1.11.0",
@@ -64,6 +66,7 @@
     "xml2js-parser": "^1.1.1"
   },
   "devDependencies": {
+    "svg-to-react": "^0.1.0",
     "eslint": "^3.17.0",
     "eslint-config-standard": "^7.0.0",
     "eslint-config-standard-react": "^4.2.0",
