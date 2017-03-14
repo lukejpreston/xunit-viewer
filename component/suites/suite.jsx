@@ -34,6 +34,24 @@ let Suite = ({
 
   let isCollapsed = Object.keys(collapsed.suites).includes(uuid) ? 'collapsed' : 'expanded'
 
+  let Content = <div className='card-content'>
+    {Props}
+    {suites}
+    {tests.map(test =>
+      <Test
+        onToggle={onToggle}
+        collapsed={collapsed}
+        key={`test-${test._uuid}`}
+        uuid={test._uuid}
+        status={test.status}
+        name={test.name}
+        message={test.message}
+          />
+      )}
+  </div>
+
+  if (Object.keys(properties).length === 1 && suites.length === 0 && tests.length === 0) Content = null
+
   return <div className={`card suite is-${isCollapsed}`}>
     <header
       className={`card-header is-${status}`}
@@ -51,21 +69,7 @@ let Suite = ({
         </span>
       </a>
     </header>
-    <div className='card-content'>
-      {Props}
-      {suites}
-      {tests.map(test =>
-        <Test
-          onToggle={onToggle}
-          collapsed={collapsed}
-          key={`test-${test._uuid}`}
-          uuid={test._uuid}
-          status={test.status}
-          name={test.name}
-          message={test.message}
-          />
-      )}
-    </div>
+    {Content}
   </div>
 }
 
