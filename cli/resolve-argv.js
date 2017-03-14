@@ -10,6 +10,7 @@ module.exports = () => {
     else if (arg.includes('--color')) options.color = arg.replace('--color=', '')
     else if (arg.includes('--watch')) options.watch = arg.replace('--watch=', '').replace('--watch', '')
     else if (arg.includes('--dev')) options.dev = arg.replace('--dev=', '').replace('--dev', '')
+    else if (arg.includes('--terminal')) options.terminal = arg.replace('--terminal=', '').replace('--terminal', '')
 
 // --filter.suites.value="Suite names matching this value"
 // --filter.suites.types=all,pass,fail,skip,error,unknown

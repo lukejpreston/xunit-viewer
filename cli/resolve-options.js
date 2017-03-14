@@ -34,6 +34,10 @@ const extractDev = (dev = false) => {
   return dev !== false
 }
 
+const extractTerminal = (terminal = false) => {
+  return terminal !== false
+}
+
 const extractFilter = (filter = {}) => {
   if (Array.isArray(filter)) return {}
   if (filter !== Object(filter)) return {}
@@ -51,9 +55,10 @@ const extarctTitle = (title = 'Xunit Viewer') => {
   return changeCase.title(title)
 }
 
-module.exports = ({ results, ignore, output, title, port, watch, filter, dev }) => {
+module.exports = ({ results, ignore, output, terminal, title, port, watch, filter, dev }) => {
   results = extractResults(results)
   output = extractOutput(output)
+  terminal = extractTerminal(terminal)
   ignore = extractIgnore(ignore)
   watch = extractWatch(watch)
   dev = extractDev(dev)
@@ -63,7 +68,7 @@ module.exports = ({ results, ignore, output, title, port, watch, filter, dev }) 
 
   let options = (port) => {
     return new Promise(resolve => {
-      resolve({ results, ignore, output, title, port, watch, filter, dev })
+      resolve({ results, ignore, output, terminal, title, port, watch, filter, dev })
     })
   }
 

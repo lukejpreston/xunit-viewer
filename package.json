@@ -32,10 +32,11 @@
   },
   "scripts": {
     "test": "npm run eslint && jest",
-    "jest": "npm run component && jest",
+    "jest": "jest",
     "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass",
-    "start": "nodemon --watch cli --exec npm run xunit-viewer",
-    "xunit-viewer": "./bin/xunit-viewer --results=data --dev --watch  --ignore=invalid.xml,blank_file.xml --port=8080"
+    "start": "nodemon --watch cli --exec npm run xunit-viewer:all",
+    "xunit-viewer:all": "./bin/xunit-viewer --results=data --dev --watch  --ignore=invalid.xml,blank_file.xml --port=8080",
+    "xunit-viewer:terminal": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --terminal --watch"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
