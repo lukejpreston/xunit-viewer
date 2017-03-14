@@ -92,6 +92,7 @@ class XunitViewer extends React.Component {
           })
         }}
         onExpand={({name, type}) => {
+          console.log(this.state.uuids[name])
           name = name.toLowerCase()
 
           let collapsed = this.state.collapsed

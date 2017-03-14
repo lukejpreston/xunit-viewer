@@ -19,14 +19,14 @@
   & .suite,
   & .test,
   & .properties {
+    & .icon {
+      margin: 0 3px;
+    }
+
     &.is-collapsed {
       & .card-content,
       & .table {
         display: none !important;
-      }
-
-      & .icon {
-        transform: rotate(-90deg) translateX(3px) !important;
       }
     }
 
@@ -41,10 +41,6 @@
 
       & .table {
         display: table;
-      }
-
-      & .icon {
-        transform: rotate(0deg);
       }
     }
   }
