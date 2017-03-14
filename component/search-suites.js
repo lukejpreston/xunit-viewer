@@ -20,6 +20,7 @@ export default (suites, search) => {
 
     if (suite.properties) {
       let properties = {}
+      properties._uuid = suite.properties._uuid
       Object.keys(suite.properties).forEach(key => {
         let value = suite.properties[key]
         if (matches(search.properties, key) || matches(search.properties, value)) properties[key] = value
