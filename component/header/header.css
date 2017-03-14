@@ -186,6 +186,10 @@
     border-radius: 3px 0 0 3px;
   }
 
+  & .control .icon {
+    fill: #AAA;
+  }
+
   & .subtitle {
     & .toggle {
 
@@ -200,8 +204,7 @@
     }
 
     & .change {
-      height: 2.385em;
-      width: 20px;
+      padding: 9px 0 8px 0;
       display: inline-flex;
       border-radius: 0px !important;
     }
