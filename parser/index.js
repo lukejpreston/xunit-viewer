@@ -1,5 +1,6 @@
 const parseString = require('xml2js-parser').parseStringSync
 const changeCase = require('change-case')
+const uuid = require('uuid')
 
 const xml2js = (xml) => {
   let data = parseString(xml)
@@ -54,6 +55,7 @@ const buildProperties = (suite) => {
               })
             })
   }
+  properties._uuid = uuid.v4()
   return properties
 }
 
@@ -114,6 +116,7 @@ const buildTest = (test) => {
   extractTestCore(test, 'skipping', 'skip')
   extractTestCore(test, 'skip', 'skip')
 
+  test._uuid = uuid.v4()
   return test
 }
 
@@ -189,6 +192,7 @@ const buildSuites = (suites) => {
           if (suite.count.tests > 0 && suite.count.tests === suite.count.skip) suite.status = 'skip'
           if (suite.count.tests > 0 && suite.count.tests === suite.count.unknown) suite.status = 'unknown'
 
+          suite._uuid = uuid.v4()
           return suite
         })
 }

@@ -10,10 +10,27 @@ let Suite = ({
   properties = {},
   tests = [],
   onToggle,
-  collapsed
+  collapsed,
+  hidden,
+  suites = []
 }) => {
+  suites = suites.map(suite => {
+    return <Suite
+      collapsed={collapsed}
+      hidden={hidden}
+      uuid={suite._uuid}
+      onToggle={onToggle}
+      key={`suite-${suite._uuid}`}
+      name={suite.name}
+      status={suite.status}
+      properties={suite.properties}
+      tests={suite.tests}
+      suites={suite.suites}
+    />
+  })
+
   let Props = null
-  if (Object.keys(properties).length > 0) Props = <Properties onToggle={onToggle} collapsed={collapsed} data={properties} />
+  if (Object.keys(properties).length > 1) Props = <Properties onToggle={onToggle} collapsed={collapsed} data={properties} />
 
   let isCollapsed = Object.keys(collapsed.suites).includes(uuid) ? 'collapsed' : 'expanded'
 
@@ -36,6 +53,7 @@ let Suite = ({
     </header>
     <div className='card-content'>
       {Props}
+      {suites}
       {tests.map(test =>
         <Test
           onToggle={onToggle}
@@ -58,7 +76,9 @@ Suite.propTypes = {
   properties: PropTypes.object,
   tests: PropTypes.array,
   onToggle: PropTypes.func.isRequired,
-  collapsed: PropTypes.object.isRequired
+  collapsed: PropTypes.object.isRequired,
+  hidden: PropTypes.object.isRequired,
+  suites: PropTypes.array
 }
 
 export default Suite
