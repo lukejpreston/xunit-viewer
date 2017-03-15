@@ -128,7 +128,6 @@ Using sockets and lighter
 
 ## TODO
 
-* dangerously set inner html
 * expanding/contracting/hidding/showing
 * meta data for slack
 * filter terminal and add a repl

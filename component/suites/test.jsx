@@ -13,14 +13,11 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
   let isCollapsed = Object.keys(collapsed.tests).includes(uuid) ? 'collapsed' : 'expanded'
   status = knownStatuses.includes(status) ? status : 'unknown'
   let Content = null
-  let Icon = null
   if (message) {
-    Content = <div className='card-content'>{message}</div>
-    Icon = <a className='card-header-icon'>
-      <span className='icon'>
-        <i className='fa fa-angle-down' />
-      </span>
-    </a>
+    Content = <div
+      className='card-content'
+      dangerouslySetInnerHTML={{__html: message}}
+    />
   }
 
   return <div className={`card test is-${isCollapsed}`}>
@@ -36,7 +33,6 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
         {iconMap[status]}
         {name}
       </p>
-      {Icon}
     </header>
     {Content}
   </div>
