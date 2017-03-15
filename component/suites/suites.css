@@ -2,7 +2,7 @@
   --fail: #E74C3C;
   --pass: #23D160;
   --error: #FFDD57;
-  --skipped: #ECF0F1;
+  --skip: #ECF0F1;
   --unknown: #3273DC;
 }
 
@@ -47,10 +47,10 @@
 
   & .properties {
     & .card-header {
-      background-color: var(--skipped);
+      background-color: var(--skip);
 
       &:hover {
-        background-color: color(var(--skipped) b(15%));
+        background-color: color(var(--skip) b(15%));
       }
     }
   }
@@ -90,11 +90,11 @@
     }
   }
 
-  & .is-skipped {
-    background-color: var(--skipped);
+  & .is-skip {
+    background-color: var(--skip);
 
     &:hover {
-      background-color: color(var(--skipped) b(15%));
+      background-color: color(var(--skip) b(15%));
     }
   }
 

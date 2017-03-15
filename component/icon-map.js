@@ -15,6 +15,6 @@ export default {
   pass: <Icon><Check /></Icon>,
   fail: <Icon><Times /></Icon>,
   error: <Icon><Exclamation /></Icon>,
-  skipped: <Icon><Ban /></Icon>,
+  skip: <Icon><Ban /></Icon>,
   unknown: <Icon><Question /></Icon>
 }

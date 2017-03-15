@@ -34,7 +34,7 @@ module.exports = (options) => {
       renderOptions.suites = JSON.stringify([])
       renderOptions.sockets = ''
 
-      if (options.watch === false) {
+      if (options.watch === false || options.parse) {
         return parseFiles(files).then(suites => {
           renderOptions.suites = JSON.stringify(suites)
           return mustache.render(template, renderOptions)

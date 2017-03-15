@@ -6,7 +6,7 @@ let knownStatuses = [
   'pass',
   'fail',
   'error',
-  'skipped'
+  'skip'
 ]
 
 let Test = ({uuid, status, name, message, onToggle, collapsed}) => {

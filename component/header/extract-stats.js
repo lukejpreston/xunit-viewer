@@ -45,7 +45,7 @@ export default (suites, search) => {
       suites: 0,
       tests: 0
     },
-    skipped: {
+    skip: {
       suites: 0,
       tests: 0
     },
@@ -86,8 +86,8 @@ export default (suites, search) => {
   updateCount('fail', 'tests')
   updateCount('error', 'suites')
   updateCount('error', 'tests')
-  updateCount('skipped', 'suites')
-  updateCount('skipped', 'tests')
+  updateCount('skip', 'suites')
+  updateCount('skip', 'tests')
   updateCount('unknown', 'suites')
   updateCount('unknown', 'tests')
 

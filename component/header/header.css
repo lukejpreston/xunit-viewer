@@ -2,7 +2,7 @@
   --fail: #E74C3C;
   --pass: #23D160;
   --error: #FFDD57;
-  --skipped: #ECF0F1;
+  --skip: #ECF0F1;
   --unknown: #3273DC;
   --info: #2C3E50;
   --burger-margin: 7px;
@@ -263,13 +263,13 @@
       }
     }
 
-    & .is-skipped {
+    & .is-skip {
       & .count,
       & .change {
-        background-color: var(--skipped) !important;
+        background-color: var(--skip) !important;
 
         &:hover {
-          background-color: color(var(--skipped) b(20%)) !important;
+          background-color: color(var(--skip) b(20%)) !important;
         }
       }
     }

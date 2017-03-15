@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <testsuites>
         <!-- standard test suite -->
-        <testsuite name="bacon" errors="666" tests="777" failures="888" time="0.021">
+        <testsuite name="facon" errors="666" tests="777" failures="888" time="0.021">
             <!-- standard props -->
             <properties>
                 <property name="x" value="y" />

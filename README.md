@@ -133,4 +133,4 @@ Using sockets and lighter
 * set up something which will parse in browser
 * clean everything and wrote some more tests
 * save file
-* console output
+* filter terminal and add a repl

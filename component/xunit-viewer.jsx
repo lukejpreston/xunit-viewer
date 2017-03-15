@@ -3,7 +3,7 @@ import Header from './header'
 import Suites from './suites'
 import sockets from './sockets'
 
-const knownStatuses = ['pass', 'fail', 'error', 'skipped']
+const knownStatuses = ['pass', 'fail', 'error', 'skip']
 
 class XunitViewer extends React.Component {
   constructor (props) {

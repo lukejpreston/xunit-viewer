@@ -4,9 +4,10 @@
 node_modules
 
 # production
-yarn-error.log
+output.html
 
 # misc
+yarn-error.log
 .DS_Store
 .env
 npm-debug.log
