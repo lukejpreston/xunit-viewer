@@ -16,7 +16,6 @@ const save = (options) => {
 }
 
 module.exports = (options) => {
-  options.parse = true
   save(options)
   if (options.watch) {
     nodeWatch(options.results, () => {

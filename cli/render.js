@@ -39,17 +39,13 @@ module.exports = (options) => {
       const renderOptions = {title, style, script}
       renderOptions.suites = JSON.stringify([])
       renderOptions.sockets = ''
+      if (options.watch === false) renderOptions.sockets = '<script src="/socket.io/socket.io.js"></script>'
       renderOptions.favico = icons.xv
 
-      if (options.watch === false || options.parse) {
-        return parseFiles(files).then(suites => {
-          renderOptions.suites = JSON.stringify(suites)
-          return mustache.render(template, renderOptions)
-        })
-      }
-
-      renderOptions.sockets = '<script src="/socket.io/socket.io.js"></script>'
-      return mustache.render(template, renderOptions)
+      return parseFiles(files).then(suites => {
+        renderOptions.suites = JSON.stringify(suites)
+        return mustache.render(template, renderOptions)
+      })
     })
     .then(output => {
       return output

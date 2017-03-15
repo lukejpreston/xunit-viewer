@@ -35,6 +35,7 @@
     "jest": "jest",
     "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass",
     "start": "nodemon --watch cli --exec npm run xunit-viewer:all",
+    "xunit-viewer": "./bin/xunit-viewer",
     "xunit-viewer:sockets": "./bin/xunit-viewer --results=data --dev --watch  --ignore=invalid.xml,blank_file.xml --port=8080",
     "xunit-viewer:terminal": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --terminal --watch",
     "xunit-viewer:output": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --watch --output=output.html"

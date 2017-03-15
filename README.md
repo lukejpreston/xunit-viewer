@@ -128,9 +128,8 @@ Using sockets and lighter
 
 ## TODO
 
-* pre populate with suites instead of waiting for sockets
-* meta data for slack
 * filter terminal and add a repl
+* meta data for slack
 * publish to npm
 * make better stub data
 * better error handling
