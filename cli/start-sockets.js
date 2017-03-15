@@ -33,4 +33,16 @@ module.exports = (server, options) => {
           })
       })
   })
+
+  if (options.watch) {
+    nodeWatch(options.results, () => {
+      resolveFiles(options)
+        .then(files => {
+          parseFiles(files)
+            .then(suites => {
+              io.emit('suites', suites)
+            })
+        })
+    })
+  }
 }

@@ -4,6 +4,7 @@ export default (setState) => {
   const socket = window.io()
 
   socket.on('suites', (suites) => {
+    console.log('Update suites,', new Date())
     setState(suites)
   })
 

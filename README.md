@@ -128,9 +128,10 @@ Using sockets and lighter
 
 ## TODO
 
-* expanding/contracting/hidding/showing
 * dangerously set inner html
+* expanding/contracting/hidding/showing
+* meta data for slack
+* filter terminal and add a repl
+* publish to npm
 * set up something which will parse in browser
 * clean everything and wrote some more tests
-* save file
-* filter terminal and add a repl
