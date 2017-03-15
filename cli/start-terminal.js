@@ -110,7 +110,7 @@ let logStats = (suites) => {
 }
 
 const log = (options) => {
-  console.log('\033[2J')
+  console.log('\x1Bc')
   console.log(chalk.yellow.bold('\n\n\nchanges detected, clearing console\n\n\n'))
 
   setTimeout(() => {
@@ -118,21 +118,20 @@ const log = (options) => {
       .then(files => {
         parseFiles(files)
           .then(suites => {
-          suites.forEach(suite => {
-            logSuite(suite, 0)
+            suites.forEach(suite => {
+              logSuite(suite, 0)
+            })
+            logStats(suites)
+            console.log(chalk.cyan.bold('\nDone:', new Date()))
           })
-          logStats(suites)
-          console.log(chalk.cyan.bold('\nDone:', new Date()))
-        })
         .catch(err => {
           console.error(err.stack)
         })
-    })
+      })
     .catch(err => {
       console.error(err.stack)
     })
   }, 1000)
-
 }
 
 module.exports = (options) => {
