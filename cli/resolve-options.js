@@ -38,12 +38,6 @@ const extractTerminal = (terminal = false) => {
   return terminal !== false
 }
 
-const extractFilter = (filter = {}) => {
-  if (Array.isArray(filter)) return {}
-  if (filter !== Object(filter)) return {}
-  return filter
-}
-
 const extractPort = (port = false) => {
   if (typeof port !== 'boolean' && typeof port !== 'number') return false
   return port
@@ -53,6 +47,20 @@ const extarctTitle = (title = 'Xunit Viewer') => {
   if (typeof title !== 'string' && typeof title !== 'number') title = 'Xunit Viewer'
   if (typeof title === 'number') title = '' + title
   return changeCase.title(title)
+}
+
+const extractFilter = (filter = {}) => {
+  filter.search = filter.search || {}
+  filter.search.suites = filter.search.suites || ''
+  filter.search.tests = filter.search.tests || ''
+  filter.search.properties = filter.search.properties || ''
+
+  filter.hideen = filter.hideen || {}
+  filter.hideen.suites = filter.hideen.suites || []
+  filter.hideen.tests = filter.hideen.tests || []
+  filter.hideen.properties = filter.hideen.properties || []
+
+  return filter
 }
 
 module.exports = ({ results, ignore, output, terminal, title, port, watch, filter, dev }) => {

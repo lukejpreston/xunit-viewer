@@ -128,7 +128,7 @@ Using sockets and lighter
 
 ## TODO
 
-* filter terminal and add a repl
+* add a repl
 * meta data for slack
 * publish to npm
 * make better stub data

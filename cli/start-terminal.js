@@ -3,6 +3,8 @@ const parseFiles = require('./parse-files')
 const nodeWatch = require('node-watch')
 const chalk = require('chalk')
 const extractStats = require('./extarct-stats')
+const searchSuites = require('./search-suites')
+const hideSuites = require('./hide-suites')
 
 const symbols = {
   pass: '✓',
@@ -94,19 +96,14 @@ let logStat = (stat, maxTotal) => {
 }
 
 let logStats = (suites) => {
-  let stats = extractStats(suites, {
-    suites: '',
-    tests: '',
-    properties: ''
-  })
+  let stats = extractStats(suites)
 
-  let maxTotal = Math.max(stats[0].total, stats[1].total, stats[2].total) + ''
+  let maxTotal = Math.max.apply(null, stats.map(s => s.total)) + ''
   maxTotal = maxTotal.length
 
-  console.log()
-  logStat(stats[0], maxTotal)
-  logStat(stats[1], maxTotal)
-  logStat(stats[2], maxTotal)
+  stats.forEach(stat => {
+    logStat(stat, maxTotal)
+  })
 }
 
 const log = (options) => {
@@ -118,6 +115,8 @@ const log = (options) => {
       .then(files => {
         parseFiles(files)
           .then(suites => {
+            suites = searchSuites(suites, options.filter.search)
+            suites = hideSuites(suites, options.filter.hidden)
             suites.forEach(suite => {
               logSuite(suite, 0)
             })

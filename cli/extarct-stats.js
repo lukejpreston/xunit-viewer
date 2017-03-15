@@ -1,5 +1,3 @@
-const searchSuites = require('./search-suites')
-
 const symbols = {
   pass: '✓',
   fail: '✕',
@@ -8,7 +6,7 @@ const symbols = {
   error: '⚠'
 }
 
-module.exports = (suites, search) => {
+module.exports = (suites) => {
   let hasSuites = suites.length > 0
   let hasTests = false
   let hasProperties = false
@@ -16,8 +14,6 @@ module.exports = (suites, search) => {
     if (suite.tests) hasTests = true
     if (suite.properties) hasProperties = true
   })
-
-  suites = searchSuites(suites, search)
 
   let stats = {
     suites: {

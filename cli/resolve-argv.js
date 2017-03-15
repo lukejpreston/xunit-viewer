@@ -36,23 +36,20 @@
         let split = arg.split('=')
 
         let keys = split[0].split('.')
-        let x = keys[0]
         let thing = keys[1]
         let filter = keys[2]
-        let value = split[1].split(',')
-        value.map(v => {
-          if (!map.hasOwnProperty(v)) return 'unknown'
-          return map[v]
-        })
-        console.log(thing, filter, value)
-      }
+        let value = split[1]
+        if (filter === 'hidden') {
+          value = split[1].split(',')
+          value.map(v => {
+            if (!map.hasOwnProperty(v)) return 'unknown'
+            return map[v]
+          })
+        }
 
-    // if (arg.includes('--filter.suites.search'))
-    // if (arg.includes('--filter.suites.hidden'))
-    // if (arg.includes('--filter.tests.search'))
-    // if (arg.includes('--filter.tests.hidden'))
-    // if (arg.includes('--filter.properties.search'))
-    // if (arg.includes('--filter.properties.hidden'))
+        options.filter[filter] = options.filter[filter] || {}
+        options.filter[filter][thing] = value
+      }
     })
 
     if (options.dev === '' || options.dev === 'true') options.dev = true
