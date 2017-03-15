@@ -128,8 +128,12 @@ Using sockets and lighter
 
 ## TODO
 
+* pre populate with suites instead of waiting for sockets
 * meta data for slack
 * filter terminal and add a repl
 * publish to npm
+* make better stub data
+* better error handling
+* junit viewer to use this instead
 * set up something which will parse in browser
 * clean everything and wrote some more tests
