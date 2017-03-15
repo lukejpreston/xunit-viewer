@@ -59,7 +59,30 @@ class XunitViewer extends React.Component {
   }
   componentDidMount () {
     sockets((suites) => {
-      this.setState({suites})
+      let uuids = {
+        suites: {},
+        properties: {},
+        tests: {}
+      }
+      suites.forEach(suite => {
+        let suiteStatus = knownStatuses.includes(suite.status) ? suite.status : 'unknown'
+        uuids.suites[suiteStatus] = uuids.suites[suiteStatus] || []
+        uuids.suites[suiteStatus].push(suite._uuid)
+
+        if (suite.properties) {
+          uuids.properties.properties = uuids.properties.properties || []
+          uuids.properties.properties.push(suite.properties._uuid)
+        }
+
+        if (suite.tests) {
+          suite.tests.forEach(test => {
+            let testStatus = knownStatuses.includes(test.status) ? test.status : 'unknown'
+            uuids.tests[testStatus] = uuids.tests[testStatus] || []
+            uuids.tests[testStatus].push(test._uuid)
+          })
+        }
+      })
+      this.setState({suites, uuids})
     })
   }
   render () {
@@ -92,7 +115,6 @@ class XunitViewer extends React.Component {
           })
         }}
         onExpand={({name, type}) => {
-          console.log(this.state.uuids[name])
           name = name.toLowerCase()
 
           let collapsed = this.state.collapsed
