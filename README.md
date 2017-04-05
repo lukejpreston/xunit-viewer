@@ -109,7 +109,7 @@ let MyWrapper = () => {
 
 ## Junit Viewer
 
-Junit Viewer is now deprecated and is being replaced with this.
+This has replaced Junit Viewer which is now deprecated this.
 
 ### Why?
 
