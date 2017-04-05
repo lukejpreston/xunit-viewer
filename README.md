@@ -41,22 +41,27 @@ If you want to run this from a node script instead of command line first install
 Then from your scripts do the following
 
 ```js
-const XunitViewerCli = require('xunit-viewer/cli')
-XunitViewerCli({
+const XunitViewer = require('xunit-viewer')
+const result = XunitViewer({
     results: '',
+    suites: [],
+    xml: '',
     ignore: [],
     output: false,
     title: 'Xunit Viewer',
     port: false,
     watch: false,
     color: true,
-    filter: {}
+    filter: {},
+    format: 'html'
 })
 ```
 
 all are optional, those are default values
 
 * `results` the file or folder where the results are, defaults to where the cli is running from i.e. `process.cwd()`
+* `suites` you can pass the JSON format in after using the parser
+* `xml` you can pass the xml string in
 * `ignore` an array of patterns to ignore or a single string with a pattern to ignore
 * `output` if folder will save a file `xunit-viewer.html` to that folder, if a file will save to that file if `'console'` then it will spit out the results to the console
 * `title` title for the HTML
@@ -80,6 +85,7 @@ all are optional, those are default values
     },
 }
 ```
+* `format` default to `html` which is the full HTML file, but you can also choose `json` if you want to use that json for your own view
 
 if any value is invalid it will try and use default
 
@@ -101,19 +107,6 @@ let MyWrapper = () => {
 }
 ```
 
-## Parser
-
-This library is used to parse the xunit into JSON
-
-You will have the read the data into a string before calling this library
-
-You can safely use this in the browser and from node
-
-```js
-const XunitViewerParser = require('xunit-viewer/parser')
-XunitViewerParser.parse('xml string')
-```
-
 ## Junit Viewer
 
 Junit Viewer is now deprecated and is being replaced with this.
@@ -130,9 +123,8 @@ Using sockets and lighter
 
 * add a repl
 * meta data for slack
-* publish to npm
 * make better stub data
 * better error handling
 * junit viewer to use this instead
 * set up something which will parse in browser
-* clean everything and wrote some more tests
+* clean everything and write some more tests
