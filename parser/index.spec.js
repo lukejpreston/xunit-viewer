@@ -14,6 +14,7 @@ describe('parser', () => {
     let input = getInput('complete_multi_suites')
 
     let parsed = parser.parse(input)
+    console.log(JSON.stringify(parsed))
 
     expect(parsed).toEqual(output)
   })

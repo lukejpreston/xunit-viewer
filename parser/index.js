@@ -90,7 +90,7 @@ const extractTestCore = (test, type, status) => {
 }
 
 const buildTest = (test) => {
-  test.status = 'unknown'
+  test.status = 'pass'
   test.name = 'no name'
 
   expandMeta(test)
