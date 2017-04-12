@@ -2,6 +2,10 @@
 
 Takes your XMl xunit results and then turns it into a nice single HTML file
 
+## HBO Changes
+
+This has been modified in order to correctly process Hadron FVT test result files.
+
 ## CLI
 
 You can use xunit-viewer from the command line
