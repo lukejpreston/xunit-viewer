@@ -16,7 +16,7 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
   if (message) {
     Content = <div
       className='card-content'
-      dangerouslySetInnerHTML={{__html: message}}
+      dangerouslySetInnerHTML={{__html: '<pre>' + message + '</pre>'}}
     />
   }
 

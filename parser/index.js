@@ -82,6 +82,8 @@ const extractTestCore = (test, type, status) => {
         test.message = ''
         if (core['$'].message) test.message += core['$'].message
         if (core['$'].type) test.message += core['$'].type
+      } else {
+        test.message = core
       }
     }
 
@@ -115,6 +117,10 @@ const buildTest = (test) => {
   extractTestCore(test, 'skipped', 'skip')
   extractTestCore(test, 'skipping', 'skip')
   extractTestCore(test, 'skip', 'skip')
+
+  if (test.status === 'unknown') {
+    test.status = 'pass'
+  }
 
   test._uuid = uuid.v4()
   return test
