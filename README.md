@@ -1,6 +1,11 @@
 # Xunit Viewer
 
+[![npm version](https://badge.fury.io/js/junit-viewer.svg)](https://badge.fury.io/js/junit-viewer)
+[![Downloads on npm](http://img.shields.io/npm/dm/xunit-viewer.svg)](https://www.npmjs.com/package/xunit-viewer)
+
 Takes your XMl xunit results and then turns it into a nice single HTML file
+
+Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 
 ## CLI
 
