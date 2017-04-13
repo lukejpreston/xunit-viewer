@@ -130,9 +130,6 @@ Using sockets and lighter
 
 * add a repl
 * meta data for slack
-* publish to npm
-* make better stub data
 * better error handling
-* junit viewer to use this instead
 * set up something which will parse in browser
 * clean everything and wrote some more tests
