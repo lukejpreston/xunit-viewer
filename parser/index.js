@@ -193,6 +193,7 @@ const buildSuites = (suites) => {
           if (suite.count.tests > 0 && suite.count.tests === suite.count.error) suite.status = 'error'
           if (suite.count.tests > 0 && suite.count.tests === suite.count.skip) suite.status = 'skip'
           if (suite.count.tests > 0 && suite.count.tests === suite.count.unknown) suite.status = 'unknown'
+          if (suite.count.tests === 0) suite.status = 'pass'
 
           suite._uuid = uuid.v4()
           return suite
