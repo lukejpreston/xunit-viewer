@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="issue 2" tests="3" failures="1" time="0.0160106">
+    <testcase name="issue 2 test" time="0.155" >
+      <failure><![CDATA[0x1 != 0
+./failed_file_name.c:467: error: Failure!]]></failure>
+    </testcase>
+</testsuite>
