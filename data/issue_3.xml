@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Issue 3 suite" timestamp="2017-04-26T11:04:17" time="3.478" tests="0" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="8bd15b60c2e4427bebe70fb618a717f4"/>
+      <property name="suiteName" value="Create Action"/>
+      <property name="capabilities" value="phantomjs"/>
+    </properties>
+  </testsuite>
+  <testsuite name="release" timestamp="2017-04-26T11:04:17" time="3.478" tests="2" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="8bd15b60c2e4427bebe70fb618a717f4"/>
+      <property name="suiteName" value="@release"/>
+      <property name="capabilities" value="phantomjs"/>
+    </properties>
+    <testcase classname="phantomjs.@release" name="testName_1" time="2.079">
+    </testcase>
+    <testcase classname="phantomjs.@release" name="testName_2" time="1.399">
+    </testcase>
+  </testsuite>
+</testsuites>
