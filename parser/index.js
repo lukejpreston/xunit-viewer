@@ -82,6 +82,8 @@ const extractTestCore = (test, type, status) => {
         test.message = ''
         if (core['$'].message) test.message += core['$'].message
         if (core['$'].type) test.message += core['$'].type
+      } else if (typeof core === 'string') {
+        test.message = core
       }
     }
 
