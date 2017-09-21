@@ -1,5 +1,5 @@
 const parseString = require('xml2js-parser').parseStringSync
-const changeCase = require('change-case')
+const toLaxTitleCase = require('titlecase').toLaxTitleCase
 const uuid = require('uuid')
 
 const xml2js = (xml) => {
@@ -97,7 +97,7 @@ const buildTest = (test) => {
 
   expandMeta(test)
 
-  test.name = changeCase.title(test.name)
+  test.name = toLaxTitleCase(test.name)
 
   extactMessage(test)
 
@@ -151,7 +151,7 @@ const buildSuites = (suites) => {
           delete suite.skipped
 
           suite.name = suite.name || 'No Name'
-          suite.name = changeCase.title(suite.name)
+          suite.name = toLaxTitleCase(suite.name)
 
           if (suite.testcase) buildTests(suite)
 
