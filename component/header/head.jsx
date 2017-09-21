@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react'
 import Icon from './icon'
-import changeCase from 'change-case'
 import { toLaxTitleCase } from 'titlecase'
 
 let Head = ({title = 'Xunit Viewer', active, onToggle}) => {
