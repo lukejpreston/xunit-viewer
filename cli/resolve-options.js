@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const detectPort = require('detect-port')
-const changeCase = require('change-case')
+const toLaxTitleCase = require('titlecase').toLaxTitleCase
 
 const extractResults = (results = process.cwd()) => {
   if (typeof results !== 'string') results = process.cwd()
@@ -46,7 +46,7 @@ const extractPort = (port = false) => {
 const extarctTitle = (title = 'Xunit Viewer') => {
   if (typeof title !== 'string' && typeof title !== 'number') title = 'Xunit Viewer'
   if (typeof title === 'number') title = '' + title
-  return changeCase.title(title)
+  return toLaxTitleCase(title)
 }
 
 const extractFilter = (filter = {}) => {

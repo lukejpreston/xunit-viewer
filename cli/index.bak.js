@@ -1,4 +1,4 @@
-const changeCase = require('change-case')
+const toLaxTitleCase = require('titlecase').toLaxTitleCase
 const parseFiles = require('./parse-files')
 const resolveFiles = require('./resolve-files')
 const nodeWatch = require('node-watch')
@@ -25,7 +25,7 @@ module.exports = {
     }) {
     const template = fs.readFileSync(path.resolve(__dirname, 'template.html')).toString()
     mustache.parse(template)
-    title = changeCase.title(title)
+    title = toLaxTitleCase(title)
     results = results || process.cwd()
     if (!path.isAbsolute(results)) results = path.resolve(process.cwd(), results)
 

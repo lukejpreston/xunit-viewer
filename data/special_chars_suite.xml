@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="view listings page" timestamp="2017-09-21T16:38:53" time="0.02" tests="0" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="ae110df54f3ea0a8d820bb5e057844d6"/>
+      <property name="suiteName" value="View listings page"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/features/main.feature"/>
+    </properties>
+  </testsuite>
+  <testsuite name="@release2017.1.0,, @mcc272151_10: display list of records" timestamp="2017-09-21T16:38:53" time="0.017" tests="3" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="ae110df54f3ea0a8d820bb5e057844d6"/>
+      <property name="suiteName" value="@release2017.1.0,, @MCC272151_10: Display list of records"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/features/main.feature"/>
+    </properties>
+    <testcase classname="chrome.@release2017.1.0,, @mcc272151_10: display list of records" name="i logged into an application" time="0.348"/>
+    <testcase classname="chrome.@release2017.1.0,, @mcc272151_10: display list of records" name="i navigate to the listings page" time="0.343"/>
+    <testcase classname="chrome.@release2017.1.0,, @mcc272151_10: display list of records" name="i can see tabular list of records" time="0.34"/>
+  </testsuite>
+</testsuites>
