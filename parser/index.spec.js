@@ -10,12 +10,14 @@ const getInput = (name) => {
 }
 
 describe('parser', () => {
+  let input = getInput('special_chars_suite')
+  let parsed = parser.parse(input)
+
   it('works', () => {
-    let input = getInput('complete_multi_suites')
-
-    let parsed = parser.parse(input)
-    console.log(JSON.stringify(parsed))
-
     expect(parsed).toEqual(output)
+  })
+
+  it('works for special chars in suite name', () => {
+    expect(parsed[1].name).toEqual("@release2017.1.0,, @Mcc272151_10: Display List of Records")
   })
 })
