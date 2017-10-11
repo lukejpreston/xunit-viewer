@@ -15,9 +15,7 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
   let Content = null
   if (message) {
     Content = <div
-      className='card-content'
-      dangerouslySetInnerHTML={{__html: message}}
-    />
+      className='card-content'>{message}</div>
   }
 
   return <div className={`card test is-${isCollapsed}`}>

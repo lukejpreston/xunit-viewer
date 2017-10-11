@@ -37,6 +37,7 @@
     &.is-expanded {
       & .card-content {
         display: block;
+        white-space: pre;
       }
 
       & .table {
