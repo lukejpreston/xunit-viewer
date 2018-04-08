@@ -14,10 +14,14 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
   status = knownStatuses.includes(status) ? status : 'unknown'
   let Content = null
   if (message) {
-    Content = <div
-      className='card-content'
-      dangerouslySetInnerHTML={{__html: message}}
-    />
+    if (window.escape) {
+      Content = <div className='card-content'>{message}</div>
+    } else {
+      Content = <div
+        className='card-content'
+        dangerouslySetInnerHTML={{__html: message}}
+      />
+    }
   }
 
   return <div className={`card test is-${isCollapsed}`}>

@@ -63,7 +63,11 @@ const extractFilter = (filter = {}) => {
   return filter
 }
 
-module.exports = ({ results, ignore, output, terminal, title, port, watch, filter, dev }) => {
+const extractEscape = (escape = false) => {
+  return escape !== false
+}
+
+module.exports = ({ results, ignore, output, terminal, title, port, watch, filter, dev, escape }) => {
   results = extractResults(results)
   output = extractOutput(output)
   terminal = extractTerminal(terminal)
@@ -73,10 +77,11 @@ module.exports = ({ results, ignore, output, terminal, title, port, watch, filte
   filter = extractFilter(filter)
   port = extractPort(port)
   title = extarctTitle(title)
+  escape = extractEscape(escape)
 
   let options = (port) => {
     return new Promise(resolve => {
-      resolve({ results, ignore, output, terminal, title, port, watch, filter, dev })
+      resolve({ results, ignore, output, terminal, title, port, watch, filter, dev, escape })
     })
   }
 

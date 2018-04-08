@@ -36,7 +36,8 @@ module.exports = (options) => {
     })
     .then(({style, files, script}) => {
       const title = options.title
-      const renderOptions = {title, style, script}
+      const escape = options.escape
+      const renderOptions = {title, style, script, escape}
       renderOptions.suites = JSON.stringify([])
       renderOptions.sockets = ''
       if (options.watch === false) renderOptions.sockets = '<script src="/socket.io/socket.io.js"></script>'

@@ -31,6 +31,7 @@ you can also run it with these optional params, see the next section for what th
 --port=8080
 --watch
 --color=false
+--escape
 --filter.suites.value="Suite names matching this value"
 --filter.suites.types=all,pass,fail,skip,error,unknown
 --filter.tests.value="Test names matching this value"
@@ -57,6 +58,7 @@ XunitViewerCli({
     port: false,
     watch: false,
     color: true,
+    escape: false,
     filter: {}
 })
 ```
@@ -70,6 +72,7 @@ all are optional, those are default values
 * `port` if `false` it will not start a server, otherwise it will start serving the output and not save not save a file unless you also provide `output`
 * `watch` will re run the cli when anything in `results` changes, if you have a port it will also update that via websockets
 * `color` if `output === 'console'` then it will either be in color or not
+* `escape` will escape HTML tags in test output
 * `filter` will filter out `suites`, `tests` and `properties` from the console output example
 ```json
 {
