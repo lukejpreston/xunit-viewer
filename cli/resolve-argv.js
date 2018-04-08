@@ -30,6 +30,7 @@
       else if (arg.includes('--watch')) options.watch = arg.replace('--watch=', '').replace('--watch', '')
       else if (arg.includes('--dev')) options.dev = arg.replace('--dev=', '').replace('--dev', '')
       else if (arg.includes('--terminal')) options.terminal = arg.replace('--terminal=', '').replace('--terminal', '')
+      else if (arg.includes('--escape')) options.escape = arg.replace(/--escape=?/, '')
 
       if (arg.includes('--filter')) {
         arg = arg.replace('--filter', '')
