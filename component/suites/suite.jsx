@@ -10,6 +10,7 @@ let Suite = ({
   properties = {},
   tests = [],
   onToggle,
+  onToggleRaw,
   collapsed,
   hidden,
   suites = []
@@ -40,12 +41,14 @@ let Suite = ({
     {tests.map(test =>
       <Test
         onToggle={onToggle}
+        onToggleRaw={onToggleRaw}
         collapsed={collapsed}
         key={`test-${test._uuid}`}
         uuid={test._uuid}
         status={test.status}
         name={test.name}
         message={test.message}
+        raw={test.raw}
           />
       )}
   </div>

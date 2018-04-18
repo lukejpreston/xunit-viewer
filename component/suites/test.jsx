@@ -9,16 +9,13 @@ let knownStatuses = [
   'skip'
 ]
 
-let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
+let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw}) => {
   let isCollapsed = Object.keys(collapsed.tests).includes(uuid) ? 'collapsed' : 'expanded'
   status = knownStatuses.includes(status) ? status : 'unknown'
   let Content = null
-  if (message) {
-    Content = <div
-      className='card-content'
-      dangerouslySetInnerHTML={{__html: message}}
-    />
-  }
+
+  if (raw) Content = <code className='test-code'>{message}</code>
+  else if (message) Content = <div className='test-message' dangerouslySetInnerHTML={{__html: message}} />
 
   return <div className={`card test is-${isCollapsed}`}>
     <header
@@ -34,7 +31,13 @@ let Test = ({uuid, status, name, message, onToggle, collapsed}) => {
         {name}
       </p>
     </header>
-    {Content}
+    {Content ? <div className='card-content'>
+      <div className='test-toggle'>
+        <input type='checkbox' id={`test-${uuid}`} onChange={() => { onToggleRaw({type: 'tests', uuid}) }} />
+        <label htmlFor={`test-${uuid}`}>Toggle Raw</label>
+      </div>
+      {Content}
+    </div> : null}
   </div>
 }
 
@@ -43,6 +46,7 @@ Test.propTypes = {
   status: PropTypes.string,
   name: PropTypes.string,
   message: PropTypes.any,
+  raw: PropTypes.any,
   onToggle: PropTypes.func.isRequired,
   collapsed: PropTypes.object.isRequired
 }

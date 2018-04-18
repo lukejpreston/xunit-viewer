@@ -22,7 +22,7 @@ let hideSuites = (suites, hidden) => {
   return suites
 }
 
-let Suites = ({suites = [], search, collapsed, hidden, onToggle}) => {
+let Suites = ({suites = [], search, collapsed, hidden, onToggle, onToggleRaw}) => {
   suites = searchSuites(suites, search)
   suites = hideSuites(suites, hidden)
   return <section className='section suites'>
@@ -32,6 +32,7 @@ let Suites = ({suites = [], search, collapsed, hidden, onToggle}) => {
           hidden={hidden}
           uuid={suite._uuid}
           onToggle={onToggle}
+          onToggleRaw={onToggleRaw}
           key={`suite-${suite._uuid}`}
           name={suite.name}
           status={suite.status}

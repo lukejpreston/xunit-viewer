@@ -107,3 +107,28 @@
   }
 
 }
+
+
+.test-toggle {
+  margin-bottom: 8px;
+
+  & input {
+    height: 16px;
+    vertical-align: middle;
+  }
+
+  & label {
+    margin-left: 8px;
+  }
+
+  & label:hover,
+  & input:hover {
+    cursor: pointer;
+  }
+}
+
+.test-message,
+.test-code {
+  display: block;
+  padding: 20px;
+}

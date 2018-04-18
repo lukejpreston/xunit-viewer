@@ -208,6 +208,22 @@ class XunitViewer extends React.Component {
           else collapsed[type][uuid] = true
           this.setState({collapsed})
         }}
+        onToggleRaw={({uuid}) => {
+          this.state.suites.forEach(suite => {
+            if (suite.tests) {
+              suite.tests.forEach(test => {
+                if (test._uuid === uuid) {
+                  if (test.raw) {
+                    test.raw = null
+                  } else {
+                    test.raw = test.message
+                  }
+                }
+              })
+            }
+          })
+          this.setState({suites: this.state.suites})
+        }}
       />
     </div>
   }
