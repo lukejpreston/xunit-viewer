@@ -48,7 +48,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       <Icon><ChevronLeft /></Icon>
     </a>
     <a
-      title='exapnd'
+      title='expand'
       className='change'
       onClick={() => {
         onExpand({name: category, type})
