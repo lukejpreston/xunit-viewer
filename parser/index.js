@@ -87,6 +87,8 @@ const extractTestCore = (test, type, status) => {
       }
     }
 
+    if (test.message) test.message = escape(test.message)
+
     delete test[type]
   }
 }

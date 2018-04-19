@@ -14,8 +14,8 @@ let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw}
   status = knownStatuses.includes(status) ? status : 'unknown'
   let Content = null
 
-  if (raw) Content = <code className='test-code'>{message}</code>
-  else if (message) Content = <div className='test-message' dangerouslySetInnerHTML={{__html: message}} />
+  if (raw) Content = <code className='test-code'>{decodeURIComponent(message)}</code>
+  else if (message) Content = <div className='test-message' dangerouslySetInnerHTML={{__html: decodeURIComponent(message)}} />
 
   return <div className={`card test is-${isCollapsed}`}>
     <header
