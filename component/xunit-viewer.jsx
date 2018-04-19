@@ -25,6 +25,7 @@ class XunitViewer extends React.Component {
 
       if (suite.tests) {
         suite.tests.forEach(test => {
+          test.raw = test.message
           let testStatus = knownStatuses.includes(test.status) ? test.status : 'unknown'
           uuids.tests[testStatus] = uuids.tests[testStatus] || []
           uuids.tests[testStatus].push(test._uuid)
@@ -207,6 +208,22 @@ class XunitViewer extends React.Component {
           if (collapsed[type][uuid]) delete collapsed[type][uuid]
           else collapsed[type][uuid] = true
           this.setState({collapsed})
+        }}
+        onToggleRaw={({uuid}) => {
+          this.state.suites.forEach(suite => {
+            if (suite.tests) {
+              suite.tests.forEach(test => {
+                if (test._uuid === uuid) {
+                  if (test.raw) {
+                    test.raw = null
+                  } else {
+                    test.raw = test.message
+                  }
+                }
+              })
+            }
+          })
+          this.setState({suites: this.state.suites})
         }}
       />
     </div>

@@ -18,8 +18,13 @@
             <testcase assertions="0" classname="bacon" name="bacon 1" time="0.001">
                 <passed message="message" type="type">inner massage</passed>
             </testcase>
+            <testcase name="has html" classname="HTML" time="0.00075">
+                    <error message="<b>BOO</b>" type="<i>ARGH</i>">
+                        Error found in line 77: &lt;script&gt;some garbage;&lt;/script&gt;
+                </error>
+            </testcase>
             <testcase assertions="0" classname="bacon" name="bacon 2" time="0.001">
-                <error message="message" type="type">inner massage</error>
+                <error message="message" type="type">Error found in line 77: &lt;script&gt;some garbage;&lt;/script&gt;</error>
             </testcase>
             <testcase assertions="0" classname="bacon" name="bacon 3" time="0.001">
                 <skipped message="message" type="type">inner massage</skipped>
