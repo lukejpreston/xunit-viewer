@@ -25,6 +25,7 @@ class XunitViewer extends React.Component {
 
       if (suite.tests) {
         suite.tests.forEach(test => {
+          test.raw = test.message
           let testStatus = knownStatuses.includes(test.status) ? test.status : 'unknown'
           uuids.tests[testStatus] = uuids.tests[testStatus] || []
           uuids.tests[testStatus].push(test._uuid)

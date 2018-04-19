@@ -33,7 +33,7 @@ let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw}
     </header>
     {Content ? <div className='card-content'>
       <div className='test-toggle'>
-        <input type='checkbox' id={`test-${uuid}`} onChange={() => { onToggleRaw({type: 'tests', uuid}) }} />
+        <input type='checkbox' id={`test-${uuid}`} onChange={() => { onToggleRaw({type: 'tests', uuid}) }} checked={raw !== null} />
         <label htmlFor={`test-${uuid}`}>Toggle Raw</label>
       </div>
       {Content}
