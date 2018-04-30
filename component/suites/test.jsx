@@ -9,7 +9,7 @@ let knownStatuses = [
   'skip'
 ]
 
-let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw}) => {
+let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw, time}) => {
   let isCollapsed = Object.keys(collapsed.tests).includes(uuid) ? 'collapsed' : 'expanded'
   status = knownStatuses.includes(status) ? status : 'unknown'
   let Content = null
@@ -29,6 +29,7 @@ let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw}
       <p className='card-header-title'>
         {iconMap[status]}
         {name}
+        {time ? <i className='card-header-title-time'>({time})</i> : null}
       </p>
     </header>
     {Content ? <div className='card-content'>
@@ -45,9 +46,11 @@ Test.propTypes = {
   uuid: PropTypes.string.isRequired,
   status: PropTypes.string,
   name: PropTypes.string,
+  time: PropTypes.string,
   message: PropTypes.any,
   raw: PropTypes.any,
   onToggle: PropTypes.func.isRequired,
+  onToggleRaw: PropTypes.func.isRequired,
   collapsed: PropTypes.object.isRequired
 }
 

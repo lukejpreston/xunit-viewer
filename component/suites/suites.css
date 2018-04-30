@@ -108,6 +108,10 @@
 
 }
 
+.card-header-title-time {
+  padding-left: 10px;
+  font-weight: normal;
+}
 
 .test-toggle {
   margin-bottom: 8px;
