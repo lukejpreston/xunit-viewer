@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <testsuites>
         <!-- standard test suite -->
-        <testsuite name="bacon" errors="666" tests="777" failures="888" time="0.021">
+        <testsuite name="bacon_with_a_really_really_really_really_really_reallyreally_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_long_name" errors="666" tests="777" failures="888" time="0.021">
             <!-- standard props -->
             <properties>
                 <property name="x" value="y" />
@@ -15,7 +15,7 @@
             <properties>
             </properties>
             <!-- each kind of test case with a full message -->
-            <testcase assertions="0" classname="bacon" name="bacon 1" time="0.001">
+            <testcase assertions="0" classname="bacon" name="bacon_with_a_really_really_really_really_really_reallyreally_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_long_name" time="0.001">
                 <passed message="message" type="type">inner massage</passed>
             </testcase>
             <testcase name="has html" classname="HTML" time="0.00075">
@@ -23,7 +23,7 @@
                         Error found in line 77: &lt;script&gt;some garbage;&lt;/script&gt;
                 </error>
             </testcase>
-            <testcase assertions="0" classname="bacon" name="bacon 2" time="0.001">
+            <testcase assertions="0" classname="bacon" name="bacon with a really really really really really reallyreally really really really really really really really really really really really really really really really really really really really really really long name" time="0.001">
                 <error message="message" type="type">Error found in line 77: &lt;script&gt;some garbage;&lt;/script&gt;</error>
             </testcase>
             <testcase assertions="0" classname="bacon" name="bacon 3" time="0.001">
