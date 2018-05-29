@@ -137,6 +137,8 @@
 
 .test-message,
 .test-code {
+  white-space: pre-wrap;
+  overflow: auto;
   display: block;
   padding: 20px;
 }
