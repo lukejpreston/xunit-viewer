@@ -13,7 +13,8 @@ let Suite = ({
   onToggleRaw,
   collapsed,
   hidden,
-  suites = []
+  suites = [],
+  time
 }) => {
   suites = suites.map(suite => {
     return <Suite
@@ -49,6 +50,7 @@ let Suite = ({
         name={test.name}
         message={test.message}
         raw={test.raw}
+        time={test.time}
           />
       )}
   </div>
@@ -64,7 +66,8 @@ let Suite = ({
       >
       <p className='card-header-title'>
         {iconMap[status]}
-        {name}
+        <span className='card-header-title-name'>{name}</span>
+        {time ? <i className='card-header-title-time'>({time})</i> : null}
       </p>
       <a className='card-header-icon'>
         <span className='icon'>
@@ -79,10 +82,12 @@ let Suite = ({
 Suite.propTypes = {
   uuid: PropTypes.string.isRequired,
   name: PropTypes.string,
+  time: PropTypes.string,
   status: PropTypes.string,
   properties: PropTypes.object,
   tests: PropTypes.array,
   onToggle: PropTypes.func.isRequired,
+  onToggleRaw: PropTypes.func.isRequired,
   collapsed: PropTypes.object.isRequired,
   hidden: PropTypes.object.isRequired,
   suites: PropTypes.array

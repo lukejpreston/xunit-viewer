@@ -16,7 +16,7 @@ module.exports = () => {
     })
     .bundle((err, code) => {
       if (err) reject(err)
-      resolve(code.toString())
+      else resolve(code.toString())
     })
   })
 }

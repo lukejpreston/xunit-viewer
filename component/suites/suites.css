@@ -108,6 +108,14 @@
 
 }
 
+.card-header-title {
+  word-break: break-all;
+}
+
+.card-header-title-time {
+  padding-left: 10px;
+  font-weight: normal;
+}
 
 .test-toggle {
   margin-bottom: 8px;
@@ -129,6 +137,8 @@
 
 .test-message,
 .test-code {
+  white-space: pre-wrap;
+  overflow: auto;
   display: block;
   padding: 20px;
 }

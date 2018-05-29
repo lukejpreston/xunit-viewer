@@ -39,6 +39,7 @@ let Suites = ({suites = [], search, collapsed, hidden, onToggle, onToggleRaw}) =
           properties={suite.properties}
           tests={suite.tests}
           suites={suite.suites}
+          time={suite.time}
           />
         )
       }</div>
