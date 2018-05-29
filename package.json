@@ -1,6 +1,6 @@
 {
   "name": "xunit-viewer",
-  "version": "5.1.4",
+  "version": "5.1.5",
   "description": "parses xunit xml into xunit viewer",
   "repository": {
     "url": "https://github.com/lukejpreston/xunit-viewer.git",
@@ -35,7 +35,7 @@
     "jest": "jest",
     "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass",
     "start": "nodemon --watch component --exec npm run run",
-      "run": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --output=output.html",
+    "run": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --output=output.html",
     "xunit-viewer": "./bin/xunit-viewer",
     "xunit-viewer:sockets": "./bin/xunit-viewer --results=data --dev --watch  --ignore=invalid.xml,blank_file.xml --port=8080",
     "xunit-viewer:terminal": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --terminal --watch --filter.suites.search=\"bacon\" --filter.suites.hidden=pass,fail --filter.tests.search=\"bacon\" --filter.tests.hidden=error,skip --filter.properties.search=\"x\" --filter.properties.hidden=all ",
