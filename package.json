@@ -63,7 +63,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "recursive-readdir": "^2.1.1",
-    "socket.io": "^1.7.3",
+    "socket.io": "^2.1.1",
     "titlecase": "^1.1.2",
     "uglify-js": "^2.8.7",
     "uglifycss": "^0.0.25",
