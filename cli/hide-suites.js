@@ -1,9 +1,4 @@
 const clone = require('clone')
-const fuzzysearch = require('fuzzysearch')
-
-let matches = (str, match) => {
-  return fuzzysearch(str.toLowerCase(), match.toLowerCase())
-}
 
 module.exports = (suites, hidden) => {
   suites = clone(suites)

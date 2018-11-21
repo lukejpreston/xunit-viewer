@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import ChevronLeft from '../icons/chevron-left'
 import Expand from '../icons/expand'
 import Compress from '../icons/compress'
@@ -6,19 +6,19 @@ import Eye from '../icons/eye'
 import EyeSlash from '../icons/eye-slash'
 import Search from '../icons/search'
 
-let Icon = ({children}) => {
+let Icon = ({ children }) => {
   return <i className='icon is-small'>
     {children}
   </i>
 }
 
-let Count = ({icon, name, total, type, category, onStatToggle}) => {
+let Count = ({ icon, name, total, type, category, onStatToggle }) => {
   category = name || category
   return <li className={`toggle is-${type}`}>
     <a
       className='count'
       onClick={() => {
-        onStatToggle({name: category, type})
+        onStatToggle({ name: category, type })
       }}>
       {icon}
       <span>{name} <b>{total}</b></span>
@@ -36,14 +36,14 @@ Count.propTypes = {
   statsStatus: PropTypes.object
 }
 
-let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide}) => {
+let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide }) => {
   category = name || category
   return <li className={`toggle is-${type}`}>
     <a
       title='cancel'
       className='change'
       onClick={() => {
-        onStatToggle({name: category, type})
+        onStatToggle({ name: category, type })
       }}>
       <Icon><ChevronLeft /></Icon>
     </a>
@@ -51,7 +51,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       title='expand'
       className='change'
       onClick={() => {
-        onExpand({name: category, type})
+        onExpand({ name: category, type })
       }}>
       <Icon><Expand /></Icon>
     </a>
@@ -59,7 +59,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       title='contract'
       className='change'
       onClick={() => {
-        onCollapse({name: category, type})
+        onCollapse({ name: category, type })
       }}>
       <Icon><Compress /></Icon>
     </a>
@@ -67,7 +67,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       title='show'
       className='change'
       onClick={() => {
-        onShow({name: category, type})
+        onShow({ name: category, type })
       }}>
       <Icon><Eye /></Icon>
     </a>
@@ -75,7 +75,7 @@ let Options = ({name, type, category, onStatToggle, onExpand, onCollapse, onShow
       title='hide'
       className='change'
       onClick={() => {
-        onHide({name: category, type})
+        onHide({ name: category, type })
       }}>
       <Icon><EyeSlash /></Icon>
     </a>
@@ -94,7 +94,7 @@ Options.propTypes = {
   onHide: PropTypes.func.isRequired
 }
 
-let Toggle = ({icon, name, total, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus}) => {
+let Toggle = ({ icon, name, total, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
   let Content = Count
   category = name || category
   category = category.toLowerCase()
@@ -113,7 +113,7 @@ let Toggle = ({icon, name, total, type, category, onStatToggle, onExpand, onColl
     onCollapse={onCollapse}
     onShow={onShow}
     onHide={onHide}
-    />
+  />
 }
 
 Toggle.propTypes = {
@@ -130,7 +130,7 @@ Toggle.propTypes = {
   statsStatus: PropTypes.object
 }
 
-let Stat = ({icon, name, total, type, data = [], onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus}) => {
+let Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
   return <div className='subtitle'>
     <div className='tabs is-toggle'>
       <ul>

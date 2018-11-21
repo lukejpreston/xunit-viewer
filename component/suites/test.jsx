@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 
 import iconMap from '../icon-map'
 
@@ -9,7 +9,7 @@ let knownStatuses = [
   'skip'
 ]
 
-let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw, time}) => {
+let Test = ({ uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw, time }) => {
   let isCollapsed = Object.keys(collapsed.tests).includes(uuid) ? 'collapsed' : 'expanded'
   status = knownStatuses.includes(status) ? status : 'unknown'
   let Content = null
@@ -17,7 +17,7 @@ let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw,
   if (raw) {
     message = unescape(message)
     Content = <code className='test-code'>{message}</code>
-  } else if (message) Content = <div className='test-message' dangerouslySetInnerHTML={{__html: decodeURIComponent(message)}} />
+  } else if (message) Content = <div className='test-message' dangerouslySetInnerHTML={{ __html: decodeURIComponent(message) }} />
 
   return <div className={`card test is-${isCollapsed}`}>
     <header
@@ -36,7 +36,7 @@ let Test = ({uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw,
     </header>
     {Content ? <div className='card-content'>
       <div className='test-toggle'>
-        <input type='checkbox' id={`test-${uuid}`} onChange={() => { onToggleRaw({type: 'tests', uuid}) }} checked={raw !== null} />
+        <input type='checkbox' id={`test-${uuid}`} onChange={() => { onToggleRaw({ type: 'tests', uuid }) }} checked={raw !== null} />
         <label htmlFor={`test-${uuid}`}>Toggle Raw</label>
       </div>
       {Content}

@@ -11,12 +11,12 @@ module.exports = () => {
       basedir: component,
       extensions: ['.js', '.jsx']
     })
-    .transform('babelify', {
-      presets: ['react-app']
-    })
-    .bundle((err, code) => {
-      if (err) reject(err)
-      else resolve(code.toString())
-    })
+      .transform('babelify', {
+        presets: ['react-app']
+      })
+      .bundle((err, code) => {
+        if (err) reject(err)
+        else resolve(code.toString())
+      })
   })
 }

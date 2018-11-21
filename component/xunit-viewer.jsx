@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import Header from './header'
 import Suites from './suites'
 import sockets from './sockets'
@@ -83,7 +83,7 @@ class XunitViewer extends React.Component {
           })
         }
       })
-      this.setState({suites, uuids})
+      this.setState({ suites, uuids })
     })
   }
   render () {
@@ -95,14 +95,14 @@ class XunitViewer extends React.Component {
         onSearch={(value, type) => {
           let search = this.state.search
           search[type] = value
-          this.setState({search})
+          this.setState({ search })
         }}
         onToggle={() => {
           let header = this.state.header
           header.active = !header.active
-          this.setState({header})
+          this.setState({ header })
         }}
-        onStatToggle={({name, type}) => {
+        onStatToggle={({ name, type }) => {
           name = name.toLowerCase()
           let statsStatus = this.state.header.statsStatus
           statsStatus[name] = statsStatus[name] || {}
@@ -115,7 +115,7 @@ class XunitViewer extends React.Component {
             }
           })
         }}
-        onExpand={({name, type}) => {
+        onExpand={({ name, type }) => {
           name = name.toLowerCase()
 
           let collapsed = this.state.collapsed
@@ -134,9 +134,9 @@ class XunitViewer extends React.Component {
             })
           }
 
-          this.setState({collapsed})
+          this.setState({ collapsed })
         }}
-        onCollapse={({name, type}) => {
+        onCollapse={({ name, type }) => {
           name = name.toLowerCase()
           let collapsed = this.state.collapsed
 
@@ -153,9 +153,9 @@ class XunitViewer extends React.Component {
               collapsed[name][uuid] = true
             })
           }
-          this.setState({collapsed})
+          this.setState({ collapsed })
         }}
-        onShow={({name, type}) => {
+        onShow={({ name, type }) => {
           name = name.toLowerCase()
 
           let hidden = this.state.hidden
@@ -174,9 +174,9 @@ class XunitViewer extends React.Component {
             })
           }
 
-          this.setState({hidden})
+          this.setState({ hidden })
         }}
-        onHide={({name, type}) => {
+        onHide={({ name, type }) => {
           name = name.toLowerCase()
           let hidden = this.state.hidden
 
@@ -193,7 +193,7 @@ class XunitViewer extends React.Component {
               hidden[name][uuid] = true
             })
           }
-          this.setState({hidden})
+          this.setState({ hidden })
         }}
         isActive={this.state.header.active}
         statsStatus={this.state.header.statsStatus}
@@ -203,13 +203,13 @@ class XunitViewer extends React.Component {
         search={this.state.search}
         hidden={this.state.hidden}
         collapsed={this.state.collapsed}
-        onToggle={({type, uuid}) => {
+        onToggle={({ type, uuid }) => {
           let collapsed = this.state.collapsed
           if (collapsed[type][uuid]) delete collapsed[type][uuid]
           else collapsed[type][uuid] = true
-          this.setState({collapsed})
+          this.setState({ collapsed })
         }}
-        onToggleRaw={({uuid}) => {
+        onToggleRaw={({ uuid }) => {
           this.state.suites.forEach(suite => {
             if (suite.tests) {
               suite.tests.forEach(test => {
@@ -223,7 +223,7 @@ class XunitViewer extends React.Component {
               })
             }
           })
-          this.setState({suites: this.state.suites})
+          this.setState({ suites: this.state.suites })
         }}
       />
     </div>

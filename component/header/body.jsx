@@ -1,8 +1,8 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import Stat from './stat'
 import extractStats from './extract-stats'
 
-let Body = ({active, suites, onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, search, statsStatus}) => {
+let Body = ({ active, suites, onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, search, statsStatus }) => {
   let stats = extractStats(suites, search)
   return <div className={`hero-body is-${active} size-${stats.length}`}>
     <div className='container'>{
@@ -21,9 +21,9 @@ let Body = ({active, suites, onSearch, onStatToggle, onExpand, onCollapse, onSho
           type={stat.type}
           icon={stat.icon}
           data={stat.data}
-          />
+        />
       })
-  }</div>
+    }</div>
   </div>
 }
 

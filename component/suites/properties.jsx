@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 
-let Row = ({name, value}) => {
+let Row = ({ name, value }) => {
   return <tr>
     <td>{name}</td>
     <td>{value}</td>
@@ -12,7 +12,7 @@ Row.propTypes = {
   value: PropTypes.string
 }
 
-let Properties = ({data = {}, onToggle, collapsed}) => {
+let Properties = ({ data = {}, onToggle, collapsed }) => {
   let isCollapsed = Object.keys(collapsed.properties).includes(data._uuid) ? 'collapsed' : 'expanded'
   return <div className={`card properties is-${isCollapsed}`}>
     <header
@@ -44,7 +44,7 @@ let Properties = ({data = {}, onToggle, collapsed}) => {
             key={`properties-${key}-${index}`}
             name={key}
             value={data[key]}
-            />
+          />
           )
       }</tbody>
     </table>

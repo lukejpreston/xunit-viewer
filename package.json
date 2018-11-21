@@ -34,6 +34,7 @@
     "test": "npm run eslint && jest",
     "jest": "jest",
     "eslint": "eslint bin cli component config data parser scripts index.js && echo eslint pass",
+    "eslintfix": "eslint bin cli component config data parser scripts index.js --fix && echo eslint pass",
     "start": "nodemon --watch component --exec npm run run",
     "run": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --output=output.html",
     "xunit-viewer": "./bin/xunit-viewer",
@@ -77,8 +78,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-standard": "^2.1.1",
-    "jest": "^19.0.2",
-    "svg-to-react": "^0.1.0"
+    "jest": "^19.0.2"
   },
   "jest": {
     "testPathIgnorePatterns": [

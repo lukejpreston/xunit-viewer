@@ -20,23 +20,23 @@ module.exports = (options) => {
     .then(files => {
       return postcss()
         .then(style => {
-          return {style, files}
+          return { style, files }
         })
     })
-    .then(({style, files}) => {
+    .then(({ style, files }) => {
       return new Promise((resolve, reject) => {
         component()
           .then(code => {
-            resolve({style, files, script: code})
+            resolve({ style, files, script: code })
           })
-        .catch(err => {
-          reject(new Error(err))
-        })
+          .catch(err => {
+            reject(new Error(err))
+          })
       })
     })
-    .then(({style, files, script}) => {
+    .then(({ style, files, script }) => {
       const title = options.title
-      const renderOptions = {title, style, script}
+      const renderOptions = { title, style, script }
       renderOptions.suites = JSON.stringify([])
       renderOptions.sockets = ''
       if (options.watch === false) renderOptions.sockets = '<script src="/socket.io/socket.io.js"></script>'
