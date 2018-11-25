@@ -8,7 +8,7 @@ export default (setState) => {
     setState(suites)
   })
 
-  socket.on('reload', ({style, code}) => {
+  socket.on('reload', ({ style, code }) => {
     if (style) document.querySelector('style').innerHTML = style
     else {
       console.log('reloading')
