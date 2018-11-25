@@ -191,7 +191,7 @@ const buildSuites = (suites) => {
           }
 
           suite.status = 'fail'
-          if (suite.count.tests > 0 && suite.count.tests === suite.count.pass) suite.status = 'pass'
+          if (suite.count.tests > 0 && suite.count.pass > 0 && suite.count.tests === (suite.count.pass + suite.count.skip)) suite.status = 'pass'
           if (suite.count.tests > 0 && suite.count.tests === suite.count.error) suite.status = 'error'
           if (suite.count.tests > 0 && suite.count.tests === suite.count.skip) suite.status = 'skip'
           if (suite.count.tests > 0 && suite.count.tests === suite.count.unknown) suite.status = 'unknown'
