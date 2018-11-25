@@ -5,6 +5,7 @@ const path = require('path')
 const mustache = require('mustache')
 const postcss = require('./postcss')
 const component = require('./component')
+const filterSuites = require('./filter')
 
 let template = fs.readFileSync(path.resolve(__dirname, './template.html')).toString()
 mustache.parse(template)
@@ -43,7 +44,7 @@ module.exports = (options) => {
       renderOptions.favico = icons.xv
 
       return parseFiles(files).then(suites => {
-        renderOptions.suites = JSON.stringify(suites)
+        renderOptions.suites = JSON.stringify(filterSuites(options.filter, suites))
         return mustache.render(template, renderOptions)
       })
     })
