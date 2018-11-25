@@ -55,10 +55,10 @@ const extractFilter = (filter = {}) => {
   filter.search.tests = filter.search.tests || ''
   filter.search.properties = filter.search.properties || ''
 
-  filter.hideen = filter.hideen || {}
-  filter.hideen.suites = filter.hideen.suites || []
-  filter.hideen.tests = filter.hideen.tests || []
-  filter.hideen.properties = filter.hideen.properties || []
+  filter.hidden = filter.hidden || {}
+  filter.hidden.suites = filter.hidden.suites || []
+  filter.hidden.tests = filter.hidden.tests || []
+  filter.hidden.properties = filter.hidden.properties || []
 
   return filter
 }
