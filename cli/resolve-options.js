@@ -60,6 +60,14 @@ const extractFilter = (filter = {}) => {
   filter.hidden.tests = filter.hidden.tests || []
   filter.hidden.properties = filter.hidden.properties || []
 
+  filter.types = filter.types || {}
+  filter.types.suites = (filter.types.suites || '').split(',')
+  filter.types.tests = (filter.types.tests || '').split(',')
+
+  filter.value = filter.value || {}
+  filter.value.suites = new RegExp(filter.value.suites || '.*')
+  filter.value.tests = new RegExp(filter.value.tests || '.*')
+
   return filter
 }
 
