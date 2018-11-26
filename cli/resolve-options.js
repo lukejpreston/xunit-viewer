@@ -61,8 +61,8 @@ const extractFilter = (filter = {}) => {
   filter.hidden.properties = filter.hidden.properties || []
 
   filter.types = filter.types || {}
-  filter.types.suites = (filter.types.suites || '').split(',')
-  filter.types.tests = (filter.types.tests || '').split(',')
+  filter.types.suites = (filter.types.suites || 'all').split(',')
+  filter.types.tests = (filter.types.tests || 'all').split(',')
 
   filter.value = filter.value || {}
   filter.value.suites = new RegExp(filter.value.suites || '.*')
