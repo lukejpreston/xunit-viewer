@@ -1,11 +1,11 @@
 const filterTypes = (filter, items) => {
   if (typeof filter === 'undefined' || filter.length === 0 || filter.includes('all')) return items
-  return items.filter(item => filter.includes(item.status))
+  return (items || []).filter(item => filter.includes(item.status))
 }
 
 const filterValue = (filter, items) => {
   if (typeof filter === 'undefined') return items
-  return items.filter(item => filter.test(item.name))
+  return (items || []).filter(item => filter.test(item.name))
 }
 
 module.exports = (filter, suites) => {
@@ -16,5 +16,5 @@ module.exports = (filter, suites) => {
     })).map(suite => {
       suite.tests = filterValue(filter.value.tests, suite.tests)
       return suite
-    })
+    }).filter(suite => suite.tests.length > 0)
 }
