@@ -18,6 +18,6 @@ describe('parser', () => {
   })
 
   it('works for special chars in suite name', () => {
-    expect(parsed[1].name).toEqual("@release2017.1.0,, @Mcc272151_10: Display List of Records")
+    expect(parsed[1].name).toEqual('@release2017.1.0,, @Mcc272151_10: Display List of Records')
   })
 })

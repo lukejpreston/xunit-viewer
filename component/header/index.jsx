@@ -1,8 +1,8 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import Head from './head'
 import Body from './body'
 
-let Header = ({suites = [], title, onToggle, onStatToggle, onExpand, onCollapse, onShow, onHide, onSearch, isActive, search, statsStatus}) => {
+let Header = ({ suites = [], title, onToggle, onStatToggle, onExpand, onCollapse, onShow, onHide, onSearch, isActive, search, statsStatus }) => {
   let active = isActive ? 'active' : 'inactive'
   return <section className='hero'>
     <Head

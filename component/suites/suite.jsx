@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import Properties from './properties'
 import Test from './test'
 import iconMap from '../icon-map'
@@ -51,8 +51,8 @@ let Suite = ({
         message={test.message}
         raw={test.raw}
         time={test.time}
-          />
-      )}
+      />
+    )}
   </div>
 
   if (Object.keys(properties).length === 1 && suites.length === 0 && tests.length === 0) Content = null
@@ -61,18 +61,16 @@ let Suite = ({
     <header
       className={`card-header is-${status}`}
       onClick={() => {
-        onToggle({type: 'suites', uuid})
+        onToggle({ type: 'suites', uuid })
       }}
-      >
+    >
       <p className='card-header-title'>
         {iconMap[status]}
         <span className='card-header-title-name'>{name}</span>
         {time ? <i className='card-header-title-time'>({time})</i> : null}
       </p>
       <a className='card-header-icon'>
-        <span className='icon'>
-          <i className='fa fa-angle-down' />
-        </span>
+        {iconMap.angleDown}
       </a>
     </header>
     {Content}

@@ -11,15 +11,15 @@ module.exports = (server, options) => {
   const io = socketIo(server)
 
   if (options.dev) {
-    io.emit('reload', {style: false, code: true})
+    io.emit('reload', { style: false, code: true })
     nodeWatch([componet], (file) => {
       if (file.includes('css')) {
         postcss()
-        .then(style => {
-          io.emit('reload', {style, code: false})
-        })
+          .then(style => {
+            io.emit('reload', { style, code: false })
+          })
       } else {
-        io.emit('reload', {style: false, code: true})
+        io.emit('reload', { style: false, code: true })
       }
     })
   }

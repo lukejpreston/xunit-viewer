@@ -1,6 +1,7 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
+import iconMap from '../icon-map'
 
-let Row = ({name, value}) => {
+let Row = ({ name, value }) => {
   return <tr>
     <td>{name}</td>
     <td>{value}</td>
@@ -12,7 +13,7 @@ Row.propTypes = {
   value: PropTypes.string
 }
 
-let Properties = ({data = {}, onToggle, collapsed}) => {
+let Properties = ({ data = {}, onToggle, collapsed }) => {
   let isCollapsed = Object.keys(collapsed.properties).includes(data._uuid) ? 'collapsed' : 'expanded'
   return <div className={`card properties is-${isCollapsed}`}>
     <header
@@ -25,9 +26,7 @@ let Properties = ({data = {}, onToggle, collapsed}) => {
       }}>
       <p className='card-header-title'>Properties</p>
       <a className='card-header-icon'>
-        <span className='icon'>
-          <i className='fa fa-angle-down' />
-        </span>
+        {iconMap.angleDown}
       </a>
     </header>
     <table className='table'>
@@ -44,7 +43,7 @@ let Properties = ({data = {}, onToggle, collapsed}) => {
             key={`properties-${key}-${index}`}
             name={key}
             value={data[key]}
-            />
+          />
           )
       }</tbody>
     </table>

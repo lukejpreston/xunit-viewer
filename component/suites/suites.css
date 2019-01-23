@@ -6,6 +6,15 @@
   --unknown: #3273DC;
 }
 
+.card-header-icon .icon {
+  width: 20px;
+  transform: translateY(-5px);
+}
+
+.is-collapsed .card-header-icon .icon {
+  transform: rotate(180deg) translateY(0px);
+}
+
 .suites {
   & .fa {
     padding-right: 5px;
