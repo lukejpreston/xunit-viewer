@@ -70,9 +70,7 @@ let Suite = ({
         {time ? <i className='card-header-title-time'>({time})</i> : null}
       </p>
       <a className='card-header-icon'>
-        <span className='icon'>
-          <i className='fa fa-angle-down' />
-        </span>
+        {iconMap.angleDown}
       </a>
     </header>
     {Content}

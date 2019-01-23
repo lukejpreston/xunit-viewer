@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import iconMap from '../icon-map'
 
 let Row = ({ name, value }) => {
   return <tr>
@@ -25,9 +26,7 @@ let Properties = ({ data = {}, onToggle, collapsed }) => {
       }}>
       <p className='card-header-title'>Properties</p>
       <a className='card-header-icon'>
-        <span className='icon'>
-          <i className='fa fa-angle-down' />
-        </span>
+        {iconMap.angleDown}
       </a>
     </header>
     <table className='table'>
