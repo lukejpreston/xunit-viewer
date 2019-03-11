@@ -28,7 +28,11 @@ const Count = ({ type, total }) => {
   </div>
 }
 
-const Options = ({ label, count, total, passed = 0, failed = 0, warning = 0, skipped = 0, unknown = 0 }) => <div className='options card is-inactive'>
+const Toggle = () => <div>
+    TOGGLE
+</div>
+
+const Options = ({ label, count, total, passed = 0, failed = 0, warning = 0, skipped = 0, unknown = 0 }) => <div className='options card is-active'>
   <header className='card-header'>
     <div className='options-inputs'>
       <Search label={label} />
@@ -45,7 +49,28 @@ const Options = ({ label, count, total, passed = 0, failed = 0, warning = 0, ski
       </span>
     </button>
   </header>
-  <div className='card-content' />
+  <div className='card-content'>
+    <div className='columns'>
+      <div className='column is-1'>
+        <h6 className='title is-6'>All</h6>
+      </div>
+      <div className='column is-1'>
+        <h6 className='title is-6'>All</h6>
+      </div>
+      <div className='column is-1'>
+        <h6 className='title is-6'>All</h6>
+      </div>
+      <div className='column is-1'>
+        <h6 className='title is-6'>All</h6>
+      </div>
+      <div className='column is-1'>
+        <h6 className='title is-6'>All</h6>
+      </div>
+      <div className='column is-1'>
+        <h6 className='title is-6'>All</h6>
+      </div>
+    </div>
+  </div>
 </div>
 
 export default Options

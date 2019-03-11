@@ -81,4 +81,10 @@ body,
 .options .card-content {
   height: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+.options.is-active .card-content {
+  height: auto;
+  padding: 1.5rem;
 }
