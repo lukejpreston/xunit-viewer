@@ -7,6 +7,19 @@ exports[`renders options 1`] = `
   <header
     className="card-header"
   >
+    <button
+      className="card-header-icon is-hidden-tablet"
+      onClick={[Function]}
+    >
+      <span
+        className="icon"
+      >
+        <i
+          aria-hidden="true"
+          className="fas fa-angle-down"
+        />
+      </span>
+    </button>
     <div
       className="options-inputs"
     >
@@ -27,7 +40,7 @@ exports[`renders options 1`] = `
         className="options-total"
       >
         <b>
-          52
+          100
         </b>
         <span>
           /
@@ -46,58 +59,13 @@ exports[`renders options 1`] = `
           />
         </span>
         <span>
-          12
-        </span>
-      </div>
-      <div
-        className="options-count"
-      >
-        <span
-          className="icon"
-        >
-          <i
-            aria-hidden="true"
-            className="fas fa-times"
-          />
-        </span>
-        <span>
-          12
-        </span>
-      </div>
-      <div
-        className="options-count"
-      >
-        <span
-          className="icon"
-        >
-          <i
-            aria-hidden="true"
-            className="fas fa-exclamation"
-          />
-        </span>
-        <span>
-          12
-        </span>
-      </div>
-      <div
-        className="options-count"
-      >
-        <span
-          className="icon"
-        >
-          <i
-            aria-hidden="true"
-            className="fas fa-question"
-          />
-        </span>
-        <span>
-          12
+          10
         </span>
       </div>
     </div>
     <button
-      aria-label="more options"
-      className="card-header-icon"
+      className="card-header-icon is-hidden-mobile"
+      onClick={[Function]}
     >
       <span
         className="icon"
@@ -111,6 +79,88 @@ exports[`renders options 1`] = `
   </header>
   <div
     className="card-content"
-  />
+  >
+    <div
+      className="toggles-container"
+    >
+      <div
+        className="toggles"
+      >
+        <h6
+          className="title is-6"
+        >
+          <span>
+            All
+          </span>
+        </h6>
+        <button
+          className="button toggle is-active"
+          disabled={true}
+        >
+          <div
+            className="toggle-rail"
+          >
+            <div
+              className="toggle-handle"
+            />
+          </div>
+          <span
+            className="icon"
+          >
+            <i
+              className="fas fa-eye"
+            />
+          </span>
+          <span>
+            Visible
+          </span>
+        </button>
+        <button
+          className="button toggle is-active"
+          disabled={true}
+        >
+          <div
+            className="toggle-rail"
+          >
+            <div
+              className="toggle-handle"
+            />
+          </div>
+          <span
+            className="icon"
+          >
+            <i
+              className="fas fa-chevron-down"
+            />
+          </span>
+          <span>
+            Expanded
+          </span>
+        </button>
+        <button
+          className="button toggle is-active"
+          disabled={true}
+        >
+          <div
+            className="toggle-rail"
+          >
+            <div
+              className="toggle-handle"
+            />
+          </div>
+          <span
+            className="icon"
+          >
+            <i
+              className="fas fa-code"
+            />
+          </span>
+          <span>
+            Raw
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;
