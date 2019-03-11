@@ -43,7 +43,7 @@
     "yargs": "^13.2.2"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.8.4",
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "bulma": "^0.7.4",
     "eslint": "^5.12.1",
     "eslint-config-standard": "^12.0.0",
@@ -55,7 +55,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-test-renderer": "^16.8.4"
   },
   "browserslist": [
     ">0.2%",

@@ -1,3 +1,8 @@
+body,
+.card {
+  color: #2C3E50 !important;
+}
+
 .hero {
     background-color: #2C3E50 !important;
 }
@@ -21,4 +26,59 @@
 .hero .title {
   font-size: 36px;
   font-weight: normal;
+}
+
+.card-header-icon {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #2C3E50;
+}
+
+.card-header-icon .icon {
+  transform: rotate(0deg);
+}
+
+.options-inputs {
+  display: flex;
+  align-items: center; 
+}
+
+.options-search {
+  margin-bottom: 0 !important;
+  margin-right: 32px;
+  margin-left: 16px;
+}
+
+.options-search .input {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #2C3E50;
+  padding: 0;
+}
+
+.options-total,
+.options-count {
+  margin-right: 16px;
+  font-size: 16px;
+}
+
+.options-count .icon {
+  font-size: 12px;
+}
+
+.options {
+  box-shadow: none;
+  border-bottom: solid 1px #E7EAED;
+}
+
+.options .card-header {
+  box-shadow: none;
+}
+
+.options .card-content {
+  height: 0;
+  padding: 0;
 }
