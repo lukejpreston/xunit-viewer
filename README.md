@@ -141,3 +141,18 @@ I will try to maintain the old API, I would be interested in finding out what pe
 
 1. run build and turn that into a single html file
 2. when people people use the command line all it would do is put the json in the html file and return that, this will be tons quicker
+
+have to change the data using the following
+
+```json
+{
+    "files": [{
+        "filename": "file-1.xml",
+        "data": "xml",
+        "suites": [{
+            "tests": [],
+            "properties": []
+        }]
+    }]
+}
+```
