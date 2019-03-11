@@ -1,5 +1,0 @@
-#!/usr/bin/env node
-
-let options = require('../cli/resolve-argv')()
-
-require('../cli')(options)
