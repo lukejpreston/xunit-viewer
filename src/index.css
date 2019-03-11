@@ -1,0 +1,24 @@
+.hero {
+    background-color: #2C3E50 !important;
+}
+
+.hero-body {
+    padding: 10px !important;
+}
+
+.hero-body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .logo {
+    height: 64px;
+    width: auto;
+    margin-right: 16px;
+}
+
+.hero .title {
+  font-size: 36px;
+  font-weight: normal;
+}

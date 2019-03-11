@@ -1,5 +1,9 @@
 import React from 'react'
 
-const App = () => <div>APP</div>
+import Hero from './hero'
+
+const App = () => <div>
+  <Hero />
+</div>
 
 export default App
