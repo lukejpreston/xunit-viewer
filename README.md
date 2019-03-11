@@ -134,3 +134,10 @@ Using sockets and lighter
 * better error handling
 * set up something which will parse in browser
 * clean everything and write some more tests
+
+# This is the new Xunit Viewer v6
+
+I will try to maintain the old API, I would be interested in finding out what people actually use but who cares
+
+1. run build and turn that into a single html file
+2. when people people use the command line all it would do is put the json in the html file and return that, this will be tons quicker
