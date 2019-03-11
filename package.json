@@ -43,7 +43,7 @@
     "xunit-viewer:output": "./bin/xunit-viewer --results=data  --ignore=invalid.xml,blank_file.xml --watch --output=output.html"
   },
   "dependencies": {
-    "babel-core": "^6.23.1",
+    "babel-core": "^6.26.3",
     "babel-preset-react-app": "^2.1.1",
     "babelify": "^7.3.0",
     "browserify": "^16.2.3",
@@ -77,7 +77,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-standard": "^2.1.1",
-    "jest": "^19.0.2",
+    "jest": "^24.3.1",
     "nodemon": "^1.18.7"
   },
   "jest": {
