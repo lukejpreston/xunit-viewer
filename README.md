@@ -98,33 +98,7 @@ if any value is invalid it will try and use default
 
 ## Component
 
-You will need to bring in React if you are using the component
-
-It works best with webpack setup but you should be able to work it out if you need to
-
-This is the view which you can reuse
-
-```js
-import React from 'react'
-import XunitViewer from 'xunit-viewer/component/xunit-viewer'
-import 'xunit-viewer/component/index.css'
-
-let MyWrapper = () => {
-    return <XunitViewer xml='' suites={[]} title='' />
-}
-```
-
-## Junit Viewer
-
-This has replaced Junit Viewer which is now deprecated this.
-
-### Why?
-
-Better API
-Better View
-Uses React
-Nested Suites
-Using sockets and lighter
+If you require Component please raise an issue. It was available in v5 (according to the docs, but no way would it have worked)
 
 ## TODO
 
