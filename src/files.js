@@ -25,12 +25,12 @@ const Files = () => {
       <div className='tabs is-boxed'>
         <ul>
           <li className='is-active'>
-            <a href='/' onClick={(evt) => {
+            <a href={active ? '/' : null} onClick={(evt) => {
               console.log('open file')
               evt.preventDefault()
             }}>
               <span>file.xml</span>
-              <button className='delete is-small' onClick={(evt) => {
+              <button disabled={!active} className='delete is-small' onClick={(evt) => {
                 console.log('remove file')
                 evt.stopPropagation()
                 evt.preventDefault()
@@ -38,7 +38,7 @@ const Files = () => {
             </a>
           </li>
           <li>
-            <a href='/' className='add-file' onClick={(evt) => {
+            <a href={active ? '/' : null} className='add-file' onClick={(evt) => {
               console.log('open file')
               evt.preventDefault()
             }}>
@@ -50,8 +50,8 @@ const Files = () => {
         </ul>
       </div>
 
-      <input className='input files-input' type='text' defaultValue='/this/is/the/full/filename.xml' placeholder='Filename' />
-      <CodeMirror
+      <input className='input files-input' type='text' defaultValue='/this/is/the/full/filename.xml' placeholder='Filename' disabled={!active} />
+      {active ? <CodeMirror
         value={`<?xml version="1.0" encoding="UTF-8"?>
 <testsuite tests="3" failures="1" time="0.0160106">
     <testcase name="Is An Error" classname="Error" time="0.00075">
@@ -65,7 +65,7 @@ const Files = () => {
         onChange={(cm, { text }, value) => {
 
         }}
-      />
+      /> : null}
     </div>
 
   </div>
