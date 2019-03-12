@@ -54,7 +54,7 @@ const Files = () => <div className='files card'>
         lineNumbers: true
       }}
       onChange={(cm, { text }, value) => {
-        console.log('here', text)
+
       }}
     />
   </div>
