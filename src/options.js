@@ -61,17 +61,13 @@ const Options = ({ label, count, total, counts = [], toggles }) => {
   const [active, setActive] = useState(false)
   return <div className={`options card is-${active ? 'active' : 'inactive'}`}>
     <header className='card-header'>
-      <ToggleOptions device='tablet' onClick={() => {
-        setActive(!active)
-      }} />
+      <ToggleOptions device='tablet' onClick={() => { setActive(!active) }} />
       <div className='options-inputs'>
         <Search label={label} />
         <Total count={count} total={total} />
         {counts.map(count => <Count {...count} />)}
       </div>
-      <ToggleOptions device='mobile' onClick={() => {
-        setActive(!active)
-      }} />
+      <ToggleOptions device='mobile' onClick={() => { setActive(!active) }} />
     </header>
     <div className='card-content'>
       <div className='toggles-container'>
