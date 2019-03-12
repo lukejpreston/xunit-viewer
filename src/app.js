@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Hero from './hero'
 import Options from './options'
+import Files from './files'
 
 const initialOptions = [{
   key: 'suites',
@@ -58,6 +59,7 @@ const App = () => {
     <header>
       <div className='container'>
         {options.map(props => <Options {...props} />)}
+        <Files />
       </div>
     </header>
   </div>
