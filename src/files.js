@@ -24,7 +24,7 @@ const Files = () => {
     <div className='card-content'>
       <div className='tabs is-boxed'>
         <ul>
-          <li className='is-active'>
+          <li className='is-inactive'>
             <a href={active ? '/' : null} onClick={(evt) => {
               console.log('open file')
               evt.preventDefault()
@@ -37,7 +37,7 @@ const Files = () => {
               }} />
             </a>
           </li>
-          <li className='is-inactive'>
+          <li className='is-active'>
             <a href={active ? '/' : null} onClick={(evt) => {
               console.log('open file')
               evt.preventDefault()
