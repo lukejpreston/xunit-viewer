@@ -5,13 +5,18 @@ body,
 
 .hero {
     background-color: #2C3E50 !important;
-}
-
-.hero-body {
     padding: 10px !important;
+}   
+
+.hero .container {
+    width: 100%;
 }
 
-.hero-body-container {
+.Burger {
+    height: 100%;
+}
+
+.hero-center {
     display: flex;
     justify-content: center;
     align-items: center;

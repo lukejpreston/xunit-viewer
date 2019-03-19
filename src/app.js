@@ -53,10 +53,11 @@ const initialOptions = [{
 
 const App = () => {
   let [options, setOptions] = useState(initialOptions)
+  const [menuActive, setMenu] = useState(true)
 
   return <div>
-    <Hero />
-    <header>
+    <Hero active={menuActive} onClick={() => { setMenu(!menuActive) }} />
+    <header className={`is-${!menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
         {options.map(props => <Options {...props} />)}
         <Files />
