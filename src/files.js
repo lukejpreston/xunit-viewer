@@ -37,9 +37,22 @@ const Files = () => {
               }} />
             </a>
           </li>
+          <li className='is-inactive'>
+            <a href={active ? '/' : null} onClick={(evt) => {
+              console.log('open file')
+              evt.preventDefault()
+            }}>
+              <span>file.xml</span>
+              <button disabled={!active} className='delete is-small' onClick={(evt) => {
+                console.log('remove file')
+                evt.stopPropagation()
+                evt.preventDefault()
+              }} />
+            </a>
+          </li>
           <li>
             <a href={active ? '/' : null} className='add-file' onClick={(evt) => {
-              console.log('open file')
+              console.log('add a new file')
               evt.preventDefault()
             }}>
               <span className='icon'>

@@ -184,36 +184,14 @@ body,
 
 .tabs {
     margin: 0 !important;
-    margin-left: -1px !important;
+    margin-top: 1px !important;
 }
 
-.tabs .tab {
-    align-items: center;
-    border-bottom-color: #dbdbdb;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    color: #4a4a4a;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    margin-bottom: -1px;
-    padding: 0.5em 1em;
-    vertical-align: top;
+.files li a {
+    border-radius: 0 !important;
 }
 
-.tabs li.is-active .tab {
-    background-color: white;
-    border-color: #dbdbdb;
-    border-bottom-color: transparent !important;
-}
-
-.files li.is-active a {
-    border-radius: 0;
-    border-top: none;
-}
-
-.files li.is-active a .delete {
+.files li a .delete {
     margin-left: 6px;
 }
 
