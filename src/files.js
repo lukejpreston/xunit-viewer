@@ -50,7 +50,7 @@ const Files = () => {
               }} />
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href={active ? '/' : null} className='add-file' onClick={(evt) => {
               console.log('add a new file')
               evt.preventDefault()
@@ -59,7 +59,7 @@ const Files = () => {
                 <i className='fas fa-plus' />
               </span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
 
