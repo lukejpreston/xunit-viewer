@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+    <testsuite name="suite 1" time="time">
+        <properties>
+            <property name="name only" />
+        </properties>
+        <properties>
+            <property name="prop 1" value="value 1" />
+            <property name="prop 1">value 2</property>
+            <property name="prop 1" />
+            <property name="prop 2" value="value" />
+            <property>value with no name</property>
+            <property />
+        </properties>
+        <properties>
+            <property name="seperate props" value="value" />
+        </properties>
+        <properties>value only</properties>
+        <properties />
+    </testsuite>
+</testsuites>

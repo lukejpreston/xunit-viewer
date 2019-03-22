@@ -5,7 +5,11 @@
             <!-- standard props -->
             <properties>
                 <property name="x" value="y" />
+                <property name="x" value="z" />
                 <property name="a" value="b" />
+                <property name="a" />
+                <property name="a">value</property>
+                <property>value</property>
             </properties>
             <!-- props with single value -->
             <properties>
@@ -13,6 +17,7 @@
             </properties>
             <!-- Props with no values -->
             <properties>
+            ksdfhkdsfhsdfkh
             </properties>
             <!-- each kind of test case with a full message -->
             <testcase assertions="0" classname="bacon" name="bacon_with_a_really_really_really_really_really_reallyreally_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_really_long_name" time="0.001">
