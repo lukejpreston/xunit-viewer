@@ -17,5 +17,52 @@
         </properties>
         <properties>value only</properties>
         <properties />
+        <testcase>only a message</testcase>
+        <testcase name="simple passing test" />
+        <testcase name="test with time" time='time'/>
+        <testcase name="test with sub test">
+            <testcase name="the sub test" />
+        </testcase>
+        <testcase name="test with messages" message="message prop">inner message</testcase>
+        <testcase name="test passed with messages and free text">
+            HERE IS SOME TEXT
+            <passed message="message prop 1">inner massage 1</passed>
+        </testcase>
+        <testcase name="test passed with messages">
+            <passed message="message prop 1">inner massage 1</passed>
+            <passed message="message prop 2">inner massage 2</passed>
+        </testcase>
+        <testcase name="failing test with messages">
+            <failure message="message prop 1">inner massage 1</failure>
+            <failure message="message prop 2">inner massage 2</failure>
+        </testcase>
+        <testcase name="erroring test with messages">
+            <error message="message prop 1">inner massage 1</error>
+            <error message="message prop 2">inner massage 2</error>
+        </testcase>
+        <testcase name="skiping test with messages">
+            <skipped message="message prop 1">inner massage 1</skipped>
+            <skipped message="message prop 2">inner massage 2</skipped>
+        </testcase>
+        <testcase name="error and failure test with messages">
+            <error message="error message prop 1">error inner massage 1</error>
+            <failure message="failure message prop 2">failure inner massage 2</failure>
+            <testsuite name='testsuite in a testcase'>
+                <testcase name='testsuite in a testcase testcase' />
+            </testsuite>
+        </testcase>
+    </testsuite>
+    <testsuite name="suite 2">
+        <testcase name='testcase' />
+    </testsuite>
+    <testsuite name="duplicate">
+        <testcase name='testcase 1' />
+    </testsuite>
+    <testsuite name="duplicate">
+        <testcase name='testcase 2' />
+    </testsuite>
+    <testsuite name="suite with duplicate tests">
+        <testcase name='testcase duplicate' message='message 1' />
+        <testcase name='testcase duplicate' message='message 2' />
     </testsuite>
 </testsuites>
