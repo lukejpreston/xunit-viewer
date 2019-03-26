@@ -41,6 +41,7 @@
     "codemirror": "^5.44.0",
     "dev": "^0.1.3",
     "handlebars": "^4.1.0",
+    "merge": "^1.2.1",
     "react-burgers": "^1.2.0",
     "react-codemirror2": "^5.1.0",
     "xml2js": "^0.4.19",

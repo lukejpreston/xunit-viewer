@@ -5,9 +5,10 @@ import '@fortawesome/fontawesome-free/js/all'
 
 import './index.css'
 import App from './app'
-import parse from './parse'
 
-const xml = `<?xml version="1.0" encoding="UTF-8" ?>
+const files = [{
+  file: '/path/to/file/complete.xml',
+  contents: `<?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
     <testsuite name="suite with properties">
         <properties>
@@ -109,13 +110,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8" ?>
             <testcase name="child one test"></testcase>
         </testsuite>
     </testsuite>
-</testsuites>
-`
+</testsuites>`
+}]
 
-ReactDOM.render(<App />, document.getElementById('root'))
-
-const main = async () => {
-  await parse(xml)
-}
-
-main()
+ReactDOM.render(<App files={files} />, document.getElementById('root'))

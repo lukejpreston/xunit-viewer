@@ -48,7 +48,7 @@ body,
 
 .card-header-icon .icon {
     margin-left: auto;
-    transition: transform 0.1s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     transform: rotate(180deg);
 }
 
@@ -106,7 +106,7 @@ body,
 
 .options .card-content,
 .files .card-content {
-    transition: height 0.1s ease-in-out, padding 0.1s ease-in-out;
+    transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
 }
 
 .options .card-content,
@@ -162,7 +162,7 @@ body,
 }
 
 .toggle-handle {
-    transition: left 0.1s ease-in-out;
+    transition: left 0.2s ease-in-out;
     position: absolute;
     top: -3px;
     height: 14px;
@@ -214,4 +214,62 @@ body,
   transform: rotate(0) translateY(2px) !important;
   font-size: 18px;
   margin-right: 4px;
+}
+
+.suite {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.suite .card-header {
+    transition: background-color 0.2s ease-in-out;
+    border: none;
+    width: 100%;
+}
+
+.suite .card-header:hover {
+    cursor: pointer;
+}
+
+.suite {
+    background-color: #F7F7F7;
+    margin: 20px;
+}
+
+.suite .card-header:hover {
+    background-color: #ebebeb;
+}
+
+.suite.is-inactive {
+    box-shadow: none;
+}
+
+.properties .card-content,
+.suite .card-content {
+    height: auto;
+    overflow: hidden;
+}
+
+.properties .card-header-icon svg,
+.suite .card-header-icon svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+.properties.is-active .card-content,
+.suite.is-active .card-content {
+    height: 0;
+    padding: 0;
+}
+
+.properties.is-active .card-header-icon svg,
+.suite.is-active .card-header-icon svg {
+    transform: rotate(180deg);
+}
+
+.properties .card-header-title {
+    margin-bottom: 0 !important;
+}
+
+.properties .card-content {
+    padding: 0;
+    padding-top: 1px;
 }

@@ -15,7 +15,7 @@ const ToggleFiles = ({ onClick }) => <button className='card-header-icon' onClic
   </span>
 </button>
 
-const Files = () => {
+const Files = ({ files = [] }) => {
   const [active, setActive] = useState(false)
   return <div className={`files card is-${active ? 'active' : 'inactive'}`}>
     <header className='card-header'>
