@@ -39,7 +39,7 @@ module.exports = (options) => {
       const renderOptions = { title, style, script }
       renderOptions.suites = JSON.stringify([])
       renderOptions.sockets = ''
-      if (options.watch === false) renderOptions.sockets = '<script src="/socket.io/socket.io.js"></script>'
+      if (options.watch) renderOptions.sockets = '<script src="/socket.io/socket.io.js"></script>'
       renderOptions.favico = icons.xv
 
       return parseFiles(files).then(suites => {
