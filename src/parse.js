@@ -84,6 +84,8 @@ const extractTests = (output, suite, testcases) => {
       test.status = status || 'passed'
     }
 
+    test.messages = test.messages.filter(message => message !== '')
+
     suite.tests[id] = test
     if (typeof testcase.testcase !== 'undefined') extractTests(output, suite, testcase.testcase)
     if (typeof testcase.testsuite !== 'undefined') extractSuite(output, testcase.testsuite)

@@ -6,7 +6,7 @@ body,
 .hero {
     background-color: #2C3E50 !important;
     padding: 10px !important;
-}   
+}
 
 .hero .container {
     width: 100%;
@@ -121,7 +121,7 @@ body,
 }
 
 .files.is-active .card-content {
-  height: 395px;
+    height: 395px;
 }
 
 .toggles-container {
@@ -196,24 +196,24 @@ body,
 }
 
 .files-input {
-  margin-left: 16px;
-  margin-bottom: 16px;
-  width: 98%;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    width: 98%;
 }
 
 .add-file {
-  padding: 0.5em 0 !important;
+    padding: 0.5em 0 !important;
 }
 
 .files .subtitle {
-  padding-left: 4px;
-  margin-bottom: 0 !important;
+    padding-left: 4px;
+    margin-bottom: 0 !important;
 }
 
 .files .subtitle .icon {
-  transform: rotate(0) translateY(2px) !important;
-  font-size: 18px;
-  margin-right: 4px;
+    transform: rotate(0) translateY(2px) !important;
+    font-size: 18px;
+    margin-right: 4px;
 }
 
 .suite {
@@ -243,6 +243,14 @@ body,
     box-shadow: none;
 }
 
+.suite .card {
+    margin-bottom: 16px;
+}
+
+.suite .card:last-child {
+    margin-bottom: 0;
+}
+
 .properties .card-content,
 .suite .card-content {
     height: auto;
@@ -265,6 +273,12 @@ body,
     transform: rotate(180deg);
 }
 
+.card-header-title small {
+    font-weight: normal;
+    margin-left: 8px;
+}
+
+.test .card-header-title,
 .properties .card-header-title {
     margin-bottom: 0 !important;
 }
@@ -272,4 +286,32 @@ body,
 .properties .card-content {
     padding: 0;
     padding-top: 1px;
+}
+
+.test .card-header-title {
+    color: #fff;
+}
+
+.test .card-header-icon {
+    color: #fff;
+}
+
+.test .card-header {
+    background-color: #4B85FA;
+}
+
+.test.is-passed .card-header {
+    background-color: #0DBF1F;
+}
+
+.test.is-failure .card-header {
+    background-color: #B32010;
+}
+
+.test.is-error .card-header {
+    background-color: #E5CB05;
+}
+
+.test.is-skipped .card-header {
+    background-color: #BEC6CC;
 }

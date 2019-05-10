@@ -10,7 +10,7 @@ const files = [{
   file: '/path/to/file/complete.xml',
   contents: `<?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-    <testsuite name="suite with properties">
+    <testsuite name="suite with properties" time="100">
         <properties>
             <property name="first_name" value="first_value" />
             <property name="second_name" value="second_name" />
@@ -29,10 +29,10 @@ const files = [{
         </testcase>
     </testsuite>
     <testsuite name="suite with each kind of test">
-        <testcase name="passed with a message">
+        <testcase name="passed with a message" time="666">
             <passed>inner message</passed>
         </testcase>
-        <testcase name="error with a message">
+        <testcase name="error with a message" time="12.3456789">
             <error>inner message</error>
         </testcase>
         <testcase name="skipped with a message">
