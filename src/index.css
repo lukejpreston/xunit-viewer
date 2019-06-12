@@ -231,8 +231,9 @@ body,
 }
 
 .suite {
+    transition: margin 0.1s ease-in-out;
     background-color: #F7F7F7;
-    margin: 20px;
+    margin: 12px 0;
 }
 
 .suite .card-header:hover {
@@ -241,6 +242,11 @@ body,
 
 .suite.is-inactive {
     box-shadow: none;
+    margin: 32px 0;
+}
+
+.suite:first-child {
+    margin-top: 32px !important;
 }
 
 .suite .card {
