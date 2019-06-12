@@ -217,7 +217,9 @@ body,
 }
 
 .suite {
-    transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out, margin 0.1s ease-in-out;
+    background-color: #F7F7F7;
+    margin: 12px 0;
 }
 
 .suite .card-header {
@@ -228,12 +230,6 @@ body,
 
 .suite .card-header:hover {
     cursor: pointer;
-}
-
-.suite {
-    transition: margin 0.1s ease-in-out;
-    background-color: #F7F7F7;
-    margin: 12px 0;
 }
 
 .suite .card-header:hover {
