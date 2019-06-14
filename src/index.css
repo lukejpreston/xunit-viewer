@@ -231,6 +231,14 @@ body,
     background-color: #ebebeb;
 }
 
+.suite.is-empty .card-header {
+    background-color: #F7F7F7;
+}
+
+.suite.is-empty .card-header:hover {
+    cursor: initial;
+}
+
 .suite.is-inactive {
     box-shadow: none;
     margin: 32px 0;
@@ -337,6 +345,9 @@ body,
     transform: rotate(180deg);
 }
 
+
+.suite.is-empty,
+.suite.is-empty .card-header
 .test.is-empty,
 .test.is-empty .card-header {
     box-shadow: none;
