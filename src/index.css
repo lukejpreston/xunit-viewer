@@ -104,20 +104,13 @@ body,
     box-shadow: none;
 }
 
-.options .card-content,
 .files .card-content {
     transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
 }
 
-.options .card-content,
 .files .card-content {
     height: 0;
     padding: 0 1.5rem;
-}
-
-.options.is-active .card-content {
-    height: 130px;
-    padding: 12px 1.5rem;
 }
 
 .files.is-active .card-content {
@@ -232,7 +225,9 @@ body,
     cursor: pointer;
 }
 
-.suite .card-header:hover {
+.suite .card-header:hover,
+.suite .card-header:active,
+.suite .card-header:focus {
     background-color: #ebebeb;
 }
 
@@ -253,21 +248,9 @@ body,
     margin-bottom: 0;
 }
 
-.properties .card-content,
-.suite .card-content {
-    height: auto;
-    overflow: hidden;
-}
-
 .properties .card-header-icon svg,
 .suite .card-header-icon svg {
     transition: transform 0.2s ease-in-out;
-}
-
-.properties.is-active .card-content,
-.suite.is-active .card-content {
-    height: 0;
-    padding: 0;
 }
 
 .properties.is-active .card-header-icon svg,
@@ -298,22 +281,74 @@ body,
     color: #fff;
 }
 
+.test.is-empty .card-header,
 .test .card-header {
     background-color: #4B85FA;
+}
+
+.test.is-populated .card-header:hover,
+.test.is-populated .card-header:active,
+.test.is-populated .card-header:focus {
+    background-color: #2f5bb4;
 }
 
 .test.is-passed .card-header {
     background-color: #0DBF1F;
 }
 
+.test.is-populated.is-passed .card-header:hover,
+.test.is-populated.is-passed .card-header:active,
+.test.is-populated.is-passed .card-header:focus {
+    background-color: #25a132;
+}
+
 .test.is-failure .card-header {
     background-color: #B32010;
+}
+
+.test.test.is-populated.is-failure .card-header:hover,
+.test.test.is-populated.is-failure .card-header:active,
+.test.test.is-populated.is-failure .card-header:focus {
+    background-color: #963126;
 }
 
 .test.is-error .card-header {
     background-color: #E5CB05;
 }
 
+
+.test.is-populated.is-error .card-header:hover,
+.test.is-populated.is-error .card-header:active,
+.test.is-populated.is-error .card-header:focus {
+    background-color: #c7b319;
+}
+
 .test.is-skipped .card-header {
     background-color: #BEC6CC;
+}
+
+.test.is-populated.is-skipped .card-header:hover,
+.test.is-populated.is-skipped .card-header:active,
+.test.is-populated.is-skipped .card-header:focus {
+    background-color: #9b9ea0;
+}
+
+.test.is-active .fa-angle-down {
+    transform: rotate(180deg);
+}
+
+.test.is-empty,
+.test.is-empty .card-header {
+    box-shadow: none;
+    opacity: 0.85;
+    cursor: initial;
+}
+
+.test.card {
+    transition: margin 0.1s ease-in-out;
+    margin: 8px 0;
+}
+
+.test.card.is-populated.is-inactive {
+    margin: 24px 0;
 }

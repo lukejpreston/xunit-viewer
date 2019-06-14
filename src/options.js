@@ -69,11 +69,11 @@ const Options = ({ label, count, total, counts = [], toggles }) => {
       </div>
       <ToggleOptions device='mobile' onClick={() => { setActive(!active) }} />
     </header>
-    <div className='card-content'>
+    {active ? <div className='card-content'>
       <div className='toggles-container'>
         {toggles.map(toggle => <Toggles {...toggle} disabled={!active} />)}
       </div>
-    </div>
+    </div> : null}
   </div>
 }
 

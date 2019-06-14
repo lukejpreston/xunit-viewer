@@ -20,7 +20,7 @@ const Properties = ({ properties, active = false }) => {
         </span>
       </span>
     </button>
-    <div className='card-content'>
+    {!open ? <div className='card-content'>
       <table className='table'>
         <thead>
           <tr>
@@ -37,15 +37,14 @@ const Properties = ({ properties, active = false }) => {
           })}
         </tbody>
       </table>
-    </div>
+    </div> : null }
   </div>
 }
 
-const Test = (props) => {
-  const { messages, status, time, name, active = false } = props
+const Test = ({ messages, status, time, name, active = false }) => {
   const [open, setOpen] = useState(active)
-  return <div className={`test card is-${open ? 'active' : 'inactive'} is-${status}`}>
-    <button className='card-header' onClick={() => { setOpen(!open) }}>
+  return <div className={`test card is-${open ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
+    <button className='card-header' onClick={() => { setOpen(!open) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
         <span className='icon'>
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
@@ -53,43 +52,44 @@ const Test = (props) => {
         <span>{title(name)}</span>
         {time ? <small>{time}</small> : null}
       </p>
-      <span className='card-header-icon'>
+      {messages.length > 0 ? <span className='card-header-icon'>
         <span className='icon'>
           <i className='fas fa-angle-down' />
         </span>
-      </span>
+      </span> : null}
     </button>
-    {messages.length > 0 ? <div className='card-content'>
-      {/* {messages.map((message, index) => <p key={`test-message-${index}`}>{message}</p>)} */}
+    {!open && messages.length > 0 ? <div className='card-content'>
+      {/* RAW {messages.map((message, index) => <p key={`test-message-${index}`}>{message}</p>)} */}
       {messages.map((message, index) => <div key={`test-message-${index}`} dangerouslySetInnerHTML={{ __html: message }} />)}
-
     </div> : null}
   </div>
 }
 
-const Suite = (props) => {
-  const { name, active = false, properties, time, tests } = props
-  const [open, setOpen] = useState(active)
+const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
+  const hasTests = Object.keys(tests).length > 0
+  const hasProperties = Object.keys(properties).length > 0
+  const containsSomething = hasTests || hasProperties
+  const [open, setOpen] = useState(!containsSomething)
   return <div className={`card suite is-${open ? 'active' : 'inactive'}`}>
-    <button className='card-header' onClick={() => { setOpen(!open) }}>
+    <button className='card-header' onClick={() => { if (containsSomething) setOpen(!open) }}>
       <p className='card-header-title'>
         <span>{title(name)}</span>
         {time ? <small>{time}</small> : null}
       </p>
-      <span className='card-header-icon'>
+      {containsSomething ? <span className='card-header-icon'>
         <span className='icon'>
           <i className='fas fa-angle-down' />
         </span>
-      </span>
+      </span> : null}
     </button>
-    <div className='card-content'>
+    {!open && containsSomething ? <div className='card-content'>
       <div className='content'>
-        {properties ? <Properties properties={properties} /> : null}
+        {hasProperties ? <Properties properties={properties} /> : null}
         <div>
           {Object.keys(tests).map(key => <Test key={key} {...tests[key]} />)}
         </div>
       </div>
-    </div>
+    </div> : null}
   </div>
 }
 
