@@ -9,6 +9,9 @@ Takes your XMl xunit results and then turns it into a nice single HTML file
 
 Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 
+Have a look at the [v6 demo](https://lukejpreston.github.io/xunit-viewer/v6)
+It isn't complete but if you are interested in an early look at what new features might be available and the new layout/styles please feel free
+
 ## CLI
 
 You can use xunit-viewer from the command line
