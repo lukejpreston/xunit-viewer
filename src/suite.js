@@ -129,9 +129,9 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
         </span>
       </span> : null}
       {containsSomething ? <p className='suite-count-container'>
-        <SuiteCount type='passed' count={passed} />
         <SuiteCount type='failure' count={failure} />
         <SuiteCount type='error' count={error} />
+        <SuiteCount type='passed' count={passed} />
         <SuiteCount type='skipped' count={skipped} />
         <SuiteCount type='unknown' count={unknown} />
       </p> : null}
@@ -141,16 +141,19 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
         {hasProperties ? <Properties properties={properties} /> : null}
         <div>
           {Object.keys(tests)
-            // .sort((left, right) => {
-            //   const leftStatus = tests[left].status || 'unknown'
-            //   const rightStatus = tests[right].status || 'unknown'
-            //   if (leftStatus === 'failure' || rightStatus === 'failure') return -5
-            //   if (leftStatus === 'error' || rightStatus === 'error') return -4
-            //   if (leftStatus === 'unknown' || rightStatus === 'unknown') return -3
-            //   if (leftStatus === 'passed' || rightStatus === 'passed') return -2
-            //   if (leftStatus === 'skipped' || rightStatus === 'skipped') return -1
-            //   return 0
-            // })
+            .filter((key) => tests[key].status === 'failure')
+            .map(key => <Test key={key} {...tests[key]} />)}
+          {Object.keys(tests)
+            .filter((key) => tests[key].status === 'error')
+            .map(key => <Test key={key} {...tests[key]} />)}
+          {Object.keys(tests)
+            .filter((key) => tests[key].status === 'passed')
+            .map(key => <Test key={key} {...tests[key]} />)}
+          {Object.keys(tests)
+            .filter((key) => tests[key].status === 'skipped')
+            .map(key => <Test key={key} {...tests[key]} />)}
+          {Object.keys(tests)
+            .filter((key) => !['failure', 'error', 'passed', 'skipped'].includes(tests[key].status))
             .map(key => <Test key={key} {...tests[key]} />)}
         </div>
       </div>

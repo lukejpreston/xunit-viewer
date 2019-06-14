@@ -357,13 +357,13 @@ body,
 }
 
 .test.is-skipped .card-header {
-    background-color: #BEC6CC;
+    background-color: #adb2b6;
 }
 
 .test.is-populated.is-skipped .card-header:hover,
 .test.is-populated.is-skipped .card-header:active,
 .test.is-populated.is-skipped .card-header:focus {
-    background-color: #9b9ea0;
+    background-color: #828588;
 }
 
 .test.is-active .fa-angle-down {
@@ -376,7 +376,7 @@ body,
 .test.is-empty,
 .test.is-empty .card-header {
     box-shadow: none;
-    opacity: 0.85;
+    opacity: 0.7;
     cursor: initial;
 }
 
