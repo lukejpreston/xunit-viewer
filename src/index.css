@@ -3,6 +3,10 @@ body,
     color: #2C3E50 !important;
 }
 
+.card-header-icon.is-hidden-tablet {
+    max-width: 48px;
+}
+
 .hero {
     background-color: #2C3E50 !important;
     padding: 10px !important;
