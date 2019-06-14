@@ -50,7 +50,7 @@ const Test = ({ messages, status, time, name, active = false }) => {
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
         </span>
         <span>{title(name)}</span>
-        {time ? <small>{time}</small> : null}
+        {time ? <small>time = {time}</small> : null}
       </p>
       {messages.length > 0 ? <span className='card-header-icon'>
         <span className='icon'>
