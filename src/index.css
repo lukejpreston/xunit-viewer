@@ -219,6 +219,13 @@ body,
     transition: background-color 0.2s ease-in-out;
     border: none;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.suite-count-container {
+    width: 100%;
+    text-align: left;
 }
 
 .suite .card-header:hover {
@@ -242,6 +249,7 @@ body,
 .suite.is-inactive {
     box-shadow: none;
     margin: 32px 0;
+    margin-bottom: 16px;
 }
 
 .suite:first-child {
@@ -264,6 +272,23 @@ body,
 .properties.is-active .card-header-icon svg,
 .suite.is-active .card-header-icon svg {
     transform: rotate(180deg);
+}
+
+.suite .card-header-title,
+.suite .card-header-icon {
+    padding: 0;
+}
+
+.suite .card-header-title {
+    margin-left: 16px;
+}
+
+.suite .card-header-icon {
+    margin-right: 16px;
+}
+
+.suite .card-header {
+    padding: 0.75rem;
 }
 
 .card-header-title small {
@@ -362,4 +387,14 @@ body,
 
 .test.card.is-populated.is-inactive {
     margin: 24px 0;
+}
+
+.suite-count {
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.suite-count .icon {
+    font-size: 10px;
+    margin-right: -4px;
 }
