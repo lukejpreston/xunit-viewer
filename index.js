@@ -20,6 +20,7 @@ const instance = yargs
   .describe('r', 'File or folder of results')
 
   .string('output')
+  .coerce('output', (arg) => path.resolve(process.cwd(), arg.endsWith('.html') ? arg : `${arg}.html`))
   .alias('o', 'output')
   .describe('o', 'Output filename')
 
@@ -75,5 +76,3 @@ types.forEach(type => {
 instance.help()
 
 console.log(instance.argv)
-
-console.log('HEYEYE')
