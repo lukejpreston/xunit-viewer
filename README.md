@@ -9,20 +9,22 @@ Takes your XMl xunit results and then turns it into a nice single HTML file or r
 
 Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 
-## Help Wanted!
+## !! Help Wanted !!
 
-In order to make sure this works I am requesting help to get as much test data as possible. If you have some results that you would like to share as test data please create a pull request. Or you can raise and issue.
+I want as many examples and test data as possible. Either create a pull request with the following files
 
-I would need the following
+```sh
+/data/file.xml
+/data/file-expected.md
+```
 
-[] xml files or code block
-[] expected results e.g. `10 passing`
+Or raise an issue and submit an xml code snippet and what you expect the results to be. The expected file can be anything, sometimes you just want to write a massive description about the test results or say how you expected the results to be presented, either in the HTML view or the console.
 
-The more obscure the data the better
+## Usage
 
 ## CLI
 
-You can use xunit-viewer from the command line
+You can use Xunit Viewer from the command line
 
 ### Installation
 
@@ -30,7 +32,7 @@ You can use xunit-viewer from the command line
 
 ### Options
 
-View this with `xunit-view --help`
+View this with `xunit-viewer --help`
 
 Option | Action | Type
 ---|---|---
@@ -120,88 +122,95 @@ const result = XunitViewer(results, {
   watch: false
   port: 8080
   filter: {
-      suites: {
-          search: '',
-          all: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          passed: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          failure: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          skipped: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          error: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          unknown: {
-              visible: true,
-              expanded: true
-              raw: true
-          }
+    suites: {
+      search: '',
+      all: {
+        visible: true,
+        expanded: true,
+        raw: true
       },
-      tests: {
-          search: '',
-          all: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          passed: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          failure: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          skipped: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          error: {
-              visible: true,
-              expanded: true
-              raw: true
-          },
-          unknown: {
-              visible: true,
-              expanded: true
-              raw: true
-          }
+      passed: {
+        visible: true,
+        expanded: true,
+        raw: true
       },
-      properties: {
-          search: '',
-          visible: true,
-          expanded: true
+      failure: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      skipped: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      error: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      unknown: {
+        visible: true,
+        expanded: true,
+        raw: true
       }
+    },
+    tests: {
+      search: '',
+      all: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      passed: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      failure: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      skipped: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      error: {
+        visible: true,
+        expanded: true,
+        raw: true
+      },
+      unknown: {
+        visible: true,
+        expanded: true,
+        raw: true
+      }
+    },
+    properties: {
+      search: '',
+      visible: true,
+      expanded: true
+    }
   }
 })
 ```
 
-## Component
+## React Component
 
-If you require Component please raise an issue. It was available in v5 (according to the docs, but no way would it have worked)
+If you require the React based component please raise an issue. It was available in `v5` (according to the docs, but no way would it have worked).
 
 ## Contributing
 
-1. run `npm i` to install
-2. `npm start` which will start the development version
-3. `npm run build` to update the template
-4. `npm run xunit-viewer -- <your options>` to run the local `xunit-viewer`
+1. `npm i` install
+2. `npm start` starts the development application
+3. `npm run build` update the template
+4. `npm run xunit-viewer -- <your options>` which is an alias for `./bin/xunit-viewer <options>`
+5. `npm test` run the tests or `npm test -- --watch` to start watching
+6. `npm run lint` run eslint
+7. `npm run demo` to create demo application
+7. `npm run deploy` deploy the demo application
+8. `npm run release -- major|minor|patch`  to do a release, default is `patch`
+
+When creating pull request please make sure the tests and linting is passing
