@@ -69,7 +69,6 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
   const hasTests = Object.keys(tests).length > 0
   const hasProperties = Object.keys(properties).length > 0
   const containsSomething = hasTests || hasProperties
-  console.log(containsSomething)
   const [open, setOpen] = useState(!containsSomething)
   return <div className={`card suite is-${open ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
     <button className='card-header' onClick={() => { if (containsSomething) setOpen(!open) }} disabled={!containsSomething}>
