@@ -65,12 +65,12 @@ const Test = ({ messages, status, time, name, active = false }) => {
   </div>
 }
 
-const SuiteCount = ({ count, type }) => <span className='suite-count'>
+const SuiteCount = ({ count, type }) => count > 0 ? <span className='suite-count'>
   <span className='icon'>
     <i className={`fas fa-${icons[type]}`} aria-hidden='true' />
   </span>
   {count}
-</span>
+</span> : null
 
 const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
   let passed = 0
