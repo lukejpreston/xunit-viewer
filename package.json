@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/lukejpreston/xunit-viewer.git"
   },
-  "homepage": "http://localhost:8000/",
+  "homepage": "./",
   "keywords": [
     "test",
     "junit",
