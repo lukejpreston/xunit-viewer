@@ -34,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src index.js"
   },
   "dependencies": {
     "change-case": "^3.1.0",
@@ -79,6 +80,9 @@
       "jest": true,
       "jasmine": true
     },
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "rules": {
+      "react/prop-types": 0
+    }
   }
 }

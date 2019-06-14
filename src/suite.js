@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { title } from 'change-case'
+import Toggle from './toggle'
 
 const icons = {
   passed: 'check',
@@ -41,8 +42,25 @@ const Properties = ({ properties, active = false }) => {
   </div>
 }
 
-const Test = ({ messages, status, time, name, active = false }) => {
+const RawContent = ({ messages }) => <div className='raw-content'>
+  {messages.map((message, index) => <pre key={`test-message-${index}`}>{message}</pre>)}
+</div>
+
+const PrettyContent = ({ messages }) => <div className='pretty-content'>
+  {messages.map((message, index) => <div key={`test-message-${index}`} dangerouslySetInnerHTML={{ __html: message }} />)}
+</div>
+
+const PrettyIcon = () => <span className='icon'>
+  <i className='fas fa-star' />
+</span>
+
+const CodeIcon = () => <span className='icon'>
+  <i className='fas fa-code' />
+</span>
+
+const Test = ({ messages, status, time, name, active = false, raw = true }) => {
   const [open, setOpen] = useState(active)
+  const [messageType, setMessageType] = useState(raw)
   return <div className={`test card is-${open ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
     <button className='card-header' onClick={() => { setOpen(!open) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
@@ -59,8 +77,14 @@ const Test = ({ messages, status, time, name, active = false }) => {
       </span> : null}
     </button>
     {!open && messages.length > 0 ? <div className='card-content'>
-      {/* RAW {messages.map((message, index) => <p key={`test-message-${index}`}>{message}</p>)} */}
-      {messages.map((message, index) => <div key={`test-message-${index}`} dangerouslySetInnerHTML={{ __html: message }} />)}
+      <Toggle
+        active={messageType}
+        onLabel='raw'
+        onIcon={<CodeIcon />}
+        offIcon={<PrettyIcon />}
+        offLabel='pretty'
+        onChange={(on) => setMessageType(on)} />
+      {messageType ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
     </div> : null}
   </div>
 }

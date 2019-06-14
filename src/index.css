@@ -398,3 +398,11 @@ body,
     font-size: 10px;
     margin-right: -4px;
 }
+
+.raw-content {
+    margin: 2px;
+}
+
+ .pretty-content {
+     margin: 20px;
+ }
