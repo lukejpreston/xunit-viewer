@@ -2,22 +2,28 @@ const path = require('path')
 const yargs = require('yargs')
 
 const instance = yargs
-  .command('xunit-viewer', 'Renders xunit xml results into simple HTML or in the command line')
+  .command('xunit-viewer', 'Renders XUnit style xml results')
   .example('xunit-viewer -r file.xml', 'a file')
   .example('xunit-viewer -r folder', 'a folder')
+  .example('xunit-viewer -r folder -i *-broke.xml', 'ignore')
   .example('xunit-viewer -r folder -o my-tests.html', 'rename output')
   .example('xunit-viewer -r folder -t "My Tests"', 'change HTML title')
   .example('xunit-viewer -r folder -c', 'render in console')
   .example('xunit-viewer -r folder -c -n', 'no color in console')
   .example('xunit-viewer -r folder -w', 'start watch')
   .example('xunit-viewer -r folder -w -p 5050', 'watch at 505')
-  .example('xunit-viewer -r folder -s.s "value"', 'search suite with term "value"')
-  .example('xunit-viewer -r folder -s.p.v false', 'hide all passing suites')
+  .example('xunit-viewer -r folder --s.s "value"', 'search suite with term "value"')
+  .example('xunit-viewer -r folder --s.p.v false', 'hide all passing suites')
 
   .string('results')
   .coerce('results', (arg) => path.resolve(process.cwd(), arg))
   .alias('r', 'results')
   .describe('r', 'File or folder of results')
+  .demandOption(['results'])
+
+  .array('ignore')
+  .alias('i', 'ignore')
+  .describe('i', 'Ignore patterns')
 
   .string('output')
   .coerce('output', (arg) => path.resolve(process.cwd(), arg.endsWith('.html') ? arg : `${arg}.html`))
@@ -44,9 +50,19 @@ const instance = yargs
   .alias('p', 'port')
   .describe('p', 'Change port for watch')
 
-  .demandOption(['r'])
+  .string('properties.search')
+  .alias('p.s', 'properties.search')
+  .describe('p.s', `pre-filter option`)
 
-const types = ['suites', 'tests', 'properties']
+  .boolean('properties.visible')
+  .alias('p.v', 'properties.visible')
+  .describe('p.v', `pre-filter option`)
+
+  .boolean('properties.expanded')
+  .alias('p.e', 'properties.expanded')
+  .describe('p.e', `pre-filter option`)
+
+const types = ['suites', 'tests']
 const statuses = ['all', 'passed', 'failure', 'skipped', 'error', 'unknown']
 const actions = ['visible', 'expanded', 'raw']
 

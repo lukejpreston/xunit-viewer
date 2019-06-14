@@ -5,38 +5,100 @@
 [![npm version](https://badge.fury.io/js/xunit-viewer.svg)](https://badge.fury.io/js/xunit-viewer)
 [![Downloads on npm](http://img.shields.io/npm/dm/xunit-viewer.svg)](https://www.npmjs.com/package/xunit-viewer)
 
-Takes your XMl xunit results and then turns it into a nice single HTML file
+Takes your XMl xunit results and then turns it into a nice single HTML file or renders it into the terminal
 
 Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
+
+## Help Wanted!
+
+In order to make sure this works I am requesting help to get as much test data as possible. If you have some results that you would like to share as test data please create a pull request. Or you can raise and issue.
+
+I would need the following
+
+[] xml files or code block
+[] expected results e.g. `10 passing`
+
+The more obscure the data the better
 
 ## CLI
 
 You can use xunit-viewer from the command line
 
-First install it
+### Installation
 
 `npm i -g xunit-viewer`
 
-Then run it
+### Options
 
-`xunit-viewer`
+View this with `xunit-view --help`
 
-you can also run it with these optional params, see the next section for what they default to
+Option | Action | Type
+---|---|---
+`--version` | Show version number | boolean
+`-r, --results` | File or folder of results | string **required**
+`-i, --ignore` | Ignore patterns | array
+`-o, --output` | Output filename | string
+`-t, --title` | HTML title e.g. "My Tests" | string
+`-c, --console` | Render in console | boolean
+`-n, --no-color` | No color in the console | boolean
+`-w, --watch` | Watch, includes live-reload | boolean
+`-p, --port` | Change port for watch | number
+`--p.s, --properties.search` | pre-filter option | string
+`--p.v, --properties.visible` | pre-filter option | boolean
+`--p.e, --properties.expanded` | pre-filter option | boolean
+`--s.s, --suites.search` | pre-filter option | string
+`--s.a.v, --suites.all.visible` | pre-filter option | boolean
+`--s.a.e, --suites.all.expanded` | pre-filter option | boolean
+`--s.a.r, --suites.all.raw` | pre-filter option | boolean
+`--s.p.v, --suites.passed.visible` | pre-filter option | boolean
+`--s.p.e, --suites.passed.expanded` | pre-filter option | boolean
+`--s.p.r, --suites.passed.raw` | pre-filter option | boolean
+`--s.f.v, --suites.failure.visible` | pre-filter option | boolean
+`--s.f.e, --suites.failure.expanded` | pre-filter option | boolean
+`--s.f.r, --suites.failure.raw` | pre-filter option | boolean
+`--s.s.v, --suites.skipped.visible` | pre-filter option | boolean
+`--s.s.e, --suites.skipped.expanded` | pre-filter option | boolean
+`--s.s.r, --suites.skipped.raw` | pre-filter option | boolean
+`--s.e.v, --suites.error.visible` | pre-filter option | boolean
+`--s.e.e, --suites.error.expanded` | pre-filter option | boolean
+`--s.e.r, --suites.error.raw` | pre-filter option | boolean
+`--s.u.v, --suites.unknown.visible` | pre-filter option | boolean
+`--s.u.e, --suites.unknown.expanded` | pre-filter option | boolean
+`--s.u.r, --suites.unknown.raw` | pre-filter option | boolean
+`--t.s, --tests.search` | pre-filter option | string
+`--t.a.v, --tests.all.visible` | pre-filter option | boolean
+`--t.a.e, --tests.all.expanded` | pre-filter option | boolean
+`--t.a.r, --tests.all.raw` | pre-filter option | boolean
+`--t.p.v, --tests.passed.visible` | pre-filter option | boolean
+`--t.p.e, --tests.passed.expanded` | pre-filter option | boolean
+`--t.p.r, --tests.passed.raw` | pre-filter option | boolean
+`--t.f.v, --tests.failure.visible` | pre-filter option | boolean
+`--t.f.e, --tests.failure.expanded` | pre-filter option | boolean
+`--t.f.r, --tests.failure.raw` | pre-filter option | boolean
+`--t.s.v, --tests.skipped.visible` | pre-filter option | boolean
+`--t.s.e, --tests.skipped.expanded` | pre-filter option | boolean
+`--t.s.r, --tests.skipped.raw` | pre-filter option | boolean
+`--t.e.v, --tests.error.visible` | pre-filter option | boolean
+`--t.e.e, --tests.error.expanded` | pre-filter option | boolean
+`--t.e.r, --tests.error.raw` | pre-filter option | boolean
+`--t.u.v, --tests.unknown.visible` | pre-filter option | boolean
+`--t.u.e, --tests.unknown.expanded` | pre-filter option | boolean
+`--t.u.r, --tests.unknown.raw` | pre-filter option | boolean
 
-```bash
---results=file_or_folder
---ignore=pattern_a,pattern_b,pattern_c
---output=file_or_folder_or_console
---title="The title"
---port=8080
---watch
---color=false
---filter.suites.value="Suite names matching this value"
---filter.suites.types=all,pass,fail,skip,error,unknown
---filter.tests.value="Test names matching this value"
---filter.tests.types=all,pass,fail,skip,error,unknown
---filter.properties.value="Properties matching with key or value matching this value"
---filter.properties.types=all
+### Examples
+
+```sh
+xunit-viewer -r file.xml                 a file
+xunit-viewer -r folder                   a folder
+xunit-viewer -r folder -i *-broke.xml    ignore
+xunit-viewer -r folder -o my-tests.html  rename output
+xunit-viewer -r folder -t "My Tests"     change HTML title
+xunit-viewer -r folder -c                render in console
+xunit-viewer -r folder -c -n             no color in console
+xunit-viewer -r folder -w                start watch
+xunit-viewer -r folder -w -p 5050        watch at 505
+xunit-viewer -r folder --s.s "value"     search suite with term "value"
+xunit-viewer -r folder --s.p.v false     hide all passing suites
 ```
 
 ## Node
@@ -49,84 +111,97 @@ Then from your scripts do the following
 
 ```js
 const XunitViewer = require('xunit-viewer')
-const result = XunitViewer({
-    results: '',
-    suites: [],
-    xml: '',
-    ignore: [],
-    output: false,
-    title: 'Xunit Viewer',
-    port: false,
-    watch: false,
-    color: true,
-    filter: {},
-    format: 'html'
+const result = XunitViewer(results, {
+  ignore: []
+  output: ''
+  title: ''
+  console: false
+  noColor: false
+  watch: false
+  port: 8080
+  filter: {
+      suites: {
+          search: '',
+          all: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          passed: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          failure: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          skipped: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          error: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          unknown: {
+              visible: true,
+              expanded: true
+              raw: true
+          }
+      },
+      tests: {
+          search: '',
+          all: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          passed: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          failure: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          skipped: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          error: {
+              visible: true,
+              expanded: true
+              raw: true
+          },
+          unknown: {
+              visible: true,
+              expanded: true
+              raw: true
+          }
+      },
+      properties: {
+          search: '',
+          visible: true,
+          expanded: true
+      }
+  }
 })
 ```
-
-all are optional, those are default values
-
-* `results` the file or folder where the results are, defaults to where the cli is running from i.e. `process.cwd()`
-* `suites` you can pass the JSON format in after using the parser
-* `xml` you can pass the xml string in
-* `ignore` an array of patterns to ignore or a single string with a pattern to ignore
-* `output` if folder will save a file `xunit-viewer.html` to that folder, if a file will save to that file if `'console'` then it will spit out the results to the console
-* `title` title for the HTML
-* `port` if `false` it will not start a server, otherwise it will start serving the output and not save not save a file unless you also provide `output`
-* `watch` will re run the cli when anything in `results` changes, if you have a port it will also update that via websockets
-* `color` if `output === 'console'` then it will either be in color or not
-* `filter` will filter out `suites`, `tests` and `properties` from the console output example
-```json
-{
-    "suites": {
-        value: "Suite names matching this value",
-        type: ["all", "pass", "fail", "skip", "error", "unknown"],
-    },
-    "tests": {
-        value: "Test names matching this value",
-        type: ["all", "pass", "fail", "skip", "error", "unknown"],
-    },
-    "properties": {
-        value: "Properties matching with key or value matching this value",
-        type: ["all"]
-    },
-}
-```
-* `format` default to `html` which is the full HTML file, but you can also choose `json` if you want to use that json for your own view
-
-if any value is invalid it will try and use default
 
 ## Component
 
 If you require Component please raise an issue. It was available in v5 (according to the docs, but no way would it have worked)
 
-## TODO
+## Contributing
 
-* add a repl
-* meta data for slack
-* make better stub data
-* better error handling
-* set up something which will parse in browser
-* clean everything and write some more tests
-
-# This is the new Xunit Viewer v6
-
-I will try to maintain the old API, I would be interested in finding out what people actually use but who cares
-
-1. run build and turn that into a single html file
-2. when people people use the command line all it would do is put the json in the html file and return that, this will be tons quicker
-
-have to change the data using the following
-
-```json
-{
-    "files": [{
-        "filename": "file-1.xml",
-        "data": "xml",
-        "suites": [{
-            "tests": [],
-            "properties": []
-        }]
-    }]
-}
-```
+1. run `npm i` to install
+2. `npm start` which will start the development version
+3. `npm run build` to update the template
+4. `npm run xunit-viewer -- <your options>` to run the local `xunit-viewer`
