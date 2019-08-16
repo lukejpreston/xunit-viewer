@@ -9,54 +9,54 @@ import Files from './files'
 import Suite from './suite'
 import parse from './parse'
 
-const initialOptions = [{
-  key: 'suites',
-  label: 'Suites',
-  term: '',
-  active: false,
-  count: 0,
-  total: 0,
-  counts: [],
-  toggles: [{
-    key: 'all',
-    label: 'all',
-    visible: true,
-    expanded: true,
-    raw: true
-  }]
-}, {
-  key: 'tests',
-  label: 'Tests',
-  term: '',
-  active: false,
-  count: 0,
-  total: 0,
-  counts: [],
-  toggles: [{
-    key: 'all',
-    label: 'all',
-    visible: true,
-    expanded: true,
-    raw: true
-  }]
-}, {
-  key: 'properties',
-  label: 'Properties',
-  term: '',
-  active: false,
-  count: 0,
-  total: 0,
-  counts: [],
-  toggles: [{
-    key: 'all',
-    label: 'all',
-    visible: true,
-    expanded: true,
-    raw: true
-  }]
-}]
+// const initialOptions = [{
+//   key: 'suites',
+//   label: 'Suites',
+//   term: '',
+//   active: false,
+//   count: 0,
+//   total: 0,
+//   counts: [],
+//   toggles: [{
+//     key: 'all',
+//     label: 'all',
+//     visible: true,
+//     expanded: true,
+//     raw: true
+//   }]
+// }, {
+//   key: 'tests',
+//   label: 'Tests',
+//   term: '',
+//   active: false,
+//   count: 0,
+//   total: 0,
+//   counts: [],
+//   toggles: [{
+//     key: 'all',
+//     label: 'all',
+//     visible: true,
+//     expanded: true,
+//     raw: true
+//   }]
+// }, {
+//   key: 'properties',
+//   label: 'Properties',
+//   term: '',
+//   active: false,
+//   count: 0,
+//   total: 0,
+//   counts: [],
+//   toggles: [{
+//     key: 'all',
+//     label: 'all',
+//     visible: true,
+//     expanded: true,
+//     raw: true
+//   }]
+// }]
 
-const parseAll = (files, suites) => new Promise(async resolve => {
+const parseAll = async (setSuites, setCurrentSuites, files, suites) => {
   for (const { contents } of files) {
     const parsed = await parse(contents)
     for (const id in parsed.suites) {
@@ -64,23 +64,21 @@ const parseAll = (files, suites) => new Promise(async resolve => {
       suites[id] = suites[id] || {}
       suites[id] = merge.recursive(suites[id], suite)
     }
-    resolve(suites)
+    setSuites(suites)
+    setCurrentSuites(suites)
   }
-})
+}
 
 const App = ({ files }) => {
-  let [options, setOptions] = useState(initialOptions)
+  // const [options, setOptions] = useState(initialOptions)
+  // console.log(options, setOptions)
   const [menuActive, setMenu] = useState(false)
   const [suites, setSuites] = useState({})
 
   const [currentSuites, setCurrentSuites] = useState({})
 
   if (Object.keys(suites).length === 0) {
-    parseAll(files, {})
-      .then(suites => {
-        setSuites(suites)
-        setCurrentSuites(suites)
-      })
+    parseAll(setSuites, setCurrentSuites, files, {})
   }
 
   let propertiesTotal = 0

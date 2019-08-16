@@ -8,7 +8,7 @@ exports[`renders hero 1`] = `
     className="container"
   >
     <div
-      className="columns"
+      className="columns is-mobile"
     >
       <div
         className="column is-1"
