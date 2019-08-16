@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import merge from 'merge'
 
 import Hero from './hero'
-import Options from './options'
+import SuiteOptions from './suite-options'
+import PropertiesOptions from './properties-options'
 import Files from './files'
 import Suite from './suite'
 import parse from './parse'
@@ -67,24 +68,46 @@ const parseAll = (files, suites) => new Promise(async resolve => {
 })
 
 const App = ({ files }) => {
-  const [suites, setSuites] = useState({})
-  if (Object.keys(suites).length === 0) parseAll(files, {}).then(setSuites)
-
-  let [options] = useState(initialOptions)
+  let [options, setOptions] = useState(initialOptions)
   const [menuActive, setMenu] = useState(false)
+  const [suites, setSuites] = useState({})
+
+  const [currentSuites, setCurrentSuites] = useState({})
+
+  if (Object.keys(suites).length === 0) {
+    parseAll(files, {})
+      .then(suites => {
+        setSuites(suites)
+        setCurrentSuites(suites)
+      })
+  }
+
+  let propertiesCount = 0
+
+  Object.keys(suites).forEach((key) => {
+    const suite = suites[key]
+    propertiesCount += Object.keys(suite.properties).length
+  })
+
+  let currentPropertiesCount = 0
+  Object.keys(currentSuites).forEach((key) => {
+    const suite = currentSuites[key]
+    currentPropertiesCount += Object.keys(suite.properties).length
+  })
 
   return <div>
     <Hero active={menuActive} onClick={() => { setMenu(!menuActive) }} />
     <header className={`is-${!menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
-        {options.map(props => <Options {...props} />)}
+        <SuiteOptions count={Object.keys(currentSuites).length} total={Object.keys(suites).length} />
+        <PropertiesOptions count={currentPropertiesCount} total={propertiesCount} />
         <Files files={files} />
       </div>
     </header>
     <main>
       <div className='container'>
         <div>
-          {Object.values(suites).map(suite => {
+          {Object.values(currentSuites).map(suite => {
             return <Suite key={suite.id} {...suite} />
           })}
         </div>

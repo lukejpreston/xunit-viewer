@@ -24,6 +24,7 @@ const extarctSuiteMeta = (output, testsuite) => {
   const id = hashCode(name)
   const suite = output.suites[id] || {}
   suite.tests = suite.tests || {}
+  suite.properties = suite.properties || {}
   suite.id = id
   suite.name = name
   suite.time = meta.time || 0

@@ -159,7 +159,7 @@ body,
 }
 
 .toggle-handle {
-    transition: left 0.2s ease-in-out;
+    transition: left 0.1s ease-in-out;
     position: absolute;
     top: -3px;
     height: 14px;

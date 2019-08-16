@@ -62,7 +62,15 @@ const instance = yargs
   .alias('p.e', 'properties.expanded')
   .describe('p.e', `pre-filter option`)
 
-const types = ['suites', 'tests']
+  .string('suites.search')
+  .alias('s.s', 'suites.search')
+  .describe('s.s', `pre-filter option`)
+
+  .boolean('suites.expanded')
+  .alias('s.e', 'suites.expanded')
+  .describe('s.e', `pre-filter option`)
+
+const types = ['tests']
 const statuses = ['all', 'passed', 'failure', 'skipped', 'error', 'unknown']
 const actions = ['visible', 'expanded', 'raw']
 
