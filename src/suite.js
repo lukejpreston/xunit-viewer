@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { title } from 'change-case'
 import Toggle from './toggle'
 
@@ -10,10 +10,9 @@ const icons = {
   unknown: 'question'
 }
 
-const Properties = ({ properties, active = false }) => {
-  const [open, setOpen] = useState(active)
-  return <div className={`properties card is-${open ? 'active' : 'inactive'}`}>
-    <button className='card-header' onClick={() => { setOpen(!open) }}>
+const Properties = ({ properties, active = false, setActive = () => {} }) => {
+  return <div className={`properties card is-${active ? 'active' : 'inactive'}`}>
+    <button className='card-header' onClick={() => { setActive(!active) }}>
       <p className='card-header-title'>Properties</p>
       <span className='card-header-icon'>
         <span className='icon'>
@@ -21,7 +20,7 @@ const Properties = ({ properties, active = false }) => {
         </span>
       </span>
     </button>
-    {!open ? <div className='card-content'>
+    {!active ? <div className='card-content'>
       <table className='table'>
         <thead>
           <tr>
@@ -58,11 +57,9 @@ const CodeIcon = () => <span className='icon'>
   <i className='fas fa-code' />
 </span>
 
-const Test = ({ messages, status, time, name, active = false, raw = true }) => {
-  const [open, setOpen] = useState(active)
-  const [messageType, setMessageType] = useState(raw)
-  return <div className={`test card is-${open ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
-    <button className='card-header' onClick={() => { setOpen(!open) }} disabled={messages.length === 0}>
+const Test = ({ messages, status, time, name, active = false, raw = true, setRaw = () => {}, setActive = () => {} }) => {
+  return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
+    <button className='card-header' onClick={() => { setActive(!active) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
         <span className='icon'>
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
@@ -76,15 +73,15 @@ const Test = ({ messages, status, time, name, active = false, raw = true }) => {
         </span>
       </span> : null}
     </button>
-    {!open && messages.length > 0 ? <div className='card-content'>
+    {!active && messages.length > 0 ? <div className='card-content'>
       <Toggle
-        active={messageType}
+        active={raw}
         onLabel='raw'
         onIcon={<CodeIcon />}
         offIcon={<PrettyIcon />}
         offLabel='pretty'
-        onChange={(on) => setMessageType(on)} />
-      {messageType ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
+        onChange={(on) => setRaw(on)} />
+      {raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
     </div> : null}
   </div>
 }
@@ -96,7 +93,7 @@ const SuiteCount = ({ count, type }) => count > 0 ? <span className='suite-count
   {count}
 </span> : null
 
-const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
+const Suite = ({ name, active = false, properties = {}, time, tests = {}, setOpen = () => {} }) => {
   let passed = 0
   let failure = 0
   let skipped = 0
@@ -114,9 +111,8 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
   const hasTests = Object.keys(tests).length > 0
   const hasProperties = Object.keys(properties).length > 0
   const containsSomething = hasTests || hasProperties
-  const [open, setOpen] = useState(active)
-  return <div className={`card suite is-${open ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
-    <button className='card-header' onClick={() => { if (containsSomething) setOpen(!open) }} disabled={!containsSomething}>
+  return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
+    <button className='card-header' onClick={() => { if (containsSomething) setOpen(!active) }} disabled={!containsSomething}>
       <p className='card-header-title'>
         <span>{title(name)}</span>
         {time ? <small>time = {time}</small> : null}
@@ -136,7 +132,7 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {} }) => {
         <SuiteCount type='unknown' count={unknown} />
       </p> : null}
     </button>
-    {!open && containsSomething ? <div className='card-content'>
+    {!active && containsSomething ? <div className='card-content'>
       <div className='content'>
         {hasProperties ? <Properties properties={properties} /> : null}
         <div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/xml/xml'
@@ -15,8 +15,7 @@ const ToggleFiles = ({ onClick }) => <button className='card-header-icon' onClic
   </span>
 </button>
 
-const Files = ({ files = [] }) => {
-  const [active, setActive] = useState(false)
+const Files = ({ active = false, setActive, files = [] }) => {
   return <div className={`files card is-${active ? 'active' : 'inactive'}`}>
     <header className='card-header'>
       <ToggleFiles device='tablet' onClick={() => { setActive(!active) }} />

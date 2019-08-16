@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default ({
   active,
@@ -9,18 +9,16 @@ export default ({
   disabled = false,
   onChange = () => {}
 }) => {
-  const [on, setOn] = useState(active)
   return <button
     onClick={() => {
-      setOn(!on)
-      onChange(!on)
+      onChange(!active)
     }}
     disabled={disabled}
-    className={`button toggle is-${on ? 'active' : 'inactive'}`}>
+    className={`button toggle is-${active ? 'active' : 'inactive'}`}>
     <div className='toggle-rail'>
       <div className='toggle-handle' />
     </div>
-    {on ? onIcon : offIcon}
-    <span>{on ? onLabel : offLabel}</span>
+    {active ? onIcon : offIcon}
+    <span>{active ? onLabel : offLabel}</span>
   </button>
 }

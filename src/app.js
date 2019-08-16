@@ -9,53 +9,6 @@ import Files from './files'
 import Suite from './suite'
 import parse from './parse'
 
-// const initialOptions = [{
-//   key: 'suites',
-//   label: 'Suites',
-//   term: '',
-//   active: false,
-//   count: 0,
-//   total: 0,
-//   counts: [],
-//   toggles: [{
-//     key: 'all',
-//     label: 'all',
-//     visible: true,
-//     expanded: true,
-//     raw: true
-//   }]
-// }, {
-//   key: 'tests',
-//   label: 'Tests',
-//   term: '',
-//   active: false,
-//   count: 0,
-//   total: 0,
-//   counts: [],
-//   toggles: [{
-//     key: 'all',
-//     label: 'all',
-//     visible: true,
-//     expanded: true,
-//     raw: true
-//   }]
-// }, {
-//   key: 'properties',
-//   label: 'Properties',
-//   term: '',
-//   active: false,
-//   count: 0,
-//   total: 0,
-//   counts: [],
-//   toggles: [{
-//     key: 'all',
-//     label: 'all',
-//     visible: true,
-//     expanded: true,
-//     raw: true
-//   }]
-// }]
-
 const parseAll = async (setSuites, setCurrentSuites, files, suites) => {
   for (const { contents } of files) {
     const parsed = await parse(contents)
@@ -70,11 +23,9 @@ const parseAll = async (setSuites, setCurrentSuites, files, suites) => {
 }
 
 const App = ({ files }) => {
-  // const [options, setOptions] = useState(initialOptions)
-  // console.log(options, setOptions)
   const [menuActive, setMenu] = useState(false)
   const [suites, setSuites] = useState({})
-
+  const [activeFiles, setActiveFiles] = useState(false)
   const [currentSuites, setCurrentSuites] = useState({})
 
   if (Object.keys(suites).length === 0) {
@@ -116,7 +67,7 @@ const App = ({ files }) => {
         <SuiteOptions count={Object.keys(currentSuites).length} total={Object.keys(suites).length} />
         {testTotal > 0 ? <TestOptions testCounts={testCounts} count={testCount} total={testTotal} /> : null}
         {propertiesTotal > 0 ? <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} /> : null}
-        <Files files={files} />
+        <Files files={files} active={activeFiles} setActive={setActiveFiles} />
       </div>
     </header>
     <main>
