@@ -80,7 +80,6 @@
       "jest": true,
       "jasmine": true
     },
-    "parser": "babel-eslint",
     "rules": {
       "react/prop-types": 0
     }
