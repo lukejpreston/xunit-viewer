@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Header from './header'
 import Suites from './suites'
 import sockets from './sockets'
@@ -228,11 +228,6 @@ class XunitViewer extends React.Component {
       />
     </div>
   }
-}
-
-XunitViewer.propTypes = {
-  title: PropTypes.string,
-  suites: PropTypes.array
 }
 
 export default XunitViewer

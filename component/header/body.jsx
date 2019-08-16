@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Stat from './stat'
 import extractStats from './extract-stats'
 
@@ -25,19 +25,6 @@ let Body = ({ active, suites, onSearch, onStatToggle, onExpand, onCollapse, onSh
       })
     }</div>
   </div>
-}
-
-Body.propTypes = {
-  active: PropTypes.string,
-  suites: PropTypes.array,
-  onSearch: PropTypes.func.isRequired,
-  onStatToggle: PropTypes.func.isRequired,
-  onExpand: PropTypes.func.isRequired,
-  onCollapse: PropTypes.func.isRequired,
-  onShow: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired,
-  search: PropTypes.object.isRequired,
-  statsStatus: PropTypes.object
 }
 
 export default Body

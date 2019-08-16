@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 import iconMap from '../icon-map'
 
@@ -42,18 +42,6 @@ let Test = ({ uuid, status, name, message, raw, onToggle, collapsed, onToggleRaw
       {Content}
     </div> : null}
   </div>
-}
-
-Test.propTypes = {
-  uuid: PropTypes.string.isRequired,
-  status: PropTypes.string,
-  name: PropTypes.string,
-  time: PropTypes.string,
-  message: PropTypes.any,
-  raw: PropTypes.any,
-  onToggle: PropTypes.func.isRequired,
-  onToggleRaw: PropTypes.func.isRequired,
-  collapsed: PropTypes.object.isRequired
 }
 
 export default Test

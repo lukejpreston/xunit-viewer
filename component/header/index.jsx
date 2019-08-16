@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Head from './head'
 import Body from './body'
 
@@ -21,21 +21,6 @@ let Header = ({ suites = [], title, onToggle, onStatToggle, onExpand, onCollapse
       onStatToggle={onStatToggle}
       search={search} />
   </section>
-}
-
-Header.propTypes = {
-  suites: PropTypes.array,
-  title: PropTypes.string,
-  isActive: PropTypes.bool,
-  onToggle: PropTypes.func.isRequired,
-  onStatToggle: PropTypes.func.isRequired,
-  onExpand: PropTypes.func.isRequired,
-  onCollapse: PropTypes.func.isRequired,
-  onShow: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired,
-  onSearch: PropTypes.func.isRequired,
-  search: PropTypes.object.isRequired,
-  statsStatus: PropTypes.object
 }
 
 export default Header

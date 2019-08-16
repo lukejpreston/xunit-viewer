@@ -1,8 +1,8 @@
-import React, {PropTypes} from 'react'
+import React from 'react'
 import Icon from './icon'
 import { toLaxTitleCase } from 'titlecase'
 
-let Head = ({title = 'Xunit Viewer', active, onToggle}) => {
+let Head = ({ title = 'Xunit Viewer', active, onToggle }) => {
   title = toLaxTitleCase(title)
   return <div className='hero-head'>
     <header className='nav'>
@@ -24,12 +24,6 @@ let Head = ({title = 'Xunit Viewer', active, onToggle}) => {
       </div>
     </header>
   </div>
-}
-
-Head.propTypes = {
-  title: PropTypes.string,
-  active: PropTypes.string,
-  onToggle: PropTypes.func
 }
 
 export default Head

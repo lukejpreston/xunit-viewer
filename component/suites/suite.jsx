@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Properties from './properties'
 import Test from './test'
 import iconMap from '../icon-map'
@@ -75,20 +75,6 @@ let Suite = ({
     </header>
     {Content}
   </div>
-}
-
-Suite.propTypes = {
-  uuid: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  time: PropTypes.string,
-  status: PropTypes.string,
-  properties: PropTypes.object,
-  tests: PropTypes.array,
-  onToggle: PropTypes.func.isRequired,
-  onToggleRaw: PropTypes.func.isRequired,
-  collapsed: PropTypes.object.isRequired,
-  hidden: PropTypes.object.isRequired,
-  suites: PropTypes.array
 }
 
 export default Suite

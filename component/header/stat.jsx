@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import ChevronLeft from '../icons/chevron-left'
 import Expand from '../icons/expand'
 import Compress from '../icons/compress'
@@ -24,16 +24,6 @@ let Count = ({ icon, name, total, type, category, onStatToggle }) => {
       <span>{name} <b>{total}</b></span>
     </a>
   </li>
-}
-
-Count.propTypes = {
-  icon: PropTypes.string,
-  name: PropTypes.string,
-  category: PropTypes.string,
-  total: PropTypes.number,
-  type: PropTypes.string,
-  onStatToggle: PropTypes.func.isRequired,
-  statsStatus: PropTypes.object
 }
 
 let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide }) => {
@@ -82,18 +72,6 @@ let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onSho
   </li>
 }
 
-Options.propTypes = {
-  name: PropTypes.string,
-  category: PropTypes.string,
-  type: PropTypes.string,
-  statsStatus: PropTypes.object,
-  onStatToggle: PropTypes.func.isRequired,
-  onExpand: PropTypes.func.isRequired,
-  onCollapse: PropTypes.func.isRequired,
-  onShow: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired
-}
-
 let Toggle = ({ icon, name, total, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
   let Content = Count
   category = name || category
@@ -114,20 +92,6 @@ let Toggle = ({ icon, name, total, type, category, onStatToggle, onExpand, onCol
     onShow={onShow}
     onHide={onHide}
   />
-}
-
-Toggle.propTypes = {
-  icon: PropTypes.string,
-  name: PropTypes.string,
-  category: PropTypes.string,
-  total: PropTypes.number,
-  type: PropTypes.string,
-  onStatToggle: PropTypes.func.isRequired,
-  onExpand: PropTypes.func.isRequired,
-  onCollapse: PropTypes.func.isRequired,
-  onShow: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired,
-  statsStatus: PropTypes.object
 }
 
 let Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
@@ -178,21 +142,6 @@ let Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpa
       </ul>
     </div>
   </div>
-}
-
-Stat.propTypes = {
-  icon: PropTypes.string,
-  name: PropTypes.string,
-  total: PropTypes.number,
-  data: PropTypes.array,
-  type: PropTypes.string,
-  onSearch: PropTypes.func.isRequired,
-  onStatToggle: PropTypes.func.isRequired,
-  onExpand: PropTypes.func.isRequired,
-  onCollapse: PropTypes.func.isRequired,
-  onShow: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired,
-  statsStatus: PropTypes.object
 }
 
 export default Stat

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import iconMap from '../icon-map'
 
 let Row = ({ name, value }) => {
@@ -6,11 +6,6 @@ let Row = ({ name, value }) => {
     <td>{name}</td>
     <td>{value}</td>
   </tr>
-}
-
-Row.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.string
 }
 
 let Properties = ({ data = {}, onToggle, collapsed }) => {
@@ -48,12 +43,6 @@ let Properties = ({ data = {}, onToggle, collapsed }) => {
       }</tbody>
     </table>
   </div>
-}
-
-Properties.propTypes = {
-  data: PropTypes.object,
-  onToggle: PropTypes.func.isRequired,
-  collapsed: PropTypes.object.isRequired
 }
 
 export default Properties

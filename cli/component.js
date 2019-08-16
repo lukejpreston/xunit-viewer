@@ -12,7 +12,10 @@ module.exports = () => {
       extensions: ['.js', '.jsx']
     })
       .transform('babelify', {
-        presets: ['react-app']
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-react'
+        ]
       })
       .bundle((err, code) => {
         if (err) reject(err)

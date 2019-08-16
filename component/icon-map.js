@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Check from './icons/check'
 import Times from './icons/times'
 import Exclamation from './icons/exclamation'
@@ -11,10 +11,6 @@ let Icon = ({ children }) => {
   return <i className='icon is-small'>
     {children}
   </i>
-}
-
-Icon.propTypes = {
-  children: PropTypes.any
 }
 
 export default {

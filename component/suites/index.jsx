@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Suite from './suite'
 import searchSuites from '../search-suites'
 
@@ -44,14 +44,6 @@ let Suites = ({ suites = [], search, collapsed, hidden, onToggle, onToggleRaw })
       )
     }</div>
   </section>
-}
-
-Suites.propTypes = {
-  suites: PropTypes.array,
-  search: PropTypes.object.isRequired,
-  collapsed: PropTypes.object.isRequired,
-  hidden: PropTypes.object.isRequired,
-  onToggle: PropTypes.func.isRequired
 }
 
 export default Suites
