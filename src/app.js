@@ -3,6 +3,7 @@ import merge from 'merge'
 
 import Hero from './hero'
 import SuiteOptions from './suite-options'
+import TestOptions from './test-options'
 import PropertiesOptions from './properties-options'
 import Files from './files'
 import Suite from './suite'
@@ -82,17 +83,32 @@ const App = ({ files }) => {
       })
   }
 
-  let propertiesCount = 0
-
-  Object.keys(suites).forEach((key) => {
-    const suite = suites[key]
-    propertiesCount += Object.keys(suite.properties).length
+  let propertiesTotal = 0
+  Object.entries(suites).forEach(([key, suite]) => {
+    propertiesTotal += Object.keys(suite.properties).length
   })
 
   let currentPropertiesCount = 0
-  Object.keys(currentSuites).forEach((key) => {
-    const suite = currentSuites[key]
+  Object.entries(currentSuites).forEach(([key, suite]) => {
     currentPropertiesCount += Object.keys(suite.properties).length
+  })
+
+  const testCounts = {}
+  let testCount = 0
+  let testTotal = 0
+  Object.entries(currentSuites).forEach(([key, suite]) => {
+    Object.entries(suite.tests).forEach(([key, test]) => {
+      const status = test.status || 'unknown'
+      testCounts[status] = testCounts[status] || {}
+      testCounts[status].count = testCounts[status].count || 0
+      testCounts[status].total = testCounts[status].total || 0
+
+      testCounts[status].count += 1
+      testCounts[status].total += 1
+
+      testTotal += 1
+      testCount += 1
+    })
   })
 
   return <div>
@@ -100,7 +116,8 @@ const App = ({ files }) => {
     <header className={`is-${!menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
         <SuiteOptions count={Object.keys(currentSuites).length} total={Object.keys(suites).length} />
-        <PropertiesOptions count={currentPropertiesCount} total={propertiesCount} />
+        {testTotal > 0 ? <TestOptions testCounts={testCounts} count={testCount} total={testTotal} /> : null}
+        {propertiesTotal > 0 ? <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} /> : null}
         <Files files={files} />
       </div>
     </header>

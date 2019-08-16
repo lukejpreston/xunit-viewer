@@ -11,6 +11,14 @@ const Total = ({ count, total }) => <div className='options-total'>
   <b>{count}</b><span>/{total}</span>
 </div>
 
+const ChevronUpIcon = () => <span className='icon'>
+  <i className='fas fa-chevron-up' />
+</span>
+
+const ChevronDownIcon = () => <span className='icon'>
+  <i className='fas fa-chevron-down' />
+</span>
+
 const Options = ({ count = 0, total = 0 }) => {
   return <div className={`options card`}>
     <header className='card-header'>
@@ -18,8 +26,16 @@ const Options = ({ count = 0, total = 0 }) => {
         <Search label='Suites' />
         <Total count={count} total={total} />
       </div>
-      <Toggle active onLabel='Exanpded' offLabel='Contracted' />
+
     </header>
+    <div className='card-content'>
+      <Toggle
+        active
+        onLabel='Expanded'
+        offLabel='Contracted'
+        offIcon={<ChevronUpIcon />}
+        onIcon={<ChevronDownIcon />} />
+    </div>
   </div>
 }
 

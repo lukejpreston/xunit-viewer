@@ -89,12 +89,22 @@ body,
     font-size: 16px;
 }
 
+.options-total .icon {
+    font-size: 12px;
+    transform: translateY(-1px);
+}
+
 .options-count {
     display: flex;
 }
 
 .options-count .icon {
     font-size: 12px;
+}
+
+.options-toggles .toggle {
+    min-width: 200px;
+    justify-content: left;
 }
 
 .options,
@@ -156,6 +166,7 @@ body,
     width: 20px;
     height: 8px;
     border-radius: 4px;
+    margin-right: 8px;
 }
 
 .toggle-handle {
