@@ -10,9 +10,9 @@ const icons = {
   unknown: 'question'
 }
 
-const Properties = ({ properties, active = false, setActive = () => {} }) => {
+const Properties = ({ properties, active = false, dispatch, suite }) => {
   return <div className={`properties card is-${active ? 'active' : 'inactive'}`}>
-    <button className='card-header' onClick={() => { setActive(!active) }}>
+    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-properties', payload: { suite } }) }}>
       <p className='card-header-title'>Properties</p>
       <span className='card-header-icon'>
         <span className='icon'>
@@ -29,12 +29,14 @@ const Properties = ({ properties, active = false, setActive = () => {} }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(properties).map(key => {
-            return <tr key={key}>
-              <td>{key}</td>
-              <td>{properties[key]}</td>
-            </tr>
-          })}
+          {Object.keys(properties)
+            .filter(key => key !== '_active')
+            .map(key => {
+              return <tr key={key}>
+                <td>{key}</td>
+                <td>{properties[key]}</td>
+              </tr>
+            })}
         </tbody>
       </table>
     </div> : null }
@@ -57,9 +59,9 @@ const CodeIcon = () => <span className='icon'>
   <i className='fas fa-code' />
 </span>
 
-const Test = ({ messages, status, time, name, active = false, raw = true, setRaw = () => {}, setActive = () => {} }) => {
+const Test = ({ id, messages, status, time, name, active = false, raw = true, dispatch, suite }) => {
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
-    <button className='card-header' onClick={() => { setActive(!active) }} disabled={messages.length === 0}>
+    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id } }) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
         <span className='icon'>
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
@@ -80,7 +82,7 @@ const Test = ({ messages, status, time, name, active = false, raw = true, setRaw
         onIcon={<CodeIcon />}
         offIcon={<PrettyIcon />}
         offLabel='pretty'
-        onChange={(on) => setRaw(on)} />
+        onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id } })} />
       {raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
     </div> : null}
   </div>
@@ -93,7 +95,7 @@ const SuiteCount = ({ count, type }) => count > 0 ? <span className='suite-count
   {count}
 </span> : null
 
-const Suite = ({ name, active = false, properties = {}, time, tests = {}, setOpen = () => {} }) => {
+const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, dispatch }) => {
   let passed = 0
   let failure = 0
   let skipped = 0
@@ -112,7 +114,7 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {}, setOpe
   const hasProperties = Object.keys(properties).length > 0
   const containsSomething = hasTests || hasProperties
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
-    <button className='card-header' onClick={() => { if (containsSomething) setOpen(!active) }} disabled={!containsSomething}>
+    <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id } }) }} disabled={!containsSomething}>
       <p className='card-header-title'>
         <span>{title(name)}</span>
         {time ? <small>time = {time}</small> : null}
@@ -134,23 +136,23 @@ const Suite = ({ name, active = false, properties = {}, time, tests = {}, setOpe
     </button>
     {!active && containsSomething ? <div className='card-content'>
       <div className='content'>
-        {hasProperties ? <Properties properties={properties} /> : null}
+        {hasProperties ? <Properties properties={properties} suite={id} dispatch={dispatch} active={properties._active} /> : null}
         <div>
           {Object.keys(tests)
             .filter((key) => tests[key].status === 'failure')
-            .map(key => <Test key={key} {...tests[key]} />)}
+            .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
             .filter((key) => tests[key].status === 'error')
-            .map(key => <Test key={key} {...tests[key]} />)}
+            .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
             .filter((key) => tests[key].status === 'passed')
-            .map(key => <Test key={key} {...tests[key]} />)}
+            .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
             .filter((key) => tests[key].status === 'skipped')
-            .map(key => <Test key={key} {...tests[key]} />)}
+            .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
             .filter((key) => !['failure', 'error', 'passed', 'skipped'].includes(tests[key].status))
-            .map(key => <Test key={key} {...tests[key]} />)}
+            .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
         </div>
       </div>
     </div> : null}

@@ -27,7 +27,10 @@ const parseAll = async (dispatch, files, suites) => {
 }
 
 const reducer = (state, { type, payload }) => {
+  console.log(type, payload)
+
   const update = {}
+  update.currentSuites = state.currentSuites
 
   if (type === 'parse-suites') {
     state = merge.recursive(true, {}, state)
@@ -38,6 +41,23 @@ const reducer = (state, { type, payload }) => {
 
   if (type === 'toggle-menu') update.menuActive = !state.menuActive
   if (type === 'toggle-files') update.activeFiles = !state.activeFiles
+  if (type === 'toggle-suite') {
+    update.currentSuites[payload.id].active = update.currentSuites[payload.id].active || false
+    update.currentSuites[payload.id].active = !update.currentSuites[payload.id].active
+  }
+  if (type === 'toggle-properties') {
+    update.currentSuites[payload.suite].properties._active = update.currentSuites[payload.suite].properties._active || false
+    update.currentSuites[payload.suite].properties._active = !update.currentSuites[payload.suite].properties._active
+  }
+  if (type === 'toggle-test') {
+    update.currentSuites[payload.suite].tests[payload.id].active = update.currentSuites[payload.suite].tests[payload.id].active || false
+    update.currentSuites[payload.suite].tests[payload.id].active = !update.currentSuites[payload.suite].tests[payload.id].active
+  }
+
+  if (type === 'toggle-test-mode') {
+    if (!('raw' in update.currentSuites[payload.suite].tests[payload.id])) update.currentSuites[payload.suite].tests[payload.id].raw = true
+    update.currentSuites[payload.suite].tests[payload.id].raw = !update.currentSuites[payload.suite].tests[payload.id].raw
+  }
 
   return merge.recursive(true, state, update)
 }
