@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import merge from 'merge'
 
 import Hero from './hero'
@@ -9,7 +9,7 @@ import Files from './files'
 import Suite from './suite'
 import parse from './parse'
 
-const parseAll = async (setSuites, setCurrentSuites, files, suites) => {
+const parseAll = async (dispatch, files, suites) => {
   for (const { contents } of files) {
     const parsed = await parse(contents)
     for (const id in parsed.suites) {
@@ -17,35 +17,55 @@ const parseAll = async (setSuites, setCurrentSuites, files, suites) => {
       suites[id] = suites[id] || {}
       suites[id] = merge.recursive(suites[id], suite)
     }
-    setSuites(suites)
-    setCurrentSuites(suites)
+    dispatch({
+      type: 'parse-suites',
+      payload: {
+        suites
+      }
+    })
   }
 }
 
-const App = ({ files }) => {
-  const [menuActive, setMenu] = useState(false)
-  const [suites, setSuites] = useState({})
-  const [activeFiles, setActiveFiles] = useState(false)
-  const [currentSuites, setCurrentSuites] = useState({})
+const reducer = (state, { type, payload }) => {
+  const update = {}
 
-  if (Object.keys(suites).length === 0) {
-    parseAll(setSuites, setCurrentSuites, files, {})
+  if (type === 'parse-suites') {
+    state = merge.recursive(true, {}, state)
+    state.suites = payload.suites
+    state.currentSuites = payload.suites
+    return state
   }
 
-  let propertiesTotal = 0
-  Object.entries(suites).forEach(([key, suite]) => {
-    propertiesTotal += Object.keys(suite.properties).length
-  })
+  if (type === 'toggle-menu') update.menuActive = !state.menuActive
+  if (type === 'toggle-files') update.activeFiles = !state.activeFiles
+
+  return merge.recursive(true, state, update)
+}
+
+const initialState = {
+  suites: {},
+  currentSuites: {},
+  menuActive: false,
+  activeFiles: false
+}
+
+const App = ({ files }) => {
+  const [state, dispatch] = useReducer(reducer, initialState)
+  if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
 
   let currentPropertiesCount = 0
-  Object.entries(currentSuites).forEach(([key, suite]) => {
+  let propertiesTotal = 0
+  Object.entries(state.currentSuites).forEach(([key, suite]) => {
     currentPropertiesCount += Object.keys(suite.properties).length
+  })
+  Object.entries(state.currentSuites).forEach(([key, suite]) => {
+    propertiesTotal += Object.keys(suite.properties).length
   })
 
   const testCounts = {}
   let testCount = 0
   let testTotal = 0
-  Object.entries(currentSuites).forEach(([key, suite]) => {
+  Object.entries(state.currentSuites).forEach(([key, suite]) => {
     Object.entries(suite.tests).forEach(([key, test]) => {
       const status = test.status || 'unknown'
       testCounts[status] = testCounts[status] || {}
@@ -61,21 +81,19 @@ const App = ({ files }) => {
   })
 
   return <div>
-    <Hero active={menuActive} onClick={() => { setMenu(!menuActive) }} />
-    <header className={`is-${!menuActive ? 'hidden' : 'shown'}`}>
+    <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} />
+    <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
-        <SuiteOptions count={Object.keys(currentSuites).length} total={Object.keys(suites).length} />
+        <SuiteOptions count={Object.keys(state.currentSuites).length} total={Object.keys(state.suites).length} />
         {testTotal > 0 ? <TestOptions testCounts={testCounts} count={testCount} total={testTotal} /> : null}
         {propertiesTotal > 0 ? <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} /> : null}
-        <Files files={files} active={activeFiles} setActive={setActiveFiles} />
+        <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
       </div>
     </header>
     <main>
       <div className='container'>
         <div>
-          {Object.values(currentSuites).map(suite => {
-            return <Suite key={suite.id} {...suite} />
-          })}
+          {Object.values(state.currentSuites).map(suite => <Suite key={suite.id} {...suite} dispatch={dispatch} />)}
         </div>
       </div>
     </main>
