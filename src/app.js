@@ -53,6 +53,21 @@ const reducer = (state, { type, payload }) => {
     update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
   }
 
+  if (type === 'search-tests') {
+    Object.values(state.suites).forEach(suite => {
+      Object.values(suite.tests).forEach(test => {
+        if (!fuzzy.test(payload.value.toLowerCase(), test.name.toLowerCase())) {
+          if (update.currentSuites[suite.id]) delete update.currentSuites[suite.id].tests[test.id]
+        } else if (suite.id in update.currentSuites && !(test.id in update.currentSuites[suite.id].tests)) {
+          if (update.currentSuites[suite.id]) {
+            update.currentSuites[suite.id].tests[test.id] = merge.recursive(true, {}, state.suites[suite.id].tests[test.id])
+            update.currentSuites[suite.id].tests[test.id].active = true
+          }
+        }
+      })
+    })
+  }
+
   if (type === 'toggle-all-suites') {
     update.suitesExpanded = !state.suitesExpanded
     Object.values(update.currentSuites).forEach(suite => { suite.active = update.suitesExpanded })
@@ -128,8 +143,8 @@ const App = ({ files }) => {
           dispatch={dispatch}
           count={Object.keys(state.currentSuites).length}
           total={Object.keys(state.suites).length} />
-        {testTotal > 0 ? <TestOptions testCounts={testCounts} count={testCount} total={testTotal} /> : null}
-        {propertiesTotal > 0 ? <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} /> : null}
+        <TestOptions testCounts={testCounts} count={testCount} total={testTotal} dispatch={dispatch} />
+        <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} />
         <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
       </div>
     </header>

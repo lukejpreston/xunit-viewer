@@ -9,9 +9,20 @@ const icons = {
   unknown: 'question'
 }
 
-const Search = ({ label }) => <div className='field options-search'>
+const Search = ({ label, dispatch, suite, id }) => <div className='field options-search'>
   <div className='control'>
-    <input className='input' type='text' placeholder={label} />
+    <input
+      onChange={(evt) => {
+        dispatch({
+          type: 'search-tests',
+          payload: {
+            value: evt.target.value
+          }
+        })
+      }}
+      className='input'
+      type='text'
+      placeholder={label} />
   </div>
 </div>
 
@@ -70,11 +81,12 @@ const StatusTotal = ({ testCounts, status }) => {
 const Options = ({
   testCounts = {},
   count = 0,
-  total = 0
+  total = 0,
+  dispatch
 }) => {
   return <div className={`options card`}>
     <header className='card-header'>
-      <Search label='Tests' />
+      <Search label='Tests' dispatch={dispatch} />
       <div className='options-inputs'>
         <Total count={count} total={total} />
         <StatusTotal testCounts={testCounts} status='passed' />
