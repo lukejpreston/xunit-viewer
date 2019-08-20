@@ -1,9 +1,20 @@
 import React from 'react'
 import Toggle from './toggle'
 
-const Search = ({ label }) => <div className='field options-search'>
+const Search = ({ label, dispatch }) => <div className='field options-search'>
   <div className='control'>
-    <input className='input' type='text' placeholder={label} />
+    <input
+      onChange={(evt) => {
+        dispatch({
+          type: 'search-suites',
+          payload: {
+            value: evt.target.value
+          }
+        })
+      }}
+      className='input'
+      type='text'
+      placeholder={label} />
   </div>
 </div>
 
@@ -23,7 +34,7 @@ export default ({ suitesExpanded = true, count = 0, total = 0, dispatch }) => {
   return <div className={`options card`}>
     <header className='card-header'>
       <div className='options-inputs'>
-        <Search label='Suites' />
+        <Search label='Suites' dispatch={dispatch} />
         <Total count={count} total={total} />
       </div>
     </header>

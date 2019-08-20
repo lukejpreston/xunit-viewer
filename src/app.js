@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 import merge from 'merge'
+import fuzzy from 'fuzzy'
 
 import Hero from './hero'
 import SuiteOptions from './suite-options'
@@ -42,11 +43,20 @@ const reducer = (state, { type, payload }) => {
     return state
   }
 
+  if (type === 'search-suites') {
+    Object.values(state.suites).forEach(({ name, id }) => {
+      if (fuzzy.test(payload.value.toLowerCase(), name.toLowerCase())) {
+        update.currentSuites[id] = update.currentSuites[id] || merge.recursive(true, {}, state.suites[id])
+        if (!('active' in update.currentSuites[id])) update.currentSuites[id].active = true
+      } else delete update.currentSuites[id]
+    })
+    update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
+  }
+
   if (type === 'toggle-all-suites') {
     update.suitesExpanded = !state.suitesExpanded
     Object.values(update.currentSuites).forEach(suite => { suite.active = update.suitesExpanded })
   }
-
   if (type === 'toggle-menu') update.menuActive = !state.menuActive
   if (type === 'toggle-files') update.activeFiles = !state.activeFiles
   if (type === 'toggle-suite') {
@@ -62,7 +72,6 @@ const reducer = (state, { type, payload }) => {
     update.currentSuites[payload.suite].tests[payload.id].active = update.currentSuites[payload.suite].tests[payload.id].active || false
     update.currentSuites[payload.suite].tests[payload.id].active = !update.currentSuites[payload.suite].tests[payload.id].active
   }
-
   if (type === 'toggle-test-mode') {
     if (!('raw' in update.currentSuites[payload.suite].tests[payload.id])) update.currentSuites[payload.suite].tests[payload.id].raw = true
     update.currentSuites[payload.suite].tests[payload.id].raw = !update.currentSuites[payload.suite].tests[payload.id].raw
