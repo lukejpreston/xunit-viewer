@@ -89,13 +89,8 @@ body,
 
 .options-total,
 .options-count {
-    margin-right: 16px;
+    margin-right: 24px;
     font-size: 16px;
-}
-
-.options-total .icon {
-    font-size: 12px;
-    transform: translateY(-1px);
 }
 
 .options-count {
@@ -130,9 +125,15 @@ body,
     padding: 0;
 }
 
-.options .card-header-icon .icon {
+.options .card-header-icon .icon:last-child {
     margin-left: auto !important;
     margin-right: 14px !important;
+}
+
+.options-total .icon {
+    font-size: 12px;
+    transform: rotate(0);
+    margin-right: 4px !important;
 }
 
 .options .card-content {

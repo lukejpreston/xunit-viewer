@@ -1,9 +1,20 @@
 import React from 'react'
 import Toggle from './toggle'
 
-const Search = ({ label }) => <div className='field options-search'>
+const Search = ({ label, dispatch }) => <div className='field options-search'>
   <div className='control'>
-    <input className='input' type='text' placeholder={label} />
+    <input
+      onChange={(evt) => {
+        dispatch({
+          type: 'search-properties',
+          payload: {
+            value: evt.target.value
+          }
+        })
+      }}
+      className='input'
+      type='text'
+      placeholder={label} />
   </div>
 </div>
 
@@ -30,7 +41,7 @@ const ChevronDownIcon = () => <span className='icon'>
 export default ({ count = 0, total = 0, active = false, dispatch }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
-      <Search label='Propeties' />
+      <Search label='Propeties' dispatch={dispatch} />
       <button
         onClick={() => dispatch({ type: 'toggle-properties-options' })}
         className='button card-header-icon'>
