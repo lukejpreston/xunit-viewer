@@ -27,11 +27,13 @@ const ChevronDownIcon = () => <span className='icon'>
   <i className='fas fa-chevron-down' />
 </span>
 
-export default ({ count = 0, total = 0, active = false }) => {
-  return <div className={`options card`}>
+export default ({ count = 0, total = 0, active = false, dispatch }) => {
+  return <div className={`is-properties options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Propeties' />
-      <button className='button card-header-icon'>
+      <button
+        onClick={() => dispatch({ type: 'toggle-properties-options' })}
+        className='button card-header-icon'>
         <div className='options-inputs'>
           <Total count={count} total={total} />
         </div>
@@ -40,25 +42,28 @@ export default ({ count = 0, total = 0, active = false }) => {
         </span>
       </button>
     </header>
-    {active
-      ? <div className='card-content'>
-        <div>
-          <Toggle
-            active
-            onLabel='Expanded'
-            offLabel='Contracted'
-            offIcon={<ChevronUpIcon />}
-            onIcon={<ChevronDownIcon />} />
-        </div>
-        <div>
-          <Toggle
-            active
-            onLabel='Visible'
-            offLabel='Hidden'
-            onIcon={<EyeIcon />}
-            offIcon={<EyeSlashIcon />} />
-        </div>
-      </div>
-      : null}
+    <div className='card-content'>
+      {active
+        ? <>
+          <div>
+            <Toggle
+              className='properties-options-toggle'
+              active
+              onLabel='Expanded'
+              offLabel='Contracted'
+              offIcon={<ChevronUpIcon />}
+              onIcon={<ChevronDownIcon />} />
+            <Toggle
+              className='properties-options-toggle'
+              active
+              onLabel='Visible'
+              offLabel='Hidden'
+              onIcon={<EyeIcon />}
+              offIcon={<EyeSlashIcon />} />
+          </div>
+        </>
+        : null}
+    </div>
+
   </div>
 }

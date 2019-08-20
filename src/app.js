@@ -73,6 +73,9 @@ const reducer = (state, { type, payload }) => {
     Object.values(update.currentSuites).forEach(suite => { suite.active = update.suitesExpanded })
   }
   if (type === 'toggle-menu') update.menuActive = !state.menuActive
+  if (type === 'toggle-suite-options') update.suiteOptionsActive = !state.suiteOptionsActive
+  if (type === 'toggle-test-options') update.testOptionsActive = !state.testOptionsActive
+  if (type === 'toggle-properties-options') update.propertiesOptionsActive = !state.propertiesOptionsActive
   if (type === 'toggle-files') update.activeFiles = !state.activeFiles
   if (type === 'toggle-suite') {
     if (!('active' in update.currentSuites[payload.id])) update.currentSuites[payload.id].active = true
@@ -99,6 +102,9 @@ const initialState = {
   suites: {},
   currentSuites: {},
   menuActive: false,
+  suiteOptionsActive: false,
+  testOptionsActive: false,
+  propertiesOptionsActive: false,
   activeFiles: false,
   suitesExpanded: true
 }
@@ -139,12 +145,22 @@ const App = ({ files }) => {
     <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
         <SuiteOptions
+          active={state.suiteOptionsActive}
           suitesExpanded={state.suitesExpanded}
           dispatch={dispatch}
           count={Object.keys(state.currentSuites).length}
           total={Object.keys(state.suites).length} />
-        <TestOptions testCounts={testCounts} count={testCount} total={testTotal} dispatch={dispatch} />
-        <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} />
+        <TestOptions
+          active={state.testOptionsActive}
+          testCounts={testCounts}
+          count={testCount}
+          total={testTotal}
+          dispatch={dispatch} />
+        <PropertiesOptions
+          active={state.propertiesOptionsActive}
+          count={currentPropertiesCount}
+          total={propertiesTotal}
+          dispatch={dispatch} />
         <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
       </div>
     </header>

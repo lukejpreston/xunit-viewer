@@ -111,10 +111,12 @@ const Options = ({
   dispatch,
   active = false
 }) => {
-  return <div className={`options card`}>
+  return <div className={`is-test options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Tests' dispatch={dispatch} />
-      <button className='button card-header-icon'>
+      <button
+        onClick={() => dispatch({ type: 'toggle-test-options' })}
+        className='button card-header-icon'>
         <div className='options-inputs'>
           <Total count={count} total={total} />
           <StatusTotal testCounts={testCounts} status='passed' />
@@ -128,16 +130,19 @@ const Options = ({
         </span>
       </button>
     </header>
-    {active
-      ? <div className='card-content options-toggles'>
-        <ToggleRow status='all' label='All' />
-        <ToggleRow status='passed' label='Passed' />
-        <ToggleRow status='failure' label='Failure' />
-        <ToggleRow status='error' label='Error' />
-        <ToggleRow status='skipped' label='Skipped' />
-        <ToggleRow status='unknown' label='Uknown' />
-      </div>
-      : null}
+    <div className='card-content options-toggles'>
+      {active
+        ? <>
+          <ToggleRow status='all' label='All' />
+          <ToggleRow status='passed' label='Passed' />
+          <ToggleRow status='failure' label='Failure' />
+          <ToggleRow status='error' label='Error' />
+          <ToggleRow status='skipped' label='Skipped' />
+          <ToggleRow status='unknown' label='Uknown' />
+        </>
+        : null}
+    </div>
+
   </div>
 }
 

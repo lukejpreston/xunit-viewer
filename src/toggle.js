@@ -7,14 +7,15 @@ export default ({
   onLabel,
   offLabel,
   disabled = false,
-  onChange = () => {}
+  onChange = () => {},
+  className = ''
 }) => {
   return <button
     onClick={() => {
       onChange(!active)
     }}
     disabled={disabled}
-    className={`button toggle is-${active ? 'active' : 'inactive'}`}>
+    className={`button toggle is-${active ? 'active' : 'inactive'} ${className}`}>
     <div className='toggle-rail'>
       <div className='toggle-handle' />
     </div>

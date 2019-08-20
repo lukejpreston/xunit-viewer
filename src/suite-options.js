@@ -31,10 +31,12 @@ const ChevronDownIcon = () => <span className='icon'>
 </span>
 
 export default ({ suitesExpanded = true, count = 0, total = 0, dispatch, active = false }) => {
-  return <div className={`options card`}>
+  return <div className={`is-suite options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Suites' dispatch={dispatch} />
-      <button className='button card-header-icon'>
+      <button
+        onClick={() => dispatch({ type: 'toggle-suite-options' })}
+        className='button card-header-icon'>
         <div className='options-inputs'>
           <Total count={count} total={total} />
         </div>
@@ -43,16 +45,17 @@ export default ({ suitesExpanded = true, count = 0, total = 0, dispatch, active 
         </span>
       </button>
     </header>
-    {active
-      ? <div className='card-content'>
-        <Toggle
+    <div className='card-content'>
+      {active
+        ? <Toggle
           onChange={() => dispatch({ type: 'toggle-all-suites' })}
           active={suitesExpanded}
           onLabel='Expanded'
           offLabel='Contracted'
           offIcon={<ChevronUpIcon />}
           onIcon={<ChevronDownIcon />} />
-      </div>
-      : null}
+        : null}
+    </div>
+
   </div>
 }

@@ -135,6 +135,33 @@ body,
     margin-right: 14px !important;
 }
 
+.options .card-content {
+    transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
+    height: 0;
+    padding: 0 1.5rem;
+    overflow: hidden;
+}
+
+.options.is-suite.is-active .card-content {
+    padding: 1.5rem;
+    height: 76px;
+}
+
+.options.is-test.is-active .card-content {
+    padding: 1.5rem;
+    height: 216px;
+}
+
+.options.is-properties.is-active .card-content {
+    padding: 1.5rem;
+    height: 76px;
+}
+
+.properties-options-toggle {
+    margin-right: 1rem;
+}
+
+
 .test-options-toggle-row {
     width: 450px;
 }
