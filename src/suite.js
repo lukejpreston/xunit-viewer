@@ -134,7 +134,7 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
         <SuiteCount type='unknown' count={unknown} />
       </p> : null}
     </button>
-    {!active && containsSomething ? <div className='card-content'>
+    {active && containsSomething ? <div className='card-content'>
       <div className='content'>
         {hasProperties ? <Properties properties={properties} suite={id} dispatch={dispatch} active={properties._active} /> : null}
         <div>

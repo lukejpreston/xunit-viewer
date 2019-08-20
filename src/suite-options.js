@@ -19,18 +19,18 @@ const ChevronDownIcon = () => <span className='icon'>
   <i className='fas fa-chevron-down' />
 </span>
 
-const Options = ({ count = 0, total = 0 }) => {
+export default ({ suitesExpanded = true, count = 0, total = 0, dispatch }) => {
   return <div className={`options card`}>
     <header className='card-header'>
       <div className='options-inputs'>
         <Search label='Suites' />
         <Total count={count} total={total} />
       </div>
-
     </header>
     <div className='card-content'>
       <Toggle
-        active
+        onChange={() => dispatch({ type: 'toggle-all-suites' })}
+        active={suitesExpanded}
         onLabel='Expanded'
         offLabel='Contracted'
         offIcon={<ChevronUpIcon />}
@@ -38,5 +38,3 @@ const Options = ({ count = 0, total = 0 }) => {
     </div>
   </div>
 }
-
-export default Options

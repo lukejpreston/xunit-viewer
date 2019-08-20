@@ -36,14 +36,23 @@ const reducer = (state, { type, payload }) => {
     state = merge.recursive(true, {}, state)
     state.suites = payload.suites
     state.currentSuites = payload.suites
+    Object.values(state.currentSuites).forEach(suite => {
+      if (Object.keys(suite.tests).length > 0 || Object.keys(suite.properties).length > 0) suite.active = true
+    })
     return state
+  }
+
+  if (type === 'toggle-all-suites') {
+    update.suitesExpanded = !state.suitesExpanded
+    Object.values(update.currentSuites).forEach(suite => { suite.active = update.suitesExpanded })
   }
 
   if (type === 'toggle-menu') update.menuActive = !state.menuActive
   if (type === 'toggle-files') update.activeFiles = !state.activeFiles
   if (type === 'toggle-suite') {
-    update.currentSuites[payload.id].active = update.currentSuites[payload.id].active || false
+    if (!('active' in update.currentSuites[payload.id])) update.currentSuites[payload.id].active = true
     update.currentSuites[payload.id].active = !update.currentSuites[payload.id].active
+    update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
   }
   if (type === 'toggle-properties') {
     update.currentSuites[payload.suite].properties._active = update.currentSuites[payload.suite].properties._active || false
@@ -66,7 +75,8 @@ const initialState = {
   suites: {},
   currentSuites: {},
   menuActive: false,
-  activeFiles: false
+  activeFiles: false,
+  suitesExpanded: true
 }
 
 const App = ({ files }) => {
@@ -104,7 +114,11 @@ const App = ({ files }) => {
     <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} />
     <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
-        <SuiteOptions count={Object.keys(state.currentSuites).length} total={Object.keys(state.suites).length} />
+        <SuiteOptions
+          suitesExpanded={state.suitesExpanded}
+          dispatch={dispatch}
+          count={Object.keys(state.currentSuites).length}
+          total={Object.keys(state.suites).length} />
         {testTotal > 0 ? <TestOptions testCounts={testCounts} count={testCount} total={testTotal} /> : null}
         {propertiesTotal > 0 ? <PropertiesOptions count={currentPropertiesCount} total={propertiesTotal} /> : null}
         <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
