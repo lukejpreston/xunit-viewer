@@ -103,8 +103,8 @@ body,
 }
 
 .options-toggles .toggle {
-    min-width: 200px;
     justify-content: left;
+    margin-right: 1em;
 }
 
 .options,
@@ -116,6 +116,16 @@ body,
 .options .card-header,
 .files .card-header {
     box-shadow: none;
+}
+
+.test-options-toggle-row-label {
+    display: inline-block;
+    width: 100px;
+}
+
+.test-options-toggle-row-label .icon {
+    font-size: 14px;
+    transform: translateY(1px);
 }
 
 .files .card-content {
@@ -392,8 +402,7 @@ body,
 
 
 .suite.is-empty,
-.suite.is-empty .card-header
-.test.is-empty,
+.suite.is-empty .card-header .test.is-empty,
 .test.is-empty .card-header {
     box-shadow: none;
     opacity: 0.7;
@@ -423,6 +432,6 @@ body,
     margin: 2px;
 }
 
- .pretty-content {
-     margin: 20px;
- }
+.pretty-content {
+    margin: 20px;
+}

@@ -40,21 +40,15 @@ const fromTestCounts = (testCounts, status, value) => {
   return statusCounts[value] || 0
 }
 
-const EyeIcon = ({ status }) => <>
+const EyeIcon = () => <>
   <span className='icon'>
     <i className='fas fa-eye' />
   </span>
-  <span className='icon'>
-    <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
-  </span>
 </>
 
-const EyeSlashIcon = ({ status }) => <>
+const EyeSlashIcon = () => <>
   <span className='icon'>
     <i className='fas fa-eye-slash' />
-  </span>
-  <span className='icon'>
-    <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
   </span>
 </>
 
@@ -78,6 +72,38 @@ const StatusTotal = ({ testCounts, status }) => {
   return fromTestCounts(testCounts, status, 'total') > 0 ? <Total count={fromTestCounts(testCounts, status, 'count')} total={fromTestCounts(testCounts, status, 'total')} icon={status} /> : null
 }
 
+const ToggleRow = ({ status, label }) => <div>
+  <div className='test-options-toggle-row-label'>
+    {status !== 'all'
+      ? <span className='icon'>
+        <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
+      </span>
+      : <span className='icon'>
+        <i className='far fa-circle' aria-hidden='true' />
+      </span>}
+    <span>{label}</span>
+  </div>
+  <Toggle
+    active
+    onLabel='Visible'
+    offLabel='Hidden'
+    onIcon={<EyeIcon />}
+    offIcon={<EyeSlashIcon />} />
+  <Toggle
+    active
+    onLabel='Exanded'
+    offLabel='Contracted'
+    onIcon={<ChevronDownIcon />}
+    offIcon={<ChevronUpIcon />} />
+  <Toggle
+    active
+    onLabel='Raw'
+    offLabel='Pretty'
+    onIcon={<CodeIcon />}
+    offIcon={<PrettyIcon />} />
+
+</div>
+
 const Options = ({
   testCounts = {},
   count = 0,
@@ -97,58 +123,12 @@ const Options = ({
       </div>
     </header>
     <div className='card-content options-toggles'>
-      <div>
-        <Toggle
-          active
-          onLabel='Passed Visible'
-          offLabel='Passed Hidden'
-          onIcon={<EyeIcon status='passed' />}
-          offIcon={<EyeSlashIcon status='passed' />} />
-        <Toggle
-          active
-          onLabel='Raw'
-          offLabel='Pretty'
-          onIcon={<CodeIcon />}
-          offIcon={<PrettyIcon />} />
-      </div>
-      <div>
-        <Toggle
-          active
-          onLabel='Failure Visible'
-          offLabel='Failure Hidden'
-          onIcon={<EyeIcon status='failure' />}
-          offIcon={<EyeSlashIcon status='failure' />} />
-        <Toggle
-          active
-          onLabel='Expanded'
-          offLabel='Contracted'
-          offIcon={<ChevronUpIcon />}
-          onIcon={<ChevronDownIcon />} />
-      </div>
-      <div>
-        <Toggle
-          active
-          onLabel='Error Visible'
-          offLabel='Error Hidden'
-          onIcon={<EyeIcon status='error' />}
-          offIcon={<EyeSlashIcon status='error' />} />
-      </div>
-      <div>
-        <Toggle
-          active
-          onLabel='Skipped Visible'
-          offLabel='Skipped Hidden'
-          onIcon={<EyeIcon status='skipped' />}
-          offIcon={<EyeSlashIcon status='skipped' />} />
-      </div>
-      <div>
-        <Toggle
-          active
-          onLabel='Unknown Visible'
-          offLabel='Unknown Hidden'
-          onIcon={<EyeIcon status='unknown' />}
-          offIcon={<EyeSlashIcon status='unknown' />} />
-      </div>
+      <ToggleRow status='all' label='All' />
+      <ToggleRow status='passed' label='Passed' />
+      <ToggleRow status='failure' label='Failure' />
+      <ToggleRow status='error' label='Error' />
+      <ToggleRow status='skipped' label='Skipped' />
+      <ToggleRow status='unknown' label='Uknown' />
     </div>
   </div>
 }
