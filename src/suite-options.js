@@ -30,22 +30,29 @@ const ChevronDownIcon = () => <span className='icon'>
   <i className='fas fa-chevron-down' />
 </span>
 
-export default ({ suitesExpanded = true, count = 0, total = 0, dispatch }) => {
+export default ({ suitesExpanded = true, count = 0, total = 0, dispatch, active = false }) => {
   return <div className={`options card`}>
     <header className='card-header'>
-      <div className='options-inputs'>
-        <Search label='Suites' dispatch={dispatch} />
-        <Total count={count} total={total} />
-      </div>
+      <Search label='Suites' dispatch={dispatch} />
+      <button className='button card-header-icon'>
+        <div className='options-inputs'>
+          <Total count={count} total={total} />
+        </div>
+        <span className='icon'>
+          <i className='fas fa-angle-down' />
+        </span>
+      </button>
     </header>
-    <div className='card-content'>
-      <Toggle
-        onChange={() => dispatch({ type: 'toggle-all-suites' })}
-        active={suitesExpanded}
-        onLabel='Expanded'
-        offLabel='Contracted'
-        offIcon={<ChevronUpIcon />}
-        onIcon={<ChevronDownIcon />} />
-    </div>
+    {active
+      ? <div className='card-content'>
+        <Toggle
+          onChange={() => dispatch({ type: 'toggle-all-suites' })}
+          active={suitesExpanded}
+          onLabel='Expanded'
+          offLabel='Contracted'
+          offIcon={<ChevronUpIcon />}
+          onIcon={<ChevronDownIcon />} />
+      </div>
+      : null}
   </div>
 }

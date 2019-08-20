@@ -72,7 +72,7 @@ const StatusTotal = ({ testCounts, status }) => {
   return fromTestCounts(testCounts, status, 'total') > 0 ? <Total count={fromTestCounts(testCounts, status, 'count')} total={fromTestCounts(testCounts, status, 'total')} icon={status} /> : null
 }
 
-const ToggleRow = ({ status, label }) => <div>
+const ToggleRow = ({ status, label }) => <div className='test-options-toggle-row'>
   <div className='test-options-toggle-row-label'>
     {status !== 'all'
       ? <span className='icon'>
@@ -108,28 +108,36 @@ const Options = ({
   testCounts = {},
   count = 0,
   total = 0,
-  dispatch
+  dispatch,
+  active = false
 }) => {
   return <div className={`options card`}>
     <header className='card-header'>
       <Search label='Tests' dispatch={dispatch} />
-      <div className='options-inputs'>
-        <Total count={count} total={total} />
-        <StatusTotal testCounts={testCounts} status='passed' />
-        <StatusTotal testCounts={testCounts} status='failure' />
-        <StatusTotal testCounts={testCounts} status='error' />
-        <StatusTotal testCounts={testCounts} status='skipped' />
-        <StatusTotal testCounts={testCounts} status='unknown' />
-      </div>
+      <button className='button card-header-icon'>
+        <div className='options-inputs'>
+          <Total count={count} total={total} />
+          <StatusTotal testCounts={testCounts} status='passed' />
+          <StatusTotal testCounts={testCounts} status='failure' />
+          <StatusTotal testCounts={testCounts} status='error' />
+          <StatusTotal testCounts={testCounts} status='skipped' />
+          <StatusTotal testCounts={testCounts} status='unknown' />
+        </div>
+        <span className='icon'>
+          <i className='fas fa-angle-down' />
+        </span>
+      </button>
     </header>
-    <div className='card-content options-toggles'>
-      <ToggleRow status='all' label='All' />
-      <ToggleRow status='passed' label='Passed' />
-      <ToggleRow status='failure' label='Failure' />
-      <ToggleRow status='error' label='Error' />
-      <ToggleRow status='skipped' label='Skipped' />
-      <ToggleRow status='unknown' label='Uknown' />
-    </div>
+    {active
+      ? <div className='card-content options-toggles'>
+        <ToggleRow status='all' label='All' />
+        <ToggleRow status='passed' label='Passed' />
+        <ToggleRow status='failure' label='Failure' />
+        <ToggleRow status='error' label='Error' />
+        <ToggleRow status='skipped' label='Skipped' />
+        <ToggleRow status='unknown' label='Uknown' />
+      </div>
+      : null}
   </div>
 }
 

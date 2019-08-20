@@ -56,7 +56,7 @@ const reducer = (state, { type, payload }) => {
   if (type === 'search-tests') {
     Object.values(state.suites).forEach(suite => {
       Object.values(suite.tests).forEach(test => {
-        if (!fuzzy.test(payload.value.toLowerCase(), test.name.toLowerCase())) {
+        if (!fuzzy.test(payload.value.toLowerCase(), test.name.toLowerCase()) && !test.messages.some(message => fuzzy.test(payload.value.toLowerCase(), message.toLowerCase()))) {
           if (update.currentSuites[suite.id]) delete update.currentSuites[suite.id].tests[test.id]
         } else if (suite.id in update.currentSuites && !(test.id in update.currentSuites[suite.id].tests)) {
           if (update.currentSuites[suite.id]) {

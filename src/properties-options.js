@@ -27,31 +27,38 @@ const ChevronDownIcon = () => <span className='icon'>
   <i className='fas fa-chevron-down' />
 </span>
 
-export default ({ count = 0, total = 0 }) => {
+export default ({ count = 0, total = 0, active = false }) => {
   return <div className={`options card`}>
     <header className='card-header'>
-      <div className='options-inputs'>
-        <Search label='Propeties' />
-        <Total count={count} total={total} />
-      </div>
+      <Search label='Propeties' />
+      <button className='button card-header-icon'>
+        <div className='options-inputs'>
+          <Total count={count} total={total} />
+        </div>
+        <span className='icon'>
+          <i className='fas fa-angle-down' />
+        </span>
+      </button>
     </header>
-    <div className='card-content'>
-      <div>
-        <Toggle
-          active
-          onLabel='Expanded'
-          offLabel='Contracted'
-          offIcon={<ChevronUpIcon />}
-          onIcon={<ChevronDownIcon />} />
+    {active
+      ? <div className='card-content'>
+        <div>
+          <Toggle
+            active
+            onLabel='Expanded'
+            offLabel='Contracted'
+            offIcon={<ChevronUpIcon />}
+            onIcon={<ChevronDownIcon />} />
+        </div>
+        <div>
+          <Toggle
+            active
+            onLabel='Visible'
+            offLabel='Hidden'
+            onIcon={<EyeIcon />}
+            offIcon={<EyeSlashIcon />} />
+        </div>
       </div>
-      <div>
-        <Toggle
-          active
-          onLabel='Visible'
-          offLabel='Hidden'
-          onIcon={<EyeIcon />}
-          offIcon={<EyeSlashIcon />} />
-      </div>
-    </div>
+      : null}
   </div>
 }

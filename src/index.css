@@ -56,6 +56,10 @@ body,
     transform: rotate(180deg);
 }
 
+.options:first-child {
+    margin-top: 0.1rem;
+}
+
 .options.is-active .card-header-icon .icon,
 .files.is-active .card-header-icon .icon {
     transform: rotate(0deg);
@@ -116,6 +120,23 @@ body,
 .options .card-header,
 .files .card-header {
     box-shadow: none;
+}
+
+.options .card-header {
+    padding: 10px 0;
+}
+
+.options .card-header-icon {
+    padding: 0;
+}
+
+.options .card-header-icon .icon {
+    margin-left: auto !important;
+    margin-right: 14px !important;
+}
+
+.test-options-toggle-row {
+    width: 450px;
 }
 
 .test-options-toggle-row-label {
