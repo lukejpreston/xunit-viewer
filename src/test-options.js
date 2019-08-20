@@ -111,7 +111,7 @@ const Options = ({
   dispatch,
   active = false
 }) => {
-  return <div className={`is-test options card ${active ? 'is-active' : 'is-inactive'}`}>
+  return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Tests' dispatch={dispatch} />
       <button

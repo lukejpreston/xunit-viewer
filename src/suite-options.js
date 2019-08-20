@@ -31,7 +31,7 @@ const ChevronDownIcon = () => <span className='icon'>
 </span>
 
 export default ({ suitesExpanded = true, count = 0, total = 0, dispatch, active = false }) => {
-  return <div className={`is-suite options card ${active ? 'is-active' : 'is-inactive'}`}>
+  return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Suites' dispatch={dispatch} />
       <button

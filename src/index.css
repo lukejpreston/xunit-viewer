@@ -142,19 +142,9 @@ body,
     overflow: hidden;
 }
 
-.options.is-suite.is-active .card-content {
+.options.is-active .card-content {
     padding: 1.5rem;
-    height: 76px;
-}
-
-.options.is-test.is-active .card-content {
-    padding: 1.5rem;
-    height: 216px;
-}
-
-.options.is-properties.is-active .card-content {
-    padding: 1.5rem;
-    height: 76px;
+    height: auto;
 }
 
 .properties-options-toggle {
