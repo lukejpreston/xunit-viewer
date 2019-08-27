@@ -24,7 +24,9 @@ const extarctSuiteMeta = (output, testsuite) => {
   const id = hashCode(name)
   const suite = output.suites[id] || {}
   suite.tests = suite.tests || {}
-  suite.properties = suite.properties || {}
+  suite.properties = suite.properties || {
+    _visible: true
+  }
   suite.id = id
   suite.name = name
   suite.time = meta.time || 0
@@ -72,7 +74,7 @@ const extractTests = (output, suite, testcases) => {
     const time = meta.time || 0
     const id = hashCode(name)
 
-    const test = suite.tests[id] || { id, name, messages: [] }
+    const test = suite.tests[id] || { id, name, messages: [], visible: true }
     test.time = time
     if (typeof testcase === 'string') test.messages.push(testcase.trim())
     if (testcase._) test.messages.push(testcase._.trim())

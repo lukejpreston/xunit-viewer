@@ -72,7 +72,7 @@ const StatusTotal = ({ testCounts, status }) => {
   return fromTestCounts(testCounts, status, 'total') > 0 ? <Total count={fromTestCounts(testCounts, status, 'count')} total={fromTestCounts(testCounts, status, 'total')} icon={status} /> : null
 }
 
-const ToggleRow = ({ status, label }) => <div className='test-options-toggle-row'>
+const ToggleRow = ({ status, label, dispatch, visible = true, expanded = true, raw = true }) => <div className='test-options-toggle-row'>
   <div className='test-options-toggle-row-label'>
     {status !== 'all'
       ? <span className='icon'>
@@ -84,19 +84,46 @@ const ToggleRow = ({ status, label }) => <div className='test-options-toggle-row
     <span>{label}</span>
   </div>
   <Toggle
-    active
+    onChange={() => {
+      dispatch({
+        type: 'toggle-test-visibility',
+        payload: {
+          status,
+          active: !visible
+        }
+      })
+    }}
+    active={visible}
     onLabel='Visible'
     offLabel='Hidden'
     onIcon={<EyeIcon />}
     offIcon={<EyeSlashIcon />} />
   <Toggle
-    active
+    onChange={() => {
+      dispatch({
+        type: 'toggle-test-expanded',
+        payload: {
+          status,
+          active: !expanded
+        }
+      })
+    }}
+    active={expanded}
     onLabel='Exanded'
     offLabel='Contracted'
     onIcon={<ChevronDownIcon />}
     offIcon={<ChevronUpIcon />} />
   <Toggle
-    active
+    onChange={() => {
+      dispatch({
+        type: 'toggle-test-raw',
+        payload: {
+          status,
+          active: !raw
+        }
+      })
+    }}
+    active={raw}
     onLabel='Raw'
     offLabel='Pretty'
     onIcon={<CodeIcon />}
@@ -109,7 +136,8 @@ const Options = ({
   count = 0,
   total = 0,
   dispatch,
-  active = false
+  active = false,
+  testOptions = {}
 }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
@@ -133,12 +161,12 @@ const Options = ({
     <div className='card-content options-toggles'>
       {active
         ? <>
-          <ToggleRow status='all' label='All' />
-          <ToggleRow status='passed' label='Passed' />
-          <ToggleRow status='failure' label='Failure' />
-          <ToggleRow status='error' label='Error' />
-          <ToggleRow status='skipped' label='Skipped' />
-          <ToggleRow status='unknown' label='Uknown' />
+          <ToggleRow status='all' label='All' dispatch={dispatch} {...testOptions.all} />
+          <ToggleRow status='passed' label='Passed' dispatch={dispatch} {...testOptions.passed} />
+          <ToggleRow status='failure' label='Failure' dispatch={dispatch} {...testOptions.failure} />
+          <ToggleRow status='error' label='Error' dispatch={dispatch} {...testOptions.error} />
+          <ToggleRow status='skipped' label='Skipped' dispatch={dispatch} {...testOptions.skipped} />
+          <ToggleRow status='unknown' label='Uknown' dispatch={dispatch} {...testOptions.unknown} />
         </>
         : null}
     </div>

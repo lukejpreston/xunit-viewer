@@ -140,7 +140,39 @@ const initialState = {
   activeFiles: false,
   suitesExpanded: true,
   propertiesExpanded: true,
-  propertiesVisible: true
+  propertiesVisible: true,
+  testOptions: {
+    all: {
+      visible: true,
+      expanded: true,
+      raw: true
+    },
+    passed: {
+      visible: true,
+      expanded: true,
+      raw: true
+    },
+    failure: {
+      visible: true,
+      expanded: true,
+      raw: true
+    },
+    error: {
+      visible: true,
+      expanded: true,
+      raw: true
+    },
+    skipped: {
+      visible: true,
+      expanded: true,
+      raw: true
+    },
+    unknown: {
+      visible: true,
+      expanded: true,
+      raw: true
+    }
+  }
 }
 
 const App = ({ files }) => {
