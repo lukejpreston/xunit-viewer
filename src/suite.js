@@ -30,7 +30,7 @@ const Properties = ({ properties, active = true, dispatch, suite }) => {
         </thead>
         <tbody>
           {Object.keys(properties)
-            .filter(key => key !== '_active')
+            .filter(key => key !== '_active' && key !== '_visible')
             .map(key => {
               return <tr key={key}>
                 <td>{key}</td>
@@ -111,7 +111,7 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
   })
 
   const hasTests = Object.keys(tests).length > 0
-  const hasProperties = Object.keys(properties).filter(key => key !== '_active').length > 0
+  const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
     <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id } }) }} disabled={!containsSomething}>

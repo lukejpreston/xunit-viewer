@@ -110,6 +110,14 @@ const reducer = (state, { type, payload }) => {
       return suite.properties._active || false
     })
   }
+
+  if (type === 'toggle-properties-visbility') {
+    Object.values(update.currentSuites).forEach(suite => {
+      suite.properties._visible = payload.active
+    })
+    update.propertiesVisible = payload.active
+  }
+
   if (type === 'toggle-test') {
     update.currentSuites[payload.suite].tests[payload.id].active = update.currentSuites[payload.suite].tests[payload.id].active || false
     update.currentSuites[payload.suite].tests[payload.id].active = !update.currentSuites[payload.suite].tests[payload.id].active
@@ -131,7 +139,8 @@ const initialState = {
   propertiesOptionsActive: false,
   activeFiles: false,
   suitesExpanded: true,
-  propertiesExpanded: true
+  propertiesExpanded: true,
+  propertiesVisible: true
 }
 
 const App = ({ files }) => {
@@ -141,10 +150,10 @@ const App = ({ files }) => {
   let currentPropertiesCount = 0
   let propertiesTotal = 0
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
-    currentPropertiesCount += Object.keys(suite.properties).filter(key => key !== '_active').length
+    currentPropertiesCount += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
   })
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
-    propertiesTotal += Object.keys(suite.properties).filter(key => key !== '_active').length
+    propertiesTotal += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
   })
 
   const testCounts = {}
@@ -183,6 +192,7 @@ const App = ({ files }) => {
           dispatch={dispatch} />
         <PropertiesOptions
           propertiesExpanded={state.propertiesExpanded}
+          propertiesVisible={state.propertiesVisible}
           active={state.propertiesOptionsActive}
           count={currentPropertiesCount}
           total={propertiesTotal}

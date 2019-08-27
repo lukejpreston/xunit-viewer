@@ -38,7 +38,7 @@ const ChevronDownIcon = () => <span className='icon'>
   <i className='fas fa-chevron-down' />
 </span>
 
-export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpanded = true }) => {
+export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpanded = true, propertiesVisible = true }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Propeties' dispatch={dispatch} />
@@ -74,7 +74,15 @@ export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpa
               onIcon={<ChevronDownIcon />} />
             <Toggle
               className='properties-options-toggle'
-              active
+              active={propertiesVisible}
+              onChange={() => {
+                dispatch({
+                  type: 'toggle-properties-visbility',
+                  payload: {
+                    active: !propertiesVisible
+                  }
+                })
+              }}
               onLabel='Visible'
               offLabel='Hidden'
               onIcon={<EyeIcon />}
