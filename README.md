@@ -200,7 +200,6 @@ When creating pull request please make sure the tests and linting is passing
 
 ## TODO
 
-* properties earch
 * test toggles
 * properties toggles
 * files

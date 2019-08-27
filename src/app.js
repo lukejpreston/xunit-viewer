@@ -75,6 +75,8 @@ const reducer = (state, { type, payload }) => {
         else if (suite.id in update.currentSuites && !(key in update.currentSuites[suite.id].properties)) {
           if (update.currentSuites[suite.id]) {
             update.currentSuites[suite.id].properties[key] = [].concat(state.suites[suite.id].properties[key])
+            update.currentSuites[suite.id].properties._active = true
+            update.propertiesExpanded = false
           }
         }
       })
@@ -94,6 +96,12 @@ const reducer = (state, { type, payload }) => {
     if (!('active' in update.currentSuites[payload.id])) update.currentSuites[payload.id].active = true
     update.currentSuites[payload.id].active = !update.currentSuites[payload.id].active
     update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
+  }
+  if (type === 'toggle-all-properties') {
+    Object.values(update.currentSuites).forEach(suite => {
+      suite.properties._active = payload.active
+    })
+    update.propertiesExpanded = payload.active
   }
   if (type === 'toggle-properties') {
     update.currentSuites[payload.suite].properties._active = update.currentSuites[payload.suite].properties._active || false
@@ -119,7 +127,8 @@ const initialState = {
   testOptionsActive: false,
   propertiesOptionsActive: false,
   activeFiles: false,
-  suitesExpanded: true
+  suitesExpanded: true,
+  propertiesExpanded: true
 }
 
 const App = ({ files }) => {
@@ -129,10 +138,10 @@ const App = ({ files }) => {
   let currentPropertiesCount = 0
   let propertiesTotal = 0
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
-    currentPropertiesCount += Object.keys(suite.properties).length
+    currentPropertiesCount += Object.keys(suite.properties).filter(key => key !== '_active').length
   })
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
-    propertiesTotal += Object.keys(suite.properties).length
+    propertiesTotal += Object.keys(suite.properties).filter(key => key !== '_active').length
   })
 
   const testCounts = {}
@@ -170,6 +179,7 @@ const App = ({ files }) => {
           total={testTotal}
           dispatch={dispatch} />
         <PropertiesOptions
+          propertiesExpanded={state.propertiesExpanded}
           active={state.propertiesOptionsActive}
           count={currentPropertiesCount}
           total={propertiesTotal}
