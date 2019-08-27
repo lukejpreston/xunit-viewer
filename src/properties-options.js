@@ -55,40 +55,38 @@ export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpa
     </header>
     <div className='card-content'>
       {active
-        ? <>
-          <div>
-            <Toggle
-              onChange={() => {
-                dispatch({
-                  type: 'toggle-all-properties',
-                  payload: {
-                    active: !propertiesExpanded
-                  }
-                })
-              }}
-              className='properties-options-toggle'
-              active={propertiesExpanded}
-              onLabel='Expanded'
-              offLabel='Contracted'
-              offIcon={<ChevronUpIcon />}
-              onIcon={<ChevronDownIcon />} />
-            <Toggle
-              className='properties-options-toggle'
-              active={propertiesVisible}
-              onChange={() => {
-                dispatch({
-                  type: 'toggle-properties-visbility',
-                  payload: {
-                    active: !propertiesVisible
-                  }
-                })
-              }}
-              onLabel='Visible'
-              offLabel='Hidden'
-              onIcon={<EyeIcon />}
-              offIcon={<EyeSlashIcon />} />
-          </div>
-        </>
+        ? <div>
+          <Toggle
+            className='properties-options-toggle'
+            active={propertiesVisible}
+            onChange={() => {
+              dispatch({
+                type: 'toggle-properties-visbility',
+                payload: {
+                  active: !propertiesVisible
+                }
+              })
+            }}
+            onLabel='Visible'
+            offLabel='Hidden'
+            onIcon={<EyeIcon />}
+            offIcon={<EyeSlashIcon />} />
+          <Toggle
+            onChange={() => {
+              dispatch({
+                type: 'toggle-all-properties',
+                payload: {
+                  active: !propertiesExpanded
+                }
+              })
+            }}
+            className='properties-options-toggle'
+            active={propertiesExpanded}
+            onLabel='Expanded'
+            offLabel='Contracted'
+            offIcon={<ChevronUpIcon />}
+            onIcon={<ChevronDownIcon />} />
+        </div>
         : null}
     </div>
 

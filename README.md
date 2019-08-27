@@ -201,11 +201,12 @@ When creating pull request please make sure the tests and linting is passing
 ## TODO
 
 * test toggles
-* properties toggles
 * files
   * tabs, add/remove file
   * contents change
   * populate contents
 * responsive
+* split suite into components
+* write some tests
 
 work out how to do the mustache stuff, react-snap to create the base and inline everything possible
