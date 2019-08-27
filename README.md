@@ -197,3 +197,16 @@ If you require the React based component please raise an issue. It was available
 8. `npm run release -- major|minor|patch`  to do a release, default is `patch`
 
 When creating pull request please make sure the tests and linting is passing
+
+## TODO
+
+* properties earch
+* test toggles
+* properties toggles
+* files
+  * tabs, add/remove file
+  * contents change
+  * populate contents
+* responsive
+
+work out how to do the mustache stuff, react-snap to create the base and inline everything possible

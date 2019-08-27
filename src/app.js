@@ -68,6 +68,19 @@ const reducer = (state, { type, payload }) => {
     })
   }
 
+  if (type === 'search-properties') {
+    Object.values(state.suites).forEach(suite => {
+      Object.entries(suite.properties).forEach(([key, values]) => {
+        if (!fuzzy.test(payload.value.toLowerCase(), key.toLowerCase()) && !values.some(value => fuzzy.test(payload.value.toLowerCase(), value.toLowerCase()))) delete update.currentSuites[suite.id].properties[key]
+        else if (suite.id in update.currentSuites && !(key in update.currentSuites[suite.id].properties)) {
+          if (update.currentSuites[suite.id]) {
+            update.currentSuites[suite.id].properties[key] = [].concat(state.suites[suite.id].properties[key])
+          }
+        }
+      })
+    })
+  }
+
   if (type === 'toggle-all-suites') {
     update.suitesExpanded = !state.suitesExpanded
     Object.values(update.currentSuites).forEach(suite => { suite.active = update.suitesExpanded })
