@@ -10,7 +10,7 @@ const icons = {
   unknown: 'question'
 }
 
-const Properties = ({ properties, active = false, dispatch, suite }) => {
+const Properties = ({ properties, active = true, dispatch, suite }) => {
   return <div className={`properties card is-${active ? 'active' : 'inactive'}`}>
     <button className='card-header' onClick={() => { dispatch({ type: 'toggle-properties', payload: { suite } }) }}>
       <p className='card-header-title'>Properties</p>
@@ -20,7 +20,7 @@ const Properties = ({ properties, active = false, dispatch, suite }) => {
         </span>
       </span>
     </button>
-    {!active ? <div className='card-content'>
+    {active ? <div className='card-content'>
       <table className='table'>
         <thead>
           <tr>
@@ -111,14 +111,13 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
   })
 
   const hasTests = Object.keys(tests).length > 0
-  const hasProperties = Object.keys(properties).length > 0
+  const hasProperties = Object.keys(properties).filter(key => key !== '_active').length > 0
   const containsSomething = hasTests || hasProperties
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
     <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id } }) }} disabled={!containsSomething}>
       <p className='card-header-title'>
         <span>{title(name)}</span>
         {time ? <small>time = {time}</small> : null}
-
       </p>
 
       {containsSomething ? <span className='card-header-icon'>

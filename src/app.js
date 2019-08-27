@@ -106,6 +106,9 @@ const reducer = (state, { type, payload }) => {
   if (type === 'toggle-properties') {
     update.currentSuites[payload.suite].properties._active = update.currentSuites[payload.suite].properties._active || false
     update.currentSuites[payload.suite].properties._active = !update.currentSuites[payload.suite].properties._active
+    update.propertiesExpanded = Object.values(update.currentSuites).some((suite) => {
+      return suite.properties._active || false
+    })
   }
   if (type === 'toggle-test') {
     update.currentSuites[payload.suite].tests[payload.id].active = update.currentSuites[payload.suite].tests[payload.id].active || false
