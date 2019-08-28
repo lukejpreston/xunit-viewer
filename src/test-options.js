@@ -133,12 +133,13 @@ const ToggleRow = ({ status, label, dispatch, visible = true, expanded = true, r
 
 const Options = ({
   testCounts = {},
+  testToggles = {},
   count = 0,
   total = 0,
   dispatch,
-  active = false,
-  testOptions = {}
+  active = false
 }) => {
+  console.log(testToggles)
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Tests' dispatch={dispatch} />
@@ -161,12 +162,12 @@ const Options = ({
     <div className='card-content options-toggles'>
       {active
         ? <>
-          <ToggleRow status='all' label='All' dispatch={dispatch} {...testOptions.all} />
-          <ToggleRow status='passed' label='Passed' dispatch={dispatch} {...testOptions.passed} />
-          <ToggleRow status='failure' label='Failure' dispatch={dispatch} {...testOptions.failure} />
-          <ToggleRow status='error' label='Error' dispatch={dispatch} {...testOptions.error} />
-          <ToggleRow status='skipped' label='Skipped' dispatch={dispatch} {...testOptions.skipped} />
-          <ToggleRow status='unknown' label='Uknown' dispatch={dispatch} {...testOptions.unknown} />
+          <ToggleRow status='all' label='All' dispatch={dispatch} {...testToggles.all} />
+          <ToggleRow status='passed' label='Passed' dispatch={dispatch} {...testToggles.passed} />
+          <ToggleRow status='failure' label='Failure' dispatch={dispatch} {...testToggles.failure} />
+          <ToggleRow status='error' label='Error' dispatch={dispatch} {...testToggles.error} />
+          <ToggleRow status='skipped' label='Skipped' dispatch={dispatch} {...testToggles.skipped} />
+          <ToggleRow status='unknown' label='Uknown' dispatch={dispatch} {...testToggles.unknown} />
         </>
         : null}
     </div>

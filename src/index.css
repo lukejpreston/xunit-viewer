@@ -154,7 +154,7 @@ body,
 
 
 .test-options-toggle-row {
-    width: 450px;
+    display: flex;
 }
 
 .test-options-toggle-row-label {

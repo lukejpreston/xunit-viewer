@@ -110,7 +110,7 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
     else unknown += 1
   })
 
-  const hasTests = Object.keys(tests).length > 0
+  const hasTests = Object.keys(tests).length > 0 && Object.values(tests).some(test => test.visible)
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
@@ -138,19 +138,19 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
         {hasProperties ? <Properties properties={properties} suite={id} dispatch={dispatch} active={properties._active} /> : null}
         <div>
           {Object.keys(tests)
-            .filter((key) => tests[key].status === 'failure')
+            .filter((key) => tests[key].visible && tests[key].status === 'failure')
             .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
-            .filter((key) => tests[key].status === 'error')
+            .filter((key) => tests[key].visible && tests[key].status === 'error')
             .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
-            .filter((key) => tests[key].status === 'passed')
+            .filter((key) => tests[key].visible && tests[key].status === 'passed')
             .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
-            .filter((key) => tests[key].status === 'skipped')
+            .filter((key) => tests[key].visible && tests[key].status === 'skipped')
             .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
           {Object.keys(tests)
-            .filter((key) => !['failure', 'error', 'passed', 'skipped'].includes(tests[key].status))
+            .filter((key) => tests[key].visible && !['failure', 'error', 'passed', 'skipped'].includes(tests[key].status))
             .map(key => <Test key={key} {...tests[key]} suite={id} dispatch={dispatch} />)}
         </div>
       </div>

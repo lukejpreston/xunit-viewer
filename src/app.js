@@ -126,6 +126,32 @@ const reducer = (state, { type, payload }) => {
     if (!('raw' in update.currentSuites[payload.suite].tests[payload.id])) update.currentSuites[payload.suite].tests[payload.id].raw = true
     update.currentSuites[payload.suite].tests[payload.id].raw = !update.currentSuites[payload.suite].tests[payload.id].raw
   }
+  if (type === 'toggle-test-visibility') {
+    update.testToggles = state.testToggles
+    update.testToggles[payload.status].visible = payload.active
+
+    Object.values(update.currentSuites).forEach(suite => {
+      Object.values(suite.tests).forEach(test => {
+        if (payload.status === 'all') test.visible = payload.active
+      })
+    })
+
+    if (payload.status === 'all') {
+      update.testToggles.passed.visible = payload.active
+      update.testToggles.failure.visible = payload.active
+      update.testToggles.error.visible = payload.active
+      update.testToggles.skipped.visible = payload.active
+      update.testToggles.unknown.visible = payload.active
+    }
+  }
+  if (type === 'toggle-test-expanded') {
+    update.testToggles = state.testToggles
+    update.testToggles[payload.status].expanded = payload.active
+  }
+  if (type === 'toggle-test-raw') {
+    update.testToggles = state.testToggles
+    update.testToggles[payload.status].raw = payload.active
+  }
 
   return merge.recursive(true, state, update)
 }
@@ -141,7 +167,7 @@ const initialState = {
   suitesExpanded: true,
   propertiesExpanded: true,
   propertiesVisible: true,
-  testOptions: {
+  testToggles: {
     all: {
       visible: true,
       expanded: true,
@@ -218,6 +244,7 @@ const App = ({ files }) => {
           total={Object.keys(state.suites).length} />
         <TestOptions
           active={state.testOptionsActive}
+          testToggles={state.testToggles}
           testCounts={testCounts}
           count={testCount}
           total={testTotal}
