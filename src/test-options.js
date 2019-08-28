@@ -139,7 +139,6 @@ const Options = ({
   dispatch,
   active = false
 }) => {
-  console.log(testToggles)
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Tests' dispatch={dispatch} />

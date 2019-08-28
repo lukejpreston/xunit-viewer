@@ -60,7 +60,6 @@ const CodeIcon = () => <span className='icon'>
 </span>
 
 const Test = ({ id, messages, status, time, name, active = true, raw = true, dispatch, suite }) => {
-  console.log(name, active)
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
     <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={messages.length === 0}>
       <p className='card-header-title'>

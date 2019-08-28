@@ -52,7 +52,6 @@ const reducer = (state, { type, payload }) => {
     })
     update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
   }
-
   if (type === 'search-tests') {
     Object.values(state.suites).forEach(suite => {
       Object.values(suite.tests).forEach(test => {
@@ -62,24 +61,34 @@ const reducer = (state, { type, payload }) => {
           if (update.currentSuites[suite.id]) {
             update.currentSuites[suite.id].tests[test.id] = merge.recursive(true, {}, state.suites[suite.id].tests[test.id])
             update.currentSuites[suite.id].tests[test.id].active = true
+            update.currentSuites[suite.id].tests[test.id].visible = true
+            update.currentSuites[suite.id].tests[test.id].raw = true
           }
         }
       })
     })
   }
-
   if (type === 'search-properties') {
     Object.values(state.suites).forEach(suite => {
       Object.entries(suite.properties).forEach(([key, values]) => {
+        values = values || []
+        if (values === true) values = []
         if (!fuzzy.test(payload.value.toLowerCase(), key.toLowerCase()) && !values.some(value => fuzzy.test(payload.value.toLowerCase(), value.toLowerCase()))) delete update.currentSuites[suite.id].properties[key]
         else if (suite.id in update.currentSuites && !(key in update.currentSuites[suite.id].properties)) {
           if (update.currentSuites[suite.id]) {
             update.currentSuites[suite.id].properties[key] = [].concat(state.suites[suite.id].properties[key])
             update.currentSuites[suite.id].properties._active = true
+            update.currentSuites[suite.id].properties._visible = true
             update.propertiesExpanded = false
           }
         }
       })
+    })
+    update.propertiesExpanded = Object.values(update.currentSuites).some((suite) => {
+      return suite.properties._active || false
+    })
+    update.propertiesVisible = Object.values(update.currentSuites).some((suite) => {
+      return suite.properties._visible || false
     })
   }
 
@@ -128,7 +137,6 @@ const reducer = (state, { type, payload }) => {
 
     Object.values(update.currentSuites).forEach(suite => {
       Object.values(suite.tests).forEach(test => {
-        console.log(test.status)
         if (payload.status === 'all') test.visible = payload.active
         else if (payload.status === test.status) test.visible = payload.active
         else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.visible = payload.active
@@ -155,7 +163,6 @@ const reducer = (state, { type, payload }) => {
 
     Object.values(update.currentSuites).forEach(suite => {
       Object.values(suite.tests).forEach(test => {
-        console.log(test.status)
         if (payload.status === 'all') test.active = payload.active
         else if (payload.status === test.status) test.active = payload.active
         else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.active = payload.active
@@ -182,7 +189,6 @@ const reducer = (state, { type, payload }) => {
 
     Object.values(update.currentSuites).forEach(suite => {
       Object.values(suite.tests).forEach(test => {
-        console.log(test.status)
         if (payload.status === 'all') test.raw = payload.active
         else if (payload.status === test.status) test.raw = payload.active
         else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.raw = payload.active
