@@ -265,7 +265,9 @@ const App = ({ files }) => {
           count={currentPropertiesCount}
           total={propertiesTotal}
           dispatch={dispatch} />
-        <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
+        {process.env.NODE_ENV === 'development'
+          ? <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
+          : null}
       </div>
     </header>
     <main>
