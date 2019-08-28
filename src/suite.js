@@ -59,7 +59,8 @@ const CodeIcon = () => <span className='icon'>
   <i className='fas fa-code' />
 </span>
 
-const Test = ({ id, messages, status, time, name, active = false, raw = true, dispatch, suite }) => {
+const Test = ({ id, messages, status, time, name, active = true, raw = true, dispatch, suite }) => {
+  console.log(name, active)
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
     <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id } }) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
@@ -75,7 +76,7 @@ const Test = ({ id, messages, status, time, name, active = false, raw = true, di
         </span>
       </span> : null}
     </button>
-    {!active && messages.length > 0 ? <div className='card-content'>
+    {active && messages.length > 0 ? <div className='card-content'>
       <Toggle
         active={raw}
         onLabel='raw'

@@ -156,10 +156,56 @@ const reducer = (state, { type, payload }) => {
   if (type === 'toggle-test-expanded') {
     update.testToggles = state.testToggles
     update.testToggles[payload.status].expanded = payload.active
+
+    Object.values(update.currentSuites).forEach(suite => {
+      Object.values(suite.tests).forEach(test => {
+        console.log(test.status)
+        if (payload.status === 'all') test.active = payload.active
+        else if (payload.status === test.status) test.active = payload.active
+        else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.active = payload.active
+      })
+    })
+
+    if (payload.status === 'all') {
+      update.testToggles.passed.expanded = payload.active
+      update.testToggles.failure.expanded = payload.active
+      update.testToggles.error.expanded = payload.active
+      update.testToggles.skipped.expanded = payload.active
+      update.testToggles.unknown.expanded = payload.active
+    } else {
+      if (update.testToggles.passed.expanded ||
+          update.testToggles.failure.expanded ||
+          update.testToggles.error.expanded ||
+          update.testToggles.skipped.expanded ||
+          update.testToggles.unknown.expanded) update.testToggles.all.expanded = true
+    }
   }
   if (type === 'toggle-test-raw') {
     update.testToggles = state.testToggles
     update.testToggles[payload.status].raw = payload.active
+
+    Object.values(update.currentSuites).forEach(suite => {
+      Object.values(suite.tests).forEach(test => {
+        console.log(test.status)
+        if (payload.status === 'all') test.raw = payload.active
+        else if (payload.status === test.status) test.raw = payload.active
+        else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.raw = payload.active
+      })
+    })
+
+    if (payload.status === 'all') {
+      update.testToggles.passed.raw = payload.active
+      update.testToggles.failure.raw = payload.active
+      update.testToggles.error.raw = payload.active
+      update.testToggles.skipped.raw = payload.active
+      update.testToggles.unknown.raw = payload.active
+    } else {
+      if (update.testToggles.passed.raw ||
+          update.testToggles.failure.raw ||
+          update.testToggles.error.raw ||
+          update.testToggles.skipped.raw ||
+          update.testToggles.unknown.raw) update.testToggles.all.raw = true
+    }
   }
 
   return merge.recursive(true, state, update)

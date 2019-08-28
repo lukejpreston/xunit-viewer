@@ -454,7 +454,7 @@ body,
     margin: 8px 0;
 }
 
-.test.card.is-populated.is-inactive {
+.test.card.is-populated.is-active {
     margin: 24px 0;
 }
 
