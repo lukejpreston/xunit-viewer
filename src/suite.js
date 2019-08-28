@@ -12,7 +12,7 @@ const icons = {
 
 const Properties = ({ properties, active = true, dispatch, suite }) => {
   return <div className={`properties card is-${active ? 'active' : 'inactive'}`}>
-    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-properties', payload: { suite } }) }}>
+    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-properties', payload: { suite, active: !active } }) }}>
       <p className='card-header-title'>Properties</p>
       <span className='card-header-icon'>
         <span className='icon'>
@@ -62,7 +62,7 @@ const CodeIcon = () => <span className='icon'>
 const Test = ({ id, messages, status, time, name, active = true, raw = true, dispatch, suite }) => {
   console.log(name, active)
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
-    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id } }) }} disabled={messages.length === 0}>
+    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
         <span className='icon'>
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
@@ -83,7 +83,7 @@ const Test = ({ id, messages, status, time, name, active = true, raw = true, dis
         onIcon={<CodeIcon />}
         offIcon={<PrettyIcon />}
         offLabel='pretty'
-        onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id } })} />
+        onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id, raw: !raw } })} />
       {raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
     </div> : null}
   </div>
@@ -115,7 +115,7 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
-    <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id } }) }} disabled={!containsSomething}>
+    <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id, active: !active } }) }} disabled={!containsSomething}>
       <p className='card-header-title'>
         <span>{title(name)}</span>
         {time ? <small>time = {time}</small> : null}

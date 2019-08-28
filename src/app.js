@@ -93,8 +93,7 @@ const reducer = (state, { type, payload }) => {
   if (type === 'toggle-properties-options') update.propertiesOptionsActive = !state.propertiesOptionsActive
   if (type === 'toggle-files') update.activeFiles = !state.activeFiles
   if (type === 'toggle-suite') {
-    if (!('active' in update.currentSuites[payload.id])) update.currentSuites[payload.id].active = true
-    update.currentSuites[payload.id].active = !update.currentSuites[payload.id].active
+    update.currentSuites[payload.id].active = payload.active
     update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
   }
   if (type === 'toggle-all-properties') {
@@ -104,8 +103,7 @@ const reducer = (state, { type, payload }) => {
     update.propertiesExpanded = payload.active
   }
   if (type === 'toggle-properties') {
-    update.currentSuites[payload.suite].properties._active = update.currentSuites[payload.suite].properties._active || false
-    update.currentSuites[payload.suite].properties._active = !update.currentSuites[payload.suite].properties._active
+    update.currentSuites[payload.suite].properties._active = payload.active
     update.propertiesExpanded = Object.values(update.currentSuites).some((suite) => {
       return suite.properties._active || false
     })
@@ -119,12 +117,10 @@ const reducer = (state, { type, payload }) => {
   }
 
   if (type === 'toggle-test') {
-    update.currentSuites[payload.suite].tests[payload.id].active = update.currentSuites[payload.suite].tests[payload.id].active || false
-    update.currentSuites[payload.suite].tests[payload.id].active = !update.currentSuites[payload.suite].tests[payload.id].active
+    update.currentSuites[payload.suite].tests[payload.id].active = payload.active
   }
   if (type === 'toggle-test-mode') {
-    if (!('raw' in update.currentSuites[payload.suite].tests[payload.id])) update.currentSuites[payload.suite].tests[payload.id].raw = true
-    update.currentSuites[payload.suite].tests[payload.id].raw = !update.currentSuites[payload.suite].tests[payload.id].raw
+    update.currentSuites[payload.suite].tests[payload.id].raw = payload.raw
   }
   if (type === 'toggle-test-visibility') {
     update.testToggles = state.testToggles
