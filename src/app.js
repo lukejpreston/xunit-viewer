@@ -132,7 +132,10 @@ const reducer = (state, { type, payload }) => {
 
     Object.values(update.currentSuites).forEach(suite => {
       Object.values(suite.tests).forEach(test => {
+        console.log(test.status)
         if (payload.status === 'all') test.visible = payload.active
+        else if (payload.status === test.status) test.visible = payload.active
+        else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.visible = payload.active
       })
     })
 
@@ -142,6 +145,12 @@ const reducer = (state, { type, payload }) => {
       update.testToggles.error.visible = payload.active
       update.testToggles.skipped.visible = payload.active
       update.testToggles.unknown.visible = payload.active
+    } else {
+      if (update.testToggles.passed.visible ||
+          update.testToggles.failure.visible ||
+          update.testToggles.error.visible ||
+          update.testToggles.skipped.visible ||
+          update.testToggles.unknown.visible) update.testToggles.all.visible = true
     }
   }
   if (type === 'toggle-test-expanded') {
