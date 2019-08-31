@@ -6,9 +6,12 @@ import '@fortawesome/fontawesome-free/js/all'
 import './index.css'
 import App from './app'
 
-const files = [{
-  file: '/path/to/file/complete.xml',
-  contents: `<?xml version="1.0" encoding="UTF-8" ?>
+let files = window.files || []
+
+if (process.env.NODE_ENV === 'development') {
+  files = [{
+    file: '/path/to/file/complete.xml',
+    contents: `<?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
     <testsuite name="suite with properties" time="100">
         <properties>
@@ -111,6 +114,7 @@ const files = [{
         </testsuite>
     </testsuite>
 </testsuites>`
-}]
+  }]
+}
 
 ReactDOM.render(<App files={files} />, document.getElementById('root'))

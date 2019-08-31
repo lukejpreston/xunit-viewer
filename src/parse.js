@@ -128,4 +128,4 @@ const parse = async (xml) => {
   return output
 }
 
-export default parse
+module.exports = parse

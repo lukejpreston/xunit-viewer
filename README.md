@@ -209,4 +209,4 @@ When creating pull request please make sure the tests and linting is passing
 * split suite into components
 * write some tests
 
-work out how to do the mustache stuff, react-snap to create the base and inline everything possible
+work out how to do the handlebars stuff, react-snap to create the base and inline everything possible
