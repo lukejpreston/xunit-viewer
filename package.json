@@ -25,7 +25,7 @@
   },
   "directories": {
     "bin": "bin",
-    "cli": "src/cli"
+    "cli": "cli"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -200,7 +200,7 @@ When creating pull request please make sure the tests and linting is passing
 
 ## TODO
 
-* test toggles
+* test toggles, they do not repsond like the other toggles do
 * files
   * tabs, add/remove file
   * contents change
@@ -208,5 +208,7 @@ When creating pull request please make sure the tests and linting is passing
 * responsive
 * split suite into components
 * write some tests
-
-work out how to do the handlebars stuff, react-snap to create the base and inline everything possible
+* make the filtering work fo cli
+* watch
+* get socket io working
+* when doing a deploy make it make the template, I also want to only publish the dist folder for nom
