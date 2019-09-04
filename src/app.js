@@ -11,20 +11,21 @@ import Suite from './suite'
 import parse from './parse'
 
 const parseAll = async (dispatch, files, suites) => {
-  for (const { contents } of files) {
-    const parsed = await parse(contents)
-    for (const id in parsed.suites) {
-      const suite = parsed.suites[id]
-      suites[id] = suites[id] || {}
-      suites[id] = merge.recursive(suites[id], suite)
+  for (const { file, contents } of files) {
+    try {
+      console.log(file)
+      const parsed = await parse(contents)
+      suites = merge.recursive(true, suites, parsed)
+    } catch (err) {
+      console.log('Failed to parse', file, '\n', err.message)
     }
-    dispatch({
-      type: 'parse-suites',
-      payload: {
-        suites
-      }
-    })
   }
+  dispatch({
+    type: 'parse-suites',
+    payload: {
+      suites: suites.suites
+    }
+  })
 }
 
 const reducer = (state, { type, payload }) => {
