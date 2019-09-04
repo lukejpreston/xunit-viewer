@@ -25,10 +25,7 @@
   },
   "directories": {
     "bin": "bin",
-    "cli": "cli",
-    "component": "component",
-    "config": "config",
-    "parser": "parser"
+    "cli": "src/cli"
   },
   "scripts": {
     "start": "react-scripts start",
