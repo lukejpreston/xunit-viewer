@@ -32,7 +32,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src index.js"
+    "lint": "eslint src index.js",
+    "deploy": "npm run build && cp -r build/static src/cli/static"
   },
   "dependencies": {
     "chalk": "^2.4.2",

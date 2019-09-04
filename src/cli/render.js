@@ -2,10 +2,10 @@ const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
 
-const buildDir = path.resolve(__dirname, '../../build')
+const staticDir = path.resolve(__dirname, './static')
 
 const getHTML = (type) => {
-  const dir = path.join(buildDir, `static/${type}`)
+  const dir = path.join(staticDir, type)
   return fs.readdirSync(dir)
     .filter(file => file.endsWith(`.${type}`) && !file.includes('runtime'))
     .map(file => fs.readFileSync(path.join(dir, file)).toString())
