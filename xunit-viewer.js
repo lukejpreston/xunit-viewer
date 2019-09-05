@@ -34,10 +34,10 @@ module.exports = async (args) => {
   }
 
   if (args.console || args.output !== false) await runXunitViewer()
-  if (args.watch) {
+  if (args.server || args.port) server(logger, args)
+  else if (args.watch) {
     watch(args, async () => {
       await runXunitViewer()
     })
   }
-  if (args.server || args.port) server(logger, args)
 }
