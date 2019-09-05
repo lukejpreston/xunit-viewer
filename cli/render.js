@@ -17,15 +17,11 @@ module.exports = (logger, files, description, { output = 'index.html', title = '
   const styles = getHTML('css')
 
   const template = Handlebars.compile(fs.readFileSync(path.resolve(__dirname, 'index.html')).toString())
-  const result = template({
+  return template({
     files: JSON.stringify(files),
     scripts,
     styles,
     title,
     description
   })
-
-  const outputFile = path.resolve(process.cwd(), output)
-  fs.writeFileSync(outputFile, result)
-  console.log('Written to:', logger.file(outputFile))
 }

@@ -1,4 +1,3 @@
-// const clear = require('clear')
 const clear = require('console-clear')
 
 module.exports = (output, logger, description, { title }) => {

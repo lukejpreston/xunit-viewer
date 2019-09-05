@@ -27,7 +27,11 @@ const instance = yargs
   .describe('i', 'Ignore patterns')
 
   .string('output')
-  .coerce('output', (arg) => path.resolve(process.cwd(), arg.endsWith('.html') ? arg : `${arg}.html`))
+  .default('output', 'index.html')
+  .coerce('output', (arg) => {
+    if (arg === 'false') return false
+    return path.resolve(process.cwd(), arg.endsWith('.html') ? arg : `${arg}.html`)
+  })
   .alias('o', 'output')
   .describe('o', 'Output filename')
 
@@ -39,10 +43,10 @@ const instance = yargs
   .alias('c', 'console')
   .describe('c', 'Render in console')
 
-  .boolean('save')
-  .default('s', true)
-  .alias('s', 'save')
-  .describe('s', 'Save to file')
+  .boolean('server')
+  .default('s', false)
+  .alias('s', 'server')
+  .describe('s', 'Start a server and sockets for live updates')
 
   .boolean('no-color')
   .alias('n', 'no-color')

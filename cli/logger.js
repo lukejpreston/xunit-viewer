@@ -2,6 +2,10 @@ const chalk = require('chalk')
 const { title } = require('change-case')
 
 module.exports = (noColor) => ({
+  server: (message, address) => {
+    if (noColor) return `${message} ${address}`
+    return `${chalk.bold(message)} ${chalk.underline.blueBright(address)}`
+  },
   property: (key, values) => {
     if (noColor) return `${key}=${values.join(', ')}`
     return `${chalk.bold.cyan(key)}=${chalk.cyan(values.join(', '))}`
