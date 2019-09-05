@@ -1,6 +1,9 @@
+// const clear = require('clear')
+const clear = require('console-clear')
 
 module.exports = (output, logger, description, { title }) => {
   const { suites } = output
+  clear()
   Object.values(suites).forEach(suite => {
     console.log('\n', logger.suite(suite.name))
 

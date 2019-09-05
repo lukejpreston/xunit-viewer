@@ -7,6 +7,7 @@ const parse = require('./parse')
 const terminal = require('./terminal')
 const render = require('./render')
 const ChangeCase = require('change-case')
+const watch = require('./watch')
 
 const logger = Logger(args.noColor)
 
@@ -17,9 +18,8 @@ if (!fs.existsSync(results)) {
   process.exit(1)
 }
 
-const main = async () => {
+const getSuites = async (files) => {
   let suites = {}
-  const files = getFiles(logger, args)
   for (const { file, contents } of files) {
     try {
       const res = await parse(contents)
@@ -28,7 +28,10 @@ const main = async () => {
       console.log(logger.error('Failed to parse'), logger.file(file), '\n', logger.error(err.message), '\n')
     }
   }
+  return suites
+}
 
+const getTestCounts = (suites) => {
   const testCounts = {}
   Object.values(suites.suites).forEach((suite) => {
     Object.values(suite.tests).forEach((test) => {
@@ -37,13 +40,32 @@ const main = async () => {
       testCounts[status] += 1
     })
   })
-  const description = Object.entries(testCounts)
+  return testCounts
+}
+
+const getDescription = (testCounts) => {
+  return Object.entries(testCounts)
     .map(([status, count]) => {
       return `${count} ${ChangeCase.title(status)}`
     })
     .join(', ')
+}
 
+const runXunitViewer = async () => {
+  const files = getFiles(logger, args)
+  const suites = await getSuites(files)
+  const testCounts = getTestCounts(suites)
+  const description = getDescription(testCounts)
   if (args.console) terminal(suites, logger, description, args)
   if (args.save) render(logger, files, description, args)
+}
+
+const main = async () => {
+  await runXunitViewer()
+  if (args.watch) {
+    watch(args, async () => {
+      await runXunitViewer()
+    })
+  }
 }
 main()

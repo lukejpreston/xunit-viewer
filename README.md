@@ -212,3 +212,4 @@ When creating pull request please make sure the tests and linting is passing
 * watch
 * get socket io working
 * when doing a deploy make it make the template, I also want to only publish the dist folder for nom
+* setup gh-pages to work, it should have index.html sample.html and two images
