@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import merge from 'merge'
 import fuzzy from 'fuzzy'
 
@@ -288,6 +288,18 @@ const App = ({ files }) => {
       testTotal += 1
       testCount += 1
     })
+  })
+
+  const onUpdate = ({ files }) => {
+    parseAll(dispatch, files, {})
+  }
+
+  window.sockets = window.sockets || null
+  useEffect(() => {
+    if (window.sockets === null && 'io' in window) {
+      window.sockets = window.io()
+      window.sockets.on('update', onUpdate)
+    }
   })
 
   return <div>

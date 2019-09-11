@@ -12,7 +12,7 @@ const getHTML = (type) => {
     .join('\n')
 }
 
-module.exports = (logger, files, description, { output = 'index.html', title = 'Xunit Viewer' }) => {
+module.exports = (logger, files, description, { output = 'index.html', title = 'Xunit Viewer' }, useSockets = false) => {
   const scripts = getHTML('js')
   const styles = getHTML('css')
 
@@ -22,6 +22,7 @@ module.exports = (logger, files, description, { output = 'index.html', title = '
     scripts,
     styles,
     title,
-    description
+    description,
+    useSockets
   })
 }

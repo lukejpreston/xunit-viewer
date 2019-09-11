@@ -92,6 +92,9 @@
             a()
         }([])
     </script>
+    {{#if useSockets}}
+    <script src="/socket.io/socket.io.js"></script>
+    {{/if}}
     <script>
         window.files = {{{files}}}
     </script>
