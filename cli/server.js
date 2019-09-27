@@ -5,7 +5,6 @@ const render = require('./render')
 const getSuites = require('./get-suites')
 const getDescription = require('./get-description')
 const watch = require('./watch')
-const debounce = require('debounce')
 
 module.exports = async (logger, args) => {
   var app = require('express')()
@@ -21,11 +20,8 @@ module.exports = async (logger, args) => {
   })
 
   io.on('connection', function (socket) {
-    const callback = debounce(() => {
+    watch(args, () => {
       socket.emit('update', { files: getFiles(logger, args) })
-    })
-    watch(args, (files) => {
-      callback()
     })
   })
 

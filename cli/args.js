@@ -54,11 +54,11 @@ const instance = yargs
 
   .boolean('watch')
   .alias('w', 'watch')
-  .describe('w', 'Watch, includes live-reload')
+  .describe('w', 'Re-run when a file changes')
 
   .number('port')
   .alias('p', 'port')
-  .describe('p', 'Change port for watch')
+  .describe('p', 'Starts a server with sockets on that port, if no port is provided then it will run on port 3000 (or next available)')
 
   .string('properties.search')
   .alias('p.s', 'properties.search')

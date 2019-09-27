@@ -1,21 +1,16 @@
 # Xunit Viewer
 
-Xunit Viewer support node LTS version (currently 10)
+Takes all your XUnit and JUnit XML files and makes them reable
 
-## Contributing
+## Features
 
-The following will start
-* app (port 3000)
-* server (port 3030)
-* console
-* output
-* test
+* Generate a HTML single file with ability to search, filter
+* Render results out to the console, this comes with the ability to search and filter
+* Re-run the above when a file changes
+* Start a server with websockets to keep the browser in-sync with the data
+* Add files to the web app without having to re-run xunit viewer
 
-each will restart when a file changes
-
-```sh
-docker-compose up --build -d
-```
+Xunit Viewer supports node LTS version (currently 10)
 
 ## Usage, CLI
 
@@ -55,9 +50,34 @@ export default () => {
 }
 ```
 
+## Contributing
+
+Simply run the following
+
+```sh
+docker-compose up --build -d
+```
+
+The following will start
+* app (port 3000)
+* server (port 3030)
+* console
+* output (saved to output/sample.html)
+
+These are using either webpack (react-scripts) or pm2 in order to restart on file changes
+
+## Help Wanted!
+
+I am always looking for sample data. If you have some results which you think are "interesting" then please raise an issue or pull request and we can add this to our sample data.
+
+## Issues
+
+Raise any issues using GitHub and provide sample data where possible.
+
+It may be useful to know what node and npm version you are using as well as what OS you are running to help debug any issues.
+
 ## TODO
 
-* get socket io working
 * filtering cli, I think it would say what the URL is or apply it to console
 * test toggles, they do not repsond like the other toggles do
 * files
