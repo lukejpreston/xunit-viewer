@@ -32,12 +32,12 @@ const xml2js = (xml) => {
 }
 
 const expandMeta = (thing) => {
-  const meta = thing['$']
+  const meta = thing.$
   if (meta) {
     Object.keys(meta).forEach(key => {
       thing[key] = meta[key]
     })
-    delete thing['$']
+    delete thing.$
   }
 }
 
@@ -50,7 +50,7 @@ const buildProperties = (suite) => {
       })
       .forEach(property => {
         property.property.forEach(prop => {
-          const meta = prop['$']
+          const meta = prop.$
           properties[meta.name] = meta.value
         })
       })
@@ -62,9 +62,9 @@ const buildProperties = (suite) => {
 const extactMessage = (thing) => {
   if (typeof thing === 'string') return
   thing.message = ''
-  if (thing['_']) {
-    thing.message = thing['_']
-    delete thing['_']
+  if (thing._) {
+    thing.message = thing._
+    delete thing._
   }
 }
 
@@ -78,10 +78,10 @@ const extractTestCore = (test, type, status) => {
     if (test.message === '') {
       if (core.message) {
         test.message = core.message
-      } else if (core['$']) {
+      } else if (core.$) {
         test.message = ''
-        if (core['$'].message) test.message += core['$'].message
-        if (core['$'].type) test.message += core['$'].type
+        if (core.$.message) test.message += core.$.message
+        if (core.$.type) test.message += core.$.type
       } else if (typeof core === 'string') {
         test.message = core
       }

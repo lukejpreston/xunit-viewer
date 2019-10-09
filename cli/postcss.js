@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const postcss = require('postcss')
-const ccsnext = require('postcss-cssnext')
+const ccsnext = require('postcss-preset-env')
 const uglifycss = require('uglifycss')
 
 const bulmaFile = require.resolve('bulma').replace('bulma.sass', 'css/bulma.css')

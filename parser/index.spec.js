@@ -28,7 +28,7 @@ function removeUUIDs (output) {
   } else {
     for (const key in output) {
       if (key === '_uuid') {
-        delete output['_uuid']
+        delete output._uuid
       } else if (typeof output[key] === 'object') {
         removeUUIDs(output[key])
       }
