@@ -22,19 +22,19 @@ const colors = {
   error: chalk.yellow
 }
 
-let logTest = (test, indentation) => {
+const logTest = (test, indentation) => {
   let indent = ''
   for (let i = 0; i < indentation; i++) indent += '  '
-  let color = colors[test.status].bold
-  let symbol = symbols[test.status]
+  const color = colors[test.status].bold
+  const symbol = symbols[test.status]
   console.log(`${indent}${color(symbol)} ${test.name}`)
   if (test.message) {
-    let message = test.message.split('\n').map(line => `${indent}    ${chalk.dim(line)}`).join('\n')
+    const message = test.message.split('\n').map(line => `${indent}    ${chalk.dim(line)}`).join('\n')
     console.log(message)
   }
 }
 
-let logProperties = (properties, indentation) => {
+const logProperties = (properties, indentation) => {
   console.log()
   console.log(chalk.underline('Properties:'))
 
@@ -46,15 +46,15 @@ let logProperties = (properties, indentation) => {
   })
 }
 
-let logSuite = (suite, indentation) => {
+const logSuite = (suite, indentation) => {
   console.log()
   let indent = ''
   for (let i = 0; i < indentation; i++) indent += '  '
-  let color = colors[suite.status].bold
-  let symbol = symbols[suite.status]
+  const color = colors[suite.status].bold
+  const symbol = symbols[suite.status]
   console.log(`${indent}${color(symbol)} ${chalk.bold(suite.name)}`)
 
-  let tests = suite.tests || []
+  const tests = suite.tests || []
   tests.forEach(test => {
     logTest(test, indentation + 1)
   })
@@ -68,25 +68,25 @@ let logSuite = (suite, indentation) => {
   }
 }
 
-let getName = (stat) => {
+const getName = (stat) => {
   let name = stat.name + ':'
-  let minLength = 11
+  const minLength = 11
   while (name.length < minLength) name += ' '
   return chalk.bold(name)
 }
 
-let getTotal = (stat, max) => {
+const getTotal = (stat, max) => {
   let total = stat.total + ''
   while (total.length < max) total += ' '
   return chalk.bold(total)
 }
 
-let logStat = (stat, maxTotal) => {
+const logStat = (stat, maxTotal) => {
   let message = `${getName(stat)} ${getTotal(stat, maxTotal)} total`
 
   if (stat.data) {
-    let extra = stat.data.map(d => {
-      let color = colors[d.type]
+    const extra = stat.data.map(d => {
+      const color = colors[d.type]
       return `${color(d.symbol)}  ${getTotal(d, maxTotal)} ${color(d.type)}`
     }).join(', ')
     message += ', ' + extra
@@ -95,8 +95,8 @@ let logStat = (stat, maxTotal) => {
   console.log(message)
 }
 
-let logStats = (suites) => {
-  let stats = extractStats(suites)
+const logStats = (suites) => {
+  const stats = extractStats(suites)
 
   let maxTotal = Math.max.apply(null, stats.map(s => s.total)) + ''
   maxTotal = maxTotal.length
@@ -123,13 +123,13 @@ const log = (options) => {
             logStats(suites)
             console.log(chalk.cyan.bold('\nDone:', new Date()))
           })
-        .catch(err => {
-          console.error(err.stack)
-        })
+          .catch(err => {
+            console.error(err.stack)
+          })
       })
-    .catch(err => {
-      console.error(err.stack)
-    })
+      .catch(err => {
+        console.error(err.stack)
+      })
   }, 1000)
 }
 

@@ -2,7 +2,7 @@ import iconMap from '../icon-map'
 import searchSuites from '../search-suites'
 
 export default (suites, search) => {
-  let hasSuites = suites.length > 0
+  const hasSuites = suites.length > 0
   let hasTests = false
   let hasProperties = false
   suites.forEach(suite => {
@@ -12,7 +12,7 @@ export default (suites, search) => {
 
   suites = searchSuites(suites, search)
 
-  let stats = {
+  const stats = {
     suites: {
       name: 'Suites',
       type: 'suites',
@@ -32,7 +32,7 @@ export default (suites, search) => {
     }
   }
 
-  let count = {
+  const count = {
     pass: {
       suites: 0,
       tests: 0
@@ -55,7 +55,7 @@ export default (suites, search) => {
     }
   }
 
-  let updateCount = (type, group) => {
+  const updateCount = (type, group) => {
     if (count[type][group] > 0) {
       stats[group].data.push({
         type,
@@ -66,13 +66,13 @@ export default (suites, search) => {
   }
 
   suites.forEach(suite => {
-    if (count.hasOwnProperty(suite.status)) count[suite.status].suites += 1
+    if (Object.prototype.hasOwnProperty.call(count, suite.status)) count[suite.status].suites += 1
     else count.unknown.suites += 1
 
     if (suite.tests) {
       stats.tests.total += suite.tests.length
       suite.tests.forEach(test => {
-        if (count.hasOwnProperty(test.status)) count[test.status].tests += 1
+        if (Object.prototype.hasOwnProperty.call(count, test.status)) count[test.status].tests += 1
         else count.unknown.tests += 1
       })
     }
@@ -91,7 +91,7 @@ export default (suites, search) => {
   updateCount('unknown', 'suites')
   updateCount('unknown', 'tests')
 
-  let result = []
+  const result = []
   if (hasSuites) result.push(stats.suites)
   if (hasTests) result.push(stats.tests)
   if (hasProperties) result.push(stats.properties)

@@ -3,7 +3,7 @@ const toLaxTitleCase = require('titlecase').toLaxTitleCase
 const uuid = require('uuid')
 
 const xml2js = (xml) => {
-  let data = parseString(xml)
+  const data = parseString(xml)
 
   let suites = []
   if (data.testsuites && data.testsuites.testsuite) {
@@ -32,7 +32,7 @@ const xml2js = (xml) => {
 }
 
 const expandMeta = (thing) => {
-  let meta = thing['$']
+  const meta = thing['$']
   if (meta) {
     Object.keys(meta).forEach(key => {
       thing[key] = meta[key]
@@ -42,7 +42,7 @@ const expandMeta = (thing) => {
 }
 
 const buildProperties = (suite) => {
-  let properties = {}
+  const properties = {}
   if (suite.properties) {
     suite.properties
       .filter(property => {
@@ -50,7 +50,7 @@ const buildProperties = (suite) => {
       })
       .forEach(property => {
         property.property.forEach(prop => {
-          let meta = prop['$']
+          const meta = prop['$']
           properties[meta.name] = meta.value
         })
       })
@@ -72,7 +72,7 @@ const extractTestCore = (test, type, status) => {
   if (test[type]) {
     test.status = status
 
-    let core = test[type][0]
+    const core = test[type][0]
     extactMessage(core)
 
     if (test.message === '') {
@@ -131,7 +131,7 @@ const buildTests = (suite) => {
       return true
     })
     .map(test => {
-      if (typeof test === 'string') return buildTest({ '_': test })
+      if (typeof test === 'string') return buildTest({ _: test })
       else return buildTest(test)
     })
   delete suite.testcase
@@ -204,7 +204,7 @@ const buildSuites = (suites) => {
 
 module.exports = {
   parse (xml) {
-    let suites = xml2js(xml)
+    const suites = xml2js(xml)
     return buildSuites(suites)
   }
 }

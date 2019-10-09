@@ -10,8 +10,8 @@ const getInput = (name) => {
 }
 
 describe('parser', () => {
-  let input = getInput('special_chars_suite')
-  let parsed = parser.parse(input)
+  const input = getInput('special_chars_suite')
+  const parsed = parser.parse(input)
 
   it('works', () => {
     expect(parsed).toEqual(output)

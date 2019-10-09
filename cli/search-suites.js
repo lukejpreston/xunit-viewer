@@ -1,7 +1,7 @@
 const clone = require('clone')
 const fuzzysearch = require('fuzzysearch')
 
-let matches = (str, match) => {
+const matches = (str, match) => {
   return fuzzysearch(str.toLowerCase(), match.toLowerCase())
 }
 
@@ -19,10 +19,10 @@ module.exports = (suites, search) => {
     }
 
     if (suite.properties) {
-      let properties = {}
+      const properties = {}
       properties._uuid = suite.properties._uuid
       Object.keys(suite.properties).forEach(key => {
-        let value = suite.properties[key]
+        const value = suite.properties[key]
         if (matches(search.properties, key) || matches(search.properties, value)) properties[key] = value
       })
 

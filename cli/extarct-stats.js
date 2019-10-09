@@ -7,7 +7,7 @@ const symbols = {
 }
 
 module.exports = (suites) => {
-  let hasSuites = suites.length > 0
+  const hasSuites = suites.length > 0
   let hasTests = false
   let hasProperties = false
   suites.forEach(suite => {
@@ -15,7 +15,7 @@ module.exports = (suites) => {
     if (suite.properties) hasProperties = true
   })
 
-  let stats = {
+  const stats = {
     suites: {
       name: 'Suites',
       type: 'suites',
@@ -35,7 +35,7 @@ module.exports = (suites) => {
     }
   }
 
-  let count = {
+  const count = {
     pass: {
       suites: 0,
       tests: 0
@@ -58,7 +58,7 @@ module.exports = (suites) => {
     }
   }
 
-  let updateCount = (type, group) => {
+  const updateCount = (type, group) => {
     if (count[type][group] > 0) {
       stats[group].data.push({
         type,
@@ -69,13 +69,13 @@ module.exports = (suites) => {
   }
 
   suites.forEach(suite => {
-    if (count.hasOwnProperty(suite.status)) count[suite.status].suites += 1
+    if (Object.prototype.hasOwnProperty.call(count, suite.status)) count[suite.status].suites += 1
     else count.unknown.suites += 1
 
     if (suite.tests) {
       stats.tests.total += suite.tests.length
       suite.tests.forEach(test => {
-        if (count.hasOwnProperty(test.status)) count[test.status].tests += 1
+        if (Object.prototype.hasOwnProperty.call(count, test.status)) count[test.status].tests += 1
         else count.unknown.tests += 1
       })
     }
@@ -94,7 +94,7 @@ module.exports = (suites) => {
   updateCount('unknown', 'suites')
   updateCount('unknown', 'tests')
 
-  let result = []
+  const result = []
   if (hasSuites) result.push(stats.suites)
   if (hasTests) result.push(stats.tests)
   if (hasProperties) result.push(stats.properties)
