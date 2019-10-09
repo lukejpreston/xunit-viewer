@@ -14,10 +14,24 @@ describe('parser', () => {
   const parsed = parser.parse(input)
 
   it('works', () => {
-    expect(parsed).toEqual(output)
+    expect(removeUUIDs(parsed)).toEqual(removeUUIDs(output))
   })
 
   it('works for special chars in suite name', () => {
     expect(parsed[1].name).toEqual('@release2017.1.0,, @Mcc272151_10: Display List of Records')
   })
 })
+
+function removeUUIDs (output) {
+  if (Array.isArray(output)) {
+    output.forEach(removeUUIDs)
+  } else {
+    for (const key in output) {
+      if (key === '_uuid') {
+        delete output['_uuid']
+      } else if (typeof output[key] === 'object') {
+        removeUUIDs(output[key])
+      }
+    }
+  }
+}
