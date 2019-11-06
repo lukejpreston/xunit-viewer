@@ -1,5 +1,5 @@
 export default (setState) => {
-  if (!window.hasOwnProperty('io')) return
+  if (!Object.prototype.hasOwnProperty.call(window, 'io')) return
 
   const socket = window.io()
 

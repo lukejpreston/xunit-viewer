@@ -74,7 +74,7 @@ module.exports = ({ results, ignore, output, terminal, title, port, watch, filte
   port = extractPort(port)
   title = extarctTitle(title)
 
-  let options = (port) => {
+  const options = (port) => {
     return new Promise(resolve => {
       resolve({ results, ignore, output, terminal, title, port, watch, filter, dev })
     })
