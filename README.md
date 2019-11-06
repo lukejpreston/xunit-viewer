@@ -51,7 +51,7 @@ If you want to run this from a node script instead of command line first install
 Then from your scripts do the following
 
 ```js
-const XunitViewer = require('xunit-viewer')
+const XunitViewer = require('xunit-viewer/cli')
 const result = XunitViewer({
     results: '',
     suites: [],
