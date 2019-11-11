@@ -8,14 +8,14 @@ services:
       - /usr/app/node_modules
     command: 'sh -c "npm i && npm start"'
     ports:
-      - 3000:3000
+      - 9090:9090
   server:
     image: node:lts
     working_dir: /usr/app
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
-    command: 'sh -c "npm i && npx pm2-dev start ecosystem-server.config.js"'
+    command: 'sh -c "npm i && npx pm2 --no-daemon start ecosystem-server.config.js"'
     ports:
       - 3030:3030
   console:
@@ -24,11 +24,11 @@ services:
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
-    command: 'sh -c "npm i && npx pm2-dev start ecosystem-console.config.js"'
+    command: 'sh -c "npm i && npx pm2 start --no-daemon ecosystem-console.config.js"'
   output:
     image: node:lts
     working_dir: /usr/app
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
-    command: 'sh -c "npm i && npx pm2-dev start ecosystem-output.config.js"'
+    command: 'sh -c "npm i && npx pm2 --no-daemon start ecosystem-output.config.js"'
