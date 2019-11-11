@@ -13,7 +13,6 @@ import parse from './parse'
 const parseAll = async (dispatch, files, suites) => {
   for (const { file, contents } of files) {
     try {
-      console.log(file)
       const parsed = await parse(contents)
       suites = merge.recursive(true, suites, parsed)
     } catch (err) {
@@ -311,21 +310,24 @@ const App = ({ files }) => {
           suitesExpanded={state.suitesExpanded}
           dispatch={dispatch}
           count={Object.keys(state.currentSuites).length}
-          total={Object.keys(state.suites).length} />
+          total={Object.keys(state.suites).length}
+        />
         <TestOptions
           active={state.testOptionsActive}
           testToggles={state.testToggles}
           testCounts={testCounts}
           count={testCount}
           total={testTotal}
-          dispatch={dispatch} />
+          dispatch={dispatch}
+        />
         <PropertiesOptions
           propertiesExpanded={state.propertiesExpanded}
           propertiesVisible={state.propertiesVisible}
           active={state.propertiesOptionsActive}
           count={currentPropertiesCount}
           total={propertiesTotal}
-          dispatch={dispatch} />
+          dispatch={dispatch}
+        />
         {process.env.NODE_ENV === 'development'
           ? <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
           : null}
@@ -338,7 +340,7 @@ const App = ({ files }) => {
         </div>
       </div>
     </main>
-  </div>
+         </div>
 }
 
 export default App

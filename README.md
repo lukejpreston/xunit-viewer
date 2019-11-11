@@ -78,14 +78,13 @@ It may be useful to know what node and npm version you are using as well as what
 
 ## TODO
 
-* filtering cli, I think it would say what the URL is or apply it to console
-* test toggles, they do not repsond like the other toggles do
 * files
   * tabs, add/remove file
   * contents change
   * populate contents
 * setup gh-pages to work, it should have index.html sample.html and two images
 * write some tests
-* split suite into components
 * add router
+* filtering cli, I think it would say what the URL is or apply it to console
 * responsive menu button
+* split suite into components

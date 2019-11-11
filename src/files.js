@@ -24,29 +24,37 @@ const Files = ({ active = false, setActive, files = [] }) => {
       <div className='tabs is-boxed'>
         <ul>
           <li className='is-inactive'>
-            <a href={active ? '/' : null} onClick={(evt) => {
-              console.log('open file')
-              evt.preventDefault()
-            }}>
-              <span>file.xml</span>
-              <button disabled={!active} className='delete is-small' onClick={(evt) => {
-                console.log('remove file')
-                evt.stopPropagation()
+            <a
+              href={active ? '/' : null} onClick={(evt) => {
+                console.log('open file')
                 evt.preventDefault()
-              }} />
+              }}
+            >
+              <span>file.xml</span>
+              <button
+                disabled={!active} className='delete is-small' onClick={(evt) => {
+                  console.log('remove file')
+                  evt.stopPropagation()
+                  evt.preventDefault()
+                }}
+              />
             </a>
           </li>
           <li className='is-active'>
-            <a href={active ? '/' : null} onClick={(evt) => {
-              console.log('open file')
-              evt.preventDefault()
-            }}>
-              <span>file.xml</span>
-              <button disabled={!active} className='delete is-small' onClick={(evt) => {
-                console.log('remove file')
-                evt.stopPropagation()
+            <a
+              href={active ? '/' : null} onClick={(evt) => {
+                console.log('open file')
                 evt.preventDefault()
-              }} />
+              }}
+            >
+              <span>file.xml</span>
+              <button
+                disabled={!active} className='delete is-small' onClick={(evt) => {
+                  console.log('remove file')
+                  evt.stopPropagation()
+                  evt.preventDefault()
+                }}
+              />
             </a>
           </li>
           {/* <li>
