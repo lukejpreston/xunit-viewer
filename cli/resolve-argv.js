@@ -16,7 +16,7 @@ const map = {
 }
 
 module.exports = () => {
-  let options = {
+  const options = {
     filter: {}
   }
 
@@ -33,16 +33,16 @@ module.exports = () => {
 
     if (arg.includes('--filter')) {
       arg = arg.replace('--filter', '')
-      let split = arg.split('=')
+      const split = arg.split('=')
 
-      let keys = split[0].split('.')
-      let thing = keys[1]
-      let filter = keys[2]
+      const keys = split[0].split('.')
+      const thing = keys[1]
+      const filter = keys[2]
       let value = split[1]
       if (filter === 'hidden') {
         value = split[1].split(',')
         value.map(v => {
-          if (!map.hasOwnProperty(v)) return 'unknown'
+          if (!Object.prototype.hasOwnProperty.call(map, v)) return 'unknown'
           return map[v]
         })
       }

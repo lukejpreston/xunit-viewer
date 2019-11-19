@@ -4,8 +4,8 @@ const paths = require('../config/paths')
 
 require('./build')(paths)
   .then(() => {
-    let staticPath = path.join(paths.appBuild, 'static/css/static')
-    let mediaPath = path.join(paths.appBuild, 'static/media')
+    const staticPath = path.join(paths.appBuild, 'static/css/static')
+    const mediaPath = path.join(paths.appBuild, 'static/media')
     fs.removeSync(staticPath)
     fs.mkdirpSync(staticPath)
     fs.copySync(mediaPath, path.join(staticPath, 'media'))

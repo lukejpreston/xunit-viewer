@@ -1,288 +1,295 @@
-:root {
-  --fail: #E74C3C;
-  --pass: #23D160;
-  --error: #FFDD57;
-  --skip: #ECF0F1;
-  --unknown: #3273DC;
-  --info: #2C3E50;
-  --burger-margin: 7px;
+.hero {
+  background-image: linear-gradient(141deg, #2C3E50 0%, rgb(55, 72, 89) 71%, rgb(65, 81, 98) 100%);
 }
 
-.hero {
-  background-image: linear-gradient(141deg, #2C3E50 0%, color(#2C3E50 tint(5%)) 71%, color(#2C3E50 tint(10%)) 100%);
+.hero-head {
+  border-bottom: solid 1px #aaa;
+  height: 65px
+}
 
-  &-head {
-    height: 49px;
+.hero-head .title {
+  color: #fff;
+  line-height: 49px;
+  font-weight: normal;
+}
 
-    & .title {
-      color: #fff;
-      line-height: 49px;
-    }
+.hero-head .icon {
+  margin-top: 3px;
+  margin-right: 10px
+}
 
-    & .icon {
-      margin-top: 3px;
-      margin-right: 10px;
+.hero-head .icon .background,
+.hero-head .icon .char,
+.hero-head .icon .border {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
 
-      & .background,
-      & .char,
-      & .border {
-        transition: all 0.2s;
-      }
+.hero-head .icon .border-top,
+.hero-head .icon .border-left,
+.hero-head .icon .char-x {
+  fill: #23D160;
+  stroke: #23D160;
+}
 
-      & .border-top,
-      & .border-left,
-      & .char-x {
-        fill: var(--pass);
-        stroke: var(--pass);
-      }
+.hero-head .icon .border-bottom,
+.hero-head .icon .border-right,
+.hero-head .icon .char-v {
+  fill: #E74C3C;
+  stroke: #E74C3C;
+}
 
-      & .border-bottom,
-      & .border-right,
-      & .char-v {
-        fill: var(--fail);
-        stroke: var(--fail);
-      }
+.hero-head .icon:hover .border-top,
+.hero-head .icon:hover .border-left,
+.hero-head .icon:hover .char-x {
+  fill: #E74C3C;
+  stroke: #E74C3C;
+}
 
-      &:hover {
-        & .border-top,
-        & .border-left,
-        & .char-x {
-          fill: var(--fail);
-          stroke: var(--fail);
-        }
+.hero-head .icon:hover .border-bottom,
+.hero-head .icon:hover .border-right,
+.hero-head .icon:hover .char-v {
+  fill: #23D160;
+  stroke: #23D160;
+}
 
-        & .border-bottom,
-        & .border-right,
-        & .char-v {
-          fill: var(--pass);
-          stroke: var(--pass);
-        }
-      }
-    }
+.hero-head .burger {
+  width: 63px;
+  position: relative;
+  height: 49px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s
+}
 
-    & .burger {
-      width: calc(9 * var(--burger-margin));
-      position: relative;
-      height: 49px;
-      background-color: transparent;
-      transition: background-color 0.2s;
+.hero-head .burger .top,
+.hero-head .burger .middle,
+.hero-head .burger .bottom {
+  position: absolute;
+  border: solid 1px #fff;
+  width: 28px;
+  left: 14px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s
+}
 
-      & .top,
-      & .middle,
-      & .bottom {
-        position: absolute;
-        border: solid 1px #fff;
-        width: calc(4 * var(--burger-margin));
-        left: calc(2 * var(--burger-margin));
-        transition: all 0.2s;
+.hero-head .burger .top:before,
+.hero-head .burger .middle:before,
+.hero-head .burger .bottom:before {
+  content: ' ';
+}
 
-        &:before {
-          content: ' ';
-        }
-      }
+.hero-head .burger .top {
+  margin-top: 15px;
+}
 
-      & .top {
-        margin-top: calc(var(--burger-margin) + var(--burger-margin) + 1px);
-      }
+.hero-head .burger .middle {
+  margin-top: 22px;
+}
 
-      & .middle {
-        margin-top: calc(2 * var(--burger-margin) + var(--burger-margin) + 1px);
-      }
+.hero-head .burger .bottom {
+  margin-top: 29px;
+}
 
-      & .bottom {
-        margin-top: calc(3 * var(--burger-margin) + var(--burger-margin) + 1px);
-      }
+.hero-head .burger:hover {
+  cursor: pointer;
+  background-color: rgb(65, 81, 98)
+}
 
-      &:hover {
-        cursor: pointer;
-        background-color: color(var(--info) tint(10%));
+.hero-head .burger:hover .bottom {
+  display: none;
+}
 
-        & .bottom {
-          display: none;
-        }
+.hero-head .burger:hover .top,
+.hero-head .burger:hover .middle {
+  width: 21px;
+}
 
-        & .top,
-        & .middle {
-          width: calc(2 * var(--burger-margin) + 7px);
-        }
+.hero-head .burger:hover .top {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 22px;
+}
 
-        & .top {
-          transform: rotate(45deg);
-          margin-top: calc(2 * var(--burger-margin) + var(--burger-margin) + 1px);
-        }
+.hero-head .burger:hover .middle {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 28px;
+}
 
-        & .middle {
-          transform: rotate(-45deg);
-          left: calc(4 * var(--burger-margin));
-        }
-      }
+.hero-head .burger.is-active .bottom {
+  display: none;
+}
 
-      &.is-active {
-        & .bottom {
-          display: none;
-        }
+.hero-head .burger.is-active .top {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-top: 22px;
+}
 
-        & .top {
-          transform: rotate(-45deg);
-          margin-top: calc(2 * var(--burger-margin) + var(--burger-margin) + 1px);
-        }
+.hero-head .burger.is-active .middle {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 22px;
+}
 
-        & .middle {
-          transform: rotate(45deg);
-          margin-top: calc(2 * var(--burger-margin) + var(--burger-margin) + 1px);
-        }
+.hero-head .burger.is-active:hover .top,
+.hero-head .burger.is-active:hover .middle {
+  width: 21px;
+}
 
-        &:hover {
-          & .top,
-          & .middle {
-            width: calc(2 * var(--burger-margin) + 7px);
-          }
+.hero-head .burger.is-active:hover .top {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-top: 22px;
+}
 
-          & .top {
-            transform: rotate(-45deg);
-            margin-top: calc(2 * var(--burger-margin) + var(--burger-margin) + 1px);
-          }
+.hero-head .burger.is-active:hover .middle {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 28px;
+}
 
-          & .middle {
-            transform: rotate(45deg);
-            left: calc(4 * var(--burger-margin));
-          }
-        }
-      }
-    }
-  }
+.hero-body {
+  -webkit-transition: height 0.2s, padding 0.2s;
+  transition: height 0.2s, padding 0.2s;
+  overflow: hidden;
+  height: 0;
+  padding: 0 10px
+}
 
-  &-body {
-    transition: height 0.2s, padding 0.2s;
-    overflow: hidden;
-    height: 0;
-    padding: 0 10px;
+.hero-body .subtitle {
+  margin-bottom: 10px;
+}
 
-    & .subtitle {
-      margin-bottom: 10px;
-    }
+.hero-body.is-active {
+  padding: 10px
+}
 
-    &.is-active {
-      padding: 10px;
+.hero-body.is-active.size-3 {
+  height: calc(7.155em + 39px);
+}
 
-      &.size-3 {
-        height: calc(3 * (2.385em + 13px));
-      }
+.hero-body.is-active.size-2 {
+  height: calc(4.77em + 30px);
+}
 
-      &.size-2 {
-        height: calc(2 * (2.385em + 15px));
-      }
+.hero-body.is-active.size-1 {
+  height: calc(2.385em + 20px);
+}
 
-      &.size-1 {
-        height: calc(2.385em + 20px);
-      }
-    }
-  }
 
-  & .input {
-    width: 170px;
-    height: 2.385em;
-    border: 0;
-    border-radius: 3px 0 0 3px;
-  }
+.hero .input {
+  width: 170px;
+  height: 2.385em;
+  border: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-  & .control .icon {
-    fill: #AAA;
-  }
+.hero .control .icon {
+  fill: #AAA;
+}
 
-  & .subtitle {
-    & .toggle {
+.hero .subtitle .toggle a {
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  border-color: #fff
+}
 
-      & a {
-        transition: background-color 0.2s;
-        border-color: #fff;
+.hero .subtitle .toggle a span {
+  color: #444;
+}
 
-        & span {
-          color: #444;
-        }
-      }
-    }
+.hero .subtitle .change {
+  padding: 9px 0 8px 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 0px !important;
+}
 
-    & .change {
-      padding: 9px 0 8px 0;
-      display: inline-flex;
-      border-radius: 0px !important;
-    }
+.hero .subtitle .is-suites,
+.hero .subtitle .is-tests,
+.hero .subtitle .is-properties {
+  min-width: 110px
+}
 
-    & .is-suites,
-    & .is-tests,
-    & .is-properties {
-      min-width: 110px;
+.hero .subtitle .is-suites .count,
+.hero .subtitle .is-suites .change,
+.hero .subtitle .is-tests .count,
+.hero .subtitle .is-tests .change,
+.hero .subtitle .is-properties .count,
+.hero .subtitle .is-properties .change {
+  background-color: rgb(171, 178, 185) !important
+}
 
-      & .count,
-      & .change {
-        background-color: color(var(--info) tint(60%)) !important;
+.hero .subtitle .is-suites .count:hover,
+.hero .subtitle .is-suites .change:hover,
+.hero .subtitle .is-tests .count:hover,
+.hero .subtitle .is-tests .change:hover,
+.hero .subtitle .is-properties .count:hover,
+.hero .subtitle .is-properties .change:hover {
+  background-color: rgb(213, 216, 220) !important;
+}
 
-        &:hover {
-          background-color: color(var(--info) tint(80%)) !important;
-        }
-      }
+.hero .subtitle .is-suites .count .icon,
+.hero .subtitle .is-tests .count .icon,
+.hero .subtitle .is-properties .count .icon {
+  display: none;
+}
 
-      & .count {
-        & .icon {
-          display: none;
-        }
-      }
-    }
+.hero .subtitle .is-pass .count,
+.hero .subtitle .is-pass .change {
+  background-color: #23D160 !important
+}
 
-    & .is-pass {
-      & .count,
-      & .change {
-        background-color: var(--pass) !important;
+.hero .subtitle .is-pass .count:hover,
+.hero .subtitle .is-pass .change:hover {
+  background-color: rgb(79, 218, 128) !important;
+}
 
-        &:hover {
-          background-color: color(var(--pass) tint(20%)) !important;
-        }
-      }
-    }
+.hero .subtitle .is-fail .count,
+.hero .subtitle .is-fail .change {
+  background-color: #E74C3C !important
+}
 
-    & .is-fail {
-      & .count,
-      & .change {
-        background-color: var(--fail) !important;
+.hero .subtitle .is-fail .count:hover,
+.hero .subtitle .is-fail .change:hover {
+  background-color: rgb(236, 112, 99) !important;
+}
 
-        &:hover {
-          background-color: color(var(--fail) tint(20%)) !important;
-        }
-      }
-    }
+.hero .subtitle .is-error .count,
+.hero .subtitle .is-error .change {
+  background-color: #FFDD57 !important
+}
 
-    & .is-error {
-      & .count,
-      & .change {
-        background-color: var(--error) !important;
+.hero .subtitle .is-error .count:hover,
+.hero .subtitle .is-error .change:hover {
+  background-color: rgb(255, 228, 121) !important;
+}
 
-        &:hover {
-          background-color: color(var(--error) tint(20%)) !important;
-        }
-      }
-    }
+.hero .subtitle .is-skip .count,
+.hero .subtitle .is-skip .change {
+  background-color: #ECF0F1 !important
+}
 
-    & .is-skip {
-      & .count,
-      & .change {
-        background-color: var(--skip) !important;
+.hero .subtitle .is-skip .count:hover,
+.hero .subtitle .is-skip .change:hover {
+  background-color: rgb(210, 210, 210) !important;
+}
 
-        &:hover {
-          background-color: color(var(--skip) b(20%)) !important;
-        }
-      }
-    }
+.hero .subtitle .is-unknown .count,
+.hero .subtitle .is-unknown .change {
+  background-color: rgb(112, 157, 231) !important
+}
 
-    & .is-unknown {
-      & .count,
-      & .change {
-        background-color: color(var(--unknown) tint(30%)) !important;
+.hero .subtitle .is-unknown .count:hover,
+.hero .subtitle .is-unknown .change:hover {
+  background-color: rgb(91, 143, 227) !important;
+}
 
-        &:hover {
-          background-color: color(var(--unknown) tint(20%)) !important;
-        }
-      }
-    }
-  }
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

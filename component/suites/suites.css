@@ -1,11 +1,3 @@
-:root {
-  --fail: #E74C3C;
-  --pass: #23D160;
-  --error: #FFDD57;
-  --skip: #ECF0F1;
-  --unknown: #3273DC;
-}
-
 .card-header-icon .icon {
   width: 20px;
   transform: translateY(-5px);
@@ -15,106 +7,104 @@
   transform: rotate(180deg) translateY(0px);
 }
 
-.suites {
-  & .fa {
-    padding-right: 5px;
-  }
+.suites .fa {
+  padding-right: 5px;
+}
 
-  & .suite,
-  & .test {
-    margin-bottom: 10px;
-  }
+.suites .suite,
+.suites .test {
+  margin-bottom: 10px;
+}
 
-  & .suite,
-  & .test,
-  & .properties {
-    & .icon {
-      margin: 0 3px;
-    }
+.suites .suite .icon,
+.suites .test .icon,
+.suites .properties .icon {
+  margin: 0 3px;
+}
 
-    &.is-collapsed {
-      & .card-content,
-      & .table {
-        display: none !important;
-      }
-    }
+.suites .suite.is-collapsed .card-content,
+.suites .suite.is-collapsed .table,
+.suites .test.is-collapsed .card-content,
+.suites .test.is-collapsed .table,
+.suites .properties.is-collapsed .card-content,
+.suites .properties.is-collapsed .table {
+  display: none !important;
+}
 
-    & .properties.is-collapsed {
-      margin-bottom: 10px;
-    }
+.suites .suite .properties.is-collapsed,
+.suites .test .properties.is-collapsed,
+.suites .properties .properties.is-collapsed {
+  margin-bottom: 10px;
+}
 
-    &.is-expanded {
-      & .card-content {
-        display: block;
-      }
+.suites .suite.is-expanded .card-content,
+.suites .test.is-expanded .card-content,
+.suites .properties.is-expanded .card-content {
+  display: block;
+}
 
-      & .table {
-        display: table;
-      }
-    }
-  }
+.suites .suite.is-expanded .table,
+.suites .test.is-expanded .table,
+.suites .properties.is-expanded .table {
+  display: table;
+}
 
-  & .properties {
-    & .card-header {
-      background-color: var(--skip);
+.suites .properties .card-header {
+  background-color: #ECF0F1;
+}
 
-      &:hover {
-        background-color: color(var(--skip) b(15%));
-      }
-    }
-  }
+.suites .properties .card-header:hover {
+  background-color: rgb(220, 220, 220);
+}
 
-  & .card-header {
-    color: #666;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.suites .card-header {
+  color: #666;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-    &-icon {
-      color: #666;
-    }
-  }
+.suites .card-header-icon {
+  color: #666;
+}
 
+.suites .is-fail {
+  background-color: #E74C3C;
+}
 
-  & .is-fail {
-    background-color: var(--fail);
+.suites .is-fail:hover {
+  background-color: rgb(217, 77, 61);
+}
 
-    &:hover {
-      background-color: color(var(--fail) b(15%));
-    }
-  }
+.suites .is-pass {
+  background-color: #23D160;
+}
 
-  & .is-pass {
-    background-color: var(--pass);
+.suites .is-pass:hover {
+  background-color: rgb(36, 217, 99);
+}
 
-    &:hover {
-      background-color: color(var(--pass) b(15%));
-    }
-  }
+.suites .is-error {
+  background-color: #FFDD57;
+}
 
-  & .is-error {
-    background-color: var(--error);
+.suites .is-error:hover {
+  background-color: rgb(217, 191, 87);
+}
 
-    &:hover {
-      background-color: color(var(--error) b(15%));
-    }
-  }
+.suites .is-skip {
+  background-color: #ECF0F1;
+}
 
-  & .is-skip {
-    background-color: var(--skip);
+.suites .is-skip:hover {
+  background-color: rgb(220, 220, 220);
+}
 
-    &:hover {
-      background-color: color(var(--skip) b(15%));
-    }
-  }
+.suites .is-unknown {
+  background-color: rgb(153, 185, 238);
+}
 
-  & .is-unknown {
-    background-color: color(var(--unknown) tint(50%));
-
-    &:hover {
-      background-color: color(var(--unknown) b(15%));
-    }
-  }
-
+.suites .is-unknown:hover {
+  background-color: rgb(51, 115, 217);
 }
 
 .card-header-title {
@@ -127,21 +117,21 @@
 }
 
 .test-toggle {
-  margin-bottom: 8px;
+  margin-bottom: 8px
+}
 
-  & input {
-    height: 16px;
-    vertical-align: middle;
-  }
+.test-toggle input {
+  height: 16px;
+  vertical-align: middle;
+}
 
-  & label {
-    margin-left: 8px;
-  }
+.test-toggle label {
+  margin-left: 8px;
+}
 
-  & label:hover,
-  & input:hover {
-    cursor: pointer;
-  }
+.test-toggle label:hover,
+.test-toggle input:hover {
+  cursor: pointer;
 }
 
 .test-message,
@@ -150,4 +140,23 @@
   overflow: auto;
   display: block;
   padding: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.search .icon svg {
+  width: 40%;
+}
+
+.change,
+li {
+  height: 38px;
 }

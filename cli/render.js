@@ -6,7 +6,7 @@ const mustache = require('mustache')
 const postcss = require('./postcss')
 const component = require('./component')
 
-let template = fs.readFileSync(path.resolve(__dirname, './template.html')).toString()
+const template = fs.readFileSync(path.resolve(__dirname, './template.html')).toString()
 mustache.parse(template)
 
 const icons = {
