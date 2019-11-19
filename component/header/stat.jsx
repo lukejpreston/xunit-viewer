@@ -6,27 +6,28 @@ import Eye from '../icons/eye'
 import EyeSlash from '../icons/eye-slash'
 import Search from '../icons/search'
 
-let Icon = ({ children }) => {
-  return <i className='icon is-small'>
+const Icon = ({ children, right = false }) => {
+  return <i className={`icon is-small is-${right ? 'right' : 'left'}`}>
     {children}
   </i>
 }
 
-let Count = ({ icon, name, total, type, category, onStatToggle }) => {
+const Count = ({ icon, name, total, type, category, onStatToggle }) => {
   category = name || category
   return <li className={`toggle is-${type}`}>
     <a
       className='count'
       onClick={() => {
         onStatToggle({ name: category, type })
-      }}>
+      }}
+    >
       {icon}
       <span>{name} <b>{total}</b></span>
     </a>
   </li>
 }
 
-let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide }) => {
+const Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide }) => {
   category = name || category
   return <li className={`toggle is-${type}`}>
     <a
@@ -34,7 +35,8 @@ let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onSho
       className='change'
       onClick={() => {
         onStatToggle({ name: category, type })
-      }}>
+      }}
+    >
       <Icon><ChevronLeft /></Icon>
     </a>
     <a
@@ -42,7 +44,8 @@ let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onSho
       className='change'
       onClick={() => {
         onExpand({ name: category, type })
-      }}>
+      }}
+    >
       <Icon><Expand /></Icon>
     </a>
     <a
@@ -50,7 +53,8 @@ let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onSho
       className='change'
       onClick={() => {
         onCollapse({ name: category, type })
-      }}>
+      }}
+    >
       <Icon><Compress /></Icon>
     </a>
     <a
@@ -58,7 +62,8 @@ let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onSho
       className='change'
       onClick={() => {
         onShow({ name: category, type })
-      }}>
+      }}
+    >
       <Icon><Eye /></Icon>
     </a>
     <a
@@ -66,13 +71,14 @@ let Options = ({ name, type, category, onStatToggle, onExpand, onCollapse, onSho
       className='change'
       onClick={() => {
         onHide({ name: category, type })
-      }}>
+      }}
+    >
       <Icon><EyeSlash /></Icon>
     </a>
   </li>
 }
 
-let Toggle = ({ icon, name, total, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
+const Toggle = ({ icon, name, total, type, category, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
   let Content = Count
   category = name || category
   category = category.toLowerCase()
@@ -94,21 +100,22 @@ let Toggle = ({ icon, name, total, type, category, onStatToggle, onExpand, onCol
   />
 }
 
-let Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
+const Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpand, onCollapse, onShow, onHide, statsStatus }) => {
   return <div className='subtitle'>
     <div className='tabs is-toggle'>
       <ul>
         <li>
-          <p className='control has-icon has-icon-right'>
-            <input
-              className='input'
-              type='text'
-              placeholder={`Search ${name}`}
-              onChange={evt => {
-                onSearch(evt.target.value, type)
-              }} />
-            <Icon><Search /></Icon>
-          </p>
+          <div className='field search'>
+            <div className='control has-icons-right'>
+              <input
+                className='input' placeholder={`Search ${name}`} onChange={evt => {
+                  onSearch(evt.target.value, type)
+                }}
+              />
+              <Icon right><Search /></Icon>
+            </div>
+          </div>
+
         </li>
         <Toggle
           onStatToggle={onStatToggle}
@@ -120,7 +127,8 @@ let Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpa
           name={name}
           total={total}
           type={type}
-          statsStatus={statsStatus} />
+          statsStatus={statsStatus}
+        />
         {
           data.map((toggle, index) => {
             return <Toggle
@@ -136,7 +144,8 @@ let Stat = ({ icon, name, total, type, data = [], onSearch, onStatToggle, onExpa
               total={toggle.total}
               active={toggle.active}
               type={toggle.type}
-              statsStatus={statsStatus} />
+              statsStatus={statsStatus}
+            />
           })
         }
       </ul>

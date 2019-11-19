@@ -3,12 +3,14 @@
 }
 
 .hero-head {
+  border-bottom: solid 1px #aaa;
   height: 65px
 }
 
 .hero-head .title {
   color: #fff;
   line-height: 49px;
+  font-weight: normal;
 }
 
 .hero-head .icon {

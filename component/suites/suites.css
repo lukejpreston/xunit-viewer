@@ -151,3 +151,12 @@
   width: 100%;
   height: auto;
 }
+
+.search .icon svg {
+  width: 40%;
+}
+
+.change,
+li {
+  height: 38px;
+}
