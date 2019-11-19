@@ -9,14 +9,25 @@ const normalizeFile = require.resolve('normalize.css')
 const headerFile = path.resolve(__dirname, '../component/header/header.css')
 const suitesFile = path.resolve(__dirname, '../component/suites/suites.css')
 
+const cssOptions = {
+  stage: 0,
+  features: {
+    'nesting-rules': true
+  }
+}
+
 module.exports = () => {
   const suites = fs.readFileSync(suitesFile).toString()
   const header = fs.readFileSync(headerFile).toString()
-  return postcss([ccsnext])
+  return postcss([
+    ccsnext(cssOptions)
+  ])
     .process(suites)
     .then(result => {
       const suitesCss = result.css
-      return postcss([ccsnext])
+      return postcss([
+        ccsnext(cssOptions)
+      ])
         .process(header)
         .then(result => {
           const headerCss = result.css

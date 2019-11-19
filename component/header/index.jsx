@@ -2,13 +2,14 @@ import React from 'react'
 import Head from './head'
 import Body from './body'
 
-let Header = ({ suites = [], title, onToggle, onStatToggle, onExpand, onCollapse, onShow, onHide, onSearch, isActive, search, statsStatus }) => {
-  let active = isActive ? 'active' : 'inactive'
+const Header = ({ suites = [], title, onToggle, onStatToggle, onExpand, onCollapse, onShow, onHide, onSearch, isActive, search, statsStatus }) => {
+  const active = isActive ? 'active' : 'inactive'
   return <section className='hero'>
     <Head
       title={title}
       active={active}
-      onToggle={onToggle} />
+      onToggle={onToggle}
+    />
     <Body
       statsStatus={statsStatus}
       suites={suites}
@@ -19,7 +20,8 @@ let Header = ({ suites = [], title, onToggle, onStatToggle, onExpand, onCollapse
       onShow={onShow}
       onHide={onHide}
       onStatToggle={onStatToggle}
-      search={search} />
+      search={search}
+    />
   </section>
 }
 

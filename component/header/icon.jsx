@@ -1,12 +1,13 @@
 import React from 'react'
 
-let Icon = () => {
+const Icon = () => {
   return <svg
     className='icon is-large'
     width='64'
     height='64'
     viewBox='0 0 64 64'
-    xmlns='http://www.w3.org/2000/svg'>
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <rect
       className='background'
       x='0'
@@ -58,7 +59,8 @@ let Icon = () => {
       fontFamily='Helvetica'
       fontSize='36'
       stroke='#23D160'
-      fill='#23D160'>
+      fill='#23D160'
+    >
     X
     </text>
     <text
@@ -68,7 +70,8 @@ let Icon = () => {
       fontFamily='Helvetica'
       fontSize='36'
       stroke='#E74C3C'
-      fill='#E74C3C'>
+      fill='#E74C3C'
+    >
     V
     </text>
   </svg>
