@@ -1,6 +1,6 @@
 {
   "name": "xunit-viewer",
-  "version": "6.0.0-beta.1",
+  "version": "6.0.0-beta.2",
   "description": "parses xunit xml into xunit viewer",
   "repository": {
     "url": "https://github.com/lukejpreston/xunit-viewer.git",
@@ -78,7 +78,9 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "eslintIgnore": ["cli/static/**/*"],
+  "eslintIgnore": [
+    "cli/static/**/*"
+  ],
   "eslintConfig": {
     "extends": [
       "standard",
