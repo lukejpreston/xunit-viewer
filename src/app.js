@@ -340,7 +340,7 @@ const App = ({ files }) => {
         </div>
       </div>
     </main>
-         </div>
+  </div>
 }
 
 export default App

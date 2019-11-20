@@ -1,5 +1,4 @@
 const path = require('path')
-const fs = require('fs')
 const yargs = require('yargs')
 
 const instance = yargs

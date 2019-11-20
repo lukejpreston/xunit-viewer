@@ -39,7 +39,7 @@ const Properties = ({ properties, active = true, dispatch, suite }) => {
             })}
         </tbody>
       </table>
-    </div> : null }
+    </div> : null}
   </div>
 }
 

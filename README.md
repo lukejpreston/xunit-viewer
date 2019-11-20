@@ -61,7 +61,7 @@ Examples:
 
 ## Usage, Node
 
-Xunit Viewer is asynchronous so you may need to 
+Xunit Viewer is asynchronous so you may need to wrap it up like so
 
 ```js
 const xunitViewer = require('xunit-viewer')
@@ -76,6 +76,20 @@ const main = async () => {
   })
 }
 main()
+```
+
+If you are going to run it from a script with no other code
+
+```js
+const xunitViewer = require('xunit-viewer')
+
+xunitViewer({
+  server: false,
+  results: 'data',
+  ignore: ['_thingy', 'invalid'],
+  title: 'Xunit View Sample Tests',
+  output: 'output.html'
+})
 ```
 
 ## Usage, React
@@ -97,7 +111,7 @@ The following will start
 * console
 * output (saved to output/sample.html)
 
-These are using either webpack (react-scripts) or pm2 in order to restart on file changes so you do not need to restart when changing files
+These are using either webpack (react-scripts) or pm2 to restart on file changes so you do not need to restart when changing files
 
 ## Help Wanted
 
@@ -107,7 +121,12 @@ I am always looking for sample data. If you have some results which you think ar
 
 Raise any issues using GitHub and provide sample data where possible.
 
-It may be useful to know what node and npm version you are using as well as what OS you are running to help debug any issues.
+To help debug any issues please provide the following info
+
+* node and npm version
+* xunit viewer version
+* browser
+* sample xml
 
 ## TODO
 
@@ -115,9 +134,9 @@ It may be useful to know what node and npm version you are using as well as what
   * tabs, add/remove file
   * contents change
   * populate contents
-* setup gh-pages to work, it should have index.html sample.html and two images
-* write some tests
-* add router
-* filtering cli, I think it would say what the URL is or apply it to console
+* automate gh-pages
+* test, lint using travis
+* add react router
+* filtering cli
 * responsive menu button
 * split suite into components
