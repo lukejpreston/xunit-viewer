@@ -60,44 +60,44 @@ const instance = yargs
   .alias('p', 'port')
   .describe('p', 'Starts a server with sockets on that port, if no port is provided then it will run on port 3000 (or next available)')
 
-  .string('properties.search')
-  .alias('p.s', 'properties.search')
-  .describe('p.s', `pre-filter option`)
+// .string('properties.search')
+// .alias('p.s', 'properties.search')
+// .describe('p.s', 'pre-filter option')
 
-  .boolean('properties.visible')
-  .alias('p.v', 'properties.visible')
-  .describe('p.v', `pre-filter option`)
+// .boolean('properties.visible')
+// .alias('p.v', 'properties.visible')
+// .describe('p.v', 'pre-filter option')
 
-  .string('suites.search')
-  .alias('s.s', 'suites.search')
-  .describe('s.s', `pre-filter option`)
+// .string('suites.search')
+// .alias('s.s', 'suites.search')
+// .describe('s.s', 'pre-filter option')
 
-const types = ['tests']
-const statuses = ['passed', 'failure', 'skipped', 'error', 'unknown']
-const actions = ['visible']
+// const types = ['tests']
+// const statuses = ['passed', 'failure', 'skipped', 'error', 'unknown']
+// const actions = ['visible']
 
-types.forEach(type => {
-  const firstTypeChar = type[0]
-  const searchCommand = `${type}.search`
-  const searchAlias = `${firstTypeChar}.s`
+// types.forEach(type => {
+//   const firstTypeChar = type[0]
+//   const searchCommand = `${type}.search`
+//   const searchAlias = `${firstTypeChar}.s`
 
-  instance.string(searchCommand)
-    .alias(searchAlias, searchCommand)
-    .describe(searchAlias, `pre-filter option`)
+//   instance.string(searchCommand)
+//     .alias(searchAlias, searchCommand)
+//     .describe(searchAlias, 'pre-filter option')
 
-  statuses.forEach(status => {
-    const firstStatusChar = status[0]
-    actions.forEach(action => {
-      const firstActionChar = action[0]
-      const toggleCommand = `${type}.${status}.${action}`
-      const toggleAlias = `${firstTypeChar}.${firstStatusChar}.${firstActionChar}`
+//   statuses.forEach(status => {
+//     const firstStatusChar = status[0]
+//     actions.forEach(action => {
+//       const firstActionChar = action[0]
+//       const toggleCommand = `${type}.${status}.${action}`
+//       const toggleAlias = `${firstTypeChar}.${firstStatusChar}.${firstActionChar}`
 
-      instance.boolean(toggleCommand)
-        .alias(toggleAlias, toggleCommand)
-        .describe(toggleAlias, 'pre-filter option')
-    })
-  })
-})
+//       instance.boolean(toggleCommand)
+//         .alias(toggleAlias, toggleCommand)
+//         .describe(toggleAlias, 'pre-filter option')
+//     })
+//   })
+// })
 
 instance.help()
 

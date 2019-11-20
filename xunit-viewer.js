@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { showHelp } = require('./cli/args')
+
 const Logger = require('./cli/logger')
 const getFiles = require('./cli/get-files')
 const terminal = require('./cli/terminal')
@@ -15,6 +15,7 @@ module.exports = async (args) => {
 
   const results = args.results
   if (!fs.existsSync(results)) {
+    const { showHelp } = require('./cli/args')
     showHelp()
     console.log(logger.error('\n The folder/file:'), logger.file(results), logger.error('does not exist'))
     process.exit(1)
