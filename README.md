@@ -130,6 +130,8 @@ To help debug any issues please provide the following info
 
 ## TODO
 
+If you would like to do any of the following please raise an issue to discuss
+
 * files
   * tabs, add/remove file
   * contents change
