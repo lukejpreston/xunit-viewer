@@ -2,6 +2,13 @@
 
 Takes all your XUnit and JUnit XML files and makes them reable
 
+![Icon](https://raw.githubusercontent.com/lukejpreston/xunit-viewer/master/XunitViewerIcon.png)
+
+[![npm version](https://badge.fury.io/js/xunit-viewer.svg)](https://badge.fury.io/js/xunit-viewer)
+[![Downloads on npm](http://img.shields.io/npm/dm/xunit-viewer.svg)](https://www.npmjs.com/package/xunit-viewer)
+
+Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
+
 ## Features
 
 * Generate a HTML single file with ability to search, filter
@@ -50,7 +57,6 @@ Examples:
   xunit-viewer -r folder -c -n             no color in console
   xunit-viewer -r folder -w                start watch
   xunit-viewer -r folder -w -p 5050        watch at 5050
-  xunit-viewer -r folder --s.s "value"     search suite with term "value"
 ```
 
 ## Usage, Node
