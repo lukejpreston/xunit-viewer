@@ -1,5 +1,6 @@
 const merge = require('merge')
-const parse = require('./parse')
+let parse = require('./parse')
+if (typeof window !== 'undefined') parse = window.parse
 
 module.exports = async (logger, files) => {
   let suites = {}
