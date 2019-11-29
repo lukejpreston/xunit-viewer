@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders files 1`] = `
+<div
+  className="files card is-inactive"
+>
+  <header
+    className="card-header"
+  >
+    <button
+      className="card-header-icon"
+      onClick={[Function]}
+    >
+      <h6
+        className="subtitle is-5"
+      >
+        <span
+          className="icon"
+        >
+          <i
+            className="fas fa-code"
+          />
+        </span>
+        <span>
+          Files
+        </span>
+      </h6>
+      <span
+        className="icon"
+      >
+        <i
+          className="fas fa-angle-down"
+        />
+      </span>
+    </button>
+  </header>
+  <div
+    className="card-content"
+  >
+    <div
+      className="tabs is-boxed"
+    >
+      <ul>
+        <li
+          className="is-inactive"
+        >
+          <a
+            href={null}
+            onClick={[Function]}
+          >
+            <span>
+              file.xml
+            </span>
+            <button
+              className="delete is-small"
+              disabled={true}
+              onClick={[Function]}
+            />
+          </a>
+        </li>
+        <li
+          className="is-active"
+        >
+          <a
+            href={null}
+            onClick={[Function]}
+          >
+            <span>
+              file.xml
+            </span>
+            <button
+              className="delete is-small"
+              disabled={true}
+              onClick={[Function]}
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <input
+      className="input files-input"
+      defaultValue="/this/is/the/full/filename.xml"
+      disabled={true}
+      placeholder="Filename"
+      type="text"
+    />
+  </div>
+</div>
+`;

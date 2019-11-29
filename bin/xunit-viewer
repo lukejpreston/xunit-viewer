@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-const options = require('../cli/resolve-argv')()
+const xunitViewer = require('../xunit-viewer')
+const { args } = require('../src/cli/args')
 
-require('../cli')(options)
+xunitViewer(args)

@@ -1,139 +1,144 @@
 # Xunit Viewer
 
+Takes all your XUnit and JUnit XML files and makes them reable
+
 ![Icon](https://raw.githubusercontent.com/lukejpreston/xunit-viewer/master/XunitViewerIcon.png)
 
 [![npm version](https://badge.fury.io/js/xunit-viewer.svg)](https://badge.fury.io/js/xunit-viewer)
 [![Downloads on npm](http://img.shields.io/npm/dm/xunit-viewer.svg)](https://www.npmjs.com/package/xunit-viewer)
 
-Takes your XMl xunit results and then turns it into a nice single HTML file
-
 Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 
-Have a look at the [v6 demo](https://lukejpreston.github.io/xunit-viewer/v6)
-It isn't complete but if you are interested in an early look at what new features might be available and the new layout/styles please feel free
+## Features
 
-## CLI
+* Generate a HTML single file with ability to search, filter
+* Render results out to the console, this comes with the ability to search and filter
+* Re-run the above when a file changes
+* Start a server with websockets to keep the browser in-sync with the data
+* Add files to the web app without having to re-run xunit viewer
 
-You can use xunit-viewer from the command line
+Xunit Viewer supports node LTS version, but should support 10+
 
-First install it
+## Usage, CLI
 
-`npm i -g xunit-viewer`
+```sh
+npm i -g xunit-viewer
+xunit-viewer --help
 
-Then run it
+xunit-viewer [command]
 
-`xunit-viewer`
+Commands:
+  xunit-viewer xunit-viewer  Renders Xunit style xml results
 
-you can also run it with these optional params, see the next section for what they default to
+Options:
+  --version       Show version number                                  [boolean]
+  -r, --results   File/Folder of results                     [string] [required]
+  -i, --ignore    Ignore patterns                                        [array]
+  -o, --output    Output filename               [string] [default: "index.html"]
+  -t, --title     HTML title e.g. "My Tests"                            [string]
+  -c, --console   Render in console                                    [boolean]
+  -s, --server    Start a server and sockets for live updates
+                                                      [boolean] [default: false]
+  -n, --no-color  No color in the console                              [boolean]
+  -w, --watch     Re-run when a file changes                           [boolean]
+  -p, --port      Starts a server with sockets on that port, if no port is
+                  provided then it will run on port 3000 (or next available)
+                                                                        [number]
+  --help          Show help                                            [boolean]
 
-```bash
---results=file_or_folder
---ignore=pattern_a,pattern_b,pattern_c
---output=file_or_folder_or_console
---title="The title"
---port=8080
---watch
---color=false
---filter.suites.value="Suite names matching this value"
---filter.suites.types=all,pass,fail,skip,error,unknown
---filter.tests.value="Test names matching this value"
---filter.tests.types=all,pass,fail,skip,error,unknown
---filter.properties.value="Properties matching with key or value matching this value"
---filter.properties.types=all
+Examples:
+  xunit-viewer -r file.xml                 a file
+  xunit-viewer -r folder                   a folder
+  xunit-viewer -r folder -i *-broke.xml    ignore
+  xunit-viewer -r folder -o my-tests.html  rename output
+  xunit-viewer -r folder -t "My Tests"     change HTML title
+  xunit-viewer -r folder -c                render in console
+  xunit-viewer -r folder -c -s -o false    render in console and do not save
+  xunit-viewer -r folder -c -n             no color in console
+  xunit-viewer -r folder -w                start watch
+  xunit-viewer -r folder -w -p 5050        watch at 5050
 ```
 
-## Node
+## Usage, Node
 
-If you want to run this from a node script instead of command line first install it
-
-`npm i -D xunit-viewer`
-
-Then from your scripts do the following
+Xunit Viewer is asynchronous so you may need to wrap it up like so
 
 ```js
-const XunitViewer = require('xunit-viewer/cli')
-const result = XunitViewer({
-    results: '',
-    suites: [],
-    xml: '',
-    ignore: [],
-    output: false,
-    title: 'Xunit Viewer',
-    port: false,
-    watch: false,
-    color: true,
-    filter: {},
-    format: 'html'
+const xunitViewer = require('xunit-viewer')
+
+const main = async () => {
+  await xunitViewer({
+    server: false,
+    results: 'data',
+    ignore: ['_thingy', 'invalid'],
+    title: 'Xunit View Sample Tests',
+    output: 'output.html'
+  })
+}
+main()
+```
+
+If you are going to run it from a script with no other code
+
+```js
+const xunitViewer = require('xunit-viewer')
+
+xunitViewer({
+  server: false,
+  results: 'data',
+  ignore: ['_thingy', 'invalid'],
+  title: 'Xunit View Sample Tests',
+  output: 'output.html'
 })
 ```
 
-all are optional, those are default values
+## Usage, React
 
-* `results` the file or folder where the results are, defaults to where the cli is running from i.e. `process.cwd()`
-* `suites` you can pass the JSON format in after using the parser
-* `xml` you can pass the xml string in
-* `ignore` an array of patterns to ignore or a single string with a pattern to ignore
-* `output` if folder will save a file `xunit-viewer.html` to that folder, if a file will save to that file if `'console'` then it will spit out the results to the console
-* `title` title for the HTML
-* `port` if `false` it will not start a server, otherwise it will start serving the output and not save not save a file unless you also provide `output`
-* `watch` will re run the cli when anything in `results` changes, if you have a port it will also update that via websockets
-* `color` if `output === 'console'` then it will either be in color or not
-* `filter` will filter out `suites`, `tests` and `properties` from the console output example
-```json
-{
-    "suites": {
-        value: "Suite names matching this value",
-        type: ["all", "pass", "fail", "skip", "error", "unknown"],
-    },
-    "tests": {
-        value: "Test names matching this value",
-        type: ["all", "pass", "fail", "skip", "error", "unknown"],
-    },
-    "properties": {
-        value: "Properties matching with key or value matching this value",
-        type: ["all"]
-    },
-}
-```
-* `format` default to `html` which is the full HTML file, but you can also choose `json` if you want to use that json for your own view
+not available
 
-if any value is invalid it will try and use default
+## Contributing
 
-## Component
+Run the following
 
-You will need to bring in React if you are using the component
-
-It works best with webpack setup but you should be able to work it out if you need to
-
-This is the view which you can reuse
-
-```js
-import React from 'react'
-import XunitViewer from 'xunit-viewer/component/xunit-viewer'
-import 'xunit-viewer/component/index.css'
-
-let MyWrapper = () => {
-    return <XunitViewer xml='' suites={[]} title='' />
-}
+```sh
+docker-compose up --build -d
 ```
 
-## Junit Viewer
+The following will start
 
-This has replaced Junit Viewer which is now deprecated this.
+* app (port 9090)
+* server (port 3030)
+* console
+* output (saved to output/sample.html)
 
-### Why?
+These are using either webpack (react-scripts) or pm2 to restart on file changes so you do not need to restart when changing files
 
-Better API
-Better View
-Uses React
-Nested Suites
-Using sockets and lighter
+## Help Wanted
+
+I am always looking for sample data. If you have some results which you think are "interesting" then please raise an issue or pull request and we can add this to our sample data.
+
+## Issues
+
+Raise any issues using GitHub and provide sample data where possible.
+
+To help debug any issues please provide the following info
+
+* node and npm version
+* xunit viewer version
+* browser
+* sample xml
 
 ## TODO
 
-* add a repl
-* meta data for slack
-* make better stub data
-* better error handling
-* set up something which will parse in browser
-* clean everything and write some more tests
+If you would like to do any of the following please raise an issue to discuss
+
+* files
+  * tabs, add/remove file
+  * contents change
+  * populate contents
+* automate gh-pages
+* test, lint using travis
+* add react router
+* filtering cli
+* responsive menu button
+* split suite into components
