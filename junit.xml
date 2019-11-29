@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" time="1.423">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T08:42:38" time="0.654" tests="1">
+    <testcase classname=" renders hero" name=" renders hero" time="0.029">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T08:42:39" time="0.149" tests="1">
+    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T08:42:39" time="0.101" tests="1">
+    <testcase classname=" renders files" name=" renders files" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>
