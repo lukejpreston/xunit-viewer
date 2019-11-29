@@ -30,12 +30,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --reporters=default --reporters=jest-junit",
     "eject": "react-scripts eject",
     "lint": "eslint xunit-viewer.js src --ignore-pattern src/cli/static/js/**/*",
-    "test:ci": "CI=true npm test -- --reporters=default --reporters=jest-junit && ./bin/xunit-viewer -r junit.xml -o gh-pages/xunit-viewer-results.html",
+    "test:ci": "CI=true npm test",
+    "test:document": "./bin/xunit-viewer -r junit.xml -o gh-pages/xunit-viewer-results.html",
+    "test:document:serve": "npm run test:document -- -s",
     "demo": "./bin/xunit-viewer -r data -o gh-pages/index.html",
-    "release:demo": "npm run demo && gh-pages -d gh-pages",
+    "release:demo": "npm run test:document && npm run demo && gh-pages -d gh-pages",
     "deploy": "rm -rf src/cli/static && cp -r build/static src/cli/static",
     "build:cli": "npm run build && npm run deploy",
     "release": "./release.sh"
