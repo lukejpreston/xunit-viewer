@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint xunit-viewer.js src",
+    "lint": "eslint xunit-viewer.js src --ignore-pattern src/cli/static/js/**/*",
     "test:ci": "CI=true npm test -- --reporters=default --reporters=jest-junit && ./bin/xunit-viewer -r junit.xml -o gh-pages/xunit-viewer-results.html",
     "demo": "./bin/xunit-viewer -r data -o gh-pages/index.html",
     "release:demo": "npm run demo && gh-pages -d gh-pages",

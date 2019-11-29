@@ -28,7 +28,7 @@ xunit-viewer --help
 xunit-viewer [command]
 
 Commands:
-  xunit-viewer xunit-viewer  Renders Xunit style xml results
+  xunit-viewer  Renders Xunit style xml results
 
 Options:
   --version       Show version number                                  [boolean]
