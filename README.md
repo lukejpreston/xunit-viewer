@@ -16,6 +16,9 @@ Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 * Re-run the above when a file changes
 * Start a server with websockets to keep the browser in-sync with the data
 * Add files to the web app without having to re-run xunit viewer
+* Adds the meta data to the header so you can share the URL in places such as slack, example
+
+![Example](https://raw.githubusercontent.com/lukejpreston/xunit-viewer/master/example-header.png)
 
 Xunit Viewer supports node LTS version, but should support 10+
 
