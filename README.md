@@ -27,7 +27,11 @@ Xunit Viewer supports node LTS version, but should support 10+
 ```sh
 npm i -g xunit-viewer
 xunit-viewer --help
+```
 
+### Commands
+
+```text
 xunit-viewer [command]
 
 Commands:
