@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" time="1.532">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:28:05" time="0.641" tests="1">
-    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.018">
+<testsuites name="jest tests" tests="3" failures="0" time="1.535">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:31:27" time="0.655" tests="1">
+    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.012">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:28:05" time="0.233" tests="1">
-    <testcase classname=" renders hero" name=" renders hero" time="0.029">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:31:28" time="0.239" tests="1">
+    <testcase classname=" renders hero" name=" renders hero" time="0.038">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:28:05" time="0.108" tests="1">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:31:28" time="0.111" tests="1">
     <testcase classname=" renders files" name=" renders files" time="0.004">
     </testcase>
   </testsuite>
