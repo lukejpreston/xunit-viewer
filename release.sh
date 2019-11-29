@@ -3,7 +3,7 @@
 set -e
 
 npm run lint
-npm run release
+npm run build:cli
 npm run test:ci
 CURRENT=$(echo npm version | grep xunit-viewer | cut -d"'" -f4)
 git commit -am 'tested $CURRENT'

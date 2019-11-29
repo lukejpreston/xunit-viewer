@@ -37,8 +37,8 @@
     "demo": "./bin/xunit-viewer -r data -o gh-pages/index.html",
     "release:demo": "npm run demo && gh-pages -d gh-pages",
     "deploy": "rm -rf src/cli/static && cp -r build/static src/cli/static",
-    "release": "npm run build && npm run deploy",
-    "publish": "./release.sh"
+    "build:cli": "npm run build && npm run deploy",
+    "release": "./release.sh"
   },
   "dependencies": {
     "chalk": "^3.0.0",
