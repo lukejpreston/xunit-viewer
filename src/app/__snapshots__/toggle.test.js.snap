@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders toggle 1`] = `
+<button
+  className="button toggle is-inactive "
+  disabled={false}
+  onClick={[Function]}
+>
+  <div
+    className="toggle-rail"
+  >
+    <div
+      className="toggle-handle"
+    />
+  </div>
+  <span>
+    off
+  </span>
+</button>
+`;

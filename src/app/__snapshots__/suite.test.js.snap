@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders suite 1`] = `
+<div
+  className="card suite is-active is-populated"
+>
+  <button
+    className="card-header"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <p
+      className="card-header-title"
+    >
+      <span>
+        Suite Name
+      </span>
+      <small>
+        time = 
+        100
+      </small>
+    </p>
+    <span
+      className="card-header-icon"
+    >
+      <span
+        className="icon"
+      >
+        <i
+          className="fas fa-angle-down"
+        />
+      </span>
+    </span>
+    <p
+      className="suite-count-container"
+    >
+      <span
+        className="suite-count"
+      >
+        <span
+          className="icon"
+        >
+          <i
+            aria-hidden="true"
+            className="fas fa-check"
+          />
+        </span>
+        1
+      </span>
+    </p>
+  </button>
+  <div
+    className="card-content"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="properties card is-active"
+      >
+        <button
+          className="card-header"
+          onClick={[Function]}
+        >
+          <p
+            className="card-header-title"
+          >
+            Properties
+          </p>
+          <span
+            className="card-header-icon"
+          >
+            <span
+              className="icon"
+            >
+              <i
+                className="fas fa-angle-down"
+              />
+            </span>
+          </span>
+        </button>
+        <div
+          className="card-content"
+        >
+          <table
+            className="table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  Property
+                </th>
+                <th>
+                  Value
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  a
+                </td>
+                <td>
+                  b
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div
+          className="test card is-active is-passed is-populated"
+        >
+          <button
+            className="card-header"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <p
+              className="card-header-title"
+            >
+              <span
+                className="icon"
+              >
+                <i
+                  aria-hidden="true"
+                  className="fas fa-check"
+                />
+              </span>
+              <span>
+                Test Name
+              </span>
+              <small>
+                time = 
+                888
+              </small>
+            </p>
+            <span
+              className="card-header-icon"
+            >
+              <span
+                className="icon"
+              >
+                <i
+                  className="fas fa-angle-down"
+                />
+              </span>
+            </span>
+          </button>
+          <div
+            className="card-content"
+          >
+            <button
+              className="button toggle is-active "
+              disabled={false}
+              onClick={[Function]}
+            >
+              <div
+                className="toggle-rail"
+              >
+                <div
+                  className="toggle-handle"
+                />
+              </div>
+              <span
+                className="icon"
+              >
+                <i
+                  className="fas fa-code"
+                />
+              </span>
+              <span>
+                raw
+              </span>
+            </button>
+            <div
+              className="raw-content"
+            >
+              <pre>
+                message 1
+              </pre>
+              <pre>
+                message 2
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

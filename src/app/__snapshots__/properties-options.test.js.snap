@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders properties options 1`] = `
+<div
+  className="options card is-inactive"
+>
+  <header
+    className="card-header"
+  >
+    <div
+      className="field options-search"
+    >
+      <div
+        className="control"
+      >
+        <input
+          className="input"
+          onChange={[Function]}
+          placeholder="Propeties"
+          type="text"
+        />
+      </div>
+    </div>
+    <button
+      className="button card-header-icon"
+      onClick={[Function]}
+    >
+      <div
+        className="options-inputs"
+      >
+        <div
+          className="options-total"
+        >
+          <b>
+            100
+          </b>
+          <span>
+            /
+            999
+          </span>
+        </div>
+      </div>
+      <span
+        className="icon"
+      >
+        <i
+          className="fas fa-angle-down"
+        />
+      </span>
+    </button>
+  </header>
+  <div
+    className="card-content"
+  />
+</div>
+`;

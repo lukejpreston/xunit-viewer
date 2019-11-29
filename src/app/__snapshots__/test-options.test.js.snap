@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders test options 1`] = `
+<div
+  className="options card is-inactive"
+>
+  <header
+    className="card-header"
+  >
+    <div
+      className="field options-search"
+    >
+      <div
+        className="control"
+      >
+        <input
+          className="input"
+          onChange={[Function]}
+          placeholder="Tests"
+          type="text"
+        />
+      </div>
+    </div>
+    <button
+      className="button card-header-icon"
+      onClick={[Function]}
+    >
+      <div
+        className="options-inputs"
+      >
+        <div
+          className="options-total"
+        >
+          <b>
+            100
+          </b>
+          <span>
+            /
+            999
+          </span>
+        </div>
+        <div
+          className="options-total"
+        >
+          <span
+            className="icon"
+          >
+            <i
+              aria-hidden="true"
+              className="fas fa-check"
+            />
+          </span>
+          <b>
+            50
+          </b>
+          <span>
+            /
+            200
+          </span>
+        </div>
+      </div>
+      <span
+        className="icon"
+      >
+        <i
+          className="fas fa-angle-down"
+        />
+      </span>
+    </button>
+  </header>
+  <div
+    className="card-content options-toggles"
+  />
+</div>
+`;
