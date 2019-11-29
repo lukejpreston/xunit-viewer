@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite tests="3" failures="1" time="0.0160106">
-    <testcase name="Is An Error" classname="Error" time="0.00075">
-        <error message="There was a error" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error</error>
-    </testcase>
-</testsuite>
