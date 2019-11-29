@@ -63,6 +63,7 @@ const extractTestMessages = (test, messages) => {
   messages.forEach(body => {
     if (body._) test.messages.push(body._.trim())
     if (body.$ && body.$.message) test.messages.push(body.$.message.trim())
+    else test.messages.push(body.trim())
   })
 }
 
