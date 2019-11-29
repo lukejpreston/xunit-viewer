@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import parse from './parse'
 
-const dataDir = path.resolve(__dirname, '../data')
+const dataDir = path.resolve(__dirname, '../../data')
 
 const expected = {
   suites: {
