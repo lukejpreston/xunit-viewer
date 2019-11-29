@@ -98,20 +98,19 @@ not available
 
 ## Contributing
 
-Run the following
+Here are a list of commands to get you running
 
 ```sh
-docker-compose up --build -d
+npm i
+npm start # this starts the dev app
+npm release # this updates the code in the cli folder
+npm run demo # this generates the demo
+./bin/xunit-viewer # to run the local command line tool
+
+npm test # runs the tests
+npm run text:ci # runs without watch and also generates a html output
+npm run lint # runs eslint
 ```
-
-The following will start
-
-* app (port 9090)
-* server (port 3030)
-* console
-* output (saved to output/sample.html)
-
-These are using either webpack (react-scripts) or pm2 to restart on file changes so you do not need to restart when changing files
 
 ## Help Wanted
 
