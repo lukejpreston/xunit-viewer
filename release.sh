@@ -5,14 +5,14 @@ set -e
 npm run lint
 npm run build:cli
 npm run test:ci
-CURRENT=$(echo npm version | grep xunit-viewer | cut -d"'" -f4)
+CURRENT=$(echo $(npm version | grep xunit-viewer | cut -d"'" -f4))
 git commit -am "tested $CURRENT"
 
-npm version ${1-patch}
-npm publish
-LATEST=$(echo npm version | grep xunit-viewer | cut -d"'" -f4)
+# npm version ${1-patch}
+# npm publish
+# LATEST=$(echo npm version | grep xunit-viewer | cut -d"'" -f4)
 
-npm run release:demo
+# npm run release:demo
 
-git push
-git push --tags
+# git push
+# git push --tags
