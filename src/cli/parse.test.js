@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import parse from './parse'
+import './parse'
+const parse = window.parse
 
 const dataDir = path.resolve(__dirname, '../../data')
 

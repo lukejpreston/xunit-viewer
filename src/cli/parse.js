@@ -135,4 +135,7 @@ const parse = async (xml) => {
   return output
 }
 
-module.exports = parse
+if (typeof window !== 'undefined') window.parse = parse
+else {
+  module.exports = parse
+}
