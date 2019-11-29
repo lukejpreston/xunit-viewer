@@ -1,5 +1,15 @@
+src/app
+src/index.js
 data
 public
 scripts
 .env
 build
+coverage
+gh-pages
+index.html
+junit.xml
+sample-usage.js
+XunitViewerIcon.png
+XunitViewerIcon.svg
+xunit-viewer-results.html

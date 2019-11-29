@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import 'bulma/css/bulma.css'
 import '@fortawesome/fontawesome-free/js/all'
 
-import './index.css'
-import App from './app'
+import './app/index.css'
+import App from './app/app.js'
 
 let files = window.files || []
 
