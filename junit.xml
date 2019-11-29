@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" time="1.571">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:21:59" time="0.671" tests="1">
-    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.012">
+<testsuites name="jest tests" tests="3" failures="0" time="1.553">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:23:00" time="0.643" tests="1">
+    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.011">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:22:00" time="0.233" tests="1">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:23:01" time="0.24" tests="1">
     <testcase classname=" renders hero" name=" renders hero" time="0.03">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:22:00" time="0.097" tests="1">
-    <testcase classname=" renders files" name=" renders files" time="0.004">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2019-11-29T14:23:01" time="0.101" tests="1">
+    <testcase classname=" renders files" name=" renders files" time="0.003">
     </testcase>
   </testsuite>
 </testsuites>
