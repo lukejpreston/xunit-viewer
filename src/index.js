@@ -12,108 +12,17 @@ if (process.env.NODE_ENV === 'development') {
   files = [{
     file: '/path/to/file/complete.xml',
     contents: `<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites>
-    <testsuite name="suite with properties" time="100">
-        <properties>
-            <property name="first_name" value="first_value" />
-            <property name="second_name" value="second_name" />
-        </properties>
-        <properties>
-            <property name="third_name" value="third_name" />
-        </properties>
-        <properties></properties>
-        <testcase name="random test name">
-            <passed></passed>
+    <testsuite tests="939" failures="4" name="CucumberTest" time="0.069" errors="0" skipped="0">
+        <testcase classname="Scenario: Uploading a file should work." name="Then the file is uploaded successfully" time="0.004">
+            <failure type="java.lang.AssertionError">java.lang.AssertionError
+        at org.junit.Assert.fail(Assert.java:86)
+        at org.junit.Assert.assertTrue(Assert.java:41)
+        at org.junit.Assert.assertTrue(Assert.java:52)
+        at com.germaniumhq.germanium.steps.GermaniumFunctionSelectFile.the_file_is_uploaded_successfully(GermaniumFunctionSelectFile.java:26)
+        at ✽.Then the file is uploaded successfully(features/features/germanium-function-select_file.feature:7)
+            </failure>
         </testcase>
-    </testsuite>
-    <testsuite name="suite with no properties">
-        <testcase name="random test name">
-            <passed></passed>
-        </testcase>
-    </testsuite>
-    <testsuite name="suite with each kind of test">
-        <testcase name="passed with a message" time="666">
-            <passed>inner message</passed>
-        </testcase>
-        <testcase name="error with a message" time="12.3456789">
-            <error>inner message</error>
-        </testcase>
-        <testcase name="skipped with a message">
-            <skipped>inner message</skipped>
-        </testcase>
-        <testcase name="failure with a message">
-            <failure>inner message</failure>
-        </testcase>
-        <testcase name="test with no type">inner message</testcase>
-        <testcase name="test with no type or message or inner message"></testcase>
-        <testcase>no name</testcase>
-        <testcase></testcase>
-        <testcase name="multiple messages">
-            <error>first message</error>
-            <error>second message</error>
-        </testcase>
-        <testcase name="test no inner message">
-            <failure message="message" type="type"></failure>
-        </testcase>
-        <testcase name="test with no message type">
-            <skipped message="message"></skipped>
-        </testcase>
-        <testcase name="test with no message">
-            <skipped type="type"></skipped>
-        </testcase>
-        <testcase name="test with HTML">
-            <error>&lt;i&gt;inner&lt;/i&gt;&lt;b&gt;message&lt;/b&gt;</error>
-        </testcase>
-        <testcase name="test with message and message type with HTML">
-            <failure message="<b>message</b>" type="<i>type</i>"></failure>
-        </testcase>
-        <testcase name="test with message and message type and inner message">
-            <error message="message" type="type">inner message</error>
-        </testcase>
-        <testcase name="test with a different classname" classname="test with own class name">
-            <passed></passed>
-        </testcase>
-        <testcase name="test with properties other than name or classname" property="prop_value" property_float="0.1234567890123456789">
-            <passed></passed>
-        </testcase>
-    </testsuite>
-    <testsuite>
-        <testcase name="test in a suite with no name">
-            <passed></passed>
-        </testcase>
-    </testsuite>
-    <testsuite name="suite with properties other than name" property="prop_value" property_float="0.1234567890123456789">
-        <testcase name="random test">
-            <passed></passed>
-        </testcase>
-    </testsuite>
-    <testsuite name="suite with no tests">
-    </testsuite>
-    <testsuite name="suite with only properties">
-        <properties>
-            <property name="first_name" value="first_value" />
-        </properties>
-    </testsuite>
-    <testsuite></testsuite>
-    <testsuite>
-        <testcase></testcase>
-    </testsuite>
-    <testsuite name="parent">
-        <testcase name="parent test"></testcase>
-        <testsuite name="child one">
-            <testcase name="child one test"></testcase>
-        </testsuite>
-        <testsuite name="child two">
-            <testcase name="child two test"></testcase>
-            <testsuite name="child of child two">
-                <testcase name="child of child two test"></testcase>
-            </testsuite>
-        </testsuite>
-        <testsuite>
-            <testcase name="child one test"></testcase>
-        </testsuite>
-    </testsuite>
-</testsuites>`
+    </testsuite>`
   }]
 }
 

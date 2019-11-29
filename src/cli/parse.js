@@ -61,9 +61,15 @@ const extractProperties = (suite, testsuite) => {
 
 const extractTestMessages = (test, messages) => {
   messages.forEach(body => {
-    if (body._) test.messages.push(body._.trim())
-    if (body.$ && body.$.message) test.messages.push(body.$.message.trim())
-    else test.messages.push(body.trim())
+    const is_ = typeof body._ === 'string'
+    const is$Message = typeof body.$ !== 'undefined' && ('message' in body.$)
+    const is$Type = typeof body.$ !== 'undefined' && ('type' in body.$)
+    const isString = typeof body === 'string'
+
+    if (is_) test.messages.push(body._.trim())
+    if (is$Message) test.messages.push(body.$.message.trim())
+    if (is$Type) test.messages.push(body.$.type.trim())
+    if (isString) test.messages.push(body.trim())
   })
 }
 
