@@ -1,3 +1,4 @@
+src/__snapshots__
 src/app
 src/index.js
 data
@@ -7,7 +8,6 @@ scripts
 build
 coverage
 gh-pages
-index.html
 junit.xml
 sample-usage.js
 XunitViewerIcon.png
