@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 const xunitViewer = require('../xunit-viewer')
-const { args } = require('../cli/args')
+const { args } = require('../src/cli/args')
 
 xunitViewer(args)

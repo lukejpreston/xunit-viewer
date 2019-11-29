@@ -1,21 +1,21 @@
 const fs = require('fs')
 const path = require('path')
 
-const Logger = require('./cli/logger')
-const getFiles = require('./cli/get-files')
-const terminal = require('./cli/terminal')
-const render = require('./cli/render')
-const watch = require('./cli/watch')
-const server = require('./cli/server')
-const getSuites = require('./cli/get-suites')
-const getDescription = require('./cli/get-description')
+const Logger = require('./src/cli/logger')
+const getFiles = require('./src/cli/get-files')
+const terminal = require('./src/cli/terminal')
+const render = require('./src/cli/render')
+const watch = require('./src/cli/watch')
+const server = require('./src/cli/server')
+const getSuites = require('./src/cli/get-suites')
+const getDescription = require('./src/cli/get-description')
 
 module.exports = async (args) => {
   const logger = Logger(args.noColor)
 
   const results = args.results
   if (!fs.existsSync(results)) {
-    const { showHelp } = require('./cli/args')
+    const { showHelp } = require('./src/cli/args')
     showHelp()
     console.log(logger.error('\n The folder/file:'), logger.file(results), logger.error('does not exist'))
     process.exit(1)

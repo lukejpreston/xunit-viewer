@@ -25,15 +25,15 @@
   },
   "directories": {
     "bin": "bin",
-    "cli": "cli"
+    "cli": "src/cli"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint xunit-viewer.js src cli",
-    "deploy": "rm -rf cli/static && cp -r build/static cli/static",
+    "lint": "eslint xunit-viewer.js src",
+    "deploy": "rm -rf src/cli/static && cp -r build/static src/cli/static",
     "release": "npm run build && npm run deploy"
   },
   "dependencies": {
