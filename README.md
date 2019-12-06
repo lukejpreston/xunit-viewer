@@ -1,6 +1,6 @@
 # Xunit Viewer
 
-Takes all your XUnit and JUnit XML files and makes them reable
+Takes all your XUnit and JUnit XML files and makes them readable
 
 ![Icon](https://raw.githubusercontent.com/lukejpreston/xunit-viewer/master/XunitViewerIcon.png)
 
