@@ -7,7 +7,7 @@ const getFiles = (logger, ignore, folder, files = []) => {
       .map(name => path.join(folder, name))
       .forEach(file => {
         if (fs.lstatSync(file).isDirectory()) files = files.concat(getFiles(logger, ignore, file, files))
-        else if (!ignore.some(pattern => file.includes(pattern) || new RegExp(pattern).test(file))) files.push(file)
+        else if (file.endsWith('.xml') && !ignore.some(pattern => file.includes(pattern) || new RegExp(pattern).test(file))) files.push(file)
         else console.log(logger.warning('IGNORING:'), logger.file(file))
       })
   } else {
