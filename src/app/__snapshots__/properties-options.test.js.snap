@@ -16,7 +16,7 @@ exports[`renders properties options 1`] = `
         <input
           className="input"
           onChange={[Function]}
-          placeholder="Propeties"
+          placeholder="Properties"
           type="text"
         />
       </div>
