@@ -109,7 +109,7 @@ const ToggleRow = ({ status, label, dispatch, visible = true, expanded = true, r
       })
     }}
     active={expanded}
-    onLabel='Exanded'
+    onLabel='Expanded'
     offLabel='Contracted'
     onIcon={<ChevronDownIcon />}
     offIcon={<ChevronUpIcon />} />
@@ -166,7 +166,7 @@ const Options = ({
           <ToggleRow status='failure' label='Failure' dispatch={dispatch} {...testToggles.failure} />
           <ToggleRow status='error' label='Error' dispatch={dispatch} {...testToggles.error} />
           <ToggleRow status='skipped' label='Skipped' dispatch={dispatch} {...testToggles.skipped} />
-          <ToggleRow status='unknown' label='Uknown' dispatch={dispatch} {...testToggles.unknown} />
+          <ToggleRow status='unknown' label='Unknown' dispatch={dispatch} {...testToggles.unknown} />
         </>
         : null}
     </div>

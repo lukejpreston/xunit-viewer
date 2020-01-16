@@ -41,7 +41,7 @@ const ChevronDownIcon = () => <span className='icon'>
 export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpanded = true, propertiesVisible = true }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
-      <Search label='Propeties' dispatch={dispatch} />
+      <Search label='Properties' dispatch={dispatch} />
       <button
         onClick={() => dispatch({ type: 'toggle-properties-options' })}
         className='button card-header-icon'>
