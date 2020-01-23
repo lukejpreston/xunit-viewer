@@ -23,6 +23,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/passing_suite.xml'),
   path.resolve(__dirname, '../../data/skipped_suite.xml'),
   path.resolve(__dirname, '../../data/special_chars_suite.xml'),
+  path.resolve(__dirname, '../../data/system-out.xml'),
   path.resolve(__dirname, '../../data/test.xml'),
   path.resolve(__dirname, '../../data/with_html.xml')
 ]

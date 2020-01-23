@@ -27,6 +27,13 @@ const extarctSuiteMeta = (output, testsuite) => {
   suite.properties = suite.properties || {
     _visible: true
   }
+
+  Object.entries(meta).forEach(([key, value]) => {
+    if (!['errors', 'failures', 'name', 'skipped', 'tests', 'time'].includes(key)) {
+      suite.properties[key] = value
+    }
+  })
+
   suite.id = id
   suite.name = name
   suite.time = meta.time || 0
@@ -89,8 +96,9 @@ const extractTests = (output, suite, testcases) => {
 
     if (typeof testcase !== 'string') {
       const keys = Object.keys(testcase).filter(key => key !== '$' && key !== '_' && key !== 'testcase')
-      const status = keys[0]
+      let status = keys[0]
       if (status) extractTestMessages(test, testcase[status])
+      if (status === 'system-out') status = 'passed'
       test.status = status || 'passed'
     }
 

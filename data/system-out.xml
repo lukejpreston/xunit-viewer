@@ -1,0 +1,26 @@
+<testsuites>
+    <testsuite errors="0" failures="0" hostname="cerberus.fox" name="pytest" skipped="0" tests="6" time="0.078" timestamp="2020-01-22T16:02:49.321656">
+        <testcase classname="tests.test_config" name="test_json_resolution" time="0.001"/>
+        <testcase classname="tests.test_config" name="test_defaults" time="0.001"/>
+        <testcase classname="tests.test_integration" name="test_config_relative_path" time="0.012">
+            <system-out>
+cwd: /tmp/tmpyn7k46sd emanate --source /tmp/tmpwz2h7glq/src '/tmp/tmpwz2h7glq/src/foo' -> '/tmp/tmpwz2h7glq/dest/foo' cwd: /tmp/tmpetkvkfdw emanate --source src '/tmp/tmpetkvkfdw/src/foo' -> '/tmp/tmpetkvkfdw/dest/foo' cwd: /tmp/tmpq7vws4le/src emanate '/tmp/tmpq7vws4le/src/foo' -> '/tmp/tmpq7vws4le/dest/foo'
+            </system-out>
+        </testcase>
+        <testcase classname="tests.test_integration" name="test_no_config" time="0.012">
+            <system-out>
+cwd: /tmp/tmpuv0uzm7s emanate --source /tmp/tmp_uh8tzdz/src --dest /tmp/tmp_uh8tzdz/dest '/tmp/tmp_uh8tzdz/src/foo' -> '/tmp/tmp_uh8tzdz/dest/foo' '/tmp/tmp_uh8tzdz/src/bar/baz' -> '/tmp/tmp_uh8tzdz/dest/bar/baz' cwd: /tmp/tmpk99ai9r0 emanate --source src --dest /tmp/tmpk99ai9r0/dest '/tmp/tmpk99ai9r0/src/foo' -> '/tmp/tmpk99ai9r0/dest/foo' '/tmp/tmpk99ai9r0/src/bar/baz' -> '/tmp/tmpk99ai9r0/dest/bar/baz' cwd: /tmp/tmprxyuze4g/src emanate --dest /tmp/tmprxyuze4g/dest '/tmp/tmprxyuze4g/src/foo' -> '/tmp/tmprxyuze4g/dest/foo' '/tmp/tmprxyuze4g/src/bar/baz' -> '/tmp/tmprxyuze4g/dest/bar/baz'
+            </system-out>
+        </testcase>
+        <testcase classname="tests.test_integration" name="test_empty_config" time="0.011">
+            <system-out>
+cwd: /tmp/tmp2gjl2wj_ emanate --source /tmp/tmp1t7j_ote/src --dest /tmp/tmp1t7j_ote/dest '/tmp/tmp1t7j_ote/src/foo' -> '/tmp/tmp1t7j_ote/dest/foo' cwd: /tmp/tmp9b40pw3b emanate --source src --dest /tmp/tmp9b40pw3b/dest '/tmp/tmp9b40pw3b/src/foo' -> '/tmp/tmp9b40pw3b/dest/foo' cwd: /tmp/tmpfmnr88qv/src emanate --dest /tmp/tmpfmnr88qv/dest '/tmp/tmpfmnr88qv/src/foo' -> '/tmp/tmpfmnr88qv/dest/foo'
+            </system-out>
+        </testcase>
+        <testcase classname="tests.test_integration" name="test_clean" time="0.013">
+            <system-out>
+cwd: /tmp/tmp9q8tpxi2 emanate --source /tmp/tmpn4lvoqq7/src clean '/tmp/tmpn4lvoqq7/dest/foo' cwd: /tmp/tmp0dzkb_z5 emanate --source src clean '/tmp/tmp0dzkb_z5/dest/foo' cwd: /tmp/tmpsueno4qa/src emanate clean '/tmp/tmpsueno4qa/dest/foo'
+            </system-out>
+        </testcase>
+    </testsuite>
+</testsuites>

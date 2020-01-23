@@ -76,10 +76,22 @@ const expected = {
       },
       properties: {
         _visible: true,
-        'flag-type': ['bug', 'bug'],
-        'flag-content': ['APPLICATION DEFECT', 'APPLICATION DEFECT'],
-        'Has a name': ['true', 'true'],
-        URL: ['/test/data.com', '/test/data.com']
+        'flag-type': [
+          'bug',
+          'bug'
+        ],
+        'flag-content': [
+          'APPLICATION DEFECT',
+          'APPLICATION DEFECT'
+        ],
+        'Has a name': [
+          'true',
+          'true'
+        ],
+        URL: [
+          '/test/data.com',
+          '/test/data.com'
+        ]
       },
       id: 953020670,
       name: 'SUITE ONE',
@@ -164,9 +176,16 @@ const expected = {
       },
       properties: {
         _visible: true,
-        specId: ['8bd15b60c2e4427bebe70fb618a717f4'],
-        suiteName: ['@release'],
-        capabilities: ['phantomjs']
+        timestamp: '2017-04-26T11:04:17',
+        specId: [
+          '8bd15b60c2e4427bebe70fb618a717f4'
+        ],
+        suiteName: [
+          '@release'
+        ],
+        capabilities: [
+          'phantomjs'
+        ]
       },
       id: 1090594823,
       name: 'release',
@@ -176,9 +195,16 @@ const expected = {
       tests: {},
       properties: {
         _visible: true,
-        specId: ['8bd15b60c2e4427bebe70fb618a717f4'],
-        suiteName: ['Create Action'],
-        capabilities: ['phantomjs']
+        timestamp: '2017-04-26T11:04:17',
+        specId: [
+          '8bd15b60c2e4427bebe70fb618a717f4'
+        ],
+        suiteName: [
+          'Create Action'
+        ],
+        capabilities: [
+          'phantomjs'
+        ]
       },
       id: 1117832292,
       name: 'Issue 3 suite',
@@ -215,7 +241,10 @@ const expected = {
         '-1785369981': {
           id: -1785369981,
           name: 'Then the file is uploaded successfully',
-          messages: ['java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat com.germaniumhq.germanium.steps.GermaniumFunctionSelectFile.the_file_is_uploaded_successfully(GermaniumFunctionSelectFile.java:26)\n\tat ✽.Then the file is uploaded successfully(features/features/germanium-function-select_file.feature:7)', 'java.lang.AssertionError'],
+          messages: [
+            'java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat com.germaniumhq.germanium.steps.GermaniumFunctionSelectFile.the_file_is_uploaded_successfully(GermaniumFunctionSelectFile.java:26)\n\tat ✽.Then the file is uploaded successfully(features/features/germanium-function-select_file.feature:7)',
+            'java.lang.AssertionError'
+          ],
           visible: true,
           time: '0.004',
           status: 'failure'
@@ -233,7 +262,9 @@ const expected = {
         2059881703: {
           id: 2059881703,
           name: 'issue 2 test',
-          messages: ['0x1 != 0\n./failed_file_name.c:467: error: Failure!'],
+          messages: [
+            '0x1 != 0\n./failed_file_name.c:467: error: Failure!'
+          ],
           visible: true,
           time: '0.155',
           status: 'failure'
@@ -251,7 +282,37 @@ const expected = {
         '-1238486695': {
           id: -1238486695,
           name: 'test name',
-          messages: ['inner massage', 'message', 'type', 'inner massage', 'message', 'type', 'inner massage', 'message', 'type', 'inner massage', 'message', 'type', 'inner message', 'inner massage', 'message', 'type', 'inner massage', 'message', 'type', 'message', 'type', 'message', 'type', 'inner massage', 'message', 'type', 'inner massage', 'message', 'type'],
+          messages: [
+            'inner massage',
+            'message',
+            'type',
+            'inner massage',
+            'message',
+            'type',
+            'inner massage',
+            'message',
+            'type',
+            'inner massage',
+            'message',
+            'type',
+            'inner message',
+            'inner massage',
+            'message',
+            'type',
+            'inner massage',
+            'message',
+            'type',
+            'message',
+            'type',
+            'message',
+            'type',
+            'inner massage',
+            'message',
+            'type',
+            'inner massage',
+            'message',
+            'type'
+          ],
           visible: true,
           time: '0.001',
           status: 'error'
@@ -259,7 +320,12 @@ const expected = {
         '-579348086': {
           id: -579348086,
           name: 'No Name',
-          messages: ['inner message', '<i>inner</i><b>message</b>', '<b>message</b>', '<i>type</i>'],
+          messages: [
+            'inner message',
+            '<i>inner</i><b>message</b>',
+            '<b>message</b>',
+            '<i>type</i>'
+          ],
           visible: true,
           time: 0,
           status: 'failure'
@@ -267,9 +333,16 @@ const expected = {
       },
       properties: {
         _visible: true,
-        x: ['y'],
-        a: ['b'],
-        c: ['d', 'd']
+        x: [
+          'y'
+        ],
+        a: [
+          'b'
+        ],
+        c: [
+          'd',
+          'd'
+        ]
       },
       id: -1035817293,
       name: 'suite name',
@@ -280,7 +353,11 @@ const expected = {
         82310513: {
           id: 82310513,
           name: 'has html',
-          messages: ['<i>ARGG</i><b>BOO</b>', '<b>BOO</b>', '<i>ARGH</i>'],
+          messages: [
+            '<i>ARGG</i><b>BOO</b>',
+            '<b>BOO</b>',
+            '<i>ARGH</i>'
+          ],
           visible: true,
           time: '0.00075',
           status: 'error'
@@ -288,7 +365,14 @@ const expected = {
         276396651: {
           id: 276396651,
           name: 'Is An Error',
-          messages: ['java.lang.RuntimeException: There was an error', 'There was a error', 'java.lang.RuntimeException', 'java.lang.RuntimeException: There was an error', 'There was a error', 'java.lang.RuntimeException'],
+          messages: [
+            'java.lang.RuntimeException: There was an error',
+            'There was a error',
+            'java.lang.RuntimeException',
+            'java.lang.RuntimeException: There was an error',
+            'There was a error',
+            'java.lang.RuntimeException'
+          ],
           visible: true,
           time: '0.00075',
           status: 'error'
@@ -296,7 +380,10 @@ const expected = {
         704554474: {
           id: 704554474,
           name: 'It Is A Failure',
-          messages: ['FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke', 'Failure'],
+          messages: [
+            'FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke',
+            'Failure'
+          ],
           visible: true,
           time: '0.012011200000000001',
           status: 'failure'
@@ -320,11 +407,21 @@ const expected = {
       },
       properties: {
         _visible: true,
-        'flag-type': ['bug'],
-        'flag-content': ['APPLICATION DEFECT'],
-        'Has a name': ['true'],
-        URL: ['/hunter/overall_test.go'],
-        even: ['more']
+        'flag-type': [
+          'bug'
+        ],
+        'flag-content': [
+          'APPLICATION DEFECT'
+        ],
+        'Has a name': [
+          'true'
+        ],
+        URL: [
+          '/hunter/overall_test.go'
+        ],
+        even: [
+          'more'
+        ]
       },
       id: -579348086,
       name: 'No Name',
@@ -334,10 +431,19 @@ const expected = {
       tests: {},
       properties: {
         _visible: true,
-        specId: ['ae110df54f3ea0a8d820bb5e057844d6'],
-        suiteName: ['View listings page'],
-        capabilities: ['chrome'],
-        file: ['./test/features/main.feature']
+        timestamp: '2017-09-21T16:38:53',
+        specId: [
+          'ae110df54f3ea0a8d820bb5e057844d6'
+        ],
+        suiteName: [
+          'View listings page'
+        ],
+        capabilities: [
+          'chrome'
+        ],
+        file: [
+          './test/features/main.feature'
+        ]
       },
       id: -1929456795,
       name: 'view listings page',
@@ -372,14 +478,91 @@ const expected = {
       },
       properties: {
         _visible: true,
-        specId: ['ae110df54f3ea0a8d820bb5e057844d6'],
-        suiteName: ['@release2017.1.0,, @MCC272151_10: Display list of records'],
-        capabilities: ['chrome'],
-        file: ['./test/features/main.feature']
+        timestamp: '2017-09-21T16:38:53',
+        specId: [
+          'ae110df54f3ea0a8d820bb5e057844d6'
+        ],
+        suiteName: [
+          '@release2017.1.0,, @MCC272151_10: Display list of records'
+        ],
+        capabilities: [
+          'chrome'
+        ],
+        file: [
+          './test/features/main.feature'
+        ]
       },
       id: -68285290,
       name: '@release2017.1.0,, @mcc272151_10: display list of records',
       time: '0.017'
+    },
+    '-973199845': {
+      tests: {
+        379181075: {
+          id: 379181075,
+          name: 'test_no_config',
+          messages: [
+            "cwd: /tmp/tmpuv0uzm7s emanate --source /tmp/tmp_uh8tzdz/src --dest /tmp/tmp_uh8tzdz/dest '/tmp/tmp_uh8tzdz/src/foo' -> '/tmp/tmp_uh8tzdz/dest/foo' '/tmp/tmp_uh8tzdz/src/bar/baz' -> '/tmp/tmp_uh8tzdz/dest/bar/baz' cwd: /tmp/tmpk99ai9r0 emanate --source src --dest /tmp/tmpk99ai9r0/dest '/tmp/tmpk99ai9r0/src/foo' -> '/tmp/tmpk99ai9r0/dest/foo' '/tmp/tmpk99ai9r0/src/bar/baz' -> '/tmp/tmpk99ai9r0/dest/bar/baz' cwd: /tmp/tmprxyuze4g/src emanate --dest /tmp/tmprxyuze4g/dest '/tmp/tmprxyuze4g/src/foo' -> '/tmp/tmprxyuze4g/dest/foo' '/tmp/tmprxyuze4g/src/bar/baz' -> '/tmp/tmprxyuze4g/dest/bar/baz'"
+          ],
+          visible: true,
+          time: '0.012',
+          status: 'passed'
+        },
+        2055415900: {
+          id: 2055415900,
+          name: 'test_clean',
+          messages: [
+            "cwd: /tmp/tmp9q8tpxi2 emanate --source /tmp/tmpn4lvoqq7/src clean '/tmp/tmpn4lvoqq7/dest/foo' cwd: /tmp/tmp0dzkb_z5 emanate --source src clean '/tmp/tmp0dzkb_z5/dest/foo' cwd: /tmp/tmpsueno4qa/src emanate clean '/tmp/tmpsueno4qa/dest/foo'"
+          ],
+          visible: true,
+          time: '0.013',
+          status: 'passed'
+        },
+        '-279939402': {
+          id: -279939402,
+          name: 'test_json_resolution',
+          messages: [],
+          visible: true,
+          time: '0.001',
+          status: 'passed'
+        },
+        '-599465121': {
+          id: -599465121,
+          name: 'test_defaults',
+          messages: [],
+          visible: true,
+          time: '0.001',
+          status: 'passed'
+        },
+        '-1637531384': {
+          id: -1637531384,
+          name: 'test_config_relative_path',
+          messages: [
+            "cwd: /tmp/tmpyn7k46sd emanate --source /tmp/tmpwz2h7glq/src '/tmp/tmpwz2h7glq/src/foo' -> '/tmp/tmpwz2h7glq/dest/foo' cwd: /tmp/tmpetkvkfdw emanate --source src '/tmp/tmpetkvkfdw/src/foo' -> '/tmp/tmpetkvkfdw/dest/foo' cwd: /tmp/tmpq7vws4le/src emanate '/tmp/tmpq7vws4le/src/foo' -> '/tmp/tmpq7vws4le/dest/foo'"
+          ],
+          visible: true,
+          time: '0.012',
+          status: 'passed'
+        },
+        '-1410564863': {
+          id: -1410564863,
+          name: 'test_empty_config',
+          messages: [
+            "cwd: /tmp/tmp2gjl2wj_ emanate --source /tmp/tmp1t7j_ote/src --dest /tmp/tmp1t7j_ote/dest '/tmp/tmp1t7j_ote/src/foo' -> '/tmp/tmp1t7j_ote/dest/foo' cwd: /tmp/tmp9b40pw3b emanate --source src --dest /tmp/tmp9b40pw3b/dest '/tmp/tmp9b40pw3b/src/foo' -> '/tmp/tmp9b40pw3b/dest/foo' cwd: /tmp/tmpfmnr88qv/src emanate --dest /tmp/tmpfmnr88qv/dest '/tmp/tmpfmnr88qv/src/foo' -> '/tmp/tmpfmnr88qv/dest/foo'"
+          ],
+          visible: true,
+          time: '0.011',
+          status: 'passed'
+        }
+      },
+      properties: {
+        _visible: true,
+        hostname: 'cerberus.fox',
+        timestamp: '2020-01-22T16:02:49.321656'
+      },
+      id: -973199845,
+      name: 'pytest',
+      time: '0.078'
     },
     '-1861124855': {
       tests: {
@@ -402,7 +585,12 @@ const expected = {
         1350225396: {
           id: 1350225396,
           name: 'failing test with messages',
-          messages: ['inner massage 1', 'message prop 1', 'inner massage 2', 'message prop 2'],
+          messages: [
+            'inner massage 1',
+            'message prop 1',
+            'inner massage 2',
+            'message prop 2'
+          ],
           visible: true,
           time: 0,
           status: 'failure'
@@ -410,7 +598,10 @@ const expected = {
         1443479640: {
           id: 1443479640,
           name: 'test with messages',
-          messages: ['inner message', 'message prop'],
+          messages: [
+            'inner message',
+            'message prop'
+          ],
           visible: true,
           time: 0,
           status: 'passed'
@@ -426,7 +617,12 @@ const expected = {
         1879989598: {
           id: 1879989598,
           name: 'erroring test with messages',
-          messages: ['inner massage 1', 'message prop 1', 'inner massage 2', 'message prop 2'],
+          messages: [
+            'inner massage 1',
+            'message prop 1',
+            'inner massage 2',
+            'message prop 2'
+          ],
           visible: true,
           time: 0,
           status: 'error'
@@ -434,7 +630,12 @@ const expected = {
         2045602436: {
           id: 2045602436,
           name: 'test passed with messages',
-          messages: ['inner massage 1', 'message prop 1', 'inner massage 2', 'message prop 2'],
+          messages: [
+            'inner massage 1',
+            'message prop 1',
+            'inner massage 2',
+            'message prop 2'
+          ],
           visible: true,
           time: 0,
           status: 'passed'
@@ -442,7 +643,9 @@ const expected = {
         '-579348086': {
           id: -579348086,
           name: 'No Name',
-          messages: ['only a message'],
+          messages: [
+            'only a message'
+          ],
           visible: true,
           time: 0
         },
@@ -457,7 +660,11 @@ const expected = {
         '-986143044': {
           id: -986143044,
           name: 'test passed with messages and free text',
-          messages: ['HERE IS SOME TEXT', 'inner massage 1', 'message prop 1'],
+          messages: [
+            'HERE IS SOME TEXT',
+            'inner massage 1',
+            'message prop 1'
+          ],
           visible: true,
           time: 0,
           status: 'passed'
@@ -465,7 +672,12 @@ const expected = {
         '-1154650731': {
           id: -1154650731,
           name: 'skiping test with messages',
-          messages: ['inner massage 1', 'message prop 1', 'inner massage 2', 'message prop 2'],
+          messages: [
+            'inner massage 1',
+            'message prop 1',
+            'inner massage 2',
+            'message prop 2'
+          ],
           visible: true,
           time: 0,
           status: 'skipped'
@@ -473,7 +685,10 @@ const expected = {
         '-198845521': {
           id: -198845521,
           name: 'error and failure test with messages',
-          messages: ['error inner massage 1', 'error message prop 1'],
+          messages: [
+            'error inner massage 1',
+            'error message prop 1'
+          ],
           visible: true,
           time: 0,
           status: 'error'
@@ -482,10 +697,20 @@ const expected = {
       properties: {
         _visible: true,
         'name only': [],
-        'prop 1': ['value 1', 'value 2'],
-        'prop 2': ['value'],
-        'No Name': ['value with no name', 'value only'],
-        'seperate props': ['value']
+        'prop 1': [
+          'value 1',
+          'value 2'
+        ],
+        'prop 2': [
+          'value'
+        ],
+        'No Name': [
+          'value with no name',
+          'value only'
+        ],
+        'seperate props': [
+          'value'
+        ]
       },
       id: -1861124855,
       name: 'suite 1',
@@ -514,7 +739,10 @@ const expected = {
         '-1387098835': {
           id: -1387098835,
           name: 'testcase duplicate',
-          messages: ['message 1', 'message 2'],
+          messages: [
+            'message 1',
+            'message 2'
+          ],
           visible: true,
           time: 0,
           status: 'passed'
@@ -539,5 +767,5 @@ const logger = {
 test('get suites', async () => {
   const files = getFiles(logger, { results: path.resolve(__dirname, '../../data') })
   const suites = await getSuites(logger, files)
-  expect(expected).toEqual(suites)
+  expect(suites).toEqual(expected)
 })
