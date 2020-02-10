@@ -16,11 +16,36 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },
       id: 390294658,
       name: 'testsuite in a testcase',
+      time: 0
+    },
+    741210020: {
+      tests: {
+        741210020: {
+          id: 741210020,
+          name: 'XYZ/e2e_tests',
+          messages: [
+            'exited with error code 1'
+          ],
+          visible: true,
+          time: '9',
+          status: 'error'
+        }
+      },
+      systemOut: [
+        "Generated test.log (if the file is not UTF-8, then this may be unreadable):\n                      exec \\THING \"$0\" || exit 1\n    Executing tests from //XYZ\n    -----------------------------------------------------------------------------\n    Traceback (most recent call last):\n      File \"/tmp/text_models/bazel/sandbox/linux-sandbox/8/execroot/text_models/bazel-out/k8-fastbuild/bin/XYZ/e2e_tests.runfiles/text_models/XYZ/e2e_tests.py\", line 6, in <module>\n        from XYZ.extractor import Extractor\n      File \"/tmp/text_models/bazel/sandbox/linux-sandbox/8/execroot/text_models/bazel-out/k8-fastbuild/bin/XYZ/e2e_tests.runfiles/text_models/XYZ/extractor.py\", line 7, in <module>\n        from ABC.DEF.helper import join_set\n    ModuleNotFoundError: No module named 'ABC'",
+        "Generated test.log (if the file is not UTF-8, then this may be unreadable):\n                      exec \\THING \"$0\" || exit 1\n    Executing tests from //XYZ\n    -----------------------------------------------------------------------------\n    Traceback (most recent call last):\n      File \"/tmp/text_models/bazel/sandbox/linux-sandbox/8/execroot/text_models/bazel-out/k8-fastbuild/bin/XYZ/e2e_tests.runfiles/text_models/XYZ/e2e_tests.py\", line 6, in <module>\n        from XYZ.extractor import Extractor\n      File \"/tmp/text_models/bazel/sandbox/linux-sandbox/8/execroot/text_models/bazel-out/k8-fastbuild/bin/XYZ/e2e_tests.runfiles/text_models/XYZ/extractor.py\", line 7, in <module>\n        from ABC.DEF.helper import join_set\n    ModuleNotFoundError: No module named 'ABC'"
+      ],
+      properties: {
+        _visible: true
+      },
+      id: 741210020,
+      name: 'XYZ/e2e_tests',
       time: 0
     },
     953020670: {
@@ -74,6 +99,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         'flag-type': [
@@ -148,6 +174,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },
@@ -174,6 +201,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         timestamp: '2017-04-26T11:04:17',
@@ -193,6 +221,7 @@ const expected = {
     },
     1117832292: {
       tests: {},
+      systemOut: [],
       properties: {
         _visible: true,
         timestamp: '2017-04-26T11:04:17',
@@ -229,6 +258,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },
@@ -250,6 +280,7 @@ const expected = {
           status: 'failure'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },
@@ -270,6 +301,7 @@ const expected = {
           status: 'failure'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },
@@ -331,6 +363,7 @@ const expected = {
           status: 'failure'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         x: [
@@ -405,6 +438,7 @@ const expected = {
           status: 'skipped'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         'flag-type': [
@@ -429,6 +463,7 @@ const expected = {
     },
     '-1929456795': {
       tests: {},
+      systemOut: [],
       properties: {
         _visible: true,
         timestamp: '2017-09-21T16:38:53',
@@ -476,6 +511,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         timestamp: '2017-09-21T16:38:53',
@@ -555,6 +591,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         hostname: 'cerberus.fox',
@@ -694,6 +731,7 @@ const expected = {
           status: 'error'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true,
         'name only': [],
@@ -727,6 +765,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },
@@ -748,6 +787,7 @@ const expected = {
           status: 'passed'
         }
       },
+      systemOut: [],
       properties: {
         _visible: true
       },

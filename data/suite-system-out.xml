@@ -1,25 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import 'bulma/css/bulma.css'
-import '@fortawesome/fontawesome-free/js/all'
-
-import './app/index.css'
-import App from './app/app.js'
-
-let files = window.files || []
-
-if (process.env.NODE_ENV === 'development') {
-  files = [{
-    file: '/path/to/file/complete.xml',
-    contents: `<?xml version="1.0" encoding="UTF-8"?>
-    <testsuites>
-      <testsuite name="XYZ/e2e_tests" tests="1" failures="0" errors="1">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="XYZ/e2e_tests" tests="1" failures="0" errors="1">
         <testcase name="XYZ/e2e_tests" status="run" duration="9" time="9">
-          <error message="exited with error code 1"></error>
+            <error message="exited with error code 1"></error>
         </testcase>
         <system-out>
     Generated test.log (if the file is not UTF-8, then this may be unreadable):
-          <![CDATA[exec \${PAGER:-/usr/bin/less} "$0" || exit 1
+                      <![CDATA[exec \THING "$0" || exit 1
     Executing tests from //XYZ
     -----------------------------------------------------------------------------
     Traceback (most recent call last):
@@ -31,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
         </system-out>
         <system-out>
     Generated test.log (if the file is not UTF-8, then this may be unreadable):
-          <![CDATA[exec \${PAGER:-/usr/bin/less} "$0" || exit 1
+                      <![CDATA[exec \THING "$0" || exit 1
     Executing tests from //XYZ
     -----------------------------------------------------------------------------
     Traceback (most recent call last):
@@ -41,9 +28,5 @@ if (process.env.NODE_ENV === 'development') {
         from ABC.DEF.helper import join_set
     ModuleNotFoundError: No module named 'ABC']]>
         </system-out>
-      </testsuite>
-    </testsuites>`
-  }]
-}
-
-ReactDOM.render(<App files={files} />, document.getElementById('root'))
+    </testsuite>
+</testsuites>

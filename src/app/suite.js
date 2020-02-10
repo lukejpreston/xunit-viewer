@@ -95,7 +95,7 @@ const SuiteCount = ({ count, type }) => count > 0 ? <span className='suite-count
   {count}
 </span> : null
 
-const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, dispatch }) => {
+const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, dispatch, systemOut = [] }) => {
   let passed = 0
   let failure = 0
   let skipped = 0
@@ -135,6 +135,7 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
     </button>
     {active && containsSomething ? <div className='card-content'>
       <div className='content'>
+        {systemOut.length > 0 ? systemOut.map((value, index) => <pre key={`${id}-sysout-${index}`}>{value}</pre>) : null}
         {hasProperties ? <Properties properties={properties} suite={id} dispatch={dispatch} active={properties._active} /> : null}
         <div>
           {Object.keys(tests)

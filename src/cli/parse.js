@@ -24,6 +24,7 @@ const extarctSuiteMeta = (output, testsuite) => {
   const id = hashCode(name)
   const suite = output.suites[id] || {}
   suite.tests = suite.tests || {}
+  suite.systemOut = suite.systemOut || []
   suite.properties = suite.properties || {
     _visible: true
   }
@@ -110,12 +111,20 @@ const extractTests = (output, suite, testcases) => {
   })
 }
 
+const extractSystemOut = (suite, testsuite) => {
+  suite.systemOut = suite.systemOut || []
+  let systemOut = testsuite['system-out']
+  if (!Array.isArray(systemOut)) systemOut = [systemOut]
+  suite.systemOut = suite.systemOut.concat(systemOut)
+}
+
 const extractSuite = (output, testsuites) => {
   if (!Array.isArray(testsuites)) testsuites = [testsuites]
   testsuites.forEach(testsuite => {
     const suite = extarctSuiteMeta(output, testsuite)
     if (typeof testsuite.properties !== 'undefined') extractProperties(suite, testsuite)
     if (typeof testsuite.testcase !== 'undefined') extractTests(output, suite, testsuite.testcase)
+    if (typeof testsuite['system-out'] !== 'undefined') extractSystemOut(suite, testsuite)
     output.suites[suite.id] = suite
   })
 }
@@ -138,6 +147,10 @@ const parse = async (xml) => {
     extract(output, testsuites)
   } else if (result.testsuite) {
     extract(output, result.testsuite)
+  }
+
+  for (const value of Object.values(output.suites)) {
+    value.systemOut = value.systemOut.map(value => value.trim())
   }
 
   return output
