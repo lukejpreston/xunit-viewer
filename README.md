@@ -6,6 +6,7 @@ Takes all your XUnit and JUnit XML files and makes them readable
 
 [![npm version](https://badge.fury.io/js/xunit-viewer.svg)](https://badge.fury.io/js/xunit-viewer)
 [![Downloads on npm](http://img.shields.io/npm/dm/xunit-viewer.svg)](https://www.npmjs.com/package/xunit-viewer)
+![CI](https://github.com/lukejpreston/xunit-viewer/workflows/CI/badge.svg?branch=master)
 
 Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 
