@@ -34,7 +34,7 @@ const Properties = ({ properties, active = true, dispatch, suite }) => {
             .map(key => {
               return <tr key={key}>
                 <td>{key}</td>
-                <td>{properties[key]}</td>
+                <td>{properties[key].join(', ')}</td>
               </tr>
             })}
         </tbody>

@@ -31,7 +31,8 @@ const extarctSuiteMeta = (output, testsuite) => {
 
   Object.entries(meta).forEach(([key, value]) => {
     if (!['errors', 'failures', 'name', 'skipped', 'tests', 'time'].includes(key)) {
-      suite.properties[key] = value
+      suite.properties[key] = suite.properties[key] || []
+      suite.properties[key].push(value)
     }
   })
 

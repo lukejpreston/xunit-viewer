@@ -204,7 +204,9 @@ const expected = {
       systemOut: [],
       properties: {
         _visible: true,
-        timestamp: '2017-04-26T11:04:17',
+        timestamp: [
+          '2017-04-26T11:04:17'
+        ],
         specId: [
           '8bd15b60c2e4427bebe70fb618a717f4'
         ],
@@ -224,7 +226,9 @@ const expected = {
       systemOut: [],
       properties: {
         _visible: true,
-        timestamp: '2017-04-26T11:04:17',
+        timestamp: [
+          '2017-04-26T11:04:17'
+        ],
         specId: [
           '8bd15b60c2e4427bebe70fb618a717f4'
         ],
@@ -466,7 +470,9 @@ const expected = {
       systemOut: [],
       properties: {
         _visible: true,
-        timestamp: '2017-09-21T16:38:53',
+        timestamp: [
+          '2017-09-21T16:38:53'
+        ],
         specId: [
           'ae110df54f3ea0a8d820bb5e057844d6'
         ],
@@ -514,7 +520,9 @@ const expected = {
       systemOut: [],
       properties: {
         _visible: true,
-        timestamp: '2017-09-21T16:38:53',
+        timestamp: [
+          '2017-09-21T16:38:53'
+        ],
         specId: [
           'ae110df54f3ea0a8d820bb5e057844d6'
         ],
@@ -594,8 +602,12 @@ const expected = {
       systemOut: [],
       properties: {
         _visible: true,
-        hostname: 'cerberus.fox',
-        timestamp: '2020-01-22T16:02:49.321656'
+        hostname: [
+          'cerberus.fox'
+        ],
+        timestamp: [
+          '2020-01-22T16:02:49.321656'
+        ]
       },
       id: -973199845,
       name: 'pytest',

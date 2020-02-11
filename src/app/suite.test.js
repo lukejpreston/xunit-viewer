@@ -7,7 +7,7 @@ test('renders suite', () => {
     id='suite-id'
     name='suite-name'
     properties={{
-      a: 'b',
+      a: ['b'],
       _visible: true
     }}
     active
