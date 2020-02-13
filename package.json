@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "change-case": "^4.1.1",
+    "change-case": "^3.1.0",
     "chokidar": "^3.3.1",
     "console-clear": "^1.1.1",
     "debounce": "^1.2.0",
