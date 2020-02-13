@@ -12,6 +12,22 @@ if (process.env.NODE_ENV === 'development') {
   files = [{
     file: '/path/to/file/complete.xml',
     contents: `<testsuites>
+    <testsuite errors="0" failures="0" hostname="msk1wst056" name="sessions.sessions_api.Доступность эндпоинта получения списка сессий" skipped="0" tests="1" time="1.047092" timestamp="2020-02-13T12:02:50.675248">
+    <testcase classname="sessions.sessions_api.Доступность эндпоинта получения списка сессий" name="Проверка доступности эндпоинта получения сессий" status="passed" time="1.047092"><system-out>
+    <![CDATA[
+@scenario.begin
+  Сценарий: Проверка доступности эндпоинта получения сессий
+    Когда Создана сессия для пользователя с аутентификацией во всех системах ... passed in 0.899s
+    И Пользователь входит в мобильное приложение Aurora-market ... passed in 0.129s
+    И Отправляется запрос для получения сессий для учетной записи Пользователь ... passed in 0.018s
+    Тогда Возвращается количество sessions равное 1 ... passed in 0.000s
+    И Возвращается количество tokens равное 1 ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+    ]]>
+    </system-out></testcase>
+</testsuite>328500
     <testsuite errors="0" failures="0" hostname="cerberus.fox" name="pytest" skipped="0" tests="6" time="0.078" timestamp="2020-01-22T16:02:49.321656">
         <testcase classname="tests.test_config" name="test_json_resolution" time="0.001"/>
         <testcase classname="tests.test_config" name="test_defaults" time="0.001"/>

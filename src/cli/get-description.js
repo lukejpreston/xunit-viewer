@@ -11,7 +11,7 @@ module.exports = (suites) => {
   })
   return Object.entries(testCounts)
     .map(([status, count]) => {
-      return `${count} ${ChangeCase.capitalCase(status)}`
+      return `${count} ${ChangeCase.title(status)}`
     })
     .join(', ')
 }

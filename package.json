@@ -31,6 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --reporters=default --reporters=jest-junit",
+    "update": "node src/cli/get-suites-expected-update.js",
     "eject": "react-scripts eject",
     "lint": "eslint xunit-viewer.js src --ignore-pattern src/cli/static/js/**/*",
     "test:ci": "CI=true npm test",
@@ -44,7 +45,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "change-case": "^4.1.1",
+    "change-case": "^3.1.0",
     "chokidar": "^3.3.1",
     "console-clear": "^1.1.1",
     "debounce": "^1.2.0",
