@@ -116,9 +116,15 @@ npm run demo # this generates the demo
 ./bin/xunit-viewer # to run the local command line tool
 
 npm test # runs the tests
-npm run text:ci # runs without watch and also generates a html output
+npm run test:ci # runs without watch and also generates a html output
 npm run lint # runs eslint
+npm run update # updates the expected files for you
+npm run build:cli # builds the js and copies it to the cli
 ```
+
+Make sure your tests are running and passing, and the linter is passing as well
+
+**DO NOT** commit the `src/cli/static` folder as part of your PR as this is auto generated and just clutters up the PR
 
 ## Help Wanted
 
@@ -138,18 +144,3 @@ To help debug any issues please provide the following info
 If you have issue migrating from Junit Viewer or older version of Xunit Viewer please feel free to raise an issue titled **MIGRATION HELP**
 
 There is a `v5` branch which maintained through Open Source PRs, this branch will not maintain `npm audit` issues
-
-## TODO
-
-If you would like to do any of the following please raise an issue to discuss
-
-* files
-  * tabs, add/remove file
-  * contents change
-  * populate contents
-* automate gh-pages
-* test, lint using travis
-* add react router
-* filtering cli
-* responsive menu button
-* split suite into components
