@@ -28,8 +28,6 @@ const parseAll = async (dispatch, files, suites) => {
 }
 
 const reducer = (state, { type, payload }) => {
-  if (process.env.NODE_ENV === 'development') console.log(type, payload)
-
   const update = {}
   update.currentSuites = state.currentSuites
 

@@ -1,12 +1,15 @@
 import React from 'react'
 import Logo from './logo'
-import { Slider } from 'react-burgers'
+
+const FilterIcon = () => <i className='fas fa-filter' />
 
 export default ({ active, onClick }) => <section className='hero is-black'>
   <div className='container'>
     <div className='columns is-mobile'>
       <div className='column is-1'>
-        <Slider className='button' active={active} onClick={onClick} borderRadius={4} color='#fff' />
+        <button className='filter button has-text-white' onClick={onClick}>
+          <span><FilterIcon /> {!active ? 'FILTER' : 'CLOSE'}</span>
+        </button>
       </div>
       <div className='column is-11'>
         <div className='hero-center'>

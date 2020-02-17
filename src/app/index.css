@@ -3,6 +3,19 @@ body,
     color: #2C3E50 !important;
 }
 
+.filter {
+    transition: background-color 0.2s ease-in-out;
+    background-color: #2C3E50 !important;
+    border: none;
+    height: 100%;
+}
+
+.filter:hover,
+.filter:active,
+.filter:focus {
+    background-color: rgb(52, 78, 104) !important;
+}
+
 .card-header-icon.is-hidden-tablet {
     max-width: 48px;
 }
