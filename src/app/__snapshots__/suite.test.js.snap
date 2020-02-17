@@ -2,7 +2,7 @@
 
 exports[`renders suite 1`] = `
 <div
-  className="card suite is-active is-populated"
+  className="card suite is-active is-populated is-hidden"
 >
   <button
     className="card-header"

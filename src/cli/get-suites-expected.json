@@ -17,7 +17,8 @@
       },
       "id": 390294658,
       "name": "testsuite in a testcase",
-      "time": 0
+      "time": 0,
+      "_visible": true
     },
     "741210020": {
       "tests": {
@@ -41,7 +42,8 @@
       },
       "id": 741210020,
       "name": "XYZ/e2e_tests",
-      "time": 0
+      "time": 0,
+      "_visible": true
     },
     "953020670": {
       "tests": {
@@ -116,7 +118,8 @@
       },
       "id": 953020670,
       "name": "SUITE ONE",
-      "time": "0.021"
+      "time": "0.021",
+      "_visible": true
     },
     "953025764": {
       "tests": {
@@ -175,7 +178,8 @@
       },
       "id": 953025764,
       "name": "SUITE TWO",
-      "time": "0.021"
+      "time": "0.021",
+      "_visible": true
     },
     "1090594823": {
       "tests": {
@@ -214,7 +218,8 @@
       },
       "id": 1090594823,
       "name": "release",
-      "time": "3.478"
+      "time": "3.478",
+      "_visible": true
     },
     "1117832292": {
       "tests": {},
@@ -236,7 +241,8 @@
       },
       "id": 1117832292,
       "name": "Issue 3 suite",
-      "time": "3.478"
+      "time": "3.478",
+      "_visible": true
     },
     "1201687819": {
       "tests": {
@@ -263,7 +269,8 @@
       },
       "id": 1201687819,
       "name": "duplicate",
-      "time": 0
+      "time": 0,
+      "_visible": true
     },
     "1937223947": {
       "tests": {
@@ -290,7 +297,8 @@
       },
       "id": 1937223947,
       "name": "sessions.sessions_api.Доступность эндпоинта получения списка сессий",
-      "time": "1.047092"
+      "time": "1.047092",
+      "_visible": true
     },
     "2038162744": {
       "tests": {
@@ -312,7 +320,8 @@
       },
       "id": 2038162744,
       "name": "CucumberTest",
-      "time": "0.069"
+      "time": "0.069",
+      "_visible": true
     },
     "2100746923": {
       "tests": {
@@ -333,7 +342,8 @@
       },
       "id": 2100746923,
       "name": "issue 2",
-      "time": "0.0160106"
+      "time": "0.0160106",
+      "_visible": true
     },
     "-1035817293": {
       "tests": {
@@ -405,7 +415,8 @@
       },
       "id": -1035817293,
       "name": "suite name",
-      "time": "0.021"
+      "time": "0.021",
+      "_visible": true
     },
     "-579348086": {
       "tests": {
@@ -485,7 +496,8 @@
       },
       "id": -579348086,
       "name": "No Name",
-      "time": "0.0160106"
+      "time": "0.0160106",
+      "_visible": true
     },
     "-1929456795": {
       "tests": {},
@@ -510,7 +522,8 @@
       },
       "id": -1929456795,
       "name": "view listings page",
-      "time": "0.02"
+      "time": "0.02",
+      "_visible": true
     },
     "-68285290": {
       "tests": {
@@ -560,7 +573,8 @@
       },
       "id": -68285290,
       "name": "@release2017.1.0,, @mcc272151_10: display list of records",
-      "time": "0.017"
+      "time": "0.017",
+      "_visible": true
     },
     "-973199845": {
       "tests": {
@@ -633,7 +647,8 @@
       },
       "id": -973199845,
       "name": "pytest",
-      "time": "0.078"
+      "time": "0.078",
+      "_visible": true
     },
     "-1861124855": {
       "tests": {
@@ -786,7 +801,8 @@
       },
       "id": -1861124855,
       "name": "suite 1",
-      "time": "time"
+      "time": "time",
+      "_visible": true
     },
     "-1861124854": {
       "tests": {
@@ -805,7 +821,8 @@
       },
       "id": -1861124854,
       "name": "suite 2",
-      "time": 0
+      "time": 0,
+      "_visible": true
     },
     "-1028948070": {
       "tests": {
@@ -827,7 +844,8 @@
       },
       "id": -1028948070,
       "name": "suite with duplicate tests",
-      "time": 0
+      "time": 0,
+      "_visible": true
     }
   }
 }

@@ -151,9 +151,9 @@ const parse = async (xml) => {
   }
 
   for (const value of Object.values(output.suites)) {
+    value._visible = Object.keys(value.tests).length > 0 || Object.keys(value.properties).filter(prop => prop !== '_visible').length > 0
     value.systemOut = value.systemOut.map(value => value.trim())
   }
-
   return output
 }
 

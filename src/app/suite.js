@@ -95,7 +95,7 @@ const SuiteCount = ({ count, type }) => count > 0 ? <span className='suite-count
   {count}
 </span> : null
 
-const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, dispatch, systemOut = [] }) => {
+const Suite = ({ visible, id, name, active = false, properties = {}, time, tests = {}, dispatch, systemOut = [] }) => {
   let passed = 0
   let failure = 0
   let skipped = 0
@@ -113,7 +113,7 @@ const Suite = ({ id, name, active = false, properties = {}, time, tests = {}, di
   const hasTests = Object.keys(tests).length > 0 && Object.values(tests).some(test => test.visible)
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
-  return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'}`}>
+  return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'} is-${visible ? 'visible' : 'hidden'}`}>
     <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id, active: !active } }) }} disabled={!containsSomething}>
       <p className='card-header-title'>
         <span>{title(name)}</span>

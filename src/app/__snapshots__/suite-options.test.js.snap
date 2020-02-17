@@ -50,7 +50,7 @@ exports[`renders suite options 1`] = `
     </button>
   </header>
   <div
-    className="card-content"
+    className="card-content options-toggles"
   />
 </div>
 `;

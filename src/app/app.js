@@ -95,6 +95,9 @@ const reducer = (state, { type, payload }) => {
     update.suitesExpanded = !state.suitesExpanded
     Object.values(update.currentSuites).forEach(suite => { suite.active = update.suitesExpanded })
   }
+  if (type === 'toggle-empty-suites') {
+    update.suitesEmpty = !state.suitesEmpty
+  }
   if (type === 'toggle-menu') update.menuActive = !state.menuActive
   if (type === 'toggle-suite-options') update.suiteOptionsActive = !state.suiteOptionsActive
   if (type === 'toggle-test-options') update.testOptionsActive = !state.testOptionsActive
@@ -209,7 +212,14 @@ const reducer = (state, { type, payload }) => {
     }
   }
 
-  return merge.recursive(true, state, update)
+  state = merge.recursive(true, state, update)
+
+  Object.values(state.currentSuites).forEach(suite => {
+    if (!state.suitesEmpty) suite._visible = true
+    else suite._visible = (Object.keys(suite.tests).length > 0 && Object.values(suite.tests).filter(test => test.visible).length > 0) || (suite.properties._visible && Object.keys(suite.properties).filter(prop => prop !== '_visible').length > 0)
+  })
+
+  return state
 }
 
 const initialState = {
@@ -221,6 +231,7 @@ const initialState = {
   propertiesOptionsActive: false,
   activeFiles: false,
   suitesExpanded: true,
+  suitesEmpty: true,
   propertiesExpanded: true,
   propertiesVisible: true,
   testToggles: {
@@ -307,6 +318,7 @@ const App = ({ files }) => {
         <SuiteOptions
           active={state.suiteOptionsActive}
           suitesExpanded={state.suitesExpanded}
+          suitesEmpty={state.suitesEmpty}
           dispatch={dispatch}
           count={Object.keys(state.currentSuites).length}
           total={Object.keys(state.suites).length}
@@ -335,7 +347,7 @@ const App = ({ files }) => {
     <main>
       <div className='container'>
         <div>
-          {Object.values(state.currentSuites).map(suite => <Suite key={suite.id} {...suite} dispatch={dispatch} />)}
+          {Object.values(state.currentSuites).map(suite => <Suite key={suite.id} {...suite} visible={suite._visible} dispatch={dispatch} />)}
         </div>
       </div>
     </main>

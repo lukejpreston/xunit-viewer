@@ -31,7 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --reporters=default --reporters=jest-junit",
-    "update": "node src/cli/get-suites-expected-update.js",
+    "update": "node src/cli/update-expected.js",
     "eject": "react-scripts eject",
     "lint": "eslint xunit-viewer.js src --ignore-pattern src/cli/static/js/**/*",
     "test:ci": "CI=true npm test",
