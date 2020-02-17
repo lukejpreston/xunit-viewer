@@ -499,6 +499,36 @@
       "time": "0.0160106",
       "_visible": true
     },
+    "-2023736567": {
+      "tests": {
+        "866431640": {
+          "id": 866431640,
+          "name": "Время последней активности изменяется при обновлении токена для мобильного устройства",
+          "messages": [
+            "Failing step: Тогда Время последней активности изменяется ... failed in 0.004s\n\nINFO:auth.api.requests:Response: 200 GET http://ocs-app.local:8018/idp/ui/login?login_challenge=d6d839a5812c443b86901005c768ffc9 data: <!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width,minimum-scale=1,initial-scale=1\"/><meta name=\"next-head-count\" content=\"2\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/login.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/_app.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/runtime/webpack-91b117697e716c22a78b.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/framework.4a6d1274021dea07c0f6.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/commons.f45713c7aba3ce20097d.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/6773ad45d0354f4720872cd5ee776c22f13c9a91.0fb260b186eb72f24901.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/81ba0819ec88dd0bec17c1c438c133cab6a290fa.916a834513a83791b2f0.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/925ec3a858999a8097194b2c53fbfdb98bfa7494.17176631661852e1c5ef.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/runtime/main-02786df16d94ee682e6c.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/caafe67f7e62507843c5388d508343f7cf6447b9.5d398491c28c531fda49.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/8a5cd78cc6f6305e12437f1637a0ac79a4886b95.f0abb74104c271c8cee6.js\" as=\"script\"/></head><body><div id=\"__next\"></div><script id=\"__NEXT_DATA__\" type=\"application/json\"></script><script nomodule=\"\" src=\"/idp/ui/_next/static/runtime/polyfills-ca767adcfe74e5592607.js\"></script><script defer=\"\" data-next-page=\"/login\" src=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/login.js\"></script><script defer=\"\" data-next-page=\"/_app\" src=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/_app.js\"></script><script src=\"/idp/ui/_next/static/runtime/webpack-91b117697e716c22a78b.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/framework.4a6d1274021dea07c0f6.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/commons.f45713c7aba3ce20097d.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/6773ad45d0354f4720872cd5ee776c22f13c9a91.0fb260b186eb72f24901.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/81ba0819ec88dd0bec17c1c438c133cab6a290fa.916a834513a83791b2f0.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/925ec3a858999a8097194b2c53fbfdb98bfa7494.17176631661852e1c5ef.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/runtime/main-02786df16d94ee682e6c.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/caafe67f7e62507843c5388d508343f7cf6447b9.5d398491c28c531fda49.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/8a5cd78cc6f6305e12437f1637a0ac79a4886b95.f0abb74104c271c8cee6.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/_buildManifest.js\" defer=\"\"></script></body></html>",
+            "2020-02-13T08:57:11+00:00 < 2020-02-13T08:57:11+00:00",
+            "AssertionError"
+          ],
+          "visible": true,
+          "time": "3.245495",
+          "status": "failure"
+        }
+      },
+      "systemOut": [],
+      "properties": {
+        "_visible": true,
+        "hostname": [
+          "msk1wst056"
+        ],
+        "timestamp": [
+          "2020-02-13T11:57:14.939203"
+        ]
+      },
+      "id": -2023736567,
+      "name": "authorization.update_last_activity.Время последней активности изменяется при обновлении токена",
+      "time": "3.245495",
+      "_visible": true
+    },
     "-1929456795": {
       "tests": {},
       "systemOut": [],

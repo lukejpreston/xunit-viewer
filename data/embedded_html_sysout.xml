@@ -1,20 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import 'bulma/css/bulma.css'
-import '@fortawesome/fontawesome-free/js/all'
-
-import './app/index.css'
-import App from './app/app.js'
-
-import LZUTF8 from 'lzutf8'
-
-let files = window.files || []
-
-if (process.env.NODE_ENV === 'development') {
-  files = [{
-    file: '/path/to/file/complete.xml',
-    contents: LZUTF8.compress(`<testsuites>
-    <testsuite errors="0" failures="1" hostname="msk1wst056" name="authorization.update_last_activity.Время последней активности изменяется при обновлении токена" skipped="0" tests="1" time="3.245495" timestamp="2020-02-13T11:57:14.939203">
+<testsuite errors="0" failures="1" hostname="msk1wst056" name="authorization.update_last_activity.Время последней активности изменяется при обновлении токена" skipped="0" tests="1" time="3.245495" timestamp="2020-02-13T11:57:14.939203">
     <testcase classname="authorization.update_last_activity.Время последней активности изменяется при обновлении токена" name="Время последней активности изменяется при обновлении токена для мобильного устройства" status="failed" time="3.245495">
         <failure message="2020-02-13T08:57:11+00:00 &lt; 2020-02-13T08:57:11+00:00" type="AssertionError">
             <![CDATA[
@@ -41,15 +25,3 @@ INFO:auth.api.requests:Response: 200 GET http://ocs-app.local:8018/idp/ui/login?
         </system-out>
     </testcase>
 </testsuite>
-    </testsuites>
-
-`, { outputEncoding: 'Base64' })
-  }]
-}
-
-files = files.map(({ file, contents }) => ({
-  file,
-  contents: LZUTF8.decompress(contents, { inputEncoding: 'Base64' })
-}))
-
-ReactDOM.render(<App files={files} />, document.getElementById('root'))

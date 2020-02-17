@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
+const LZUTF8 = require('lzutf8')
 
 const staticDir = path.resolve(__dirname, './static')
 
@@ -17,6 +18,9 @@ module.exports = (logger, files, description, { output = 'index.html', title = '
   const styles = getHTML('css')
 
   const template = Handlebars.compile(fs.readFileSync(path.resolve(__dirname, 'index.html')).toString())
+
+  files = files.map(({ file, contents }) => ({ file, contents: LZUTF8.compress(contents, { outputEncoding: 'Base64' }) }))
+
   return template({
     files: JSON.stringify(files),
     scripts,
