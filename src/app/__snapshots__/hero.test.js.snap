@@ -14,15 +14,15 @@ exports[`renders hero 1`] = `
         className="column is-1"
       >
         <button
-          className="jsx-1843298680 BurgerSlider Burger button"
+          className="filter button has-text-white"
         >
-          <div
-            className="jsx-1843298680 BurgerBox"
-          >
-            <div
-              className="jsx-1843298680 BurgerInner"
+          <span>
+            <i
+              className="fas fa-filter"
             />
-          </div>
+             
+            FILTER
+          </span>
         </button>
       </div>
       <div
