@@ -114,10 +114,14 @@ const reducer = (state, { type, payload }) => {
     update.propertiesExpanded = payload.active
   }
   if (type === 'toggle-properties') {
-    update.currentSuites[payload.suite].properties._active = payload.active
-    update.propertiesExpanded = Object.values(update.currentSuites).some((suite) => {
-      return suite.properties._active || false
-    })
+    if (payload.test !== undefined) {
+      update.currentSuites[payload.suite].tests[payload.test].properties._active = payload.active
+    } else {
+      update.currentSuites[payload.suite].properties._active = payload.active
+      update.propertiesExpanded = Object.values(update.currentSuites).some((suite) => {
+        return suite.properties._active || false
+      })
+    }
   }
 
   if (type === 'toggle-properties-visbility') {

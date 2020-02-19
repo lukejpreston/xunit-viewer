@@ -149,40 +149,44 @@ exports[`renders suite 1`] = `
             </span>
           </button>
           <div
-            className="card-content"
+            className="content"
           >
-            <button
-              className="button toggle is-active "
-              disabled={false}
-              onClick={[Function]}
+            <div
+              className="card-content"
             >
-              <div
-                className="toggle-rail"
+              <button
+                className="button toggle is-active "
+                disabled={false}
+                onClick={[Function]}
               >
                 <div
-                  className="toggle-handle"
-                />
-              </div>
-              <span
-                className="icon"
+                  className="toggle-rail"
+                >
+                  <div
+                    className="toggle-handle"
+                  />
+                </div>
+                <span
+                  className="icon"
+                >
+                  <i
+                    className="fas fa-code"
+                  />
+                </span>
+                <span>
+                  raw
+                </span>
+              </button>
+              <div
+                className="raw-content"
               >
-                <i
-                  className="fas fa-code"
-                />
-              </span>
-              <span>
-                raw
-              </span>
-            </button>
-            <div
-              className="raw-content"
-            >
-              <pre>
-                message 1
-              </pre>
-              <pre>
-                message 2
-              </pre>
+                <pre>
+                  message 1
+                </pre>
+                <pre>
+                  message 2
+                </pre>
+              </div>
             </div>
           </div>
         </div>

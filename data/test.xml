@@ -65,4 +65,25 @@
         <testcase name='testcase duplicate' message='message 1' />
         <testcase name='testcase duplicate' message='message 2' />
     </testsuite>
+    <testsuite name="testcase with properties">
+        <testcase name='with properties' message='message 1'>
+
+            <properties>
+                <property name="name only"/>
+            </properties>
+            <properties>
+                <property name="prop 1" value="value 1"/>
+                <property name="prop 1">value 2</property>
+                <property name="prop 1"/>
+                <property name="prop 2" value="value"/>
+                <property>value with no name</property>
+                <property/>
+            </properties>
+            <properties>
+                <property name="seperate props" value="value"/>
+            </properties>
+            <properties>value only</properties>
+            <properties/>
+        </testcase>
+    </testsuite>
 </testsuites>

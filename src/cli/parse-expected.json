@@ -48,6 +48,45 @@
       "time": 0,
       "_visible": true
     },
+    "1870281583": {
+      "tests": {
+        "31726797": {
+          "id": 31726797,
+          "name": "with properties",
+          "messages": [
+            "message 1"
+          ],
+          "visible": true,
+          "time": 0,
+          "properties": {
+            "name only": [],
+            "prop 1": [
+              "value 1",
+              "value 2"
+            ],
+            "prop 2": [
+              "value"
+            ],
+            "No Name": [
+              "value with no name",
+              "value only"
+            ],
+            "seperate props": [
+              "value"
+            ]
+          },
+          "status": "passed"
+        }
+      },
+      "systemOut": [],
+      "properties": {
+        "_visible": true
+      },
+      "id": 1870281583,
+      "name": "testcase with properties",
+      "time": 0,
+      "_visible": true
+    },
     "-1861124855": {
       "tests": {
         "152530127": {
