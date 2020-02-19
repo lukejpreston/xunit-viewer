@@ -99,7 +99,9 @@ const extractTests = (output, suite, testcases) => {
     if (typeof testcase !== 'string') {
       const keys = Object.keys(testcase).filter(key => key !== '$' && key !== '_' && key !== 'testcase')
       let status = keys[0]
-      if (status) extractTestMessages(test, testcase[status])
+      keys.forEach((key) => {
+        if (key) extractTestMessages(test, testcase[key])
+      })
       if (status === 'system-out') status = 'passed'
       test.status = status || 'passed'
     }
