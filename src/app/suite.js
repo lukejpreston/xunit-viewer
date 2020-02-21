@@ -10,9 +10,9 @@ const icons = {
   unknown: 'question'
 }
 
-const Properties = ({ properties, active = true, dispatch, suite }) => {
+const Properties = ({ properties, active = true, dispatch, suite, test = null }) => {
   return <div className={`properties card is-${active ? 'active' : 'inactive'}`}>
-    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-properties', payload: { suite, active: !active } }) }}>
+    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-properties', payload: { suite, test, active: !active } }) }}>
       <p className='card-header-title'>Properties</p>
       <span className='card-header-icon'>
         <span className='icon'>
@@ -59,7 +59,8 @@ const CodeIcon = () => <span className='icon'>
   <i className='fas fa-code' />
 </span>
 
-const Test = ({ id, messages, status, time, name, active = true, raw = true, dispatch, suite }) => {
+const Test = ({ id, messages, status, time, name, properties = {}, active = true, raw = true, dispatch, suite }) => {
+  const hasProperties = Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
     <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={messages.length === 0}>
       <p className='card-header-title'>
@@ -75,16 +76,19 @@ const Test = ({ id, messages, status, time, name, active = true, raw = true, dis
         </span>
       </span> : null}
     </button>
-    {active && messages.length > 0 ? <div className='card-content'>
-      <Toggle
-        active={raw}
-        onLabel='raw'
-        onIcon={<CodeIcon />}
-        offIcon={<PrettyIcon />}
-        offLabel='pretty'
-        onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id, raw: !raw } })} />
-      {raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
-    </div> : null}
+    <div className='content'>
+      {active && messages.length > 0 ? <div className='card-content'>
+        {hasProperties ? <Properties properties={properties} suite={suite} test={id} dispatch={dispatch} active={properties._active} /> : null}
+        <Toggle
+          active={raw}
+          onLabel='raw'
+          onIcon={<CodeIcon />}
+          offIcon={<PrettyIcon />}
+          offLabel='pretty'
+          onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id, raw: !raw } })} />
+        {raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
+      </div> : null}
+    </div>
   </div>
 }
 

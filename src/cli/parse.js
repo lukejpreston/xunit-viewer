@@ -95,6 +95,10 @@ const extractTests = (output, suite, testcases) => {
     if (typeof testcase === 'string') test.messages.push(testcase.trim())
     if (testcase._) test.messages.push(testcase._.trim())
     if (meta.message) test.messages.push(testcase.$.message.trim())
+    if (typeof testcase.properties !== 'undefined') {
+      extractProperties(test, testcase)
+      delete testcase.properties
+    }
 
     if (typeof testcase !== 'string') {
       const keys = Object.keys(testcase).filter(key => key !== '$' && key !== '_' && key !== 'testcase')
