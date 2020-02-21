@@ -106,7 +106,7 @@ not available
 
 ## Contributing
 
-Here are a list of commands to get you running
+A list of available commands
 
 ```sh
 npm i
@@ -124,7 +124,23 @@ npm run build:cli # builds the js and copies it to the cli
 
 Make sure your tests are running and passing, and the linter is passing as well
 
-**DO NOT** commit the `src/cli/static` folder as part of your PR as this is auto generated and just clutters up the PR
+**DO NOT** commit the `src/cli/static` folder or the `junit.xml` file as part of your PR as these are auto generated and just clutters up the PR, future work will be done to not make them part of the repo but they currently need to be included for the tags
+
+A suggested workflow for UI changes
+
+1. `npm i` to install the project
+2. `npm start` to start the dev application then you can make your changes quickly
+3. `npm test` to run the tests, run `npm run updated` to quickly update expected values
+4. `npm run lint` to make sure all the files and nice and linted
+5. `npm build:cli` in order to update the CLI with your UI changes
+6. `./bin/xunit-viewer -r data -o test-output.html` in order to make sure the commands work as expected
+
+If you work does not include any UI work then a suggestion is
+
+1. `npm i` to install the project
+2. `./bin/xunit-viewer ...` in order to make sure the commands work as expected
+3. `npm test` to run the tests, run `npm run updated` to quickly update expected values
+4. `npm run lint` to make sure all the files and nice and linted
 
 ## Help Wanted
 
