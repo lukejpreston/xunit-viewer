@@ -66,8 +66,8 @@ export default ({ suitesExpanded = true, suitesEmpty = true, count = 0, total = 
           <Toggle
             onChange={() => dispatch({ type: 'toggle-empty-suites' })}
             active={suitesEmpty}
-            onLabel='Hide empty'
-            offLabel='Show empty'
+            onLabel='Empty hidden'
+            offLabel='Empty shown'
             onIcon={<HideIcon />}
             offIcon={<ShowIcon />} />
         </>
