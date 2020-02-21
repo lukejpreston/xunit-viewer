@@ -1,6 +1,6 @@
 {
   "name": "xunit-viewer",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "parses xunit xml into xunit viewer",
   "repository": {
     "url": "https://github.com/lukejpreston/xunit-viewer.git",
