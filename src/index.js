@@ -13,35 +13,27 @@ let files = window.files || []
 if (process.env.NODE_ENV === 'development') {
   files = [{
     file: '/path/to/file/complete.xml',
-    contents: LZUTF8.compress(`<testsuites>
-    <testsuite errors="0" failures="1" hostname="msk1wst056" name="authorization.update_last_activity.Время последней активности изменяется при обновлении токена" skipped="0" tests="1" time="3.245495" timestamp="2020-02-13T11:57:14.939203">
-    <testcase classname="authorization.update_last_activity.Время последней активности изменяется при обновлении токена" name="Время последней активности изменяется при обновлении токена для мобильного устройства" status="failed" time="3.245495">
-        <failure message="2020-02-13T08:57:11+00:00 &lt; 2020-02-13T08:57:11+00:00" type="AssertionError">
-            <![CDATA[
-Failing step: Тогда Время последней активности изменяется ... failed in 0.004s
+    contents: LZUTF8.compress(`<testsuite name="testcase with properties">
+    <testcase name='with properties' message='message 1'>
 
-INFO:auth.api.requests:Response: 200 GET http://ocs-app.local:8018/idp/ui/login?login_challenge=d6d839a5812c443b86901005c768ffc9 data: <!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/><meta name="next-head-count" content="2"/><link rel="preload" href="/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/login.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/_app.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/runtime/webpack-91b117697e716c22a78b.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/framework.4a6d1274021dea07c0f6.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/commons.f45713c7aba3ce20097d.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/6773ad45d0354f4720872cd5ee776c22f13c9a91.0fb260b186eb72f24901.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/81ba0819ec88dd0bec17c1c438c133cab6a290fa.916a834513a83791b2f0.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/925ec3a858999a8097194b2c53fbfdb98bfa7494.17176631661852e1c5ef.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/runtime/main-02786df16d94ee682e6c.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/caafe67f7e62507843c5388d508343f7cf6447b9.5d398491c28c531fda49.js" as="script"/><link rel="preload" href="/idp/ui/_next/static/chunks/8a5cd78cc6f6305e12437f1637a0ac79a4886b95.f0abb74104c271c8cee6.js" as="script"/></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json"></script><script nomodule="" src="/idp/ui/_next/static/runtime/polyfills-ca767adcfe74e5592607.js"></script><script defer="" data-next-page="/login" src="/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/login.js"></script><script defer="" data-next-page="/_app" src="/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/_app.js"></script><script src="/idp/ui/_next/static/runtime/webpack-91b117697e716c22a78b.js" defer=""></script><script src="/idp/ui/_next/static/chunks/framework.4a6d1274021dea07c0f6.js" defer=""></script><script src="/idp/ui/_next/static/chunks/commons.f45713c7aba3ce20097d.js" defer=""></script><script src="/idp/ui/_next/static/chunks/6773ad45d0354f4720872cd5ee776c22f13c9a91.0fb260b186eb72f24901.js" defer=""></script><script src="/idp/ui/_next/static/chunks/81ba0819ec88dd0bec17c1c438c133cab6a290fa.916a834513a83791b2f0.js" defer=""></script><script src="/idp/ui/_next/static/chunks/925ec3a858999a8097194b2c53fbfdb98bfa7494.17176631661852e1c5ef.js" defer=""></script><script src="/idp/ui/_next/static/runtime/main-02786df16d94ee682e6c.js" defer=""></script><script src="/idp/ui/_next/static/chunks/caafe67f7e62507843c5388d508343f7cf6447b9.5d398491c28c531fda49.js" defer=""></script><script src="/idp/ui/_next/static/chunks/8a5cd78cc6f6305e12437f1637a0ac79a4886b95.f0abb74104c271c8cee6.js" defer=""></script><script src="/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/_buildManifest.js" defer=""></script></body></html>
-]]>
-        </failure>
-        <system-out>
-            <![CDATA[
-@scenario.begin
-
-  @fixture.test_account_with_all_roles
-  Сценарий: Время последней активности изменяется при обновлении токена для мобильного устройства
-    Допустим Пользователь входит в мобильное приложение Aurora-market ... passed in 0.160s
-    И Запоминает время последней активности ... passed in 0.017s
-    И Проходит 3 секунда ... passed in 3.002s
-    Когда Обновляется токен ... passed in 0.062s
-    Тогда Время последней активности изменяется ... failed in 0.004s
-
-@scenario.end
---------------------------------------------------------------------------------
-]]>
-        </system-out>
+        <properties>
+            <property name="name only"/>
+        </properties>
+        <properties>
+            <property name="prop 1" value="value 1"/>
+            <property name="prop 1">value 2</property>
+            <property name="prop 1"/>
+            <property name="prop 2" value="value"/>
+            <property>value with no name</property>
+            <property/>
+        </properties>
+        <properties>
+            <property name="seperate props" value="value"/>
+        </properties>
+        <properties>value only</properties>
+        <properties/>
     </testcase>
 </testsuite>
-    </testsuites>
 
 `, { outputEncoding: 'Base64' })
   }]
