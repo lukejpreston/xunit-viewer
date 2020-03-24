@@ -12,5 +12,5 @@ test('get description', async () => {
   const data = path.join(dataDir, '/test.xml')
   const parsed = await parse(fs.readFileSync(data).toString())
   const result = getDescription(parsed)
-  expect(result).toBe('13 Passed, 1 Failure, 2 Error, 1 Unknown, 1 Skipped')
+  expect(result).toBe('13 passed, 1 failure, 2 error, 1 unknown, 1 skipped')
 })

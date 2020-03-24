@@ -17,6 +17,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/issue_3.xml'),
   path.resolve(__dirname, '../../data/malformed.xml'),
   path.resolve(__dirname, '../../data/most_complex.xml'),
+  path.resolve(__dirname, '../../data/multi-name-unique-classname.xml'),
   path.resolve(__dirname, '../../data/multi_cases.xml'),
   path.resolve(__dirname, '../../data/multi_suite.xml'),
   path.resolve(__dirname, '../../data/name.has.dots.xml'),

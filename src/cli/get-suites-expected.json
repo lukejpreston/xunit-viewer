@@ -20,6 +20,112 @@
       "time": 0,
       "_visible": true
     },
+    "668687547": {
+      "tests": {
+        "246456528": {
+          "id": 246456528,
+          "name": "DeberiaDevolverStatus401CuandoNoHayToken",
+          "messages": [],
+          "visible": true,
+          "time": "0.0019560",
+          "status": "passed"
+        },
+        "746582688": {
+          "id": 746582688,
+          "name": "DeberiaDevolverStatus200CuandoElTokenEsValido",
+          "messages": [],
+          "visible": true,
+          "time": "0.1757020",
+          "status": "passed"
+        },
+        "856660634": {
+          "id": 856660634,
+          "name": "DeberiaInvocarASoaYDevolverHttpOk",
+          "messages": [
+            "at Obi.Backend.Tests.CuentaTest.DeberiaInvocarASoaYDevolverHttpOk() in /Users/nicopaez/Projects/esfera/supervielle/obi/bff-obi/Obi.Backend.Tests/CuentaTest.cs:line 27\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaitable)\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)\n   at NUnit.Framework.Internal.Execution.SimpleWorkItem.PerformWork()",
+            "Expected: OK\n  But was:  InternalServerError"
+          ],
+          "visible": true,
+          "time": "0.0007900",
+          "status": "passed"
+        },
+        "1202422515": {
+          "id": 1202422515,
+          "name": "DeberiaDevolverLastLogonDelTokenCuandoEstaPresente",
+          "messages": [],
+          "visible": true,
+          "time": "0.0024730",
+          "status": "passed"
+        },
+        "2146460449": {
+          "id": 2146460449,
+          "name": "DeberiaDevolverVersion",
+          "messages": [],
+          "visible": true,
+          "time": "0.0087049",
+          "status": "passed"
+        },
+        "-37114658": {
+          "id": -37114658,
+          "name": "DeberiaDevolverStatus401CuandoElTokenNoEsValido",
+          "messages": [],
+          "visible": true,
+          "time": "0.0081730",
+          "status": "passed"
+        },
+        "-1540976225": {
+          "id": -1540976225,
+          "name": "DeberiaDevolverElNombreYApellidoDelCliente",
+          "messages": [],
+          "visible": true,
+          "time": "0.1447000",
+          "status": "passed"
+        },
+        "-390326682": {
+          "id": -390326682,
+          "name": "DeberiaDevolverParsearLasLogonDeFormaRobusta",
+          "messages": [],
+          "visible": true,
+          "time": "0.0041390",
+          "status": "passed"
+        },
+        "-230345365": {
+          "id": -230345365,
+          "name": "DeberiaInvocarAlLogger",
+          "messages": [],
+          "visible": true,
+          "time": "0.0143280",
+          "status": "passed"
+        },
+        "-906934060": {
+          "id": -906934060,
+          "name": "DeberiaDevolverStatusHealthy",
+          "messages": [],
+          "visible": true,
+          "time": "0.0503930",
+          "status": "passed"
+        },
+        "-1266958970": {
+          "id": -1266958970,
+          "name": "DeberiaDevolverHTTPOkSiNoMandoToken",
+          "messages": [],
+          "visible": true,
+          "time": "0.0290100",
+          "status": "passed"
+        }
+      },
+      "systemOut": [],
+      "properties": {
+        "_visible": true,
+        "id": [
+          "0"
+        ]
+      },
+      "id": 668687547,
+      "name": "/Users/nicopaez/Projects/esfera/supervielle/obi/bff-obi/Obi.Backend.Tests/bin/Debug/netcoreapp3.1/Obi.Backend.Tests.dll",
+      "time": "61.181",
+      "_visible": true
+    },
     "741210020": {
       "tests": {
         "741210020": {

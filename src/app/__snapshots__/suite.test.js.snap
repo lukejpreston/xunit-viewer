@@ -13,7 +13,7 @@ exports[`renders suite 1`] = `
       className="card-header-title"
     >
       <span>
-        Suite Name
+        suite-name
       </span>
       <small>
         time = 
@@ -129,7 +129,7 @@ exports[`renders suite 1`] = `
                 />
               </span>
               <span>
-                Test Name
+                Test name
               </span>
               <small>
                 time = 
