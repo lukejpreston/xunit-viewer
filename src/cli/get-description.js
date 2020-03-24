@@ -1,5 +1,3 @@
-const ChangeCase = require('change-case')
-
 module.exports = (suites) => {
   const testCounts = {}
   Object.values(suites.suites).forEach((suite) => {
@@ -11,7 +9,7 @@ module.exports = (suites) => {
   })
   return Object.entries(testCounts)
     .map(([status, count]) => {
-      return `${count} ${ChangeCase.title(status)}`
+      return `${count} ${status}`
     })
     .join(', ')
 }

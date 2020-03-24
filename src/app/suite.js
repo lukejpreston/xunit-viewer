@@ -1,5 +1,4 @@
 import React from 'react'
-import { title } from 'change-case'
 import Toggle from './toggle'
 
 const icons = {
@@ -67,7 +66,7 @@ const Test = ({ id, messages, status, time, name, properties = {}, active = true
         <span className='icon'>
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
         </span>
-        <span>{title(name)}</span>
+        <span>{name}</span>
         {time ? <small>time = {time}</small> : null}
       </p>
       {messages.length > 0 ? <span className='card-header-icon'>
@@ -120,7 +119,7 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'} is-${visible ? 'visible' : 'hidden'}`}>
     <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id, active: !active } }) }} disabled={!containsSomething}>
       <p className='card-header-title'>
-        <span>{title(name)}</span>
+        <span>{name}</span>
         {time ? <small>time = {time}</small> : null}
       </p>
 

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites time="61.181" tests="12" failures="1">
+  <testsuite id="0" name="/Users/nicopaez/Projects/esfera/supervielle/obi/bff-obi/Obi.Backend.Tests/bin/Debug/netcoreapp3.1/Obi.Backend.Tests.dll" tests="12" failures="1" time="61.181">
+    <testcase classname="Obi.Backend.Tests.AuthenticationTest" name="DeberiaDevolverStatus200CuandoElTokenEsValido" time="0.1757020" />
+    <testcase classname="Obi.Backend.Tests.AuthenticationTest" name="DeberiaDevolverStatus401CuandoElTokenNoEsValido" time="0.0081730" />
+    <testcase classname="Obi.Backend.Tests.AuthenticationTest" name="DeberiaDevolverStatus401CuandoNoHayToken" time="0.0019560" />
+    <testcase classname="Obi.Backend.Tests.Controllers.ClienteControllerTest" name="DeberiaDevolverElNombreYApellidoDelCliente" time="0.1447000" />
+    <testcase classname="Obi.Backend.Tests.Controllers.ClienteControllerTest" name="DeberiaDevolverLastLogonDelTokenCuandoEstaPresente" time="0.0024730" />
+    <testcase classname="Obi.Backend.Tests.Controllers.ClienteControllerTest" name="DeberiaDevolverParsearLasLogonDeFormaRobusta" time="0.0041390" />
+    <testcase classname="Obi.Backend.Tests.Controllers.LogControllerTest" name="DeberiaInvocarAlLogger" time="0.0143280" />
+    <testcase classname="Obi.Backend.Tests.CuentaTest" name="DeberiaInvocarASoaYDevolverHttpOk" time="60.7409720">
+      <error message="  Expected: OK&#xA;  But was:  InternalServerError&#xA;">   at Obi.Backend.Tests.CuentaTest.DeberiaInvocarASoaYDevolverHttpOk() in /Users/nicopaez/Projects/esfera/supervielle/obi/bff-obi/Obi.Backend.Tests/CuentaTest.cs:line 27
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaitable)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Execution.SimpleWorkItem.PerformWork()
+</error>
+    </testcase>
+    <testcase classname="Obi.Backend.Tests.HealthTest" name="DeberiaDevolverStatusHealthy" time="0.0503930" />
+    <testcase classname="Obi.Backend.Tests.HealthTest" name="DeberiaDevolverVersion" time="0.0087049" />
+    <testcase classname="Obi.Backend.Tests.LogTest" name="DeberiaDevolverHTTPOkSiNoMandoToken" time="0.0290100" />
+    <testcase classname="Obi.Backend.Tests.TarjetaTest" name="DeberiaInvocarASoaYDevolverHttpOk" time="0.0007900" />
+  </testsuite>
+</testsuites>
