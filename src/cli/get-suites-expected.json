@@ -378,6 +378,58 @@
       "time": 0,
       "_visible": true
     },
+    "1309562018": {
+      "tests": {
+        "1041867330": {
+          "id": 1041867330,
+          "name": "Suite001: netshoot : junit testsuite001",
+          "messages": [
+            "{\n\"facts\": {\n\"testscript\": {\n\"Output\": \"test001 succeeded!\\n\"\n}\n},\n\"changed\": true,\n\"container\": {\n\"Output\": \"test001 succeeded!\\n\"\n},\n\"result_failed\": false\n}"
+          ],
+          "visible": true,
+          "time": "1.278109",
+          "status": "passed"
+        },
+        "-1076819928": {
+          "id": -1076819928,
+          "name": "Suite002.: netshoot : junit testsuite002",
+          "messages": [
+            "result",
+            "skipped",
+            "result",
+            "skipped",
+            "result",
+            "skipped",
+            "result",
+            "skipped"
+          ],
+          "visible": true,
+          "time": "0.021978",
+          "status": "skipped"
+        },
+        "-1076819927": {
+          "id": -1076819927,
+          "name": "Suite002.: netshoot : junit testsuite003",
+          "messages": [
+            "{\n\"facts\": {\n\"testscript\": {\n\"Output\": \"test001 succeeded!\\n\"\n}\n},\n\"changed\": true,\n\"container\": {\n\"Output\": \"test001 succeeded!\\n\"\n},\n\"result_failed\": false\n}"
+          ],
+          "visible": true,
+          "time": "1.058713",
+          "status": "passed"
+        }
+      },
+      "systemOut": [],
+      "properties": {
+        "_visible": true,
+        "disabled": [
+          "0"
+        ]
+      },
+      "id": 1309562018,
+      "name": "netshoot",
+      "time": "2.3972086906433105",
+      "_visible": true
+    },
     "1870281583": {
       "tests": {
         "31726797": {

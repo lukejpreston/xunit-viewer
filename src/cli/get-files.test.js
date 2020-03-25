@@ -25,6 +25,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/passing_suite.xml'),
   path.resolve(__dirname, '../../data/pytest_testcase_properties.xml'),
   path.resolve(__dirname, '../../data/russian-unicode.xml'),
+  path.resolve(__dirname, '../../data/semi-colon.xml'),
   path.resolve(__dirname, '../../data/skipped_suite.xml'),
   path.resolve(__dirname, '../../data/special_chars_suite.xml'),
   path.resolve(__dirname, '../../data/suite-system-out.xml'),

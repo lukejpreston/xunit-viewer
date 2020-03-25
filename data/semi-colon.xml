@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="6" time="2.3972086906433105">
+    <testsuite disabled="0" errors="0" failures="0" name="netshoot" skipped="4" tests="6" time="2.3972086906433105">
+        <testcase classname="../testfile01.yml:3" name="Suite001: netshoot : junit testsuite001" time="1.278109">
+            <system-out>{
+&quot;facts&quot;: {
+&quot;testscript&quot;: {
+&quot;Output&quot;: &quot;test001 succeeded!\n&quot;
+}
+},
+&quot;changed&quot;: true,
+&quot;container&quot;: {
+&quot;Output&quot;: &quot;test001 succeeded!\n&quot;
+},
+&quot;result_failed&quot;: false
+}</system-out>
+        </testcase>
+        <testcase classname="../catchfail.yml:13" name="Suite002.: netshoot : junit testsuite002" time="0.012056">
+            <skipped message="result" type="skipped"/>
+        </testcase>
+        <testcase classname="../catchfail.yml:25" name="Suite002.: netshoot : junit testsuite002" time="0.011861">
+            <skipped message="result" type="skipped"/>
+        </testcase>
+        <testcase classname="../testfile01.yml:3" name="Suite002.: netshoot : junit testsuite003" time="1.058713">
+            <system-out>{
+&quot;facts&quot;: {
+&quot;testscript&quot;: {
+&quot;Output&quot;: &quot;test001 succeeded!\n&quot;
+}
+},
+&quot;changed&quot;: true,
+&quot;container&quot;: {
+&quot;Output&quot;: &quot;test001 succeeded!\n&quot;
+},
+&quot;result_failed&quot;: false
+}</system-out>
+        </testcase>
+        <testcase classname="../catchfail.yml:13" name="Suite002.: netshoot : junit testsuite002" time="0.014492">
+            <skipped message="result" type="skipped"/>
+        </testcase>
+        <testcase classname="../catchfail.yml:25" name="Suite002.: netshoot : junit testsuite002" time="0.021978">
+            <skipped message="result" type="skipped"/>
+        </testcase>
+    </testsuite>
+</testsuites>
