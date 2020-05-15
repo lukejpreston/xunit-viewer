@@ -462,6 +462,10 @@ body,
     cursor: initial;
 }
 
+.card-header {
+    user-select: text;
+}
+
 .test.card {
     transition: margin 0.1s ease-in-out;
     margin: 8px 0;
