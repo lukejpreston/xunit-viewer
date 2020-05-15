@@ -62,7 +62,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "bulma": "^0.8.2",
     "codemirror": "^5.53.2",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-import": "^2.20.2",
