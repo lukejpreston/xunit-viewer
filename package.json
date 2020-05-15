@@ -74,7 +74,7 @@
     "gh-pages": "^2.2.0",
     "jest-junit": "^10.0.0",
     "react": "^16.13.1",
-    "react-codemirror2": "^6.0.1",
+    "react-codemirror2": "^7.1.0",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "react-test-renderer": "^16.13.1"
