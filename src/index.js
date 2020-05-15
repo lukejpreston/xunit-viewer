@@ -13,27 +13,35 @@ let files = window.files || []
 if (process.env.NODE_ENV === 'development') {
   files = [{
     file: '/path/to/file/complete.xml',
-    contents: LZUTF8.compress(`<testsuite name="testcase with properties">
-    <testcase name='with properties' message='message 1' retries='1'>
+    contents: LZUTF8.compress(`<testsuite name='DELETED.BasicWebViewControllerTests' tests='8' failures='1'>
 
-        <properties>
-            <property name="name only"/>
-        </properties>
-        <properties>
-            <property name="prop 1" value="value 1"/>
-            <property name="prop 1">value 2</property>
-            <property name="prop 1"/>
-            <property name="prop 2" value="value"/>
-            <property>value with no name</property>
-            <property/>
-        </properties>
-        <properties>
-            <property name="seperate props" value="value"/>
-        </properties>
-        <properties>value only</properties>
-        <properties/>
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testCompletionIsCalledWhenResettingWebContentEarly' time='0.010'/>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testFullResetWebViewURL' time='0.011'/>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testIsBasedOnHostMatchingURLReturnsFalseWhenHostDoesNotMatch' time='0.008'/>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testIsBasedOnHostMatchingURLReturnsFalseWithNilDefaultURL' time='0.008'/>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testIsBasedOnHostMatchingURLReturnsTrueWhenHostMatches' time='0.008'/>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testLoadingFragmentURLSession' retries='1'>
+
+      <failure message='Asynchronous wait failed: Exceeded timeout of 5 seconds, with unfulfilled expectations: &quot;testLoadingFragmentURLSession()&quot;.'>
+
+        
+
+        [DELETED]/BasicWebViewControllerTests.swift:103 
+
+      </failure>
+
     </testcase>
-</testsuite>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testResetWebContentWithDefaultURL' time='1.481'/>
+
+    <testcase classname='DELETED.BasicWebViewControllerTests' name='testResetWebContentWithNilDefaultURL' time='1.458'/>
+
+  </testsuite>
 
 `, { outputEncoding: 'Base64' })
   }]
