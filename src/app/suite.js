@@ -58,7 +58,7 @@ const CodeIcon = () => <span className='icon'>
   <i className='fas fa-code' />
 </span>
 
-const Test = ({ id, messages, status, time, name, properties = {}, active = true, raw = true, dispatch, suite }) => {
+const Test = ({ id, messages, status, time, classname, name, properties = {}, active = true, raw = true, dispatch, suite }) => {
   const hasProperties = Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
     <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={messages.length === 0}>
@@ -67,6 +67,7 @@ const Test = ({ id, messages, status, time, name, properties = {}, active = true
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
         </span>
         <span>{name}</span>
+        {classname ? <small>classname = {classname}</small> : null}
         {time ? <small>time = {time}</small> : null}
       </p>
       {messages.length > 0 ? <span className='card-header-icon'>

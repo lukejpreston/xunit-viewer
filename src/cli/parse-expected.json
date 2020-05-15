@@ -8,6 +8,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },
@@ -28,6 +29,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-2126675372": {
@@ -36,6 +38,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },
@@ -58,6 +61,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "properties": {
             "name only": [],
             "prop 1": [
@@ -95,6 +99,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "448559065": {
@@ -103,6 +108,7 @@
           "messages": [],
           "visible": true,
           "time": "time",
+          "classname": "",
           "status": "passed"
         },
         "1350225396": {
@@ -116,6 +122,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "failure"
         },
         "1443479640": {
@@ -127,6 +134,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "1669557569": {
@@ -135,6 +143,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "1879989598": {
@@ -148,6 +157,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "error"
         },
         "2045602436": {
@@ -161,6 +171,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-579348086": {
@@ -170,7 +181,8 @@
             "only a message"
           ],
           "visible": true,
-          "time": 0
+          "time": 0,
+          "classname": ""
         },
         "-232186498": {
           "id": -232186498,
@@ -178,6 +190,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-986143044": {
@@ -190,6 +203,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-1154650731": {
@@ -203,6 +217,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "skipped"
         },
         "-198845521": {
@@ -216,6 +231,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "error"
         }
       },
@@ -251,6 +267,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },
@@ -274,6 +291,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },

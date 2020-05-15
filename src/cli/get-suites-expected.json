@@ -8,6 +8,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },
@@ -22,95 +23,115 @@
     },
     "668687547": {
       "tests": {
-        "246456528": {
-          "id": 246456528,
-          "name": "DeberiaDevolverStatus401CuandoNoHayToken",
+        "323522833": {
+          "id": 323522833,
+          "name": "DeberiaInvocarAlLogger",
           "messages": [],
           "visible": true,
-          "time": "0.0019560",
+          "time": "0.0143280",
+          "classname": "Obi.Backend.Tests.Controllers.LogControllerTest",
           "status": "passed"
         },
-        "746582688": {
-          "id": 746582688,
+        "635718753": {
+          "id": 635718753,
+          "name": "DeberiaDevolverStatusHealthy",
+          "messages": [],
+          "visible": true,
+          "time": "0.0503930",
+          "classname": "Obi.Backend.Tests.HealthTest",
+          "status": "passed"
+        },
+        "1076420422": {
+          "id": 1076420422,
+          "name": "DeberiaInvocarASoaYDevolverHttpOk",
+          "messages": [],
+          "visible": true,
+          "time": "0.0007900",
+          "classname": "Obi.Backend.Tests.TarjetaTest",
+          "status": "passed"
+        },
+        "1550233836": {
+          "id": 1550233836,
+          "name": "DeberiaDevolverParsearLasLogonDeFormaRobusta",
+          "messages": [],
+          "visible": true,
+          "time": "0.0041390",
+          "classname": "Obi.Backend.Tests.Controllers.ClienteControllerTest",
+          "status": "passed"
+        },
+        "-1862439095": {
+          "id": -1862439095,
           "name": "DeberiaDevolverStatus200CuandoElTokenEsValido",
           "messages": [],
           "visible": true,
           "time": "0.1757020",
+          "classname": "Obi.Backend.Tests.AuthenticationTest",
           "status": "passed"
         },
-        "856660634": {
-          "id": 856660634,
+        "-468229497": {
+          "id": -468229497,
+          "name": "DeberiaDevolverStatus401CuandoElTokenNoEsValido",
+          "messages": [],
+          "visible": true,
+          "time": "0.0081730",
+          "classname": "Obi.Backend.Tests.AuthenticationTest",
+          "status": "passed"
+        },
+        "-597244551": {
+          "id": -597244551,
+          "name": "DeberiaDevolverStatus401CuandoNoHayToken",
+          "messages": [],
+          "visible": true,
+          "time": "0.0019560",
+          "classname": "Obi.Backend.Tests.AuthenticationTest",
+          "status": "passed"
+        },
+        "-199052013": {
+          "id": -199052013,
+          "name": "DeberiaDevolverElNombreYApellidoDelCliente",
+          "messages": [],
+          "visible": true,
+          "time": "0.1447000",
+          "classname": "Obi.Backend.Tests.Controllers.ClienteControllerTest",
+          "status": "passed"
+        },
+        "-24851649": {
+          "id": -24851649,
+          "name": "DeberiaDevolverLastLogonDelTokenCuandoEstaPresente",
+          "messages": [],
+          "visible": true,
+          "time": "0.0024730",
+          "classname": "Obi.Backend.Tests.Controllers.ClienteControllerTest",
+          "status": "passed"
+        },
+        "-1730143981": {
+          "id": -1730143981,
           "name": "DeberiaInvocarASoaYDevolverHttpOk",
           "messages": [
             "at Obi.Backend.Tests.CuentaTest.DeberiaInvocarASoaYDevolverHttpOk() in /Users/nicopaez/Projects/esfera/supervielle/obi/bff-obi/Obi.Backend.Tests/CuentaTest.cs:line 27\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaitable)\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)\n   at NUnit.Framework.Internal.Execution.SimpleWorkItem.PerformWork()",
             "Expected: OK\n  But was:  InternalServerError"
           ],
           "visible": true,
-          "time": "0.0007900",
-          "status": "passed"
+          "time": "60.7409720",
+          "classname": "Obi.Backend.Tests.CuentaTest",
+          "status": "error"
         },
-        "1202422515": {
-          "id": 1202422515,
-          "name": "DeberiaDevolverLastLogonDelTokenCuandoEstaPresente",
-          "messages": [],
-          "visible": true,
-          "time": "0.0024730",
-          "status": "passed"
-        },
-        "2146460449": {
-          "id": 2146460449,
+        "-2120212178": {
+          "id": -2120212178,
           "name": "DeberiaDevolverVersion",
           "messages": [],
           "visible": true,
           "time": "0.0087049",
+          "classname": "Obi.Backend.Tests.HealthTest",
           "status": "passed"
         },
-        "-37114658": {
-          "id": -37114658,
-          "name": "DeberiaDevolverStatus401CuandoElTokenNoEsValido",
-          "messages": [],
-          "visible": true,
-          "time": "0.0081730",
-          "status": "passed"
-        },
-        "-1540976225": {
-          "id": -1540976225,
-          "name": "DeberiaDevolverElNombreYApellidoDelCliente",
-          "messages": [],
-          "visible": true,
-          "time": "0.1447000",
-          "status": "passed"
-        },
-        "-390326682": {
-          "id": -390326682,
-          "name": "DeberiaDevolverParsearLasLogonDeFormaRobusta",
-          "messages": [],
-          "visible": true,
-          "time": "0.0041390",
-          "status": "passed"
-        },
-        "-230345365": {
-          "id": -230345365,
-          "name": "DeberiaInvocarAlLogger",
-          "messages": [],
-          "visible": true,
-          "time": "0.0143280",
-          "status": "passed"
-        },
-        "-906934060": {
-          "id": -906934060,
-          "name": "DeberiaDevolverStatusHealthy",
-          "messages": [],
-          "visible": true,
-          "time": "0.0503930",
-          "status": "passed"
-        },
-        "-1266958970": {
-          "id": -1266958970,
+        "-978892015": {
+          "id": -978892015,
           "name": "DeberiaDevolverHTTPOkSiNoMandoToken",
           "messages": [],
           "visible": true,
           "time": "0.0290100",
+          "classname": "Obi.Backend.Tests.LogTest",
           "status": "passed"
         }
       },
@@ -136,6 +157,7 @@
           ],
           "visible": true,
           "time": "9",
+          "classname": "",
           "properties": {
             "status": [
               "run"
@@ -161,64 +183,13 @@
     },
     "953020670": {
       "tests": {
-        "406265962": {
-          "id": 406265962,
-          "name": "the fifth test",
-          "messages": [],
-          "visible": true,
-          "time": "0.002",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "1155740465": {
-          "id": 1155740465,
-          "name": "the sixt test",
-          "messages": [],
-          "visible": true,
-          "time": "0.001",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "-698800367": {
-          "id": -698800367,
-          "name": "the first test",
-          "messages": [],
-          "visible": true,
-          "time": "0.001",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "-1782127729": {
-          "id": -1782127729,
-          "name": "the second test",
-          "messages": [],
-          "visible": true,
-          "time": "0.001",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "-1493528902": {
-          "id": -1493528902,
+        "86987652": {
+          "id": 86987652,
           "name": "the third test",
           "messages": [],
           "visible": true,
           "time": "0.012",
+          "classname": "SUITE ONE",
           "properties": {
             "assertions": [
               "0"
@@ -226,12 +197,69 @@
           },
           "status": "passed"
         },
-        "-1476174975": {
-          "id": -1476174975,
+        "409138845": {
+          "id": 409138845,
           "name": "the fouth test",
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "classname": "SUITE ONE",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "652395757": {
+          "id": 652395757,
+          "name": "the sixt test",
+          "messages": [],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE ONE",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "1444716111": {
+          "id": 1444716111,
+          "name": "the second test",
+          "messages": [],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE ONE",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "-542036723": {
+          "id": -542036723,
+          "name": "the first test",
+          "messages": [],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE ONE",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "-1023170604": {
+          "id": -1023170604,
+          "name": "the fifth test",
+          "messages": [],
+          "visible": true,
+          "time": "0.002",
+          "classname": "SUITE ONE",
           "properties": {
             "assertions": [
               "0"
@@ -267,64 +295,13 @@
     },
     "953025764": {
       "tests": {
-        "406265962": {
-          "id": 406265962,
-          "name": "the fifth test",
-          "messages": [],
-          "visible": true,
-          "time": "0.002",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "1155740465": {
-          "id": 1155740465,
-          "name": "the sixt test",
-          "messages": [],
-          "visible": true,
-          "time": "0.001",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "-698800367": {
-          "id": -698800367,
-          "name": "the first test",
-          "messages": [],
-          "visible": true,
-          "time": "0.001",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "-1782127729": {
-          "id": -1782127729,
-          "name": "the second test",
-          "messages": [],
-          "visible": true,
-          "time": "0.001",
-          "properties": {
-            "assertions": [
-              "0"
-            ]
-          },
-          "status": "passed"
-        },
-        "-1493528902": {
-          "id": -1493528902,
+        "86992746": {
+          "id": 86992746,
           "name": "the third test",
           "messages": [],
           "visible": true,
           "time": "0.012",
+          "classname": "SUITE TWO",
           "properties": {
             "assertions": [
               "0"
@@ -332,12 +309,69 @@
           },
           "status": "passed"
         },
-        "-1476174975": {
-          "id": -1476174975,
+        "409143939": {
+          "id": 409143939,
           "name": "the fouth test",
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "classname": "SUITE TWO",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "652400851": {
+          "id": 652400851,
+          "name": "the sixt test",
+          "messages": [],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE TWO",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "1444721205": {
+          "id": 1444721205,
+          "name": "the second test",
+          "messages": [],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE TWO",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "-542031629": {
+          "id": -542031629,
+          "name": "the first test",
+          "messages": [],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE TWO",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
+          "status": "passed"
+        },
+        "-1023165510": {
+          "id": -1023165510,
+          "name": "the fifth test",
+          "messages": [],
+          "visible": true,
+          "time": "0.002",
+          "classname": "SUITE TWO",
           "properties": {
             "assertions": [
               "0"
@@ -357,20 +391,22 @@
     },
     "1090594823": {
       "tests": {
-        "1566902959": {
-          "id": 1566902959,
+        "302772878": {
+          "id": 302772878,
           "name": "testName_1",
           "messages": [],
           "visible": true,
           "time": "2.079",
+          "classname": "phantomjs.@release",
           "status": "passed"
         },
-        "1566902960": {
-          "id": 1566902960,
+        "-541698993": {
+          "id": -541698993,
           "name": "testName_2",
           "messages": [],
           "visible": true,
           "time": "1.399",
+          "classname": "phantomjs.@release",
           "status": "passed"
         }
       },
@@ -426,6 +462,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-2126675372": {
@@ -434,6 +471,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },
@@ -448,24 +486,24 @@
     },
     "1309562018": {
       "tests": {
-        "1041867330": {
-          "id": 1041867330,
-          "name": "Suite001: netshoot : junit testsuite001",
-          "messages": [
-            "{\n\"facts\": {\n\"testscript\": {\n\"Output\": \"test001 succeeded!\\n\"\n}\n},\n\"changed\": true,\n\"container\": {\n\"Output\": \"test001 succeeded!\\n\"\n},\n\"result_failed\": false\n}"
-          ],
-          "visible": true,
-          "time": "1.278109",
-          "status": "passed"
-        },
-        "-1076819928": {
-          "id": -1076819928,
+        "327161728": {
+          "id": 327161728,
           "name": "Suite002.: netshoot : junit testsuite002",
           "messages": [
             "result",
             "skipped",
             "result",
-            "skipped",
+            "skipped"
+          ],
+          "visible": true,
+          "time": "0.014492",
+          "classname": "../catchfail.yml:13",
+          "status": "skipped"
+        },
+        "327161761": {
+          "id": 327161761,
+          "name": "Suite002.: netshoot : junit testsuite002",
+          "messages": [
             "result",
             "skipped",
             "result",
@@ -473,16 +511,29 @@
           ],
           "visible": true,
           "time": "0.021978",
+          "classname": "../catchfail.yml:25",
           "status": "skipped"
         },
-        "-1076819927": {
-          "id": -1076819927,
+        "-57934625": {
+          "id": -57934625,
+          "name": "Suite001: netshoot : junit testsuite001",
+          "messages": [
+            "{\n\"facts\": {\n\"testscript\": {\n\"Output\": \"test001 succeeded!\\n\"\n}\n},\n\"changed\": true,\n\"container\": {\n\"Output\": \"test001 succeeded!\\n\"\n},\n\"result_failed\": false\n}"
+          ],
+          "visible": true,
+          "time": "1.278109",
+          "classname": "../testfile01.yml:3",
+          "status": "passed"
+        },
+        "-166664296": {
+          "id": -166664296,
           "name": "Suite002.: netshoot : junit testsuite003",
           "messages": [
             "{\n\"facts\": {\n\"testscript\": {\n\"Output\": \"test001 succeeded!\\n\"\n}\n},\n\"changed\": true,\n\"container\": {\n\"Output\": \"test001 succeeded!\\n\"\n},\n\"result_failed\": false\n}"
           ],
           "visible": true,
           "time": "1.058713",
+          "classname": "../testfile01.yml:3",
           "status": "passed"
         }
       },
@@ -508,6 +559,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "properties": {
             "name only": [],
             "prop 1": [
@@ -539,14 +591,15 @@
     },
     "1937223947": {
       "tests": {
-        "2083138683": {
-          "id": 2083138683,
+        "-280607056": {
+          "id": -280607056,
           "name": "Проверка доступности эндпоинта получения сессий",
           "messages": [
             "@scenario.begin\n  Сценарий: Проверка доступности эндпоинта получения сессий\n    Когда Создана сессия для пользователя с аутентификацией во всех системах ... passed in 0.899s\n    И Пользователь входит в мобильное приложение Aurora-market ... passed in 0.129s\n    И Отправляется запрос для получения сессий для учетной записи Пользователь ... passed in 0.018s\n    Тогда Возвращается количество sessions равное 1 ... passed in 0.000s\n    И Возвращается количество tokens равное 1 ... passed in 0.000s\n\n@scenario.end\n--------------------------------------------------------------------------------"
           ],
           "visible": true,
           "time": "1.047092",
+          "classname": "sessions.sessions_api.Доступность эндпоинта получения списка сессий",
           "properties": {
             "status": [
               "passed"
@@ -572,8 +625,8 @@
     },
     "2038162744": {
       "tests": {
-        "-1785369981": {
-          "id": -1785369981,
+        "1447121213": {
+          "id": 1447121213,
           "name": "Then the file is uploaded successfully",
           "messages": [
             "java.lang.AssertionError\n\tat org.junit.Assert.fail(Assert.java:86)\n\tat org.junit.Assert.assertTrue(Assert.java:41)\n\tat org.junit.Assert.assertTrue(Assert.java:52)\n\tat com.germaniumhq.germanium.steps.GermaniumFunctionSelectFile.the_file_is_uploaded_successfully(GermaniumFunctionSelectFile.java:26)\n\tat ✽.Then the file is uploaded successfully(features/features/germanium-function-select_file.feature:7)",
@@ -581,6 +634,7 @@
           ],
           "visible": true,
           "time": "0.004",
+          "classname": "Scenario: Uploading a file should work.",
           "status": "failure"
         }
       },
@@ -595,64 +649,35 @@
     },
     "2087276485": {
       "tests": {
-        "386768197": {
-          "id": 386768197,
-          "name": "testIsBasedOnHostMatchingURLReturnsFalseWithNilDefaultURL",
-          "messages": [],
-          "visible": true,
-          "time": "0.008",
-          "status": "passed"
-        },
-        "556625620": {
-          "id": 556625620,
+        "313512049": {
+          "id": 313512049,
           "name": "testIsBasedOnHostMatchingURLReturnsTrueWhenHostMatches",
           "messages": [],
           "visible": true,
           "time": "0.008",
+          "classname": "DELETED.BasicWebViewControllerTests",
           "status": "passed"
         },
-        "1166518039": {
-          "id": 1166518039,
-          "name": "testResetWebContentWithNilDefaultURL",
-          "messages": [],
-          "visible": true,
-          "time": "1.458",
-          "status": "passed"
-        },
-        "1298888630": {
-          "id": 1298888630,
-          "name": "testResetWebContentWithDefaultURL",
-          "messages": [],
-          "visible": true,
-          "time": "1.481",
-          "status": "passed"
-        },
-        "-1357515056": {
-          "id": -1357515056,
+        "1086154485": {
+          "id": 1086154485,
           "name": "testCompletionIsCalledWhenResettingWebContentEarly",
           "messages": [],
           "visible": true,
           "time": "0.010",
+          "classname": "DELETED.BasicWebViewControllerTests",
           "status": "passed"
         },
-        "-460495676": {
-          "id": -460495676,
-          "name": "testFullResetWebViewURL",
-          "messages": [],
-          "visible": true,
-          "time": "0.011",
-          "status": "passed"
-        },
-        "-386286111": {
-          "id": -386286111,
+        "1090453060": {
+          "id": 1090453060,
           "name": "testIsBasedOnHostMatchingURLReturnsFalseWhenHostDoesNotMatch",
           "messages": [],
           "visible": true,
           "time": "0.008",
+          "classname": "DELETED.BasicWebViewControllerTests",
           "status": "passed"
         },
-        "-1890839935": {
-          "id": -1890839935,
+        "1332700580": {
+          "id": 1332700580,
           "name": "testLoadingFragmentURLSession",
           "messages": [
             "[DELETED]/BasicWebViewControllerTests.swift:103",
@@ -660,12 +685,49 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "DELETED.BasicWebViewControllerTests",
           "properties": {
             "retries": [
               "1"
             ]
           },
           "status": "failure"
+        },
+        "-685206399": {
+          "id": -685206399,
+          "name": "testFullResetWebViewURL",
+          "messages": [],
+          "visible": true,
+          "time": "0.011",
+          "classname": "DELETED.BasicWebViewControllerTests",
+          "status": "passed"
+        },
+        "-52902816": {
+          "id": -52902816,
+          "name": "testIsBasedOnHostMatchingURLReturnsFalseWithNilDefaultURL",
+          "messages": [],
+          "visible": true,
+          "time": "0.008",
+          "classname": "DELETED.BasicWebViewControllerTests",
+          "status": "passed"
+        },
+        "-1488679857": {
+          "id": -1488679857,
+          "name": "testResetWebContentWithDefaultURL",
+          "messages": [],
+          "visible": true,
+          "time": "1.481",
+          "classname": "DELETED.BasicWebViewControllerTests",
+          "status": "passed"
+        },
+        "-2131338930": {
+          "id": -2131338930,
+          "name": "testResetWebContentWithNilDefaultURL",
+          "messages": [],
+          "visible": true,
+          "time": "1.458",
+          "classname": "DELETED.BasicWebViewControllerTests",
+          "status": "passed"
         }
       },
       "systemOut": [],
@@ -687,6 +749,7 @@
           ],
           "visible": true,
           "time": "0.155",
+          "classname": "",
           "status": "failure"
         }
       },
@@ -701,8 +764,8 @@
     },
     "-1035817293": {
       "tests": {
-        "-1238486695": {
-          "id": -1238486695,
+        "-1599486772": {
+          "id": -1599486772,
           "name": "test name",
           "messages": [
             "inner massage",
@@ -717,17 +780,6 @@
             "inner massage",
             "message",
             "type",
-            "inner message",
-            "inner massage",
-            "message",
-            "type",
-            "inner massage",
-            "message",
-            "type",
-            "message",
-            "type",
-            "message",
-            "type",
             "inner massage",
             "message",
             "type",
@@ -737,10 +789,9 @@
           ],
           "visible": true,
           "time": "0.001",
+          "classname": "suite name",
           "properties": {
             "assertions": [
-              "0",
-              "0",
               "0",
               "0",
               "0",
@@ -750,6 +801,23 @@
             ]
           },
           "status": "error"
+        },
+        "-1836108859": {
+          "id": -1836108859,
+          "name": "test name",
+          "messages": [
+            "inner message"
+          ],
+          "visible": true,
+          "time": "0.001",
+          "classname": "SUITE ONE",
+          "properties": {
+            "assertions": [
+              "0",
+              "0"
+            ]
+          },
+          "status": "passed"
         },
         "-579348086": {
           "id": -579348086,
@@ -762,7 +830,28 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "failure"
+        },
+        "-1238486695": {
+          "id": -1238486695,
+          "name": "test name",
+          "messages": [
+            "inner massage",
+            "message",
+            "type",
+            "inner massage",
+            "message",
+            "type",
+            "message",
+            "type",
+            "message",
+            "type"
+          ],
+          "visible": true,
+          "time": 0,
+          "classname": "",
+          "status": "skipped"
         }
       },
       "systemOut": [],
@@ -786,24 +875,13 @@
     },
     "-579348086": {
       "tests": {
-        "82310513": {
-          "id": 82310513,
-          "name": "has html",
-          "messages": [
-            "<i>ARGG</i><b>BOO</b>",
-            "<b>BOO</b>",
-            "<i>ARGH</i>"
-          ],
-          "visible": true,
-          "time": "0.00075",
-          "status": "error"
-        },
-        "137192677": {
-          "id": 137192677,
+        "524803104": {
+          "id": 524803104,
           "name": "test_function",
           "messages": [],
           "visible": true,
           "time": "0.0009",
+          "classname": "test_function",
           "properties": {
             "example_key": [
               "1"
@@ -817,8 +895,30 @@
           },
           "status": "passed"
         },
-        "276396651": {
-          "id": 276396651,
+        "834489265": {
+          "id": 834489265,
+          "name": "It Is A Pass",
+          "messages": [],
+          "visible": true,
+          "time": "0.000625",
+          "classname": "",
+          "status": "passed"
+        },
+        "1023095389": {
+          "id": 1023095389,
+          "name": "Is An Error",
+          "messages": [
+            "java.lang.RuntimeException: There was an error",
+            "There was a error",
+            "java.lang.RuntimeException"
+          ],
+          "visible": true,
+          "time": "0.00075",
+          "classname": "Error",
+          "status": "error"
+        },
+        "1030567310": {
+          "id": 1030567310,
           "name": "Is An Error",
           "messages": [
             "java.lang.RuntimeException: There was an error",
@@ -830,10 +930,33 @@
           ],
           "visible": true,
           "time": "0.00075",
+          "classname": "Multi",
           "status": "error"
         },
-        "704554474": {
-          "id": 704554474,
+        "1610183612": {
+          "id": 1610183612,
+          "name": "Is An Error",
+          "messages": [
+            "java.lang.RuntimeException: There was an error",
+            "There was a error",
+            "java.lang.RuntimeException"
+          ],
+          "visible": true,
+          "time": "0",
+          "classname": "Defect",
+          "status": "error"
+        },
+        "1860231169": {
+          "id": 1860231169,
+          "name": "It Is Skipped",
+          "messages": [],
+          "visible": true,
+          "time": "0",
+          "classname": "Skipped",
+          "status": "skipped"
+        },
+        "1953847994": {
+          "id": 1953847994,
           "name": "It Is A Failure",
           "messages": [
             "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
@@ -841,23 +964,72 @@
           ],
           "visible": true,
           "time": "0.012011200000000001",
+          "classname": "Failing",
           "status": "failure"
         },
-        "834489265": {
-          "id": 834489265,
+        "2115128906": {
+          "id": 2115128906,
+          "name": "It Is Skipped",
+          "messages": [
+            "This is a message",
+            "This is a message"
+          ],
+          "visible": true,
+          "time": "0",
+          "classname": "Multi",
+          "status": "skipped"
+        },
+        "-2011012753": {
+          "id": -2011012753,
+          "name": "It Is A Failure",
+          "messages": [
+            "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
+            "Failure"
+          ],
+          "visible": true,
+          "time": "0.012011200000000001",
+          "classname": "Multi",
+          "status": "failure"
+        },
+        "-1973993464": {
+          "id": -1973993464,
           "name": "It Is A Pass",
           "messages": [],
           "visible": true,
           "time": "0.000625",
+          "classname": "Multi",
           "status": "passed"
         },
-        "1065278511": {
-          "id": 1065278511,
-          "name": "It Is Skipped",
+        "-612761391": {
+          "id": -612761391,
+          "name": "It Is A Pass",
           "messages": [],
           "visible": true,
-          "time": "0",
-          "status": "skipped"
+          "time": "0.000625",
+          "classname": "H.a.s.D.o.t.s",
+          "status": "passed"
+        },
+        "-830774976": {
+          "id": -830774976,
+          "name": "It Is A Pass",
+          "messages": [],
+          "visible": true,
+          "time": "0.000625",
+          "classname": "Passing",
+          "status": "passed"
+        },
+        "-1136667492": {
+          "id": -1136667492,
+          "name": "has html",
+          "messages": [
+            "<i>ARGG</i><b>BOO</b>",
+            "<b>BOO</b>",
+            "<i>ARGH</i>"
+          ],
+          "visible": true,
+          "time": "0.00075",
+          "classname": "HTML",
+          "status": "error"
         }
       },
       "systemOut": [],
@@ -886,8 +1058,8 @@
     },
     "-2023736567": {
       "tests": {
-        "866431640": {
-          "id": 866431640,
+        "1718064033": {
+          "id": 1718064033,
           "name": "Время последней активности изменяется при обновлении токена для мобильного устройства",
           "messages": [
             "Failing step: Тогда Время последней активности изменяется ... failed in 0.004s\n\nINFO:auth.api.requests:Response: 200 GET http://ocs-app.local:8018/idp/ui/login?login_challenge=d6d839a5812c443b86901005c768ffc9 data: <!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width,minimum-scale=1,initial-scale=1\"/><meta name=\"next-head-count\" content=\"2\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/login.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/_app.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/runtime/webpack-91b117697e716c22a78b.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/framework.4a6d1274021dea07c0f6.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/commons.f45713c7aba3ce20097d.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/6773ad45d0354f4720872cd5ee776c22f13c9a91.0fb260b186eb72f24901.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/81ba0819ec88dd0bec17c1c438c133cab6a290fa.916a834513a83791b2f0.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/925ec3a858999a8097194b2c53fbfdb98bfa7494.17176631661852e1c5ef.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/runtime/main-02786df16d94ee682e6c.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/caafe67f7e62507843c5388d508343f7cf6447b9.5d398491c28c531fda49.js\" as=\"script\"/><link rel=\"preload\" href=\"/idp/ui/_next/static/chunks/8a5cd78cc6f6305e12437f1637a0ac79a4886b95.f0abb74104c271c8cee6.js\" as=\"script\"/></head><body><div id=\"__next\"></div><script id=\"__NEXT_DATA__\" type=\"application/json\"></script><script nomodule=\"\" src=\"/idp/ui/_next/static/runtime/polyfills-ca767adcfe74e5592607.js\"></script><script defer=\"\" data-next-page=\"/login\" src=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/login.js\"></script><script defer=\"\" data-next-page=\"/_app\" src=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/pages/_app.js\"></script><script src=\"/idp/ui/_next/static/runtime/webpack-91b117697e716c22a78b.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/framework.4a6d1274021dea07c0f6.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/commons.f45713c7aba3ce20097d.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/6773ad45d0354f4720872cd5ee776c22f13c9a91.0fb260b186eb72f24901.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/81ba0819ec88dd0bec17c1c438c133cab6a290fa.916a834513a83791b2f0.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/925ec3a858999a8097194b2c53fbfdb98bfa7494.17176631661852e1c5ef.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/runtime/main-02786df16d94ee682e6c.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/caafe67f7e62507843c5388d508343f7cf6447b9.5d398491c28c531fda49.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/chunks/8a5cd78cc6f6305e12437f1637a0ac79a4886b95.f0abb74104c271c8cee6.js\" defer=\"\"></script><script src=\"/idp/ui/_next/static/HkUfFtgP6klFe2fEQqmxy/_buildManifest.js\" defer=\"\"></script></body></html>",
@@ -897,6 +1069,7 @@
           ],
           "visible": true,
           "time": "3.245495",
+          "classname": "authorization.update_last_activity.Время последней активности изменяется при обновлении токена",
           "properties": {
             "status": [
               "failed"
@@ -948,28 +1121,31 @@
     },
     "-68285290": {
       "tests": {
-        "104219158": {
-          "id": 104219158,
-          "name": "i logged into an application",
-          "messages": [],
-          "visible": true,
-          "time": "0.348",
-          "status": "passed"
-        },
-        "926961572": {
-          "id": 926961572,
+        "1081166278": {
+          "id": 1081166278,
           "name": "i navigate to the listings page",
           "messages": [],
           "visible": true,
           "time": "0.343",
+          "classname": "chrome.@release2017.1.0,, @mcc272151_10: display list of records",
           "status": "passed"
         },
-        "-1597401884": {
-          "id": -1597401884,
+        "-2045072328": {
+          "id": -2045072328,
+          "name": "i logged into an application",
+          "messages": [],
+          "visible": true,
+          "time": "0.348",
+          "classname": "chrome.@release2017.1.0,, @mcc272151_10: display list of records",
+          "status": "passed"
+        },
+        "-315584762": {
+          "id": -315584762,
           "name": "i can see tabular list of records",
           "messages": [],
           "visible": true,
           "time": "0.34",
+          "classname": "chrome.@release2017.1.0,, @mcc272151_10: display list of records",
           "status": "passed"
         }
       },
@@ -999,60 +1175,66 @@
     },
     "-973199845": {
       "tests": {
-        "379181075": {
-          "id": 379181075,
-          "name": "test_no_config",
-          "messages": [
-            "cwd: /tmp/tmpuv0uzm7s emanate --source /tmp/tmp_uh8tzdz/src --dest /tmp/tmp_uh8tzdz/dest '/tmp/tmp_uh8tzdz/src/foo' -> '/tmp/tmp_uh8tzdz/dest/foo' '/tmp/tmp_uh8tzdz/src/bar/baz' -> '/tmp/tmp_uh8tzdz/dest/bar/baz' cwd: /tmp/tmpk99ai9r0 emanate --source src --dest /tmp/tmpk99ai9r0/dest '/tmp/tmpk99ai9r0/src/foo' -> '/tmp/tmpk99ai9r0/dest/foo' '/tmp/tmpk99ai9r0/src/bar/baz' -> '/tmp/tmpk99ai9r0/dest/bar/baz' cwd: /tmp/tmprxyuze4g/src emanate --dest /tmp/tmprxyuze4g/dest '/tmp/tmprxyuze4g/src/foo' -> '/tmp/tmprxyuze4g/dest/foo' '/tmp/tmprxyuze4g/src/bar/baz' -> '/tmp/tmprxyuze4g/dest/bar/baz'"
-          ],
-          "visible": true,
-          "time": "0.012",
-          "status": "passed"
-        },
-        "2055415900": {
-          "id": 2055415900,
+        "460490032": {
+          "id": 460490032,
           "name": "test_clean",
           "messages": [
             "cwd: /tmp/tmp9q8tpxi2 emanate --source /tmp/tmpn4lvoqq7/src clean '/tmp/tmpn4lvoqq7/dest/foo' cwd: /tmp/tmp0dzkb_z5 emanate --source src clean '/tmp/tmp0dzkb_z5/dest/foo' cwd: /tmp/tmpsueno4qa/src emanate clean '/tmp/tmpsueno4qa/dest/foo'"
           ],
           "visible": true,
           "time": "0.013",
+          "classname": "tests.test_integration",
           "status": "passed"
         },
-        "-279939402": {
-          "id": -279939402,
+        "923679564": {
+          "id": 923679564,
           "name": "test_json_resolution",
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "classname": "tests.test_config",
           "status": "passed"
         },
-        "-599465121": {
-          "id": -599465121,
+        "-1605528125": {
+          "id": -1605528125,
           "name": "test_defaults",
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "classname": "tests.test_config",
           "status": "passed"
         },
-        "-1637531384": {
-          "id": -1637531384,
+        "-913992484": {
+          "id": -913992484,
           "name": "test_config_relative_path",
           "messages": [
             "cwd: /tmp/tmpyn7k46sd emanate --source /tmp/tmpwz2h7glq/src '/tmp/tmpwz2h7glq/src/foo' -> '/tmp/tmpwz2h7glq/dest/foo' cwd: /tmp/tmpetkvkfdw emanate --source src '/tmp/tmpetkvkfdw/src/foo' -> '/tmp/tmpetkvkfdw/dest/foo' cwd: /tmp/tmpq7vws4le/src emanate '/tmp/tmpq7vws4le/src/foo' -> '/tmp/tmpq7vws4le/dest/foo'"
           ],
           "visible": true,
           "time": "0.012",
+          "classname": "tests.test_integration",
           "status": "passed"
         },
-        "-1410564863": {
-          "id": -1410564863,
+        "-733970009": {
+          "id": -733970009,
+          "name": "test_no_config",
+          "messages": [
+            "cwd: /tmp/tmpuv0uzm7s emanate --source /tmp/tmp_uh8tzdz/src --dest /tmp/tmp_uh8tzdz/dest '/tmp/tmp_uh8tzdz/src/foo' -> '/tmp/tmp_uh8tzdz/dest/foo' '/tmp/tmp_uh8tzdz/src/bar/baz' -> '/tmp/tmp_uh8tzdz/dest/bar/baz' cwd: /tmp/tmpk99ai9r0 emanate --source src --dest /tmp/tmpk99ai9r0/dest '/tmp/tmpk99ai9r0/src/foo' -> '/tmp/tmpk99ai9r0/dest/foo' '/tmp/tmpk99ai9r0/src/bar/baz' -> '/tmp/tmpk99ai9r0/dest/bar/baz' cwd: /tmp/tmprxyuze4g/src emanate --dest /tmp/tmprxyuze4g/dest '/tmp/tmprxyuze4g/src/foo' -> '/tmp/tmprxyuze4g/dest/foo' '/tmp/tmprxyuze4g/src/bar/baz' -> '/tmp/tmprxyuze4g/dest/bar/baz'"
+          ],
+          "visible": true,
+          "time": "0.012",
+          "classname": "tests.test_integration",
+          "status": "passed"
+        },
+        "-2141413355": {
+          "id": -2141413355,
           "name": "test_empty_config",
           "messages": [
             "cwd: /tmp/tmp2gjl2wj_ emanate --source /tmp/tmp1t7j_ote/src --dest /tmp/tmp1t7j_ote/dest '/tmp/tmp1t7j_ote/src/foo' -> '/tmp/tmp1t7j_ote/dest/foo' cwd: /tmp/tmp9b40pw3b emanate --source src --dest /tmp/tmp9b40pw3b/dest '/tmp/tmp9b40pw3b/src/foo' -> '/tmp/tmp9b40pw3b/dest/foo' cwd: /tmp/tmpfmnr88qv/src emanate --dest /tmp/tmpfmnr88qv/dest '/tmp/tmpfmnr88qv/src/foo' -> '/tmp/tmpfmnr88qv/dest/foo'"
           ],
           "visible": true,
           "time": "0.011",
+          "classname": "tests.test_integration",
           "status": "passed"
         }
       },
@@ -1079,6 +1261,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "448559065": {
@@ -1087,6 +1270,7 @@
           "messages": [],
           "visible": true,
           "time": "time",
+          "classname": "",
           "status": "passed"
         },
         "1350225396": {
@@ -1100,6 +1284,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "failure"
         },
         "1443479640": {
@@ -1111,6 +1296,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "1669557569": {
@@ -1119,6 +1305,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "1879989598": {
@@ -1132,6 +1319,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "error"
         },
         "2045602436": {
@@ -1145,6 +1333,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-579348086": {
@@ -1154,7 +1343,8 @@
             "only a message"
           ],
           "visible": true,
-          "time": 0
+          "time": 0,
+          "classname": ""
         },
         "-232186498": {
           "id": -232186498,
@@ -1162,6 +1352,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-986143044": {
@@ -1174,6 +1365,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         },
         "-1154650731": {
@@ -1187,6 +1379,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "skipped"
         },
         "-198845521": {
@@ -1200,6 +1393,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "error"
         }
       },
@@ -1235,6 +1429,7 @@
           "messages": [],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },
@@ -1258,6 +1453,7 @@
           ],
           "visible": true,
           "time": 0,
+          "classname": "",
           "status": "passed"
         }
       },

@@ -87,11 +87,13 @@ const extractTests = (output, suite, testcases) => {
   testcases.forEach(testcase => {
     const meta = testcase.$ || {}
     const name = meta.name || 'No Name'
+    const classname = meta.classname || ''
     const time = meta.time || 0
-    const id = hashCode(name)
+    const id = hashCode(name + classname)
 
     const test = suite.tests[id] || { id, name, messages: [], visible: true }
     test.time = time
+    test.classname = classname
     if (typeof testcase === 'string') test.messages.push(testcase.trim())
     if (testcase._) test.messages.push(testcase._.trim())
     if (meta.message) test.messages.push(testcase.$.message.trim())

@@ -9,6 +9,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/complete_single_case_only.xml'),
   path.resolve(__dirname, '../../data/complete_single_suite.xml'),
   path.resolve(__dirname, '../../data/defect_suite.xml'),
+  path.resolve(__dirname, '../../data/duplicate_name_unique_classanme.xml'),
   path.resolve(__dirname, '../../data/embedded_html_sysout.xml'),
   path.resolve(__dirname, '../../data/error_suite.xml'),
   path.resolve(__dirname, '../../data/failing_suite.xml'),
