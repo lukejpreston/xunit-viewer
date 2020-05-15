@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'development') {
   files = [{
     file: '/path/to/file/complete.xml',
     contents: LZUTF8.compress(`<testsuite name="testcase with properties">
-    <testcase name='with properties' message='message 1'>
+    <testcase name='with properties' message='message 1' retries='1'>
 
         <properties>
             <property name="name only"/>

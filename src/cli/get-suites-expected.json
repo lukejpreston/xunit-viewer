@@ -136,6 +136,14 @@
           ],
           "visible": true,
           "time": "9",
+          "properties": {
+            "status": [
+              "run"
+            ],
+            "duration": [
+              "9"
+            ]
+          },
           "status": "error"
         }
       },
@@ -159,6 +167,11 @@
           "messages": [],
           "visible": true,
           "time": "0.002",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "1155740465": {
@@ -167,6 +180,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-698800367": {
@@ -175,6 +193,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-1782127729": {
@@ -183,6 +206,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-1493528902": {
@@ -191,6 +219,11 @@
           "messages": [],
           "visible": true,
           "time": "0.012",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-1476174975": {
@@ -199,6 +232,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         }
       },
@@ -235,6 +273,11 @@
           "messages": [],
           "visible": true,
           "time": "0.002",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "1155740465": {
@@ -243,6 +286,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-698800367": {
@@ -251,6 +299,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-1782127729": {
@@ -259,6 +312,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-1493528902": {
@@ -267,6 +325,11 @@
           "messages": [],
           "visible": true,
           "time": "0.012",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         },
         "-1476174975": {
@@ -275,6 +338,11 @@
           "messages": [],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0"
+            ]
+          },
           "status": "passed"
         }
       },
@@ -479,6 +547,11 @@
           ],
           "visible": true,
           "time": "1.047092",
+          "properties": {
+            "status": [
+              "passed"
+            ]
+          },
           "status": "passed"
         }
       },
@@ -518,6 +591,90 @@
       "id": 2038162744,
       "name": "CucumberTest",
       "time": "0.069",
+      "_visible": true
+    },
+    "2087276485": {
+      "tests": {
+        "386768197": {
+          "id": 386768197,
+          "name": "testIsBasedOnHostMatchingURLReturnsFalseWithNilDefaultURL",
+          "messages": [],
+          "visible": true,
+          "time": "0.008",
+          "status": "passed"
+        },
+        "556625620": {
+          "id": 556625620,
+          "name": "testIsBasedOnHostMatchingURLReturnsTrueWhenHostMatches",
+          "messages": [],
+          "visible": true,
+          "time": "0.008",
+          "status": "passed"
+        },
+        "1166518039": {
+          "id": 1166518039,
+          "name": "testResetWebContentWithNilDefaultURL",
+          "messages": [],
+          "visible": true,
+          "time": "1.458",
+          "status": "passed"
+        },
+        "1298888630": {
+          "id": 1298888630,
+          "name": "testResetWebContentWithDefaultURL",
+          "messages": [],
+          "visible": true,
+          "time": "1.481",
+          "status": "passed"
+        },
+        "-1357515056": {
+          "id": -1357515056,
+          "name": "testCompletionIsCalledWhenResettingWebContentEarly",
+          "messages": [],
+          "visible": true,
+          "time": "0.010",
+          "status": "passed"
+        },
+        "-460495676": {
+          "id": -460495676,
+          "name": "testFullResetWebViewURL",
+          "messages": [],
+          "visible": true,
+          "time": "0.011",
+          "status": "passed"
+        },
+        "-386286111": {
+          "id": -386286111,
+          "name": "testIsBasedOnHostMatchingURLReturnsFalseWhenHostDoesNotMatch",
+          "messages": [],
+          "visible": true,
+          "time": "0.008",
+          "status": "passed"
+        },
+        "-1890839935": {
+          "id": -1890839935,
+          "name": "testLoadingFragmentURLSession",
+          "messages": [
+            "[DELETED]/BasicWebViewControllerTests.swift:103",
+            "Asynchronous wait failed: Exceeded timeout of 5 seconds, with unfulfilled expectations: \"testLoadingFragmentURLSession()\"."
+          ],
+          "visible": true,
+          "time": 0,
+          "properties": {
+            "retries": [
+              "1"
+            ]
+          },
+          "status": "failure"
+        }
+      },
+      "systemOut": [],
+      "properties": {
+        "_visible": true
+      },
+      "id": 2087276485,
+      "name": "DELETED.BasicWebViewControllerTests",
+      "time": 0,
       "_visible": true
     },
     "2100746923": {
@@ -580,6 +737,18 @@
           ],
           "visible": true,
           "time": "0.001",
+          "properties": {
+            "assertions": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          },
           "status": "error"
         },
         "-579348086": {
@@ -638,6 +807,12 @@
           "properties": {
             "example_key": [
               "1"
+            ],
+            "file": [
+              "test_function.py"
+            ],
+            "line": [
+              "0"
             ]
           },
           "status": "passed"
@@ -722,6 +897,11 @@
           ],
           "visible": true,
           "time": "3.245495",
+          "properties": {
+            "status": [
+              "failed"
+            ]
+          },
           "status": "failure"
         }
       },

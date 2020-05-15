@@ -42,9 +42,9 @@ const extarctSuiteMeta = (output, testsuite) => {
   return suite
 }
 
-const extractProperties = (suite, testsuite) => {
+const extractProperties = (suite, properties) => {
   suite.properties = suite.properties || {}
-  testsuite.properties.forEach(property => {
+  properties.forEach(property => {
     if (typeof property === 'string') {
       property = property.trim()
       if (property !== '') {
@@ -96,8 +96,24 @@ const extractTests = (output, suite, testcases) => {
     if (testcase._) test.messages.push(testcase._.trim())
     if (meta.message) test.messages.push(testcase.$.message.trim())
     if (typeof testcase.properties !== 'undefined') {
-      extractProperties(test, testcase)
+      extractProperties(test, testcase.properties)
       delete testcase.properties
+    }
+    const clonedMeta = Object.assign({}, meta)
+    delete clonedMeta.time
+    delete clonedMeta.name
+    delete clonedMeta.classname
+    delete clonedMeta.message
+    if (Object.keys(clonedMeta).length > 0) {
+      const property = []
+      for (const [name, value] of Object.entries(clonedMeta)) {
+        property.push({
+          $: {
+            name, value
+          }
+        })
+      }
+      extractProperties(test, [{ property }])
     }
 
     if (typeof testcase !== 'string') {
@@ -129,7 +145,7 @@ const extractSuite = (output, testsuites) => {
   if (!Array.isArray(testsuites)) testsuites = [testsuites]
   testsuites.forEach(testsuite => {
     const suite = extarctSuiteMeta(output, testsuite)
-    if (typeof testsuite.properties !== 'undefined') extractProperties(suite, testsuite)
+    if (typeof testsuite.properties !== 'undefined') extractProperties(suite, testsuite.properties)
     if (typeof testsuite.testcase !== 'undefined') extractTests(output, suite, testsuite.testcase)
     if (typeof testsuite['system-out'] !== 'undefined') extractSystemOut(suite, testsuite)
     output.suites[suite.id] = suite

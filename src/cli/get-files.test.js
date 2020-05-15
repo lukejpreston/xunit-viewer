@@ -23,6 +23,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/name.has.dots.xml'),
   path.resolve(__dirname, '../../data/no_class_name.xml'),
   path.resolve(__dirname, '../../data/passing_suite.xml'),
+  path.resolve(__dirname, '../../data/properties_in_test_meta.xml'),
   path.resolve(__dirname, '../../data/pytest_testcase_properties.xml'),
   path.resolve(__dirname, '../../data/russian-unicode.xml'),
   path.resolve(__dirname, '../../data/semi-colon.xml'),
