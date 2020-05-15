@@ -8,6 +8,8 @@ const instance = yargs
   .example('xunit-viewer -r folder -i *-broke.xml', 'ignore')
   .example('xunit-viewer -r folder -o my-tests.html', 'rename output')
   .example('xunit-viewer -r folder -t "My Tests"', 'change HTML title')
+  .example('xunit-viewer -r folder -b https://image.png', 'change the image')
+  .example('xunit-viewer -r folder -f https://image.favico', 'change the favicon')
   .example('xunit-viewer -r folder -c', 'render in console')
   .example('xunit-viewer -r folder -c -s false', 'render in console and do not save')
   .example('xunit-viewer -r folder -c -n', 'no color in console')
@@ -37,6 +39,14 @@ const instance = yargs
   .string('title')
   .alias('t', 'title')
   .describe('t', 'HTML title e.g. "My Tests"')
+
+  .string('brand')
+  .alias('b', 'brand')
+  .describe('b', 'Provide a URL with your own logo')
+
+  .string('favicon')
+  .alias('f', 'favicon')
+  .describe('f', 'Provide a URL with your own favicon')
 
   .boolean('console')
   .alias('c', 'console')

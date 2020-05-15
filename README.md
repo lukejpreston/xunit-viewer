@@ -44,6 +44,8 @@ Options:
   -i, --ignore    Ignore patterns                                        [array]
   -o, --output    Output filename               [string] [default: "index.html"]
   -t, --title     HTML title e.g. "My Tests"                            [string]
+  -b, --brand     Provide a URL with your own logo                      [string]
+  -f, --favicon   Provide a URL with your own favicon                   [string]
   -c, --console   Render in console                                    [boolean]
   -s, --server    Start a server and sockets for live updates
                                                       [boolean] [default: false]
@@ -55,16 +57,18 @@ Options:
   --help          Show help                                            [boolean]
 
 Examples:
-  xunit-viewer -r file.xml                 a file
-  xunit-viewer -r folder                   a folder
-  xunit-viewer -r folder -i *-broke.xml    ignore
-  xunit-viewer -r folder -o my-tests.html  rename output
-  xunit-viewer -r folder -t "My Tests"     change HTML title
-  xunit-viewer -r folder -c                render in console
-  xunit-viewer -r folder -c -s -o false    render in console and do not save
-  xunit-viewer -r folder -c -n             no color in console
-  xunit-viewer -r folder -w                start watch
-  xunit-viewer -r folder -w -p 5050        watch at 5050
+  xunit-viewer -r file.xml                       a file
+  xunit-viewer -r folder                         a folder
+  xunit-viewer -r folder -i *-broke.xml          ignore
+  xunit-viewer -r folder -o my-tests.html        rename output
+  xunit-viewer -r folder -t "My Tests"           change HTML title
+  xunit-viewer -r folder -b https://image.png    change the image
+  xunit-viewer -r folder -f https://image.favico change the favicon
+  xunit-viewer -r folder -c                      render in console
+  xunit-viewer -r folder -c -s -o false          render in console and do not save
+  xunit-viewer -r folder -c -n                   no color in console
+  xunit-viewer -r folder -w                      start watch
+  xunit-viewer -r folder -w -p 5050              watch at 5050
 ```
 
 ## Usage, Node

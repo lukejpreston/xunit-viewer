@@ -272,7 +272,7 @@ const initialState = {
   }
 }
 
-const App = ({ files }) => {
+const App = ({ files, title, brand }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
 
@@ -316,7 +316,7 @@ const App = ({ files }) => {
   })
 
   return <div>
-    <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} />
+    <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} title={title} brand={brand} />
     <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
         <SuiteOptions

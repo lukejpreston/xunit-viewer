@@ -9,6 +9,8 @@ import App from './app/app.js'
 import LZUTF8 from 'lzutf8'
 
 let files = window.files || []
+const title = window.title || 'Xunit Viewer'
+const brand = window.brand || null
 
 if (process.env.NODE_ENV === 'development') {
   files = [{
@@ -49,4 +51,4 @@ files = files.map(({ file, contents }) => ({
   contents: LZUTF8.decompress(contents, { inputEncoding: 'Base64' })
 }))
 
-ReactDOM.render(<App files={files} />, document.getElementById('root'))
+ReactDOM.render(<App files={files} title={title} brand={brand} />, document.getElementById('root'))

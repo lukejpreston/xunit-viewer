@@ -13,7 +13,7 @@ const getHTML = (type) => {
     .join('\n')
 }
 
-module.exports = (logger, files, description, { output = 'index.html', title = 'Xunit Viewer' }, useSockets = false) => {
+module.exports = (logger, files, description, { title = 'Xunit Viewer', brand, favicon }, useSockets = false) => {
   const scripts = getHTML('js')
   const styles = getHTML('css')
 
@@ -26,6 +26,9 @@ module.exports = (logger, files, description, { output = 'index.html', title = '
     scripts,
     styles,
     title,
+    icon: brand || 'https://lukejpreston.github.io/xunit-viewer/icon.png',
+    favicon: favicon || 'https://lukejpreston.github.io/xunit-viewer/favicon.ico',
+    brand,
     description,
     useSockets
   })

@@ -39,6 +39,7 @@ body,
     align-items: center;
 }
 
+.hero .brand,
 .hero .logo {
     height: 64px;
     width: auto;

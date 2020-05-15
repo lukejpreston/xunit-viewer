@@ -3,7 +3,7 @@ import Logo from './logo'
 
 const FilterIcon = () => <i className='fas fa-filter' />
 
-export default ({ active, onClick }) => <section className='hero is-black'>
+export default ({ active, onClick, title, brand }) => <section className='hero is-black'>
   <div className='container'>
     <div className='columns is-mobile'>
       <div className='column is-1'>
@@ -13,8 +13,12 @@ export default ({ active, onClick }) => <section className='hero is-black'>
       </div>
       <div className='column is-11'>
         <div className='hero-center'>
-          <Logo />
-          <h1 className='title'>Xunit Viewer</h1>
+          {
+            brand !== null
+              ? <img className='brand' alt={title} src={brand} />
+              : <Logo />
+          }
+          <h1 className='title'>{title}</h1>
         </div>
       </div>
     </div>
