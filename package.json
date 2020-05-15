@@ -44,7 +44,7 @@
     "release": "./release.sh"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "chokidar": "^3.4.0",
     "console-clear": "^1.1.1",
     "debounce": "^1.2.0",
