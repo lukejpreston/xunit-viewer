@@ -1,0 +1,45 @@
+{
+    "suites": {},
+    "currentSuites": {},
+    "menuActive": false,
+    "suiteOptionsActive": false,
+    "testOptionsActive": false,
+    "propertiesOptionsActive": false,
+    "activeFiles": false,
+    "suitesExpanded": true,
+    "suitesEmpty": true,
+    "propertiesExpanded": true,
+    "propertiesVisible": true,
+    "testToggles": {
+      "all": {
+        "visible": true,
+        "expanded": true,
+        "raw": true
+      },
+      "passed": {
+        "visible": true,
+        "expanded": true,
+        "raw": true
+      },
+      "failure": {
+        "visible": true,
+        "expanded": true,
+        "raw": true
+      },
+      "error": {
+        "visible": true,
+        "expanded": true,
+        "raw": true
+      },
+      "skipped": {
+        "visible": true,
+        "expanded": true,
+        "raw": true
+      },
+      "unknown": {
+        "visible": true,
+        "expanded": true,
+        "raw": true
+      }
+    }
+  }
