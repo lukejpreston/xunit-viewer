@@ -60,8 +60,9 @@ const CodeIcon = () => <span className='icon'>
 
 const Test = ({ id, messages, status, time, classname, name, properties = {}, active = true, raw = true, dispatch, suite }) => {
   const hasProperties = Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
-  return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${messages.length === 0 ? 'empty' : 'populated'}`}>
-    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={messages.length === 0}>
+  const hasMessage = messages.length > 0
+  return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${!hasMessage && !hasProperties ? 'empty' : 'populated'}`}>
+    <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={!hasMessage && !hasProperties}>
       <p className='card-header-title'>
         <span className='icon'>
           <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
@@ -70,23 +71,29 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
         {classname ? <small>classname = {classname}</small> : null}
         {time ? <small>time = {time}</small> : null}
       </p>
-      {messages.length > 0 ? <span className='card-header-icon'>
+      {hasMessage || hasProperties ? <span className='card-header-icon'>
         <span className='icon'>
           <i className='fas fa-angle-down' />
         </span>
       </span> : null}
     </button>
     <div className='content'>
-      {active && messages.length > 0 ? <div className='card-content'>
+      {active && (hasMessage || hasProperties) ? <div className='card-content'>
         {hasProperties ? <Properties properties={properties} suite={suite} test={id} dispatch={dispatch} active={properties._active} /> : null}
-        <Toggle
-          active={raw}
-          onLabel='raw'
-          onIcon={<CodeIcon />}
-          offIcon={<PrettyIcon />}
-          offLabel='pretty'
-          onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id, raw: !raw } })} />
-        {raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />}
+        {
+          hasMessage
+            ? <>
+              <Toggle
+                active={raw}
+                onLabel='raw'
+                onIcon={<CodeIcon />}
+                offIcon={<PrettyIcon />}
+                offLabel='pretty'
+                onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id, raw: !raw } })} />
+              raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />
+            </>
+            : null
+        }
       </div> : null}
     </div>
   </div>
