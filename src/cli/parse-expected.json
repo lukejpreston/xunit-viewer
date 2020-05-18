@@ -63,6 +63,7 @@
           "time": 0,
           "classname": "",
           "properties": {
+            "_visible": true,
             "name only": [],
             "prop 1": [
               "value 1",

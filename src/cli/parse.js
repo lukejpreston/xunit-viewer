@@ -44,6 +44,7 @@ const extarctSuiteMeta = (output, testsuite) => {
 
 const extractProperties = (suite, properties) => {
   suite.properties = suite.properties || {}
+  suite.properties._visible = true
   properties.forEach(property => {
     if (typeof property === 'string') {
       property = property.trim()

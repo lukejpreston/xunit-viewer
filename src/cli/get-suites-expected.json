@@ -159,6 +159,7 @@
           "time": "9",
           "classname": "",
           "properties": {
+            "_visible": true,
             "status": [
               "run"
             ],
@@ -191,6 +192,7 @@
           "time": "0.012",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -205,6 +207,7 @@
           "time": "0.001",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -219,6 +222,7 @@
           "time": "0.001",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -233,6 +237,7 @@
           "time": "0.001",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -247,6 +252,7 @@
           "time": "0.001",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -261,6 +267,7 @@
           "time": "0.002",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -303,6 +310,7 @@
           "time": "0.012",
           "classname": "SUITE TWO",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -317,6 +325,7 @@
           "time": "0.001",
           "classname": "SUITE TWO",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -331,6 +340,7 @@
           "time": "0.001",
           "classname": "SUITE TWO",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -345,6 +355,7 @@
           "time": "0.001",
           "classname": "SUITE TWO",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -359,6 +370,7 @@
           "time": "0.001",
           "classname": "SUITE TWO",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -373,6 +385,7 @@
           "time": "0.002",
           "classname": "SUITE TWO",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0"
             ]
@@ -561,6 +574,7 @@
           "time": 0,
           "classname": "",
           "properties": {
+            "_visible": true,
             "name only": [],
             "prop 1": [
               "value 1",
@@ -601,6 +615,7 @@
           "time": "1.047092",
           "classname": "sessions.sessions_api.Доступность эндпоинта получения списка сессий",
           "properties": {
+            "_visible": true,
             "status": [
               "passed"
             ]
@@ -687,6 +702,7 @@
           "time": 0,
           "classname": "DELETED.BasicWebViewControllerTests",
           "properties": {
+            "_visible": true,
             "retries": [
               "1"
             ]
@@ -791,6 +807,7 @@
           "time": "0.001",
           "classname": "suite name",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0",
               "0",
@@ -812,6 +829,7 @@
           "time": "0.001",
           "classname": "SUITE ONE",
           "properties": {
+            "_visible": true,
             "assertions": [
               "0",
               "0"
@@ -883,6 +901,7 @@
           "time": "0.0009",
           "classname": "test_function",
           "properties": {
+            "_visible": true,
             "example_key": [
               "1"
             ],
@@ -1071,6 +1090,7 @@
           "time": "3.245495",
           "classname": "authorization.update_last_activity.Время последней активности изменяется при обновлении токена",
           "properties": {
+            "_visible": true,
             "status": [
               "failed"
             ]
