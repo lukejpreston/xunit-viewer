@@ -59,7 +59,7 @@ const CodeIcon = () => <span className='icon'>
 </span>
 
 const Test = ({ id, messages, status, time, classname, name, properties = {}, active = true, raw = true, dispatch, suite }) => {
-  const hasProperties = Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
+  const hasProperties = properties._visible & Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const hasMessage = messages.length > 0
   return <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${!hasMessage && !hasProperties ? 'empty' : 'populated'}`}>
     <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={!hasMessage && !hasProperties}>

@@ -171,10 +171,18 @@ body,
     display: flex;
 }
 
+.properties-options-toggle-label,
 .test-options-toggle-row-label {
     color: #5e5e5e;
     display: inline-block;
+}
+
+.test-options-toggle-row-label {
     width: 100px;
+}
+
+.properties-options-toggle-label {
+    width: 60px;
 }
 
 .test-options-toggle-row-label .icon {
@@ -390,63 +398,63 @@ body,
     padding-top: 1px;
 }
 
-.test > .card-header > .card-header-title {
+.test>.card-header>.card-header-title {
     color: #fff;
 }
 
-.test > .card-header > .card-header-icon {
+.test>.card-header>.card-header-icon {
     color: #fff;
 }
 
-.test.is-empty > .card-header,
-.test > .card-header {
+.test.is-empty>.card-header,
+.test>.card-header {
     background-color: #4B85FA;
 }
 
-.test.is-populated > .card-header:hover,
-.test.is-populated > .card-header:active,
-.test.is-populated > .card-header:focus {
+.test.is-populated>.card-header:hover,
+.test.is-populated>.card-header:active,
+.test.is-populated>.card-header:focus {
     background-color: #2f5bb4;
 }
 
-.test.is-passed > .card-header {
+.test.is-passed>.card-header {
     background-color: #0DBF1F;
 }
 
-.test.is-populated.is-passed > .card-header:hover,
-.test.is-populated.is-passed > .card-header:active,
-.test.is-populated.is-passed > .card-header:focus {
+.test.is-populated.is-passed>.card-header:hover,
+.test.is-populated.is-passed>.card-header:active,
+.test.is-populated.is-passed>.card-header:focus {
     background-color: #25a132;
 }
 
-.test.is-failure > .card-header {
+.test.is-failure>.card-header {
     background-color: #B32010;
 }
 
-.test.test.is-populated.is-failure > .card-header:hover,
-.test.test.is-populated.is-failure > .card-header:active,
-.test.test.is-populated.is-failure > .card-header:focus {
+.test.test.is-populated.is-failure>.card-header:hover,
+.test.test.is-populated.is-failure>.card-header:active,
+.test.test.is-populated.is-failure>.card-header:focus {
     background-color: #963126;
 }
 
-.test.is-error > .card-header {
+.test.is-error>.card-header {
     background-color: #E5CB05;
 }
 
 
-.test.is-populated.is-error > .card-header:hover,
-.test.is-populated.is-error > .card-header:active,
-.test.is-populated.is-error > .card-header:focus {
+.test.is-populated.is-error>.card-header:hover,
+.test.is-populated.is-error>.card-header:active,
+.test.is-populated.is-error>.card-header:focus {
     background-color: #c7b319;
 }
 
-.test.is-skipped > .card-header {
+.test.is-skipped>.card-header {
     background-color: #adb2b6;
 }
 
-.test.is-populated.is-skipped > .card-header:hover,
-.test.is-populated.is-skipped > .card-header:active,
-.test.is-populated.is-skipped > .card-header:focus {
+.test.is-populated.is-skipped>.card-header:hover,
+.test.is-populated.is-skipped>.card-header:active,
+.test.is-populated.is-skipped>.card-header:focus {
     background-color: #828588;
 }
 

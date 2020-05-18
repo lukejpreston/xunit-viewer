@@ -18,6 +18,10 @@ if (process.env.NODE_ENV === 'development') {
     contents: LZUTF8.compress(`<?xml version="1.0" encoding="utf-8"?>
     <?xml version="1.0" encoding="UTF-8"?>
 <testsuite tests="2" failures="1" time="0.0160106">
+<properties>
+                <property name="x" value="y" />
+                <property name="a" value="b" />
+            </properties>
     <testcase classname="test_function" file="test_function.py" line="0" name="test_function" time="0.0009">
         <properties>
             <property name="example_key" value="1"/>

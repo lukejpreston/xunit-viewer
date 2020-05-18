@@ -8,8 +8,16 @@
     "activeFiles": false,
     "suitesExpanded": true,
     "suitesEmpty": true,
-    "propertiesExpanded": true,
-    "propertiesVisible": true,
+    "propertiesExpanded": {
+      "all": true,
+      "suites": true,
+      "tests": true
+    },
+    "propertiesVisible": {
+      "all": true,
+      "suites": true,
+      "tests": true
+    },
     "testToggles": {
       "all": {
         "visible": true,

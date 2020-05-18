@@ -1,8 +1,35 @@
 import fuzzy from 'fuzzy'
 import merge from 'merge'
 
+const toggleAllProperties = (state, payload, update, toggleType, suiteTesttoggleType) => {
+  update[toggleType] = state[toggleType]
+  update[toggleType][payload.type] = payload.active
+
+  if (payload.type === 'all') {
+    update[toggleType].suites = payload.active
+    update[toggleType].tests = payload.active
+  }
+
+  if (payload.type === 'all' || payload.type === 'suites') {
+    Object.values(update.currentSuites).forEach(suite => {
+      suite.properties[suiteTesttoggleType] = payload.active
+    })
+  }
+
+  if (payload.type === 'all' || payload.type === 'tests') {
+    Object.values(update.currentSuites).forEach(suite => {
+      Object.values(suite.tests).forEach(test => {
+        if ('properties' in test) {
+          test.properties[suiteTesttoggleType] = payload.active
+        }
+      })
+    })
+  }
+  return update
+}
+
 export default (state, { type, payload }) => {
-  const update = {}
+  let update = {}
   update.currentSuites = state.currentSuites
 
   if (type === 'parse-suites') {
@@ -81,12 +108,7 @@ export default (state, { type, payload }) => {
     update.currentSuites[payload.id].active = payload.active
     update.suitesExpanded = Object.values(update.currentSuites).some(suite => suite.active === true)
   }
-  if (type === 'toggle-all-properties') {
-    Object.values(update.currentSuites).forEach(suite => {
-      suite.properties._active = payload.active
-    })
-    update.propertiesExpanded = payload.active
-  }
+
   if (type === 'toggle-properties') {
     if (typeof payload.test !== 'undefined' && payload.test !== null) {
       console.log(payload.test, update.currentSuites[payload.suite].tests[payload.test])
@@ -99,11 +121,11 @@ export default (state, { type, payload }) => {
     }
   }
 
+  if (type === 'toggle-all-properties') {
+    update = toggleAllProperties(state, payload, update, 'propertiesExpanded', '_active')
+  }
   if (type === 'toggle-properties-visbility') {
-    Object.values(update.currentSuites).forEach(suite => {
-      suite.properties._visible = payload.active
-    })
-    update.propertiesVisible = payload.active
+    update = toggleAllProperties(state, payload, update, 'propertiesVisible', '_visible')
   }
 
   if (type === 'toggle-test') {
