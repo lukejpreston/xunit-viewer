@@ -111,7 +111,6 @@ export default (state, { type, payload }) => {
 
   if (type === 'toggle-properties') {
     if (typeof payload.test !== 'undefined' && payload.test !== null) {
-      console.log(payload.test, update.currentSuites[payload.suite].tests[payload.test])
       update.currentSuites[payload.suite].tests[payload.test].properties._active = payload.active
     } else {
       update.currentSuites[payload.suite].properties._active = payload.active
