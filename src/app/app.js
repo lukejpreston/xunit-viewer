@@ -17,9 +17,15 @@ const App = ({ files, title, brand }) => {
   let propertiesTotal = 0
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
     currentPropertiesCount += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
+    Object.values(suite.tests).forEach(test => {
+      if (test.properties) currentPropertiesCount += Object.keys(test.properties).filter(key => key !== '_active' && key !== '_visible').length
+    })
   })
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
     propertiesTotal += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
+    Object.values(suite.tests).forEach(test => {
+      if (test.properties) propertiesTotal += Object.keys(test.properties).filter(key => key !== '_active' && key !== '_visible').length
+    })
   })
 
   const testCounts = {}
