@@ -21,12 +21,12 @@ if (process.env.NODE_ENV === 'development') {
     <testsuite name="CodeceptionSupport.acceptance" tests="43" assertions="1348" failures="4" errors="7"
                time="3167.404369">
         <testcase file="/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingBetViewPageCest.php"
-                  name="assertBetViewPage" class="CodeceptionAcceptance\Bets\GuestBrowsingBetViewPageCest"
+                  name="assertBetViewPage" class="CodeceptionAcceptanceBetsGuestBrowsingBetViewPageCest"
                   feature="assert bet view page" assertions="42" time="78.914764"/>
         <testcase file="/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php"
-                  name="navigateAndCheckTest" class="CodeceptionAcceptance\Bets\GuestBrowsingProphetBetsPageCest"
+                  name="navigateAndCheckTest" class="CodeceptionAcceptanceBetsGuestBrowsingProphetBetsPageCest"
                   feature="navigate and check test" assertions="2" time="19.616513">
-            <failure type="PHPUnit\Framework\ExpectationFailedException">GuestBrowsingProphetBetsPageCest: Navigate and
+            <failure type="PHPUnitFrameworkExpectationFailedException">GuestBrowsingProphetBetsPageCest: Navigate and
                 check test
                 Failed asserting that two strings are equal.
                 /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:768
@@ -37,9 +37,9 @@ if (process.env.NODE_ENV === 'development') {
         <testcase
                 file="/usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php"
                 name="navigateAndCheckTest"
-                class="CodeceptionAcceptance\Bets\GuestBrowsingProphetOfferedPropheciesPageCest"
+                class="CodeceptionAcceptanceBetsGuestBrowsingProphetOfferedPropheciesPageCest"
                 feature="navigate and check test" assertions="4" time="50.317909">
-            <failure type="Codeception\Exception\ElementNotFound">GuestBrowsingProphetOfferedPropheciesPageCest:
+            <failure type="CodeceptionExceptionElementNotFound">GuestBrowsingProphetOfferedPropheciesPageCest:
                 Navigate and check test
                 Element located either by name, CSS or XPath element with '#twoLevelTabsMenu' was not found.
                 /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:334
