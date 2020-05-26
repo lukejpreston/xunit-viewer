@@ -177,7 +177,6 @@ exports[`renders suite 1`] = `
                   raw
                 </span>
               </button>
-              raw ? 
               <div
                 className="raw-content"
               >
@@ -187,25 +186,6 @@ exports[`renders suite 1`] = `
                 <pre>
                   message 2
                 </pre>
-              </div>
-               : 
-              <div
-                className="pretty-content"
-              >
-                <div
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "message 1",
-                    }
-                  }
-                />
-                <div
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "message 2",
-                    }
-                  }
-                />
               </div>
             </div>
           </div>
