@@ -90,7 +90,11 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
                 offIcon={<PrettyIcon />}
                 offLabel='pretty'
                 onChange={() => dispatch({ type: 'toggle-test-mode', payload: { suite, id, raw: !raw } })} />
-              raw ? <RawContent messages={messages} /> : <PrettyContent messages={messages} />
+              {
+                raw
+                  ? <RawContent messages={messages} />
+                  : <PrettyContent messages={messages} />
+              }
             </>
             : null
         }
