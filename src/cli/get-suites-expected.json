@@ -778,6 +778,90 @@
       "time": "0.0160106",
       "_visible": true
     },
+    "-94034837": {
+      "tests": {
+        "-2057581292": {
+          "id": -2057581292,
+          "name": "assertBetViewPage",
+          "messages": [],
+          "visible": true,
+          "time": "78.914764",
+          "classname": "CodeceptionAcceptance\\Bets\\GuestBrowsingBetViewPageCest",
+          "properties": {
+            "_visible": true,
+            "file": [
+              "/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingBetViewPageCest.php"
+            ],
+            "feature": [
+              "assert bet view page"
+            ],
+            "assertions": [
+              "42"
+            ]
+          },
+          "status": "passed"
+        },
+        "-1163887169": {
+          "id": -1163887169,
+          "name": "navigateAndCheckTest",
+          "messages": [
+            "GuestBrowsingProphetBetsPageCest: Navigate and\n                check test\n                Failed asserting that two strings are equal.\n                /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:768\n                /usr/share/nginx/html/tests/_support/Step/Prophet.php:50\n                /usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php:49",
+            "PHPUnit\\Framework\\ExpectationFailedException"
+          ],
+          "visible": true,
+          "time": "19.616513",
+          "classname": "CodeceptionAcceptance\\Bets\\GuestBrowsingProphetBetsPageCest",
+          "properties": {
+            "_visible": true,
+            "file": [
+              "/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php"
+            ],
+            "feature": [
+              "navigate and check test"
+            ],
+            "assertions": [
+              "2"
+            ]
+          },
+          "status": "failure"
+        },
+        "-1233311274": {
+          "id": -1233311274,
+          "name": "navigateAndCheckTest",
+          "messages": [
+            "GuestBrowsingProphetOfferedPropheciesPageCest:\n                Navigate and check test\n                Element located either by name, CSS or XPath element with '#twoLevelTabsMenu' was not found.\n                /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:334\n                /usr/share/nginx/html/tests/_support/AcceptanceTester.php:346\n                /usr/share/nginx/html/tests/_support/Page/Element/UserProfileMenu.php:204\n                /usr/share/nginx/html/tests/_support/Page/Element/UserProfileMenu.php:298\n                /usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php:54",
+            "Codeception\\Exception\\ElementNotFound"
+          ],
+          "visible": true,
+          "time": "50.317909",
+          "classname": "CodeceptionAcceptance\\Bets\\GuestBrowsingProphetOfferedPropheciesPageCest",
+          "properties": {
+            "_visible": true,
+            "file": [
+              "/usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php"
+            ],
+            "feature": [
+              "navigate and check test"
+            ],
+            "assertions": [
+              "4"
+            ]
+          },
+          "status": "failure"
+        }
+      },
+      "systemOut": [],
+      "properties": {
+        "_visible": true,
+        "assertions": [
+          "1348"
+        ]
+      },
+      "id": -94034837,
+      "name": "CodeceptionSupport.acceptance",
+      "time": "3167.404369",
+      "_visible": true
+    },
     "-1035817293": {
       "tests": {
         "-1599486772": {

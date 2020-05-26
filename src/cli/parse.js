@@ -88,7 +88,7 @@ const extractTests = (output, suite, testcases) => {
   testcases.forEach(testcase => {
     const meta = testcase.$ || {}
     const name = meta.name || 'No Name'
-    const classname = meta.classname || ''
+    const classname = meta.classname || meta.class || ''
     const time = meta.time || 0
     const id = hashCode(name + classname)
 
@@ -106,6 +106,7 @@ const extractTests = (output, suite, testcases) => {
     delete clonedMeta.time
     delete clonedMeta.name
     delete clonedMeta.classname
+    delete clonedMeta.class
     delete clonedMeta.message
     if (Object.keys(clonedMeta).length > 0) {
       const property = []

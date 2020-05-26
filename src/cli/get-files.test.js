@@ -3,6 +3,7 @@ const path = require('path')
 const getFiles = require('./get-files')
 
 const expectedFiles = [
+  path.resolve(__dirname, '../../data/class_not_classname.xml'),
   path.resolve(__dirname, '../../data/complete_no_suite.xml'),
   path.resolve(__dirname, '../../data/complete_no_suite_multi_cases.xml'),
   path.resolve(__dirname, '../../data/complete_no_suite_single_suite.xml'),

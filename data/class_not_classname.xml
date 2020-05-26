@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<testsuites>
+    <testsuite name="CodeceptionSupport.acceptance" tests="43" assertions="1348" failures="4" errors="7"
+               time="3167.404369">
+        <testcase file="/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingBetViewPageCest.php"
+                  name="assertBetViewPage" class="CodeceptionAcceptance\Bets\GuestBrowsingBetViewPageCest"
+                  feature="assert bet view page" assertions="42" time="78.914764"/>
+        <testcase file="/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php"
+                  name="navigateAndCheckTest" class="CodeceptionAcceptance\Bets\GuestBrowsingProphetBetsPageCest"
+                  feature="navigate and check test" assertions="2" time="19.616513">
+            <failure type="PHPUnit\Framework\ExpectationFailedException">GuestBrowsingProphetBetsPageCest: Navigate and
+                check test
+                Failed asserting that two strings are equal.
+                /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:768
+                /usr/share/nginx/html/tests/_support/Step/Prophet.php:50
+                /usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php:49
+            </failure>
+        </testcase>
+        <testcase
+                file="/usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php"
+                name="navigateAndCheckTest"
+                class="CodeceptionAcceptance\Bets\GuestBrowsingProphetOfferedPropheciesPageCest"
+                feature="navigate and check test" assertions="4" time="50.317909">
+            <failure type="Codeception\Exception\ElementNotFound">GuestBrowsingProphetOfferedPropheciesPageCest:
+                Navigate and check test
+                Element located either by name, CSS or XPath element with '#twoLevelTabsMenu' was not found.
+                /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:334
+                /usr/share/nginx/html/tests/_support/AcceptanceTester.php:346
+                /usr/share/nginx/html/tests/_support/Page/Element/UserProfileMenu.php:204
+                /usr/share/nginx/html/tests/_support/Page/Element/UserProfileMenu.php:298
+                /usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php:54
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>
