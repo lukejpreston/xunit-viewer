@@ -225,15 +225,15 @@
           "id": -198845521,
           "name": "error and failure test with messages",
           "messages": [
-            "error inner massage 1",
-            "error message prop 1",
             "failure inner massage 2",
-            "failure message prop 2"
+            "failure message prop 2",
+            "error inner massage 1",
+            "error message prop 1"
           ],
           "visible": true,
           "time": 0,
           "classname": "",
-          "status": "error"
+          "status": "failure"
         }
       },
       "systemOut": [],

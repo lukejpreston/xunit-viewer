@@ -21,6 +21,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/most_complex.xml'),
   path.resolve(__dirname, '../../data/multi-name-unique-classname.xml'),
   path.resolve(__dirname, '../../data/multi_cases.xml'),
+  path.resolve(__dirname, '../../data/multi_error_test_with_system_out.xml'),
   path.resolve(__dirname, '../../data/multi_suite.xml'),
   path.resolve(__dirname, '../../data/name.has.dots.xml'),
   path.resolve(__dirname, '../../data/no_class_name.xml'),

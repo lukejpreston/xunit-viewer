@@ -1,5 +1,13 @@
 const xml2js = require('xml2js')
 
+const statusRank = [
+  'failure',
+  'error',
+  'passed',
+  'skipped',
+  'unknown'
+]
+
 const parseString = (xml) => new Promise((resolve, reject) => {
   xml2js.parseString(xml, (err, result) => {
     if (err) reject(new Error(err))
@@ -122,6 +130,16 @@ const extractTests = (output, suite, testcases) => {
 
     if (typeof testcase !== 'string') {
       const keys = Object.keys(testcase).filter(key => key !== '$' && key !== '_' && key !== 'testcase')
+        .sort((left, right) => {
+          let leftStatus = statusRank.indexOf(left)
+          let rightStatus = statusRank.indexOf(right)
+          leftStatus = leftStatus === -1 ? statusRank.length : leftStatus
+          rightStatus = rightStatus === -1 ? statusRank.length : rightStatus
+
+          if (leftStatus < rightStatus) return -1
+          if (leftStatus > rightStatus) return 1
+          return 0
+        })
       let status = keys[0]
       keys.forEach((key) => {
         if (key) extractTestMessages(test, testcase[key])

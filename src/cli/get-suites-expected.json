@@ -1062,8 +1062,10 @@
           "id": 1953847994,
           "name": "It Is A Failure",
           "messages": [
-            "FILENAME:XX\nExpected\n    <string>: Luke\nto equal\n    <string>: luke",
-            "Failure"
+            "FILENAME:XX",
+            "Failure",
+            "Error message",
+            "Some messgae"
           ],
           "visible": true,
           "time": "0.012011200000000001",
@@ -1490,15 +1492,15 @@
           "id": -198845521,
           "name": "error and failure test with messages",
           "messages": [
-            "error inner massage 1",
-            "error message prop 1",
             "failure inner massage 2",
-            "failure message prop 2"
+            "failure message prop 2",
+            "error inner massage 1",
+            "error message prop 1"
           ],
           "visible": true,
           "time": 0,
           "classname": "",
-          "status": "error"
+          "status": "failure"
         }
       },
       "systemOut": [],
