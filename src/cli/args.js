@@ -11,11 +11,11 @@ const instance = yargs
   .example('xunit-viewer -r folder -b https://image.png', 'change the image')
   .example('xunit-viewer -r folder -f https://image.favico', 'change the favicon')
   .example('xunit-viewer -r folder -c', 'render in console')
-  .example('xunit-viewer -r folder -c -s false', 'render in console and do not save')
+  .example('xunit-viewer -r folder -c -C', 'render in console, do not clear')
   .example('xunit-viewer -r folder -c -n', 'no color in console')
   .example('xunit-viewer -r folder -w', 'start watch')
   .example('xunit-viewer -r folder -w -p 5050', 'watch at 5050')
-  .example('xunit-viewer -r folder --s.s "value"', 'search suite with term "value"')
+  // .example('xunit-viewer -r folder --s.s "value"', 'search suite with term "value"')
 
   .string('results')
   .coerce('results', (arg) => path.resolve(process.cwd(), arg))

@@ -42,11 +42,12 @@ Options:
   --version       Show version number                                  [boolean]
   -r, --results   File/Folder of results                     [string] [required]
   -i, --ignore    Ignore patterns                                        [array]
-  -o, --output    Output filename               [string] [default: "index.html"]
+  -o, --output    Output filename                                       [string]
   -t, --title     HTML title e.g. "My Tests"                            [string]
   -b, --brand     Provide a URL with your own logo                      [string]
   -f, --favicon   Provide a URL with your own favicon                   [string]
   -c, --console   Render in console                                    [boolean]
+  -C, --clear     Clears the console                   [boolean] [default: true]
   -s, --server    Start a server and sockets for live updates
                                                       [boolean] [default: false]
   -n, --no-color  No color in the console                              [boolean]
@@ -65,7 +66,7 @@ Examples:
   xunit-viewer -r folder -b https://image.png    change the image
   xunit-viewer -r folder -f https://image.favico change the favicon
   xunit-viewer -r folder -c                      render in console
-  xunit-viewer -r folder -c -s -o false          render in console and do not save
+  xunit-viewer -r folder -c -s false             render in console and do not save
   xunit-viewer -r folder -c -n                   no color in console
   xunit-viewer -r folder -w                      start watch
   xunit-viewer -r folder -w -p 5050              watch at 5050
