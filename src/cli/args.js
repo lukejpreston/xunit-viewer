@@ -52,6 +52,11 @@ const instance = yargs
   .alias('c', 'console')
   .describe('c', 'Render in console')
 
+  .boolean('clear')
+  .alias('C', 'clear')
+  .default('C', true)
+  .describe('C', 'Clears the console')
+
   .boolean('server')
   .default('s', false)
   .alias('s', 'server')

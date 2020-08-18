@@ -8,9 +8,9 @@ const statusRank = [
   'unknown'
 ]
 
-module.exports = (output, logger, description, { title }) => {
+module.exports = (output, logger, description, args) => {
   const { suites } = output
-  clear()
+  if (args.clear) clear()
   Object.values(suites)
     .sort((left, right) => {
       if (left.name < right.name) return -1
@@ -62,6 +62,6 @@ module.exports = (output, logger, description, { title }) => {
         })
     })
   console.log()
-  if (title) console.log(title)
+  if (args.title) console.log(args.title)
   console.log(description)
 }
