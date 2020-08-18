@@ -170,7 +170,7 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
 
                 leftStatus = leftStatus === -1 ? statusRank.length : leftStatus
                 rightStatus = rightStatus === -1 ? statusRank.length : rightStatus
-              
+
                 if (leftStatus < rightStatus) {
                   return -2
                 }
