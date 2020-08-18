@@ -16,41 +16,67 @@ if (process.env.NODE_ENV === 'development') {
   files = [{
     file: '/path/to/file/complete.xml',
     contents: LZUTF8.compress(`
-    <?xml version="1.0"?>
-<testsuites>
-    <testsuite name="CodeceptionSupport.acceptance" tests="43" assertions="1348" failures="4" errors="7"
-               time="3167.404369">
-        <testcase file="/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingBetViewPageCest.php"
-                  name="assertBetViewPage" class="CodeceptionAcceptanceBetsGuestBrowsingBetViewPageCest"
-                  feature="assert bet view page" assertions="42" time="78.914764"/>
-        <testcase file="/usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php"
-                  name="navigateAndCheckTest" class="CodeceptionAcceptanceBetsGuestBrowsingProphetBetsPageCest"
-                  feature="navigate and check test" assertions="2" time="19.616513">
-            <failure type="PHPUnitFrameworkExpectationFailedException">GuestBrowsingProphetBetsPageCest: Navigate and
-                check test
-                Failed asserting that two strings are equal.
-                /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:768
-                /usr/share/nginx/html/tests/_support/Step/Prophet.php:50
-                /usr/share/nginx/html/tests/acceptance/Bets/GuestBrowsingProphetBetsPageCest.php:49
-            </failure>
-        </testcase>
-        <testcase
-                file="/usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php"
-                name="navigateAndCheckTest"
-                class="CodeceptionAcceptanceBetsGuestBrowsingProphetOfferedPropheciesPageCest"
-                feature="navigate and check test" assertions="4" time="50.317909">
-            <failure type="CodeceptionExceptionElementNotFound">GuestBrowsingProphetOfferedPropheciesPageCest:
-                Navigate and check test
-                Element located either by name, CSS or XPath element with '#twoLevelTabsMenu' was not found.
-                /usr/share/nginx/html/tests/_support/_generated/AcceptanceTesterActions.php:334
-                /usr/share/nginx/html/tests/_support/AcceptanceTester.php:346
-                /usr/share/nginx/html/tests/_support/Page/Element/UserProfileMenu.php:204
-                /usr/share/nginx/html/tests/_support/Page/Element/UserProfileMenu.php:298
-                /usr/share/nginx/html/tests/acceptance/Prophecies/GuestBrowsingProphetOfferedPropheciesPageCest.php:54
-            </failure>
-        </testcase>
-    </testsuite>
-</testsuites>
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <testsuites>
+        <testsuite name="X SUITE ONE" errors="7" tests="10" failures="2" time="0.021">
+            <properties>
+                <property name="flag-type" value="bug" />
+                <property name="flag-content" value="APPLICATION DEFECT" />
+                <property name="Has a name" value="true" />
+                <property name="URL" value="/test/data.com" />
+            </properties>
+            <properties>
+                <property name="flag-type" value="bug" />
+                <property name="flag-content" value="APPLICATION DEFECT" />
+                <property name="Has a name" value="true" />
+                <property name="URL" value="/test/data.com" />
+            </properties>
+            <testcase assertions="0" classname="SUITE ONE" name="the first test X" time="0.001">
+                <error message="There was a error" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the first test" time="0.001">
+                <error message="There was a error" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the second test" time="0.001">
+                <error message="I ignore this" type="when inner message">&lt;i&gt;WITH&lt;/i&gt;&lt;b&gt;HTML&lt;/b&gt;</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the third test" time="0.012">
+                <passed message="I ignore" type="this anyway">For some reason a passing message</passed>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the fouth test" time="0.001">
+                <error message="There was a error 1" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error 1</error>
+                <error message="There was a error 2" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error 2</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the fifth test" time="0.002">
+                <error message="This one has no inner message" type="java.lang.RuntimeException"></error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the sixt test" time="0.001">
+                <error message="This one has no inner message or type"></error>
+            </testcase>
+            </testsuite>
+          <testsuite name="SUITE TWO" errors="0" tests="6" failures="0" time="0.021">
+            <testcase assertions="0" classname="SUITE ONE" name="the sixt test" time="0.001">
+                <bacon message="This one has no inner message or type"></bacon>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the first test" time="0.001">
+                <error type="This one has no inner message or message"></error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the second test" time="0.001">
+                <skipped></skipped>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the third test" time="0.012">
+                <failure></failure>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the fouth test" time="0.001">
+              <error message="<i>WITH HTML</i>" type="<b>NO INNER</b>"></error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the fifth test" time="0.002">
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the sixt test" time="0.001">
+            </testcase>
+        </testsuite>
+    </testsuites>
+
 
 
 `, { outputEncoding: 'Base64' })
