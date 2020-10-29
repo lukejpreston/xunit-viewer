@@ -31,6 +31,7 @@ module.exports = async (args) => {
       const outputFile = path.resolve(process.cwd(), args.output)
       fs.writeFileSync(outputFile, result)
       console.log('Written to:', logger.file(outputFile))
+      process.exit(0)
     }
   }
 
