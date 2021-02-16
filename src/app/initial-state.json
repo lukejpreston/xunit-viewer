@@ -21,7 +21,7 @@
     "testToggles": {
       "all": {
         "visible": true,
-        "expanded": true,
+        "expanded": false,
         "raw": true
       },
       "passed": {
