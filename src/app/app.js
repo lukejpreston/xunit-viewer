@@ -58,55 +58,61 @@ const App = ({ files, title, brand }) => {
     }
   })
 
-  return <div>
-    <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} title={title} brand={brand} />
-    <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
-      <div className='container'>
-        <SuiteOptions
-          active={state.suiteOptionsActive}
-          suitesExpanded={state.suitesExpanded}
-          suitesEmpty={state.suitesEmpty}
-          dispatch={dispatch}
-          count={Object.keys(state.currentSuites).length}
-          total={Object.keys(state.suites).length}
-        />
-        <TestOptions
-          active={state.testOptionsActive}
-          testToggles={state.testToggles}
-          testCounts={testCounts}
-          count={testCount}
-          total={testTotal}
-          dispatch={dispatch}
-        />
-        <PropertiesOptions
-          propertiesExpanded={state.propertiesExpanded}
-          propertiesVisible={state.propertiesVisible}
-          active={state.propertiesOptionsActive}
-          count={currentPropertiesCount}
-          total={propertiesTotal}
-          dispatch={dispatch}
-        />
-        {process.env.NODE_ENV === 'development'
-          ? <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
-          : null}
-      </div>
-    </header>
-    <main>
-      <div className='container'>
-        <div>
-          {
-            Object.values(state.currentSuites)
-              .sort((left, right) => {
-                if (left.name < right.name) return -1
-                if (left.name > right.name) return 1
-                return 0
-              })
-              .map(suite => <Suite key={suite.id} {...suite} visible={suite._visible} dispatch={dispatch} />)
-          }
+  return (
+    <div>
+      <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} title={title} brand={brand} />
+      <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
+        <div className='container'>
+          {/*
+          <SuiteOptions
+            active={state.suiteOptionsActive}
+            suitesExpanded={state.suitesExpanded}
+            suitesEmpty={state.suitesEmpty}
+            dispatch={dispatch}
+            count={Object.keys(state.currentSuites).length}
+            total={Object.keys(state.suites).length}
+          />
+          */}
+          <TestOptions
+            active={state.testOptionsActive}
+            testToggles={state.testToggles}
+            testCounts={testCounts}
+            count={testCount}
+            total={testTotal}
+            dispatch={dispatch}
+          />
+          {/*
+          <PropertiesOptions
+            propertiesExpanded={state.propertiesExpanded}
+            propertiesVisible={state.propertiesVisible}
+            active={state.propertiesOptionsActive}
+            count={currentPropertiesCount}
+            total={propertiesTotal}
+            dispatch={dispatch}
+          />
+          */}
+          {process.env.NODE_ENV === 'development'
+            ? <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
+            : null}
         </div>
-      </div>
-    </main>
-  </div>
+      </header>
+      <main>
+        <div className='container'>
+          <div>
+            {
+              Object.values(state.currentSuites)
+                .sort((left, right) => {
+                  if (left.name < right.name) return -1
+                  if (left.name > right.name) return 1
+                  return 0
+                })
+                .map(suite => <Suite key={suite.id} {...suite} visible={suite._visible} dispatch={dispatch} />)
+            }
+          </div>
+        </div>
+      </main>
+    </div>
+  )
 }
 
 export default App

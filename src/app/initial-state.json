@@ -1,7 +1,7 @@
 {
     "suites": {},
     "currentSuites": {},
-    "menuActive": false,
+    "menuActive": true,
     "suiteOptionsActive": false,
     "testOptionsActive": false,
     "propertiesOptionsActive": false,
@@ -26,7 +26,7 @@
       },
       "passed": {
         "visible": true,
-        "expanded": true,
+        "expanded": false,
         "raw": true
       },
       "failure": {

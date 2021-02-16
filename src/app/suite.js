@@ -137,6 +137,7 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'} is-${visible ? 'visible' : 'hidden'}`}>
+    {/*
     <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id, active: !active } }) }} disabled={!containsSomething}>
       <p className='card-header-title'>
         <span>{name}</span>
@@ -156,6 +157,7 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
         <SuiteCount type='unknown' count={unknown} />
       </p> : null}
     </button>
+    */}
     {active && containsSomething ? <div className='card-content'>
       <div className='content'>
         {systemOut.length > 0 ? systemOut.map((value, index) => <pre key={`${id}-sysout-${index}`}>{value}</pre>) : null}

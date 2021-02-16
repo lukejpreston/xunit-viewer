@@ -141,7 +141,7 @@ const Options = ({
 }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
-      <Search label='Tests' dispatch={dispatch} />
+      <Search label='Filter tests' dispatch={dispatch} />
       <button
         onClick={() => dispatch({ type: 'toggle-test-options' })}
         className='button card-header-icon'>
