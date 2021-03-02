@@ -17,13 +17,22 @@ if (process.env.NODE_ENV === 'development') {
     file: '/path/to/file/complete.xml',
     contents: LZUTF8.compress(`
     <?xml version="1.0" encoding="UTF-8"?>
-<testsuite tests="1" failures="1" time="0.0160106">
-  <testcase name="It Is A Failure" classname="Failing" time="0.012011200000000001">
-    <error>Error message</error>
-    <system-out>Some messgae</system-out>
-    <failure type="Failure">FILENAME:XX</failure>
-  </testcase>
-</testsuite>
+<testsuites>
+    <testsuite name="plan1" tests="1" failures="1" time="0.0160106">
+      <testcase name="It Is A Fokin Failure" classname="Failing" time="0.012011200000000001">
+        <error>Error message</error>
+        <system-out>Some messgae</system-out>
+        <failure type="Failure">FILENAME:XX</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="plan2" tests="1" failures="1" time="0.0160106">
+      <testcase name="It Is A Fokin Failure" classname="Failing" time="0.012011200000000001">
+        <error>Error message</error>
+        <system-out>Some messgae</system-out>
+        <failure type="Failure">FILENAME:XX</failure>
+      </testcase>
+    </testsuite>
+</testsuites>
 `, { outputEncoding: 'Base64' })
   }]
 }
