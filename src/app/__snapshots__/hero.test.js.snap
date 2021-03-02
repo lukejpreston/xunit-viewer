@@ -11,21 +11,6 @@ exports[`renders hero 1`] = `
       className="columns is-mobile"
     >
       <div
-        className="column is-1"
-      >
-        <button
-          className="filter button has-text-white"
-        >
-          <span>
-            <i
-              className="fas fa-filter"
-            />
-             
-            FILTER
-          </span>
-        </button>
-      </div>
-      <div
         className="column is-11"
       >
         <div
@@ -54,21 +39,6 @@ exports[`renders hero with title and brand 1`] = `
     <div
       className="columns is-mobile"
     >
-      <div
-        className="column is-1"
-      >
-        <button
-          className="filter button has-text-white"
-        >
-          <span>
-            <i
-              className="fas fa-filter"
-            />
-             
-            FILTER
-          </span>
-        </button>
-      </div>
       <div
         className="column is-11"
       >

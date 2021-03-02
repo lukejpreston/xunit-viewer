@@ -3,30 +3,30 @@ import Files from './files'
 import Hero from './hero'
 import initialState from './initial-state.json'
 import parseAll from './parse-all'
-import PropertiesOptions from './properties-options'
+// import PropertiesOptions from './properties-options'
 import reducer from './reducer'
 import Suite from './suite'
-import SuiteOptions from './suite-options'
+// import SuiteOptions from './suite-options'
 import TestOptions from './test-options'
 
 const App = ({ files, title, brand }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
 
-  let currentPropertiesCount = 0
-  let propertiesTotal = 0
-  Object.entries(state.currentSuites).forEach(([key, suite]) => {
-    currentPropertiesCount += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
-    Object.values(suite.tests).forEach(test => {
-      if (test.properties) currentPropertiesCount += Object.keys(test.properties).filter(key => key !== '_active' && key !== '_visible').length
-    })
-  })
-  Object.entries(state.currentSuites).forEach(([key, suite]) => {
-    propertiesTotal += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
-    Object.values(suite.tests).forEach(test => {
-      if (test.properties) propertiesTotal += Object.keys(test.properties).filter(key => key !== '_active' && key !== '_visible').length
-    })
-  })
+  // let currentPropertiesCount = 0
+  // let propertiesTotal = 0
+  // Object.entries(state.currentSuites).forEach(([key, suite]) => {
+  //   currentPropertiesCount += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
+  //   Object.values(suite.tests).forEach(test => {
+  //     if (test.properties) currentPropertiesCount += Object.keys(test.properties).filter(key => key !== '_active' && key !== '_visible').length
+  //   })
+  // })
+  // Object.entries(state.currentSuites).forEach(([key, suite]) => {
+  //   propertiesTotal += Object.keys(suite.properties).filter(key => key !== '_active' && key !== '_visible').length
+  //   Object.values(suite.tests).forEach(test => {
+  //     if (test.properties) propertiesTotal += Object.keys(test.properties).filter(key => key !== '_active' && key !== '_visible').length
+  //   })
+  // })
 
   const testCounts = {}
   let testCount = 0

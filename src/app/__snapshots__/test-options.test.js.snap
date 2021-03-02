@@ -16,7 +16,7 @@ exports[`renders test options 1`] = `
         <input
           className="input"
           onChange={[Function]}
-          placeholder="Tests"
+          placeholder="Filter tests"
           type="text"
         />
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from './logo'
 
-const FilterIcon = () => <i className='fas fa-filter' />
+// const FilterIcon = () => <i className='fas fa-filter' />
 
 export default ({ active, onClick, title, brand }) => <section className='hero is-black'>
   <div className='container'>
