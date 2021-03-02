@@ -21,7 +21,7 @@
   "license": "MIT",
   "main": "xunit-viewer",
   "bin": {
-    "xunit-viewer": "bin/xunit-viewer"
+    "testing-farm-viewer": "bin/xunit-viewer"
   },
   "directories": {
     "bin": "bin",
