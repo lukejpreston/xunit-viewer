@@ -38,7 +38,7 @@ const ShowIcon = () => <span className='icon'>
   <i className='far fa-eye' />
 </span>
 
-export default ({ suitesExpanded = true, suitesEmpty = true, count = 0, total = 0, dispatch, active = false }) => {
+const SuiteOptions = ({ suitesExpanded = true, suitesEmpty = true, count = 0, total = 0, dispatch, active = false }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Suites' dispatch={dispatch} />
@@ -76,3 +76,5 @@ export default ({ suitesExpanded = true, suitesEmpty = true, count = 0, total = 
 
   </div>
 }
+
+export default SuiteOptions

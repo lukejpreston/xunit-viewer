@@ -27,7 +27,8 @@ const Properties = ({ properties, active = true, dispatch, suite, test = null })
         </span>
       </span>
     </button>
-    {active ? <div className='card-content'>
+    {active
+      ? <div className='card-content'>
       <table className='table'>
         <thead>
           <tr>
@@ -46,7 +47,8 @@ const Properties = ({ properties, active = true, dispatch, suite, test = null })
             })}
         </tbody>
       </table>
-    </div> : null}
+    </div>
+      : null}
   </div>
 }
 
@@ -79,14 +81,17 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
         {classname ? <small>classname = {classname}</small> : null}
         {time ? <small>time = {time}</small> : null}
       </p>
-      {hasMessage || hasProperties ? <span className='card-header-icon'>
+      {hasMessage || hasProperties
+        ? <span className='card-header-icon'>
         <span className='icon'>
           <i className='fas fa-angle-down' />
         </span>
-      </span> : null}
+      </span>
+        : null}
     </button>
     <div className='content'>
-      {active && (hasMessage || hasProperties) ? <div className='card-content'>
+      {active && (hasMessage || hasProperties)
+        ? <div className='card-content'>
         {hasProperties ? <Properties properties={properties} suite={suite} test={id} dispatch={dispatch} active={properties._active} /> : null}
         {
           hasMessage
@@ -106,17 +111,20 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
             </>
             : null
         }
-      </div> : null}
+      </div>
+        : null}
     </div>
   </div>
 }
 
-const SuiteCount = ({ count, type }) => count > 0 ? <span className='suite-count'>
+const SuiteCount = ({ count, type }) => count > 0
+  ? <span className='suite-count'>
   <span className='icon'>
     <i className={`fas fa-${icons[type]}`} aria-hidden='true' />
   </span>
   {count}
-</span> : null
+</span>
+  : null
 
 const Suite = ({ visible, id, name, active = false, properties = {}, time, tests = {}, dispatch, systemOut = [] }) => {
   let passed = 0
@@ -143,20 +151,25 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
         {time ? <small>time = {time}</small> : null}
       </p>
 
-      {containsSomething ? <span className='card-header-icon'>
+      {containsSomething
+        ? <span className='card-header-icon'>
         <span className='icon'>
           <i className='fas fa-angle-down' />
         </span>
-      </span> : null}
-      {containsSomething ? <p className='suite-count-container'>
+      </span>
+        : null}
+      {containsSomething
+        ? <p className='suite-count-container'>
         <SuiteCount type='failure' count={failure} />
         <SuiteCount type='error' count={error} />
         <SuiteCount type='passed' count={passed} />
         <SuiteCount type='skipped' count={skipped} />
         <SuiteCount type='unknown' count={unknown} />
-      </p> : null}
+      </p>
+        : null}
     </button>
-    {active && containsSomething ? <div className='card-content'>
+    {active && containsSomething
+      ? <div className='card-content'>
       <div className='content'>
         {systemOut.length > 0 ? systemOut.map((value, index) => <pre key={`${id}-sysout-${index}`}>{value}</pre>) : null}
         {hasProperties ? <Properties properties={properties} suite={id} dispatch={dispatch} active={properties._active} /> : null}
@@ -188,7 +201,8 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
           }
         </div>
       </div>
-    </div> : null}
+    </div>
+      : null}
   </div>
 }
 

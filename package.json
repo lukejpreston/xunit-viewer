@@ -62,14 +62,14 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bulma": "^0.9.0",
     "codemirror": "^5.56.0",
-    "eslint": "^7.7.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-standard": "^5.0.0",
     "fuzzy": "^0.1.3",
     "gh-pages": "^2.2.0",
     "jest-junit": "^10.0.0",
@@ -91,7 +91,8 @@
   "eslintConfig": {
     "extends": [
       "standard",
-      "standard-react"
+      "standard-react",
+      "plugin:react/recommended"
     ],
     "env": {
       "browser": true,

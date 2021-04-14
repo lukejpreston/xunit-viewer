@@ -76,7 +76,7 @@ const ToggleRow = ({ type, label, propertiesVisible, propertiesExpanded, dispatc
     onIcon={<ChevronDownIcon />} />
 </div>
 
-export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpanded = { all: true, suites: true, tests: true }, propertiesVisible = { all: true, suites: true, tests: true } }) => {
+const PropertiesOptions = ({ count = 0, total = 0, active = false, dispatch, propertiesExpanded = { all: true, suites: true, tests: true }, propertiesVisible = { all: true, suites: true, tests: true } }) => {
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Properties' dispatch={dispatch} />
@@ -103,3 +103,5 @@ export default ({ count = 0, total = 0, active = false, dispatch, propertiesExpa
 
   </div>
 }
+
+export default PropertiesOptions

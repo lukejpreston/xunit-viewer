@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({
+const Toggle = ({
   active,
   onIcon,
   offIcon,
@@ -23,3 +23,5 @@ export default ({
     <span>{active ? onLabel : offLabel}</span>
   </button>
 }
+
+export default Toggle

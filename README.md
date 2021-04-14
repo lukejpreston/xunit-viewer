@@ -12,16 +12,16 @@ Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 
 ## Features
 
-* Generate a HTML single file with ability to search, filter
+* Generate an HTML single file with the ability to search, filter
 * Render results out to the console, this comes with the ability to search and filter
 * Re-run the above when a file changes
-* Start a server with websockets to keep the browser in-sync with the data
+* Start a server with WebSockets to keep the browser in sync with the data
 * Add files to the web app without having to re-run xunit viewer
-* Adds the meta data to the header so you can share the URL in places such as slack, example
+* Adds the metadata to the header so you can share the URL in places such as slack, for example
 
 ![Example](https://raw.githubusercontent.com/lukejpreston/xunit-viewer/master/example-header.png)
 
-Xunit Viewer supports node LTS version, but should support 10+
+Xunit Viewer supports node LTS version but should work on node 10+
 
 ## Usage, CLI
 
@@ -129,7 +129,7 @@ npm run build:cli # builds the js and copies it to the cli
 
 Make sure your tests are running and passing, and the linter is passing as well
 
-**DO NOT** commit the `src/cli/static` folder or the `junit.xml` file as part of your PR as these are auto generated and just clutters up the PR, future work will be done to not make them part of the repo but they currently need to be included for the tags
+**DO NOT** commit the `src/cli/static` folder or the `junit.xml` file as part of your PR as these are auto-generated and just clutters up the PR, future work will be done to not make them part of the repo but they currently need to be included for the tags
 
 A suggested workflow for UI changes
 
@@ -140,7 +140,7 @@ A suggested workflow for UI changes
 5. `npm build:cli` in order to update the CLI with your UI changes
 6. `./bin/xunit-viewer -r data -o test-output.html` in order to make sure the commands work as expected
 
-If you work does not include any UI work then a suggestion is
+If your work does not include any UI work then a suggestion is
 
 1. `npm i` to install the project
 2. `./bin/xunit-viewer ...` in order to make sure the commands work as expected
@@ -157,11 +157,8 @@ Raise any issues using GitHub and provide sample data where possible.
 
 To help debug any issues please provide the following info
 
-* node and npm version
+* node and npm version, refer to [Node](https://nodejs.org/en/) for LTS
 * xunit viewer version
 * browser
 * sample xml
 
-If you have issue migrating from Junit Viewer or older version of Xunit Viewer please feel free to raise an issue titled **MIGRATION HELP**
-
-There is a `v5` branch which maintained through Open Source PRs, this branch will not maintain `npm audit` issues

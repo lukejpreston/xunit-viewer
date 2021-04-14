@@ -71,7 +71,8 @@ const Files = ({ active = false, setActive, files = [] }) => {
       </div>
 
       <input className='input files-input' type='text' defaultValue='/this/is/the/full/filename.xml' placeholder='Filename' disabled={!active} />
-      {active ? <CodeMirror
+      {active
+        ? <CodeMirror
         value={`<?xml version="1.0" encoding="UTF-8"?>
 <testsuite tests="3" failures="1" time="0.0160106">
     <testcase name="Is An Error" classname="Error" time="0.00075">
@@ -85,7 +86,8 @@ const Files = ({ active = false, setActive, files = [] }) => {
         onChange={(cm, { text }, value) => {
 
         }}
-      /> : null}
+      />
+        : null}
     </div>
 
   </div>
