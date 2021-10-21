@@ -110,7 +110,7 @@ exports[`renders suite 1`] = `
       </div>
       <div>
         <div
-          className="test card is-active is-passed is-populated"
+          className="test card is-inactive is-passed is-populated"
         >
           <button
             className="card-header"
@@ -150,45 +150,7 @@ exports[`renders suite 1`] = `
           </button>
           <div
             className="content"
-          >
-            <div
-              className="card-content"
-            >
-              <button
-                className="button toggle is-active "
-                disabled={false}
-                onClick={[Function]}
-              >
-                <div
-                  className="toggle-rail"
-                >
-                  <div
-                    className="toggle-handle"
-                  />
-                </div>
-                <span
-                  className="icon"
-                >
-                  <i
-                    className="fas fa-code"
-                  />
-                </span>
-                <span>
-                  raw
-                </span>
-              </button>
-              <div
-                className="raw-content"
-              >
-                <pre>
-                  message 1
-                </pre>
-                <pre>
-                  message 2
-                </pre>
-              </div>
-            </div>
-          </div>
+          />
         </div>
       </div>
     </div>
