@@ -34,7 +34,11 @@ export default (state, { type, payload }) => {
 
   if (type === 'parse-error') {
     state = merge.recursive(true, {}, state)
-    state.error = payload.error
+    state.errors = state.errors || []
+    state.errors.push({
+      error: payload.error,
+      file: payload.file
+    })
     return state
   }
 

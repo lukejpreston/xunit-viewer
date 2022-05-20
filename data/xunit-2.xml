@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="100" result="Failed(Child)" total="100" passed="99" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2020-10-29 18:32:49Z" end-time="2020-10-29 18:32:51Z" duration="2.0143689">
+  <test-suite type="TestSuite" id="1000" name="Sandbox" fullname="Sandbox" runstate="Runnable" testcasecount="100" result="Failed" site="Child" start-time="2020-10-29 18:32:49Z" end-time="2020-10-29 18:32:51Z" duration="2.014369" total="100" passed="99" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1109" name="LatentSpace.EditorTests.dll" fullname="/home/rave/Projects/UnityInferenceClient/Library/ScriptAssemblies/LatentSpace.EditorTests.dll" runstate="Runnable" testcasecount="100" result="Failed" site="Child" start-time="2020-10-29 18:32:50Z" end-time="2020-10-29 18:32:51Z" duration="1.076876" total="100" passed="99" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="17760" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1110" name="Tests" fullname="Tests" runstate="Runnable" testcasecount="100" result="Failed" site="Child" start-time="2020-10-29 18:32:50Z" end-time="2020-10-29 18:32:51Z" duration="1.022271" total="100" passed="99" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestFixture" id="1003" name="MockEditorTest" fullname="Tests.MockEditorTest" classname="Tests.MockEditorTest" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-10-29 18:32:50Z" end-time="2020-10-29 18:32:50Z" duration="0.012854" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1004" name="MockEditorTestSimplePasses" fullname="Tests.MockEditorTest.MockEditorTestSimplePasses" methodname="MockEditorTestSimplePasses" classname="Tests.MockEditorTest" runstate="Runnable" seed="156292656" result="Passed" start-time="2020-10-29 18:32:47Z" end-time="0001-01-01 00:00:00Z" duration="0.008466" asserts="0">
+            <properties />
+            <reason>
+              <message><![CDATA[]]></message>
+            </reason>
+          </test-case>
+          <test-case id="1005" name="MockEditorTestWithEnumeratorPasses" fullname="Tests.MockEditorTest.MockEditorTestWithEnumeratorPasses" methodname="MockEditorTestWithEnumeratorPasses" classname="Tests.MockEditorTest" runstate="Runnable" seed="226707645" result="Passed" start-time="2020-10-29 18:32:47Z" end-time="0001-01-01 00:00:00Z" duration="0.010922" asserts="0">
+            <properties>
+              <property name="_JOINTYPE" value="UnityCombinatorial" />
+            </properties>
+            <reason>
+              <message><![CDATA[]]></message>
+            </reason>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1006" name="TestCommandParsing" fullname="Tests.TestCommandParsing" classname="Tests.TestCommandParsing" runstate="Runnable" testcasecount="1" result="Passed" start-time="2020-10-29 18:32:50Z" end-time="2020-10-29 18:32:50Z" duration="0.000717" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1007" name="TestCommandParsingEmptyString" fullname="Tests.TestCommandParsing.TestCommandParsingEmptyString" methodname="TestCommandParsingEmptyString" classname="Tests.TestCommandParsing" runstate="Runnable" seed="546609924" result="Passed" start-time="2020-10-29 18:32:47Z" end-time="0001-01-01 00:00:00Z" duration="0.012886" asserts="0">
+            <properties />
+            <reason>
+              <message><![CDATA[]]></message>
+            </reason>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1001" name="TestItemStackSerializer" fullname="Tests.TestItemStackSerializer" classname="Tests.TestItemStackSerializer" runstate="Runnable" testcasecount="1" result="Passed" start-time="2020-10-29 18:32:50Z" end-time="2020-10-29 18:32:50Z" duration="0.000617" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1002" name="TestItemStackSerializeDeserialize" fullname="Tests.TestItemStackSerializer.TestItemStackSerializeDeserialize" methodname="TestItemStackSerializeDeserialize" classname="Tests.TestItemStackSerializer" runstate="Runnable" seed="316232528" result="Passed" start-time="2020-10-29 18:32:47Z" end-time="0001-01-01 00:00:00Z" duration="0.006472" asserts="0">
+            <properties />
+            <reason>
+              <message><![CDATA[]]></message>
+            </reason>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1008" name="TestPersistence" fullname="Tests.TestPersistence" classname="Tests.TestPersistence" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2020-10-29 18:32:50Z" end-time="2020-10-29 18:32:51Z" duration="0.538006" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-case id="1009" name="TestBlockPersistenceFails" fullname="Tests.TestPersistence.TestBlockPersistenceFails" methodname="TestBlockPersistenceFails" classname="Tests.TestPersistence" runstate="Runnable" seed="621840733" result="Failed" start-time="2020-10-29 18:32:47Z" end-time="2020-10-29 18:32:50Z" duration="3.158017" asserts="0">
+            <properties>
+              <property name="_JOINTYPE" value="UnityCombinatorial" />
+            </properties>
+            <failure>
+              <message><![CDATA[Unhandled log message: '[Error] DatabaseClient Request failed, returned status code InternalServerError'. Use UnityEngine.TestTools.LogAssert.Expect]]></message>
+              <stack-trace><![CDATA[LatentSpace.DatabaseClient:DoRequest(String, String, ClientMethod, HttpContent) (at Assets/Scripts/DatabaseClient.cs:120)
+LatentSpace.DatabaseClient:CreateRoom(Int32, Boolean, String) (at Assets/Scripts/DatabaseClient.cs:192)
+Tests.ManagerBase:CreateRealm() (at Assets/Scripts/PlayTests/ManagerBase.cs:53)
+Tests.<TestBlockPersistenceFails>d__2:MoveNext() (at Assets/Scripts/EditorTests/TestPersistence.cs:30)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions() (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorApplication.cs:310)
+
+]]></stack-trace>
+            </failure>
+            <output><![CDATA[DatabaseClient Executing CreateRoom with uri http://127.0.0.1:8000/room/?uid=0&game_mode=survival&room_name=
+DatabaseClient Request failed, returned status code InternalServerError
+ArgumentNullException: Value cannot be null.
+Parameter name: value
+DatabaseClient returning default value 0
+]]></output>
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1010" name="TestPortals" fullname="Tests.TestPortals" classname="Tests.TestPortals" runstate="Runnable" testcasecount="1" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.010803" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1011" name="TestPortalKeyCreation" fullname="Tests.TestPortals.TestPortalKeyCreation" methodname="TestPortalKeyCreation" classname="Tests.TestPortals" runstate="Runnable" seed="384367934" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.009036" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1012" name="TestRaycast" fullname="Tests.TestRaycast" classname="Tests.TestRaycast" runstate="Runnable" testcasecount="38" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.093844" total="38" passed="38" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1042" name="TestRaycastDiagonal" fullname="Tests.TestRaycast.TestRaycastDiagonal" methodname="TestRaycastDiagonal" classname="Tests.TestRaycast" runstate="Runnable" seed="201769255" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.012205" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1014" name="TestRaycastDownToBlockCenter" fullname="Tests.TestRaycast.TestRaycastDownToBlockCenter" methodname="TestRaycastDownToBlockCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="175096231" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000939" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1043" name="TestRaycastDownToBlockCenterBarelyReach" fullname="Tests.TestRaycast.TestRaycastDownToBlockCenterBarelyReach" methodname="TestRaycastDownToBlockCenterBarelyReach" classname="Tests.TestRaycast" runstate="Runnable" seed="1462703435" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000746" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1044" name="TestRaycastDownToBlockCenterOutOfReach" fullname="Tests.TestRaycast.TestRaycastDownToBlockCenterOutOfReach" methodname="TestRaycastDownToBlockCenterOutOfReach" classname="Tests.TestRaycast" runstate="Runnable" seed="936048110" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000784" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1013" name="TestRaycastDownToBlockEdge" fullname="Tests.TestRaycast.TestRaycastDownToBlockEdge" methodname="TestRaycastDownToBlockEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="125055067" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000758" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1015" name="TestRaycastDownToBlockFarEdge" fullname="Tests.TestRaycast.TestRaycastDownToBlockFarEdge" methodname="TestRaycastDownToBlockFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="616476369" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000753" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1026" name="TestRaycastDownToBlockPlatformCenter" fullname="Tests.TestRaycast.TestRaycastDownToBlockPlatformCenter" methodname="TestRaycastDownToBlockPlatformCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="1282462067" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000788" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1040" name="TestRaycastDownToBlockPlatformCenterFromBlockPlatform" fullname="Tests.TestRaycast.TestRaycastDownToBlockPlatformCenterFromBlockPlatform" methodname="TestRaycastDownToBlockPlatformCenterFromBlockPlatform" classname="Tests.TestRaycast" runstate="Runnable" seed="817857672" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000761" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1025" name="TestRaycastDownToBlockPlatformEdge" fullname="Tests.TestRaycast.TestRaycastDownToBlockPlatformEdge" methodname="TestRaycastDownToBlockPlatformEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1077914702" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000810" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1027" name="TestRaycastDownToBlockPlatformFarEdge" fullname="Tests.TestRaycast.TestRaycastDownToBlockPlatformFarEdge" methodname="TestRaycastDownToBlockPlatformFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="2031271435" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000783" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1041" name="TestRaycastFractional" fullname="Tests.TestRaycast.TestRaycastFractional" methodname="TestRaycastFractional" classname="Tests.TestRaycast" runstate="Runnable" seed="1129289536" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000770" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1037" name="TestRaycastHitNothing" fullname="Tests.TestRaycast.TestRaycastHitNothing" methodname="TestRaycastHitNothing" classname="Tests.TestRaycast" runstate="Runnable" seed="1748073942" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000855" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1020" name="TestRaycastLeftToBlockCenter" fullname="Tests.TestRaycast.TestRaycastLeftToBlockCenter" methodname="TestRaycastLeftToBlockCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="719562773" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000780" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1047" name="TestRaycastLeftToBlockCenterBarelyReach" fullname="Tests.TestRaycast.TestRaycastLeftToBlockCenterBarelyReach" methodname="TestRaycastLeftToBlockCenterBarelyReach" classname="Tests.TestRaycast" runstate="Runnable" seed="30321359" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000780" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1048" name="TestRaycastLeftToBlockCenterOutOfReach" fullname="Tests.TestRaycast.TestRaycastLeftToBlockCenterOutOfReach" methodname="TestRaycastLeftToBlockCenterOutOfReach" classname="Tests.TestRaycast" runstate="Runnable" seed="869289606" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000732" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1019" name="TestRaycastLeftToBlockEdge" fullname="Tests.TestRaycast.TestRaycastLeftToBlockEdge" methodname="TestRaycastLeftToBlockEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1077032419" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000749" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1021" name="TestRaycastLeftToBlockFarEdge" fullname="Tests.TestRaycast.TestRaycastLeftToBlockFarEdge" methodname="TestRaycastLeftToBlockFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="444939377" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000741" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1032" name="TestRaycastLeftToBlockPlatformCenter" fullname="Tests.TestRaycast.TestRaycastLeftToBlockPlatformCenter" methodname="TestRaycastLeftToBlockPlatformCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="1021177820" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000736" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1031" name="TestRaycastLeftToBlockPlatformEdge" fullname="Tests.TestRaycast.TestRaycastLeftToBlockPlatformEdge" methodname="TestRaycastLeftToBlockPlatformEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1311730187" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000742" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1033" name="TestRaycastLeftToBlockPlatformFarEdge" fullname="Tests.TestRaycast.TestRaycastLeftToBlockPlatformFarEdge" methodname="TestRaycastLeftToBlockPlatformFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1821589224" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000729" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1023" name="TestRaycastRightToBlockCenter" fullname="Tests.TestRaycast.TestRaycastRightToBlockCenter" methodname="TestRaycastRightToBlockCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="23746002" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000803" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1049" name="TestRaycastRightToBlockCenterBarelyReach" fullname="Tests.TestRaycast.TestRaycastRightToBlockCenterBarelyReach" methodname="TestRaycastRightToBlockCenterBarelyReach" classname="Tests.TestRaycast" runstate="Runnable" seed="1917574918" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000777" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1050" name="TestRaycastRightToBlockCenterOutOfReach" fullname="Tests.TestRaycast.TestRaycastRightToBlockCenterOutOfReach" methodname="TestRaycastRightToBlockCenterOutOfReach" classname="Tests.TestRaycast" runstate="Runnable" seed="1963202116" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000790" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1022" name="TestRaycastRightToBlockEdge" fullname="Tests.TestRaycast.TestRaycastRightToBlockEdge" methodname="TestRaycastRightToBlockEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="832441582" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000841" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1024" name="TestRaycastRightToBlockFarEdge" fullname="Tests.TestRaycast.TestRaycastRightToBlockFarEdge" methodname="TestRaycastRightToBlockFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1096858119" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000793" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1035" name="TestRaycastRightToBlockPlatformCenter" fullname="Tests.TestRaycast.TestRaycastRightToBlockPlatformCenter" methodname="TestRaycastRightToBlockPlatformCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="1369282926" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000770" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1034" name="TestRaycastRightToBlockPlatformEdge" fullname="Tests.TestRaycast.TestRaycastRightToBlockPlatformEdge" methodname="TestRaycastRightToBlockPlatformEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="129763057" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000758" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1036" name="TestRaycastRightToBlockPlatformFarEdge" fullname="Tests.TestRaycast.TestRaycastRightToBlockPlatformFarEdge" methodname="TestRaycastRightToBlockPlatformFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1750453085" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000736" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1038" name="TestRaycastStartInBlock" fullname="Tests.TestRaycast.TestRaycastStartInBlock" methodname="TestRaycastStartInBlock" classname="Tests.TestRaycast" runstate="Runnable" seed="444855456" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000741" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1039" name="TestRaycastStartInBlockPlatform" fullname="Tests.TestRaycast.TestRaycastStartInBlockPlatform" methodname="TestRaycastStartInBlockPlatform" classname="Tests.TestRaycast" runstate="Runnable" seed="541445944" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000746" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1017" name="TestRaycastUpToBlockCenter" fullname="Tests.TestRaycast.TestRaycastUpToBlockCenter" methodname="TestRaycastUpToBlockCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="1117726580" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000871" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1045" name="TestRaycastUpToBlockCenterBarelyReach" fullname="Tests.TestRaycast.TestRaycastUpToBlockCenterBarelyReach" methodname="TestRaycastUpToBlockCenterBarelyReach" classname="Tests.TestRaycast" runstate="Runnable" seed="1705010484" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000837" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1046" name="TestRaycastUpToBlockCenterOutOfReach" fullname="Tests.TestRaycast.TestRaycastUpToBlockCenterOutOfReach" methodname="TestRaycastUpToBlockCenterOutOfReach" classname="Tests.TestRaycast" runstate="Runnable" seed="129915984" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000784" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1016" name="TestRaycastUpToBlockEdge" fullname="Tests.TestRaycast.TestRaycastUpToBlockEdge" methodname="TestRaycastUpToBlockEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="1214004467" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000773" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1018" name="TestRaycastUpToBlockFarEdge" fullname="Tests.TestRaycast.TestRaycastUpToBlockFarEdge" methodname="TestRaycastUpToBlockFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="609354271" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000794" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1029" name="TestRaycastUpToBlockPlatformCenter" fullname="Tests.TestRaycast.TestRaycastUpToBlockPlatformCenter" methodname="TestRaycastUpToBlockPlatformCenter" classname="Tests.TestRaycast" runstate="Runnable" seed="725366222" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000762" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1028" name="TestRaycastUpToBlockPlatformEdge" fullname="Tests.TestRaycast.TestRaycastUpToBlockPlatformEdge" methodname="TestRaycastUpToBlockPlatformEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="617495066" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000739" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1030" name="TestRaycastUpToBlockPlatformFarEdge" fullname="Tests.TestRaycast.TestRaycastUpToBlockPlatformFarEdge" methodname="TestRaycastUpToBlockPlatformFarEdge" classname="Tests.TestRaycast" runstate="Runnable" seed="568307647" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000776" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1051" name="TestServerCallbacks" fullname="Tests.TestServerCallbacks" classname="Tests.TestServerCallbacks" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.007463" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1052" name="TestIterateCoordinatesDoesNotRunDuplicateCoordinates" fullname="Tests.TestServerCallbacks.TestIterateCoordinatesDoesNotRunDuplicateCoordinates" methodname="TestIterateCoordinatesDoesNotRunDuplicateCoordinates" classname="Tests.TestServerCallbacks" runstate="Runnable" seed="1610933528" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.003368" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1053" name="TestIterateCoordinatesDoesNotRunOnZero" fullname="Tests.TestServerCallbacks.TestIterateCoordinatesDoesNotRunOnZero" methodname="TestIterateCoordinatesDoesNotRunOnZero" classname="Tests.TestServerCallbacks" runstate="Runnable" seed="1849450863" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000801" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="TestFixture" id="1054" name="TestStructure" fullname="Tests.TestStructure" classname="Tests.TestStructure" runstate="Runnable" testcasecount="54" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.268501" total="54" passed="54" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1088" name="TestStructureCanPlace" fullname="Tests.TestStructure.TestStructureCanPlace" methodname="TestStructureCanPlace" classname="Tests.TestStructure" runstate="Runnable" seed="507372660" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.002198" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1094" name="TestStructureCanPlaceAlreadyPlaced" fullname="Tests.TestStructure.TestStructureCanPlaceAlreadyPlaced" methodname="TestStructureCanPlaceAlreadyPlaced" classname="Tests.TestStructure" runstate="Runnable" seed="1703925633" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000684" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1095" name="TestStructureCanPlaceAny" fullname="Tests.TestStructure.TestStructureCanPlaceAny" methodname="TestStructureCanPlaceAny" classname="Tests.TestStructure" runstate="Runnable" seed="690142775" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000581" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1091" name="TestStructureCanPlaceFailsBottomLeft" fullname="Tests.TestStructure.TestStructureCanPlaceFailsBottomLeft" methodname="TestStructureCanPlaceFailsBottomLeft" classname="Tests.TestStructure" runstate="Runnable" seed="312458952" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000573" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1092" name="TestStructureCanPlaceFailsBottomRight" fullname="Tests.TestStructure.TestStructureCanPlaceFailsBottomRight" methodname="TestStructureCanPlaceFailsBottomRight" classname="Tests.TestStructure" runstate="Runnable" seed="1042929995" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000650" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1089" name="TestStructureCanPlaceFailsTopLeft" fullname="Tests.TestStructure.TestStructureCanPlaceFailsTopLeft" methodname="TestStructureCanPlaceFailsTopLeft" classname="Tests.TestStructure" runstate="Runnable" seed="864823628" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000586" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1090" name="TestStructureCanPlaceFailsTopRight" fullname="Tests.TestStructure.TestStructureCanPlaceFailsTopRight" methodname="TestStructureCanPlaceFailsTopRight" classname="Tests.TestStructure" runstate="Runnable" seed="878326511" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000590" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1083" name="TestStructureCanPlaceSingle" fullname="Tests.TestStructure.TestStructureCanPlaceSingle" methodname="TestStructureCanPlaceSingle" classname="Tests.TestStructure" runstate="Runnable" seed="1948025245" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000813" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1087" name="TestStructureCanPlaceSingleAlreadyPlaced" fullname="Tests.TestStructure.TestStructureCanPlaceSingleAlreadyPlaced" methodname="TestStructureCanPlaceSingleAlreadyPlaced" classname="Tests.TestStructure" runstate="Runnable" seed="228375816" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000615" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1086" name="TestStructureCanPlaceSingleAny" fullname="Tests.TestStructure.TestStructureCanPlaceSingleAny" methodname="TestStructureCanPlaceSingleAny" classname="Tests.TestStructure" runstate="Runnable" seed="1605994349" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000586" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1084" name="TestStructureCanPlaceSingleFail" fullname="Tests.TestStructure.TestStructureCanPlaceSingleFail" methodname="TestStructureCanPlaceSingleFail" classname="Tests.TestStructure" runstate="Runnable" seed="1425189518" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000601" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1085" name="TestStructureCanPlaceSingleThreshold" fullname="Tests.TestStructure.TestStructureCanPlaceSingleThreshold" methodname="TestStructureCanPlaceSingleThreshold" classname="Tests.TestStructure" runstate="Runnable" seed="1051941975" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000564" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1093" name="TestStructureCanPlaceThreshold" fullname="Tests.TestStructure.TestStructureCanPlaceThreshold" methodname="TestStructureCanPlaceThreshold" classname="Tests.TestStructure" runstate="Runnable" seed="1608790276" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000593" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1079" name="TestStructureCheckExists" fullname="Tests.TestStructure.TestStructureCheckExists" methodname="TestStructureCheckExists" classname="Tests.TestStructure" runstate="Runnable" seed="1857110635" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000883" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1081" name="TestStructureCheckExistsFail" fullname="Tests.TestStructure.TestStructureCheckExistsFail" methodname="TestStructureCheckExistsFail" classname="Tests.TestStructure" runstate="Runnable" seed="498302635" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000614" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1080" name="TestStructureCheckExistsNotOrigin" fullname="Tests.TestStructure.TestStructureCheckExistsNotOrigin" methodname="TestStructureCheckExistsNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="2039108676" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000603" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1071" name="TestStructureCheckExistsSingle" fullname="Tests.TestStructure.TestStructureCheckExistsSingle" methodname="TestStructureCheckExistsSingle" classname="Tests.TestStructure" runstate="Runnable" seed="883075918" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000592" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1075" name="TestStructureCheckExistsSingleFail" fullname="Tests.TestStructure.TestStructureCheckExistsSingleFail" methodname="TestStructureCheckExistsSingleFail" classname="Tests.TestStructure" runstate="Runnable" seed="1457293227" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000625" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1076" name="TestStructureCheckExistsSingleFailNotOrigin" fullname="Tests.TestStructure.TestStructureCheckExistsSingleFailNotOrigin" methodname="TestStructureCheckExistsSingleFailNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="1288668117" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000902" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1072" name="TestStructureCheckExistsSingleNotOrigin" fullname="Tests.TestStructure.TestStructureCheckExistsSingleNotOrigin" methodname="TestStructureCheckExistsSingleNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="104392750" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000667" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1077" name="TestStructureCheckExistsSingleThreshold" fullname="Tests.TestStructure.TestStructureCheckExistsSingleThreshold" methodname="TestStructureCheckExistsSingleThreshold" classname="Tests.TestStructure" runstate="Runnable" seed="1887794590" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000604" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1073" name="TestStructureCheckExistsSingleThresholdExtra" fullname="Tests.TestStructure.TestStructureCheckExistsSingleThresholdExtra" methodname="TestStructureCheckExistsSingleThresholdExtra" classname="Tests.TestStructure" runstate="Runnable" seed="511727359" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000607" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1074" name="TestStructureCheckExistsSingleThresholdExtraNotOrigin" fullname="Tests.TestStructure.TestStructureCheckExistsSingleThresholdExtraNotOrigin" methodname="TestStructureCheckExistsSingleThresholdExtraNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="729599227" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000609" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1078" name="TestStructureCheckExistsSingleThresholdNotOrigin" fullname="Tests.TestStructure.TestStructureCheckExistsSingleThresholdNotOrigin" methodname="TestStructureCheckExistsSingleThresholdNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="1910645601" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000612" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1082" name="TestStructureCheckExistsThreshold" fullname="Tests.TestStructure.TestStructureCheckExistsThreshold" methodname="TestStructureCheckExistsThreshold" classname="Tests.TestStructure" runstate="Runnable" seed="1068398636" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000616" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1105" name="TestStructureCheckOneBottomLeft" fullname="Tests.TestStructure.TestStructureCheckOneBottomLeft" methodname="TestStructureCheckOneBottomLeft" classname="Tests.TestStructure" runstate="Runnable" seed="1995995154" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.001025" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1106" name="TestStructureCheckOneBottomRight" fullname="Tests.TestStructure.TestStructureCheckOneBottomRight" methodname="TestStructureCheckOneBottomRight" classname="Tests.TestStructure" runstate="Runnable" seed="414727204" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000560" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1096" name="TestStructureCheckOneSingle" fullname="Tests.TestStructure.TestStructureCheckOneSingle" methodname="TestStructureCheckOneSingle" classname="Tests.TestStructure" runstate="Runnable" seed="484013650" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000552" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1102" name="TestStructureCheckOneSingleAny" fullname="Tests.TestStructure.TestStructureCheckOneSingleAny" methodname="TestStructureCheckOneSingleAny" classname="Tests.TestStructure" runstate="Runnable" seed="1193302192" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000795" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1097" name="TestStructureCheckOneSingleFail" fullname="Tests.TestStructure.TestStructureCheckOneSingleFail" methodname="TestStructureCheckOneSingleFail" classname="Tests.TestStructure" runstate="Runnable" seed="1239097216" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000550" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1099" name="TestStructureCheckOneSingleOutOfBoundsBottom" fullname="Tests.TestStructure.TestStructureCheckOneSingleOutOfBoundsBottom" methodname="TestStructureCheckOneSingleOutOfBoundsBottom" classname="Tests.TestStructure" runstate="Runnable" seed="1039797463" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000581" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1101" name="TestStructureCheckOneSingleOutOfBoundsLeft" fullname="Tests.TestStructure.TestStructureCheckOneSingleOutOfBoundsLeft" methodname="TestStructureCheckOneSingleOutOfBoundsLeft" classname="Tests.TestStructure" runstate="Runnable" seed="2004691174" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000579" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1100" name="TestStructureCheckOneSingleOutOfBoundsRight" fullname="Tests.TestStructure.TestStructureCheckOneSingleOutOfBoundsRight" methodname="TestStructureCheckOneSingleOutOfBoundsRight" classname="Tests.TestStructure" runstate="Runnable" seed="183898811" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000577" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1098" name="TestStructureCheckOneSingleOutOfBoundsTop" fullname="Tests.TestStructure.TestStructureCheckOneSingleOutOfBoundsTop" methodname="TestStructureCheckOneSingleOutOfBoundsTop" classname="Tests.TestStructure" runstate="Runnable" seed="1840581895" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000575" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1103" name="TestStructureCheckOneTopLeft" fullname="Tests.TestStructure.TestStructureCheckOneTopLeft" methodname="TestStructureCheckOneTopLeft" classname="Tests.TestStructure" runstate="Runnable" seed="1078396201" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000608" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1104" name="TestStructureCheckOneTopRight" fullname="Tests.TestStructure.TestStructureCheckOneTopRight" methodname="TestStructureCheckOneTopRight" classname="Tests.TestStructure" runstate="Runnable" seed="83575058" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000586" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1108" name="TestStructureCheckPartOf" fullname="Tests.TestStructure.TestStructureCheckPartOf" methodname="TestStructureCheckPartOf" classname="Tests.TestStructure" runstate="Runnable" seed="448367960" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.001249" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1107" name="TestStructureCheckPartOfSingle" fullname="Tests.TestStructure.TestStructureCheckPartOfSingle" methodname="TestStructureCheckPartOfSingle" classname="Tests.TestStructure" runstate="Runnable" seed="189076275" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000623" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1056" name="TestStructureParsing" fullname="Tests.TestStructure.TestStructureParsing" methodname="TestStructureParsing" classname="Tests.TestStructure" runstate="Runnable" seed="140249320" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000686" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1058" name="TestStructureParsingJson" fullname="Tests.TestStructure.TestStructureParsingJson" methodname="TestStructureParsingJson" classname="Tests.TestStructure" runstate="Runnable" seed="590914525" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.138107" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1057" name="TestStructureParsingJsonSingle" fullname="Tests.TestStructure.TestStructureParsingJsonSingle" methodname="TestStructureParsingJsonSingle" classname="Tests.TestStructure" runstate="Runnable" seed="596899861" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000835" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1059" name="TestStructureParsingJsonSingleProbability" fullname="Tests.TestStructure.TestStructureParsingJsonSingleProbability" methodname="TestStructureParsingJsonSingleProbability" classname="Tests.TestStructure" runstate="Runnable" seed="1055270751" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000884" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1055" name="TestStructureParsingSingle" fullname="Tests.TestStructure.TestStructureParsingSingle" methodname="TestStructureParsingSingle" classname="Tests.TestStructure" runstate="Runnable" seed="481359858" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000632" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1060" name="TestStructurePlacement" fullname="Tests.TestStructure.TestStructurePlacement" methodname="TestStructurePlacement" classname="Tests.TestStructure" runstate="Runnable" seed="1480916462" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.001200" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1061" name="TestStructurePlacementSingle" fullname="Tests.TestStructure.TestStructurePlacementSingle" methodname="TestStructurePlacementSingle" classname="Tests.TestStructure" runstate="Runnable" seed="1747629364" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000636" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1067" name="TestStructurePlacementSingleAny" fullname="Tests.TestStructure.TestStructurePlacementSingleAny" methodname="TestStructurePlacementSingleAny" classname="Tests.TestStructure" runstate="Runnable" seed="100901284" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000686" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1068" name="TestStructurePlacementSingleAnyNotOrigin" fullname="Tests.TestStructure.TestStructurePlacementSingleAnyNotOrigin" methodname="TestStructurePlacementSingleAnyNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="1765839341" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000621" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1065" name="TestStructurePlacementSingleFailBadBounds" fullname="Tests.TestStructure.TestStructurePlacementSingleFailBadBounds" methodname="TestStructurePlacementSingleFailBadBounds" classname="Tests.TestStructure" runstate="Runnable" seed="1036553453" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000599" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1066" name="TestStructurePlacementSingleFailBadBoundsNotOrigin" fullname="Tests.TestStructure.TestStructurePlacementSingleFailBadBoundsNotOrigin" methodname="TestStructurePlacementSingleFailBadBoundsNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="114606075" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000604" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1069" name="TestStructurePlacementSingleNoOverride" fullname="Tests.TestStructure.TestStructurePlacementSingleNoOverride" methodname="TestStructurePlacementSingleNoOverride" classname="Tests.TestStructure" runstate="Runnable" seed="738663200" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000704" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1070" name="TestStructurePlacementSingleNoOverrideNotOrigin" fullname="Tests.TestStructure.TestStructurePlacementSingleNoOverrideNotOrigin" methodname="TestStructurePlacementSingleNoOverrideNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="1195046248" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000669" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1063" name="TestStructurePlacementSingleNotOrigin" fullname="Tests.TestStructure.TestStructurePlacementSingleNotOrigin" methodname="TestStructurePlacementSingleNotOrigin" classname="Tests.TestStructure" runstate="Runnable" seed="1468139885" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000636" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1064" name="TestStructurePlacementSingleNotOriginTightBounds" fullname="Tests.TestStructure.TestStructurePlacementSingleNotOriginTightBounds" methodname="TestStructurePlacementSingleNotOriginTightBounds" classname="Tests.TestStructure" runstate="Runnable" seed="31133952" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000648" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1062" name="TestStructurePlacementSingleTightBounds" fullname="Tests.TestStructure.TestStructurePlacementSingleTightBounds" methodname="TestStructurePlacementSingleTightBounds" classname="Tests.TestStructure" runstate="Runnable" seed="523875815" result="Passed" start-time="2020-10-29 18:32:51Z" end-time="2020-10-29 18:32:51Z" duration="0.000606" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

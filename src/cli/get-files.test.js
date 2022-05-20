@@ -17,6 +17,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/invalid.xml'),
   path.resolve(__dirname, '../../data/issue_2.xml'),
   path.resolve(__dirname, '../../data/issue_3.xml'),
+  path.resolve(__dirname, '../../data/lots-of-results.xml'),
   path.resolve(__dirname, '../../data/malformed.xml'),
   path.resolve(__dirname, '../../data/most_complex.xml'),
   path.resolve(__dirname, '../../data/multi-name-unique-classname.xml'),
@@ -35,7 +36,9 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/suite-system-out.xml'),
   path.resolve(__dirname, '../../data/test-system-out.xml'),
   path.resolve(__dirname, '../../data/test.xml'),
-  path.resolve(__dirname, '../../data/with_html.xml')
+  path.resolve(__dirname, '../../data/with_html.xml'),
+  path.resolve(__dirname, '../../data/xunit-2-2.xml'),
+  path.resolve(__dirname, '../../data/xunit-2.xml')
 ]
 
 test('get files', () => {

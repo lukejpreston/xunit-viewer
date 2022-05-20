@@ -98,8 +98,8 @@ const App = ({ files, title, brand }) => {
     </header>
     <main>
       <div className='container'>
-        {state.error && <Error error={state.error} />}
-        {state.error === null && Object.values(state.currentSuites).length === 0 && <Loading />}
+        {state.errors && <Error errors={state.errors} />}
+        {state.errors === null && Object.values(state.currentSuites).length === 0 && <Loading />}
         {Object.values(state.currentSuites).length > 0 && <div>
           {
             Object.values(state.currentSuites)
