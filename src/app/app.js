@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import Files from './files'
 import Hero from './hero'
 import initialState from './initial-state.json'
@@ -8,10 +8,14 @@ import reducer from './reducer'
 import Suite from './suite'
 import SuiteOptions from './suite-options'
 import TestOptions from './test-options'
+import Error from './error'
 
 const App = ({ files, title, brand }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
+
+  useEffect(() => {
+    if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
+  }, [files])
 
   let currentPropertiesCount = 0
   let propertiesTotal = 0
@@ -93,7 +97,8 @@ const App = ({ files, title, brand }) => {
     </header>
     <main>
       <div className='container'>
-        <div>
+        {state.error && <Error error={state.error} />}
+        {Object.values(state.currentSuites).length > 0 && <div>
           {
             Object.values(state.currentSuites)
               .sort((left, right) => {
@@ -104,6 +109,7 @@ const App = ({ files, title, brand }) => {
               .map(suite => <Suite key={suite.id} {...suite} visible={suite._visible} dispatch={dispatch} />)
           }
         </div>
+        }
       </div>
     </main>
   </div>

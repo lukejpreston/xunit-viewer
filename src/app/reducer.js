@@ -32,6 +32,12 @@ export default (state, { type, payload }) => {
   let update = {}
   update.currentSuites = state.currentSuites
 
+  if (type === 'parse-error') {
+    state = merge.recursive(true, {}, state)
+    state.error = payload.error
+    return state
+  }
+
   if (type === 'parse-suites') {
     state = merge.recursive(true, {}, state)
     state.suites = payload.suites
