@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="13" failures="0" errors="0" time="4.88">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:03" time="1.033" tests="1">
-    <testcase classname=" renders suite" name=" renders suite" time="0.021">
+<testsuites name="jest tests" tests="13" failures="0" errors="0" time="5.824">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="1.603" tests="1">
+    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.141">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:03" time="1.038" tests="1">
-    <testcase classname=" renders test options" name=" renders test options" time="0.082">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="1.748" tests="1">
+    <testcase classname=" renders toggle" name=" renders toggle" time="0.016">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:03" time="1.259" tests="1">
-    <testcase classname=" get suites" name=" get suites" time="0.31">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="1.92" tests="1">
+    <testcase classname=" get description" name=" get description" time="0.01">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:04" time="0.305" tests="1">
-    <testcase classname=" renders logo" name=" renders logo" time="0.005">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="1.733" tests="1">
+    <testcase classname=" renders suite options" name=" renders suite options" time="0.047">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:03" time="1.378" tests="1">
-    <testcase classname=" get description" name=" get description" time="0.032">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="1.858" tests="1">
+    <testcase classname=" renders suite" name=" renders suite" time="0.151">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:04" time="0.613" tests="1">
-    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.126">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="2.082" tests="1">
+    <testcase classname=" renders test options" name=" renders test options" time="0.121">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:04" time="0.514" tests="1">
-    <testcase classname=" renders suite options" name=" renders suite options" time="0.018">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:15" time="0.436" tests="1">
+    <testcase classname=" renders logo" name=" renders logo" time="0.004">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:05" time="0.244" tests="1">
-    <testcase classname=" renders properties options" name=" renders properties options" time="0.005">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:15" time="0.705" tests="1">
+    <testcase classname=" renders files" name=" renders files" time="0.173">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:04" time="0.478" tests="1">
-    <testcase classname=" renders toggle" name=" renders toggle" time="0.015">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:16" time="0.331" tests="1">
+    <testcase classname=" get files" name=" get files" time="0.023">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:04" time="0.436" tests="1">
-    <testcase classname=" renders files" name=" renders files" time="0.004">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:14" time="2.209" tests="1">
+    <testcase classname=" get suites" name=" get suites" time="0.547">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:05" time="0.266" tests="2">
-    <testcase classname=" renders hero" name=" renders hero" time="0.003">
-    </testcase>
-    <testcase classname=" renders hero with title and brand" name=" renders hero with title and brand" time="0.002">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:16" time="0.477" tests="1">
+    <testcase classname=" renders properties options" name=" renders properties options" time="0.01">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:55:05" time="0.237" tests="1">
-    <testcase classname=" get files" name=" get files" time="0.021">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-20T11:56:16" time="0.476" tests="2">
+    <testcase classname=" renders hero" name=" renders hero" time="0.065">
+    </testcase>
+    <testcase classname=" renders hero with title and brand" name=" renders hero with title and brand" time="0.003">
     </testcase>
   </testsuite>
 </testsuites>
