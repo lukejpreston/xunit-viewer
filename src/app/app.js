@@ -9,6 +9,7 @@ import Suite from './suite'
 import SuiteOptions from './suite-options'
 import TestOptions from './test-options'
 import Error from './error'
+import Loading from './loading'
 
 const App = ({ files, title, brand }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -98,6 +99,7 @@ const App = ({ files, title, brand }) => {
     <main>
       <div className='container'>
         {state.error && <Error error={state.error} />}
+        {state.error === null && Object.values(state.currentSuites).length === 0 && <Loading />}
         {Object.values(state.currentSuites).length > 0 && <div>
           {
             Object.values(state.currentSuites)
