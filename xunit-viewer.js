@@ -9,16 +9,16 @@ const watch = require('./src/cli/watch')
 const server = require('./src/cli/server')
 const getSuites = require('./src/cli/get-suites')
 const getDescription = require('./src/cli/get-description')
+const { ResultsNotFoundError } = require('./src/errors')
 
-module.exports = async (args) => {
+module.exports = async args => {
   const logger = Logger(args.noColor)
 
   const results = args.results
   if (!fs.existsSync(results)) {
-    const { showHelp } = require('./src/cli/args')
-    showHelp()
-    console.log(logger.error('\n The folder/file:'), logger.file(results), logger.error('does not exist'))
-    process.exit(1)
+    throw new ResultsNotFoundError(
+      `${logger.error('The folder/file:')} ${logger.file(results)} ${logger.error('does not exist')}`
+    )
   }
 
   const runXunitViewer = async () => {
@@ -31,7 +31,6 @@ module.exports = async (args) => {
       const outputFile = path.resolve(process.cwd(), args.output)
       fs.writeFileSync(outputFile, result)
       console.log('Written to:', logger.file(outputFile))
-      if (!args.server) process.exit(0)
     }
   }
 

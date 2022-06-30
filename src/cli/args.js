@@ -1,8 +1,25 @@
 const path = require('path')
 const yargs = require('yargs')
+const xunitViewer = require('../../xunit-viewer')
+const { ResultsNotFoundError } = require('../errors')
 
 const instance = yargs
-  .command('xunit-viewer', 'Renders Xunit style xml results')
+  .wrap(yargs.terminalWidth())
+  .command('$0 [opts]', 'Renders Xunit style xml results', {}, async argv =>
+    xunitViewer(argv)
+      .then(_ => {
+        if (!argv.server && !argv.watch) process.exit(0)
+      })
+      .catch(error => {
+        if (error instanceof ResultsNotFoundError) {
+          console.error(error.message, '\n')
+          yargs.showHelp()
+          process.exit(1)
+        } else {
+          throw error
+        }
+      })
+  )
   .example('xunit-viewer -r file.xml', 'a file')
   .example('xunit-viewer -r folder', 'a folder')
   .example('xunit-viewer -r folder -i *-broke.xml', 'ignore')
@@ -18,7 +35,7 @@ const instance = yargs
   // .example('xunit-viewer -r folder --s.s "value"', 'search suite with term "value"')
 
   .string('results')
-  .coerce('results', (arg) => path.resolve(process.cwd(), arg))
+  .coerce('results', arg => path.resolve(process.cwd(), arg))
   .alias('r', 'results')
   .describe('r', 'File/Folder of results')
   .demandOption(['results'])
@@ -29,7 +46,7 @@ const instance = yargs
 
   .string('output')
   .default('output', 'index.html')
-  .coerce('output', (arg) => {
+  .coerce('output', arg => {
     if (arg === 'false') return false
     return path.resolve(process.cwd(), arg.endsWith('.html') ? arg : `${arg}.html`)
   })
@@ -72,7 +89,10 @@ const instance = yargs
 
   .number('port')
   .alias('p', 'port')
-  .describe('p', 'Starts a server with sockets on that port, if no port is provided then it will run on port 3000 (or next available)')
+  .describe(
+    'p',
+    'Starts a server with sockets on that port, if no port is provided then it will run on port 3000 (or next available)'
+  )
 
 // .string('properties.search')
 // .alias('p.s', 'properties.search')
@@ -115,5 +135,4 @@ const instance = yargs
 
 instance.help()
 
-module.exports.args = instance.argv
-module.exports.showHelp = instance.showHelp
+module.exports = instance
