@@ -74,7 +74,7 @@ Examples:
 
 ## Usage, Node
 
-Xunit Viewer is asynchronous so you may need to wrap it up like so
+Xunit Viewer is asynchronous so you may need to wrap it up like so. **NOTE** The `script` parameter which will skip all Xunit Viewer's exit codes.
 
 ```js
 const xunitViewer = require('xunit-viewer')
@@ -85,7 +85,8 @@ const main = async () => {
     results: 'data',
     ignore: ['_thingy', 'invalid'],
     title: 'Xunit View Sample Tests',
-    output: 'output.html'
+    output: 'output.html',
+    script: true 
   })
 }
 main()
@@ -101,7 +102,8 @@ xunitViewer({
   results: 'data',
   ignore: ['_thingy', 'invalid'],
   title: 'Xunit View Sample Tests',
-  output: 'output.html'
+  output: 'output.html',
+  script: true 
 })
 ```
 
