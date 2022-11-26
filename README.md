@@ -1,3 +1,10 @@
+# Roadmap
+
+* Fail-first sorting, i.e. ability to view failed tests at the top
+* Opinionated config UX instead of 8x3 grid of switches/checkboxes. Make config tweak behaviour more intuitive (e.g. hide items completely if user chooses to hide them)
+  * Also make config component accessible from every scroll position, so that user doesn't have to scroll to the top to access it
+* Maybe: sidebar with the ability to preview and leap to a test suite, to add the ability to quickly navigate the document
+
 # Xunit Viewer
 
 Takes all your XUnit and JUnit XML files and makes them readable

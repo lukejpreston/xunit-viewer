@@ -91,6 +91,7 @@ const App = ({ files, title, brand }) => {
           total={propertiesTotal}
           dispatch={dispatch}
         />
+        {/* TODO: figure out what this does in development */}
         {process.env.NODE_ENV === 'development'
           ? <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
           : null}
