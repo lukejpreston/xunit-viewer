@@ -344,7 +344,7 @@ body,
     margin: 8px 0;
 }
 
-.suite:first-child {
+.suites {
     margin-top: 32px !important;
 }
 
