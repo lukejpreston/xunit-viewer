@@ -1,5 +1,4 @@
 import React from 'react'
-import RenderIfVisible from 'react-render-if-visible'
 import Toggle from './toggle.js'
 
 const icons = {
@@ -73,7 +72,6 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
   const hasProperties = properties._visible & Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const hasMessage = messages.length > 0
   return (
-    <RenderIfVisible>
       <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${!hasMessage && !hasProperties ? 'empty' : 'populated'}`}>
         <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={!hasMessage && !hasProperties}>
           <p className='card-header-title'>
@@ -118,7 +116,6 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
             : null}
         </div>
       </div>
-    </RenderIfVisible>
   )
 }
 
@@ -150,7 +147,6 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return (
-    <RenderIfVisible>
       <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'} is-${visible ? 'visible' : 'hidden'}`}>
         <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id, active: !active } }) }} disabled={!containsSomething}>
           <p className='card-header-title'>
@@ -211,7 +207,6 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
           </div>
           : null}
       </div>
-    </RenderIfVisible>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import 'bulma/css/bulma.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
@@ -33,4 +33,9 @@ files = files.map(({ file, contents }) => ({
   contents: LZUTF8.decompress(contents, { inputEncoding: 'Base64' })
 }))
 
-ReactDOM.render(<App files={files} title={title} brand={brand} />, document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <App files={files} title={title} brand={brand} />
+  </React.StrictMode>
+)
