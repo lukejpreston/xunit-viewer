@@ -1,5 +1,5 @@
 import React from 'react'
-import Toggle from './toggle'
+import Toggle from './toggle.js'
 
 const Search = ({ label, dispatch }) => <div className='field options-search'>
   <div className='control'>

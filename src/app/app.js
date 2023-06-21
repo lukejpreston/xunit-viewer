@@ -1,22 +1,22 @@
 import React, { useReducer, useEffect } from 'react'
 // import Files from './files'
-import Hero from './hero'
+import Hero from './hero.js'
 import initialState from './initial-state.json'
-import parseAll from './parse-all'
-import PropertiesOptions from './properties-options'
-import reducer from './reducer'
-import Suite from './suite'
-import SuiteOptions from './suite-options'
-import TestOptions from './test-options'
-import Error from './error'
-import Loading from './loading'
+import parseAll from './parse-all.js'
+import PropertiesOptions from './properties-options.js'
+import reducer from './reducer.js'
+import Suite from './suite.js'
+import SuiteOptions from './suite-options.js'
+import TestOptions from './test-options.js'
+import Error from './error.js'
+import Loading from './loading.js'
 
 const App = ({ files, title, brand }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
     if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
-  }, [files])
+  }, [files, state.suites])
 
   let currentPropertiesCount = 0
   let propertiesTotal = 0

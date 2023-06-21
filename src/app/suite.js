@@ -1,6 +1,6 @@
 import React from 'react'
 import RenderIfVisible from 'react-render-if-visible'
-import Toggle from './toggle'
+import Toggle from './toggle.js'
 
 const icons = {
   passed: 'check',

@@ -5,7 +5,7 @@ set -e
 npm run lint
 npm run build:cli
 npm run test:ci
-./bin/xunit-viewer -r junit.xml -c -C false
+./bin/xunit-viewer.js -r junit.xml -c -C false
 CURRENT=$(echo $(npm version | grep xunit-viewer | cut -d"'" -f4))
 git commit -am "tested $CURRENT"
 

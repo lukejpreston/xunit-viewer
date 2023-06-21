@@ -1,5 +1,5 @@
 import merge from 'merge'
-import parse from './parse'
+import parse from './parse.js'
 
 export default async (dispatch, files, suites) => {
   for (const { file, contents } of files) {

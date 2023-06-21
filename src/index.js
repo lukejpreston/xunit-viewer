@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bulma/css/bulma.css'
-import '@fortawesome/fontawesome-free/js/all'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 import './app/index.css'
 import App from './app/app.js'
