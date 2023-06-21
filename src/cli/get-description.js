@@ -1,4 +1,4 @@
-module.exports = (suites) => {
+export default (suites) => {
   const testCounts = {}
   Object.values(suites.suites).forEach((suite) => {
     Object.values(suite.tests).forEach((test) => {

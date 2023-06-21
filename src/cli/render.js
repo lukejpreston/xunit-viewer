@@ -1,7 +1,11 @@
-const fs = require('fs')
-const path = require('path')
-const Handlebars = require('handlebars')
-const LZUTF8 = require('lzutf8')
+import fs from 'fs'
+import path from 'path'
+import Handlebars from 'handlebars'
+import LZUTF8 from 'lzutf8'
+
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const staticDir = path.resolve(__dirname, './static')
 
@@ -13,7 +17,7 @@ const getHTML = (type) => {
     .join('\n')
 }
 
-module.exports = (logger, files, description, { title = 'Xunit Viewer', brand, favicon }, useSockets = false) => {
+export default (logger, files, description, { title = 'Xunit Viewer', brand, favicon }, useSockets = false) => {
   const scripts = getHTML('js')
   const styles = getHTML('css')
 

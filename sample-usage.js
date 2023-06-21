@@ -1,4 +1,4 @@
-const xunitViewer = require('./xunit-viewer')
+import xunitViewer from './xunit-viewer'
 
 xunitViewer({
   server: false,

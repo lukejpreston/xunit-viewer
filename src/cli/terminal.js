@@ -1,4 +1,4 @@
-const clear = require('console-clear')
+import clear from 'console-clear'
 
 const statusRank = [
   'failure',
@@ -8,7 +8,7 @@ const statusRank = [
   'unknown'
 ]
 
-module.exports = (output, logger, description, args) => {
+export default (output, logger, description, args) => {
   const { suites } = output
   if (args.clear) clear()
   Object.values(suites)

@@ -1,6 +1,5 @@
-const path = require('path')
-
-const getFiles = require('./get-files')
+import path from 'path'
+import getFiles from './get-files'
 
 const expectedFiles = [
   path.resolve(__dirname, '../../data/class_not_classname.xml'),

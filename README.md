@@ -77,7 +77,7 @@ Examples:
 Xunit Viewer is asynchronous so you may need to wrap it up like so. **NOTE** The `script` parameter which will skip all Xunit Viewer's exit codes.
 
 ```js
-const xunitViewer = require('xunit-viewer')
+import xunitViewer from 'xunit-viewer'
 
 const main = async () => {
   await xunitViewer({
@@ -95,7 +95,7 @@ main()
 If you are going to run it from a script with no other code
 
 ```js
-const xunitViewer = require('xunit-viewer')
+import xunitViewer from 'xunit-viewer'
 
 xunitViewer({
   server: false,

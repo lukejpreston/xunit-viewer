@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from 'react'
-import Files from './files'
+// import Files from './files'
 import Hero from './hero'
 import initialState from './initial-state.json'
 import parseAll from './parse-all'
@@ -91,9 +91,6 @@ const App = ({ files, title, brand }) => {
           total={propertiesTotal}
           dispatch={dispatch}
         />
-        {process.env.NODE_ENV === 'development'
-          ? <Files files={files} active={state.activeFiles} setActive={() => { dispatch({ type: 'toggle-files' }) }} />
-          : null}
       </div>
     </header>
     <main>

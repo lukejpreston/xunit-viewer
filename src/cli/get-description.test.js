@@ -1,12 +1,11 @@
 import fs from 'fs'
 import path from 'path'
+import getDescription from './get-description.js'
 import './parse'
 
 const parse = window.parse
 
 const dataDir = path.resolve(__dirname, '../../data')
-
-const getDescription = require('./get-description')
 
 test('get description', async () => {
   const data = path.join(dataDir, '/test.xml')

@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 const getFiles = (logger, ignore, folder, files = []) => {
   if (fs.lstatSync(folder).isDirectory()) {
@@ -16,7 +16,7 @@ const getFiles = (logger, ignore, folder, files = []) => {
   return Array.from(new Set(files))
 }
 
-module.exports = (logger, { results, ignore = [] }) => {
+export default (logger, { results, ignore = [] }) => {
   const files = getFiles(logger, ignore, results)
   return files.map(file => ({
     file,

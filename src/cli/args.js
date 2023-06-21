@@ -1,7 +1,8 @@
-const path = require('path')
-const yargs = require('yargs')
+import path from 'path'
+import yargs from 'yargs/yargs'
+import { hideBin } from 'yargs/helpers'
 
-const instance = yargs
+const instance = yargs(hideBin(process.argv))
   .command('xunit-viewer', 'Renders Xunit style xml results')
   .example('xunit-viewer -r file.xml', 'a file')
   .example('xunit-viewer -r folder', 'a folder')
@@ -115,5 +116,5 @@ const instance = yargs
 
 instance.help()
 
-module.exports.args = instance.argv
-module.exports.showHelp = instance.showHelp
+export const args = instance.argv
+export const showHelp = instance.showHelp

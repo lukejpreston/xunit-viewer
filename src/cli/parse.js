@@ -1,4 +1,4 @@
-const xml2js = require('xml2js')
+import xml2js from 'xml2js'
 
 const statusRank = [
   'failure',
@@ -202,6 +202,5 @@ const parse = async (xml) => {
 }
 
 if (typeof window !== 'undefined') window.parse = parse
-else {
-  module.exports = parse
-}
+
+export default parse

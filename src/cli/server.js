@@ -1,15 +1,18 @@
-const getPort = require('get-port')
-const ip = require('ip')
-const getFiles = require('./get-files')
-const render = require('./render')
-const getSuites = require('./get-suites')
-const getDescription = require('./get-description')
-const watch = require('./watch')
+import express from 'express'
+import getPort from 'get-port'
+import HTTP from 'http'
+import ip from 'ip'
+import { Server } from 'socket.io'
+import getDescription from './get-description.js'
+import getFiles from './get-files.js'
+import getSuites from './get-suites.js'
+import render from './render.js'
+import watch from './watch.js'
 
-module.exports = async (logger, args) => {
-  const app = require('express')()
-  const http = require('http').createServer(app)
-  const io = require('socket.io')(http)
+export default async (logger, args) => {
+  const app = express()
+  const http = HTTP.createServer(app)
+  const io = new Server(http)
 
   app.get('/', async (req, res) => {
     const files = getFiles(logger, args)

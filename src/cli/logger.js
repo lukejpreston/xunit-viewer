@@ -1,6 +1,6 @@
-const chalk = require('chalk')
+import chalk from 'chalk'
 
-module.exports = (noColor) => ({
+export default (noColor) => ({
   server: (message, address) => {
     if (noColor) return `${message} ${address}`
     return `${chalk.bold(message)} ${chalk.underline.blueBright(address)}`

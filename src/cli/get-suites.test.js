@@ -1,8 +1,7 @@
-const path = require('path')
-
-const getFiles = require('./get-files')
-const getSuites = require('./get-suites')
-const expected = require('./get-suites-expected.json')
+import path from 'path'
+import getFiles from './get-files'
+import getSuites from './get-suites'
+import expected from './get-suites-expected.json'
 
 const logger = {
   warning: input => input,

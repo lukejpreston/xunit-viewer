@@ -1,7 +1,7 @@
-const chokidar = require('chokidar')
-const debounce = require('debounce')
+import chokidar from 'chokidar'
+import debounce from 'debounce'
 
-module.exports = ({ results }, cb) => {
+export default ({ results }, cb) => {
   cb = debounce(cb)
   chokidar.watch(results)
     .on('all', (event, path) => {

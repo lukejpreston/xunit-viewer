@@ -1,21 +1,20 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
+import getDescription from './src/cli/get-description.js'
+import getFiles from './src/cli/get-files.js'
+import getSuites from './src/cli/get-suites.js'
+import Logger from './src/cli/logger.js'
+import render from './src/cli/render.js'
+import server from './src/cli/server.js'
+import terminal from './src/cli/terminal.js'
+import watch from './src/cli/watch.js'
 
-const Logger = require('./src/cli/logger')
-const getFiles = require('./src/cli/get-files')
-const terminal = require('./src/cli/terminal')
-const render = require('./src/cli/render')
-const watch = require('./src/cli/watch')
-const server = require('./src/cli/server')
-const getSuites = require('./src/cli/get-suites')
-const getDescription = require('./src/cli/get-description')
-
-module.exports = async (args) => {
+export default async (args) => {
   const logger = Logger(args.noColor)
 
   const results = args.results
   if (!fs.existsSync(results)) {
-    const { showHelp } = require('./src/cli/args')
+    const { showHelp } = import('./src/cli/args.js')
     showHelp()
     console.log(logger.error('\n The folder/file:'), logger.file(results), logger.error('does not exist'))
     if (!args.script) process.exit(1)
