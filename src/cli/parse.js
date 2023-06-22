@@ -91,7 +91,7 @@ const extractTestMessages = (test, messages) => {
   })
 }
 
-const extractTests = (output, suite, testcases) => {
+const extractTests = (output, suite, testcases, defaultVisibility) => {
   suite.tests = suite.tests || {}
   testcases.forEach(testcase => {
     const meta = testcase.$ || {}
@@ -150,8 +150,9 @@ const extractTests = (output, suite, testcases) => {
 
     test.messages = test.messages.filter(message => message !== '')
 
+    test.visible = defaultVisibility[test.status]
     suite.tests[id] = test
-    if (typeof testcase.testcase !== 'undefined') extractTests(output, suite, testcase.testcase)
+    if (typeof testcase.testcase !== 'undefined') extractTests(output, suite, testcase.testcase, defaultVisibility)
     if (typeof testcase.testsuite !== 'undefined') extractSuite(output, testcase.testsuite)
   })
 }
@@ -163,35 +164,35 @@ const extractSystemOut = (suite, testsuite) => {
   suite.systemOut = suite.systemOut.concat(systemOut)
 }
 
-const extractSuite = (output, testsuites) => {
+const extractSuite = (output, testsuites, defaultVisibility) => {
   if (!Array.isArray(testsuites)) testsuites = [testsuites]
   testsuites.forEach(testsuite => {
     const suite = extarctSuiteMeta(output, testsuite)
     if (typeof testsuite.properties !== 'undefined') extractProperties(suite, testsuite.properties)
-    if (typeof testsuite.testcase !== 'undefined') extractTests(output, suite, testsuite.testcase)
+    if (typeof testsuite.testcase !== 'undefined') extractTests(output, suite, testsuite.testcase, defaultVisibility)
     if (typeof testsuite['system-out'] !== 'undefined') extractSystemOut(suite, testsuite)
     output.suites[suite.id] = suite
   })
 }
 
-const extract = (output, testsuites) => {
+const extract = (output, testsuites, defaultVisibility) => {
   if (!Array.isArray(testsuites)) testsuites = [testsuites]
   testsuites.forEach(testsuite => {
-    extractSuite(output, testsuite)
+    extractSuite(output, testsuite, defaultVisibility)
     if (typeof testsuite.testsuite !== 'undefined') extract(output, testsuite.testsuite)
   })
 }
 
-const parse = async (xml) => {
+const parse = async (xml, defaultVisibility = { passed: true, failure: true, skipped: true, unknown: true, error: true }) => {
   const output = {
     suites: {}
   }
   const result = await parseString(xml)
   if (result.testsuites) {
     const testsuites = result.testsuites.testsuite
-    extract(output, testsuites)
+    extract(output, testsuites, defaultVisibility)
   } else if (result.testsuite) {
-    extract(output, result.testsuite)
+    extract(output, result.testsuite, defaultVisibility)
   }
 
   for (const value of Object.values(output.suites)) {

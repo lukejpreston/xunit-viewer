@@ -1,4 +1,10 @@
 {
+    "hero": {
+      "burger": false,
+      "dropdown": false,
+      "fastFilter": 0
+    },
+    "printMode": false,
     "error": null,
     "suites": {},
     "currentSuites": {},
@@ -21,14 +27,14 @@
     },
     "testToggles": {
       "all": {
-        "visible": true,
-        "expanded": true,
-        "raw": true
+        "visible": false,
+        "expanded": false,
+        "raw": false
       },
       "passed": {
-        "visible": true,
-        "expanded": true,
-        "raw": true
+        "visible": false,
+        "expanded": false,
+        "raw": false
       },
       "failure": {
         "visible": true,
@@ -41,9 +47,9 @@
         "raw": true
       },
       "skipped": {
-        "visible": true,
-        "expanded": true,
-        "raw": true
+        "visible": false,
+        "expanded": false,
+        "raw": false
       },
       "unknown": {
         "visible": true,

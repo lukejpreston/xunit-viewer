@@ -164,3 +164,17 @@ To help debug any issues please provide the following info
 * browser
 * sample xml
 
+
+TODO
+
+1. Add test count to header
+    TEST COUNT :TICK: 1/1 ...
+2. Release v9
+3. Add react router for filtering
+4. Release v10
+5. Fix CLI filtering
+6. Release v11
+7. Refactorings
+    * Split components into files
+    * Split reducer into files
+    * Test all the things

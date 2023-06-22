@@ -1,45 +1,493 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="11" failures="0" errors="0" time="1.285">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:03" time="0.4" tests="1">
-    <testcase classname=" get suites" name=" get suites" time="0.25">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:03" time="0.05" tests="1">
-    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.005">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:03" time="0.054" tests="1">
-    <testcase classname=" renders toggle" name=" renders toggle" time="0.004">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:03" time="0.053" tests="1">
-    <testcase classname=" renders test options" name=" renders test options" time="0.007">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:04" time="0.051" tests="1">
-    <testcase classname=" renders suite options" name=" renders suite options" time="0.006">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:04" time="0.05" tests="1">
-    <testcase classname=" renders logo" name=" renders logo" time="0.005">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:04" time="0.052" tests="1">
-    <testcase classname=" renders properties options" name=" renders properties options" time="0.006">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:04" time="0.049" tests="1">
+<testsuites name="jest tests" tests="5" failures="5" errors="0" time="1.449">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2023-06-22T15:48:29" time="0.35" tests="1">
     <testcase classname=" get description" name=" get description" time="0.004">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;passed&apos;)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:153:37)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractTests (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:96:13)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:172:52)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractSuite (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:169:14)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:156:52)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractTests (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:96:13)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:172:52)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractSuite (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:169:14)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:181:5)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extract (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:180:14)
+    at parse (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:193:5)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.&lt;anonymous&gt; (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/get-description.test.js:12:18)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:04" time="0.054" tests="2">
-    <testcase classname=" renders hero" name=" renders hero" time="0.005">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2023-06-22T15:48:29" time="0.35" tests="1">
+    <testcase classname=" complete multi suites" name=" complete multi suites" time="0.004">
+      <failure>TypeError: Cannot read properties of undefined (reading &apos;passed&apos;)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:153:37)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractTests (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:96:13)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:172:52)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractSuite (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:169:14)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:156:52)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractTests (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:96:13)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:172:52)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extractSuite (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:169:14)
+    at forEach (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:181:5)
+    at Array.forEach (&lt;anonymous&gt;)
+    at extract (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:180:14)
+    at parse (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.js:193:5)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Object.&lt;anonymous&gt; (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/parse.test.js:11:18)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="2" skipped="0" timestamp="2023-06-22T15:48:29" time="0.366" tests="2">
+    <testcase classname=" renders hero" name=" renders hero" time="0.01">
+      <failure>TypeError: Cannot convert undefined or null to object
+    at Function.values (&lt;anonymous&gt;)
+    at Hero (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/app/hero.js:77:30)
+    at renderWithHooks (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:6351:18)
+    at mountIndeterminateComponent (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9855:13)
+    at beginWork (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:11312:16)
+    at performUnitOfWork (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15811:12)
+    at workLoopSync (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15745:5)
+    at renderRootSync (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15717:7)
+    at performSyncWorkOnRoot (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15422:20)
+    at flushSyncCallbacks (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:2597:22)
+    at flushSyncCallbacksOnlyInLegacyMode (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:2576:5)
+    at scheduleUpdateOnFiber (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:14910:7)
+    at updateContainer (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:17770:5)
+    at Object.create (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:18510:3)
+    at Object.&lt;anonymous&gt; (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/app/hero.test.js:6:25)
+    at Promise.then.completed (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:66:9)
+    at run (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-runner/build/runTest.js:475:34)
+    at Object.worker (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-runner/build/testWorker.js:133:12)</failure>
     </testcase>
     <testcase classname=" renders hero with title and brand" name=" renders hero with title and brand" time="0">
+      <failure>TypeError: Cannot convert undefined or null to object
+    at Function.values (&lt;anonymous&gt;)
+    at Hero (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/app/hero.js:77:30)
+    at renderWithHooks (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:6351:18)
+    at mountIndeterminateComponent (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:9855:13)
+    at beginWork (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:11312:16)
+    at performUnitOfWork (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15811:12)
+    at workLoopSync (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15745:5)
+    at renderRootSync (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15717:7)
+    at performSyncWorkOnRoot (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15422:20)
+    at flushSyncCallbacks (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:2597:22)
+    at flushSyncCallbacksOnlyInLegacyMode (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:2576:5)
+    at scheduleUpdateOnFiber (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:14910:7)
+    at updateContainer (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:17770:5)
+    at Object.create (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:18510:3)
+    at Object.&lt;anonymous&gt; (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/app/hero.test.js:11:25)
+    at Promise.then.completed (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:66:9)
+    at run (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-runner/build/runTest.js:475:34)
+    at Object.worker (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/node_modules/jest-runner/build/testWorker.js:133:12)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-06-21T15:39:04" time="0.041" tests="1">
-    <testcase classname=" get files" name=" get files" time="0.004">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2023-06-22T15:48:29" time="0.919" tests="1">
+    <testcase classname=" get suites" name=" get suites" time="0.539">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 305
++ Received  +   0
+
+@@ -1324,34 +1324,10 @@
+            &quot;visible&quot;: true,
+          },
+        },
+        &quot;time&quot;: 0,
+      },
+-     &quot;-1028948070&quot;: Object {
+-       &quot;_visible&quot;: true,
+-       &quot;id&quot;: -1028948070,
+-       &quot;name&quot;: &quot;suite with duplicate tests&quot;,
+-       &quot;properties&quot;: Object {
+-         &quot;_visible&quot;: true,
+-       },
+-       &quot;systemOut&quot;: Array [],
+-       &quot;tests&quot;: Object {
+-         &quot;-1387098835&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -1387098835,
+-           &quot;messages&quot;: Array [
+-             &quot;message 1&quot;,
+-             &quot;message 2&quot;,
+-           ],
+-           &quot;name&quot;: &quot;testcase duplicate&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: 0,
+-     },
+      &quot;-1035817293&quot;: Object {
+        &quot;_visible&quot;: true,
+        &quot;id&quot;: -1035817293,
+        &quot;name&quot;: &quot;suite name&quot;,
+        &quot;properties&quot;: Object {
+@@ -12502,208 +12478,19 @@
+              &quot;result&quot;: Array [
+                &quot;completed&quot;,
+              ],
+              &quot;status&quot;: Array [
+                &quot;run&quot;,
+-             ],
+-           },
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: 0,
+-     },
+-     &quot;-1861124854&quot;: Object {
+-       &quot;_visible&quot;: true,
+-       &quot;id&quot;: -1861124854,
+-       &quot;name&quot;: &quot;suite 2&quot;,
+-       &quot;properties&quot;: Object {
+-         &quot;_visible&quot;: true,
+-       },
+-       &quot;systemOut&quot;: Array [],
+-       &quot;tests&quot;: Object {
+-         &quot;-1146345790&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -1146345790,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;testcase&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: 0,
+-     },
+-     &quot;-1861124855&quot;: Object {
+-       &quot;_visible&quot;: true,
+-       &quot;id&quot;: -1861124855,
+-       &quot;name&quot;: &quot;suite 1&quot;,
+-       &quot;properties&quot;: Object {
+-         &quot;No Name&quot;: Array [
+-           &quot;value with no name&quot;,
+-           &quot;value only&quot;,
+-         ],
+-         &quot;_visible&quot;: true,
+-         &quot;name only&quot;: Array [],
+-         &quot;prop 1&quot;: Array [
+-           &quot;value 1&quot;,
+-           &quot;value 2&quot;,
+-         ],
+-         &quot;prop 2&quot;: Array [
+-           &quot;value&quot;,
+-         ],
+-         &quot;seperate props&quot;: Array [
+-           &quot;value&quot;,
+-         ],
+-       },
+-       &quot;systemOut&quot;: Array [],
+-       &quot;tests&quot;: Object {
+-         &quot;-1154650731&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -1154650731,
+-           &quot;messages&quot;: Array [
+-             &quot;inner massage 1&quot;,
+-             &quot;message prop 1&quot;,
+-             &quot;inner massage 2&quot;,
+-             &quot;message prop 2&quot;,
+              ],
+-           &quot;name&quot;: &quot;skiping test with messages&quot;,
+-           &quot;status&quot;: &quot;skipped&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+            },
+-         &quot;-198845521&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -198845521,
+-           &quot;messages&quot;: Array [
+-             &quot;failure inner massage 2&quot;,
+-             &quot;failure message prop 2&quot;,
+-             &quot;error inner massage 1&quot;,
+-             &quot;error message prop 1&quot;,
+-           ],
+-           &quot;name&quot;: &quot;error and failure test with messages&quot;,
+-           &quot;status&quot;: &quot;failure&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;-232186498&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -232186498,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;test with sub test&quot;,
+            &quot;status&quot;: &quot;passed&quot;,
+            &quot;time&quot;: 0,
+            &quot;visible&quot;: true,
+          },
+-         &quot;-579348086&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -579348086,
+-           &quot;messages&quot;: Array [
+-             &quot;only a message&quot;,
+-           ],
+-           &quot;name&quot;: &quot;No Name&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+        },
+-         &quot;-986143044&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -986143044,
+-           &quot;messages&quot;: Array [
+-             &quot;HERE IS SOME TEXT&quot;,
+-             &quot;inner massage 1&quot;,
+-             &quot;message prop 1&quot;,
+-           ],
+-           &quot;name&quot;: &quot;test passed with messages and free text&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+        &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+      },
+-         &quot;1350225396&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 1350225396,
+-           &quot;messages&quot;: Array [
+-             &quot;inner massage 1&quot;,
+-             &quot;message prop 1&quot;,
+-             &quot;inner massage 2&quot;,
+-             &quot;message prop 2&quot;,
+-           ],
+-           &quot;name&quot;: &quot;failing test with messages&quot;,
+-           &quot;status&quot;: &quot;failure&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;1443479640&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 1443479640,
+-           &quot;messages&quot;: Array [
+-             &quot;inner message&quot;,
+-             &quot;message prop&quot;,
+-           ],
+-           &quot;name&quot;: &quot;test with messages&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;152530127&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 152530127,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;simple passing test&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;1669557569&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 1669557569,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;the sub test&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;1879989598&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 1879989598,
+-           &quot;messages&quot;: Array [
+-             &quot;inner massage 1&quot;,
+-             &quot;message prop 1&quot;,
+-             &quot;inner massage 2&quot;,
+-             &quot;message prop 2&quot;,
+-           ],
+-           &quot;name&quot;: &quot;erroring test with messages&quot;,
+-           &quot;status&quot;: &quot;error&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;2045602436&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 2045602436,
+-           &quot;messages&quot;: Array [
+-             &quot;inner massage 1&quot;,
+-             &quot;message prop 1&quot;,
+-             &quot;inner massage 2&quot;,
+-             &quot;message prop 2&quot;,
+-           ],
+-           &quot;name&quot;: &quot;test passed with messages&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;448559065&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 448559065,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;test with time&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: &quot;time&quot;,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: &quot;time&quot;,
+-     },
+      &quot;-1929456795&quot;: Object {
+        &quot;_visible&quot;: true,
+        &quot;id&quot;: -1929456795,
+        &quot;name&quot;: &quot;view listings page&quot;,
+        &quot;properties&quot;: Object {
+@@ -21186,40 +20973,10 @@
+              &quot;status&quot;: Array [
+                &quot;run&quot;,
+              ],
+            },
+            &quot;status&quot;: &quot;skipped&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: 0,
+-     },
+-     &quot;1201687819&quot;: Object {
+-       &quot;_visible&quot;: true,
+-       &quot;id&quot;: 1201687819,
+-       &quot;name&quot;: &quot;duplicate&quot;,
+-       &quot;properties&quot;: Object {
+-         &quot;_visible&quot;: true,
+-       },
+-       &quot;systemOut&quot;: Array [],
+-       &quot;tests&quot;: Object {
+-         &quot;-2126675372&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -2126675372,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;testcase 2&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-         &quot;-2126675373&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -2126675373,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;testcase 1&quot;,
+-           &quot;status&quot;: &quot;passed&quot;,
+            &quot;time&quot;: 0,
+            &quot;visible&quot;: true,
+          },
+        },
+        &quot;time&quot;: 0,
+@@ -22469,51 +22226,10 @@
+            &quot;visible&quot;: true,
+          },
+        },
+        &quot;time&quot;: 0,
+      },
+-     &quot;1870281583&quot;: Object {
+-       &quot;_visible&quot;: true,
+-       &quot;id&quot;: 1870281583,
+-       &quot;name&quot;: &quot;testcase with properties&quot;,
+-       &quot;properties&quot;: Object {
+-         &quot;_visible&quot;: true,
+-       },
+-       &quot;systemOut&quot;: Array [],
+-       &quot;tests&quot;: Object {
+-         &quot;31726797&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: 31726797,
+-           &quot;messages&quot;: Array [
+-             &quot;message 1&quot;,
+-           ],
+-           &quot;name&quot;: &quot;with properties&quot;,
+-           &quot;properties&quot;: Object {
+-             &quot;No Name&quot;: Array [
+-               &quot;value with no name&quot;,
+-               &quot;value only&quot;,
+-             ],
+-             &quot;_visible&quot;: true,
+-             &quot;name only&quot;: Array [],
+-             &quot;prop 1&quot;: Array [
+-               &quot;value 1&quot;,
+-               &quot;value 2&quot;,
+-             ],
+-             &quot;prop 2&quot;: Array [
+-               &quot;value&quot;,
+-             ],
+-             &quot;seperate props&quot;: Array [
+-               &quot;value&quot;,
+-             ],
+-           },
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: 0,
+-     },
+      &quot;1937223947&quot;: Object {
+        &quot;_visible&quot;: true,
+        &quot;id&quot;: 1937223947,
+        &quot;name&quot;: &quot;sessions.sessions_api.Доступность эндпоинта получения списка сессий&quot;,
+        &quot;properties&quot;: Object {
+@@ -38377,31 +38093,10 @@
+              ],
+              &quot;status&quot;: Array [
+                &quot;run&quot;,
+              ],
+            },
+-           &quot;status&quot;: &quot;passed&quot;,
+-           &quot;time&quot;: 0,
+-           &quot;visible&quot;: true,
+-         },
+-       },
+-       &quot;time&quot;: 0,
+-     },
+-     &quot;390294658&quot;: Object {
+-       &quot;_visible&quot;: true,
+-       &quot;id&quot;: 390294658,
+-       &quot;name&quot;: &quot;testsuite in a testcase&quot;,
+-       &quot;properties&quot;: Object {
+-         &quot;_visible&quot;: true,
+-       },
+-       &quot;systemOut&quot;: Array [],
+-       &quot;tests&quot;: Object {
+-         &quot;-1319400288&quot;: Object {
+-           &quot;classname&quot;: &quot;&quot;,
+-           &quot;id&quot;: -1319400288,
+-           &quot;messages&quot;: Array [],
+-           &quot;name&quot;: &quot;testsuite in a testcase testcase&quot;,
+            &quot;status&quot;: &quot;passed&quot;,
+            &quot;time&quot;: 0,
+            &quot;visible&quot;: true,
+          },
+        },
+    at Object.&lt;anonymous&gt; (/Users/Luke.Preston/Projects/lukejpreston/xunit-viewer/src/cli/get-suites.test.js:15:18)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
   </testsuite>
 </testsuites>

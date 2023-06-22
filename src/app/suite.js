@@ -1,7 +1,10 @@
 import React from 'react'
-import Toggle from './toggle.js'
 import X from 'react-render-if-visible'
+import Toggle from './toggle.js'
+import SuiteCount from './suite-count.js'
+
 const RenderIfVisible = X.default
+const RenderAlways = (props) => <div {...props} />
 
 const icons = {
   passed: 'check',
@@ -70,11 +73,26 @@ const CodeIcon = () => <span className='icon'>
   <i className='fas fa-code' />
 </span>
 
-const Test = ({ id, messages, status, time, classname, name, properties = {}, active = true, raw = true, dispatch, suite }) => {
+const Test = ({
+  printMode,
+  id,
+  messages,
+  status,
+  time,
+  classname,
+  name,
+  properties = {},
+  active = true,
+  raw = true,
+  dispatch,
+  suite
+}) => {
   const hasProperties = properties._visible & Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const hasMessage = messages.length > 0
+  const Wrapper = printMode ? RenderAlways : RenderIfVisible
+
   return (
-    <RenderIfVisible>
+    <Wrapper>
       <div className={`test card is-${active ? 'active' : 'inactive'} is-${status} is-${!hasMessage && !hasProperties ? 'empty' : 'populated'}`}>
         <button className='card-header' onClick={() => { dispatch({ type: 'toggle-test', payload: { suite, id, active: !active } }) }} disabled={!hasMessage && !hasProperties}>
           <p className='card-header-title'>
@@ -119,20 +137,22 @@ const Test = ({ id, messages, status, time, classname, name, properties = {}, ac
             : null}
         </div>
       </div>
-    </RenderIfVisible>
+    </Wrapper>
   )
 }
 
-const SuiteCount = ({ count, type }) => count > 0
-  ? <span className='suite-count'>
-    <span className='icon'>
-      <i className={`fas fa-${icons[type]}`} aria-hidden='true' />
-    </span>
-    {count}
-  </span>
-  : null
-
-const Suite = ({ visible, id, name, active = false, properties = {}, time, tests = {}, dispatch, systemOut = [] }) => {
+const Suite = ({
+  visible,
+  id,
+  name,
+  active = false,
+  properties = {},
+  time,
+  tests = {},
+  dispatch,
+  systemOut = [],
+  printMode = false
+}) => {
   let passed = 0
   let failure = 0
   let skipped = 0
@@ -147,11 +167,13 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
     else unknown += 1
   })
 
+  const Wrapper = printMode ? RenderAlways : RenderIfVisible
+
   const hasTests = Object.keys(tests).length > 0 && Object.values(tests).some(test => test.visible)
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return (
-    <RenderIfVisible>
+    <Wrapper>
       <div className={`card suite is-${active ? 'active' : 'inactive'} is-${containsSomething ? 'populated' : 'empty'} is-${visible ? 'visible' : 'hidden'}`}>
         <button className='card-header' onClick={() => { if (containsSomething) dispatch({ type: 'toggle-suite', payload: { id, active: !active } }) }} disabled={!containsSomething}>
           <p className='card-header-title'>
@@ -205,14 +227,14 @@ const Suite = ({ visible, id, name, active = false, properties = {}, time, tests
 
                       return 0
                     })
-                    .map(([key, test]) => <Test key={key} {...test} suite={id} dispatch={dispatch} />)
+                    .map(([key, test]) => <Test key={key} {...test} suite={id} dispatch={dispatch} printMode={printMode} />)
                 }
               </div>
             </div>
           </div>
           : null}
       </div>
-    </RenderIfVisible>
+    </Wrapper>
   )
 }
 

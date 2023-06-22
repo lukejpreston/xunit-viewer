@@ -7,7 +7,6 @@ body,
     transition: background-color 0.2s ease-in-out;
     background-color: #2C3E50 !important;
     border: none;
-    height: 100%;
 }
 
 .filter:hover,
@@ -18,6 +17,47 @@ body,
 
 .card-header-icon.is-hidden-tablet {
     max-width: 48px;
+}
+
+.navbar-brand {
+    align-items: center;
+}
+
+.navbar-burger {
+    color: white;
+}
+
+.navbar-menu {
+    background-color: transparent !important;
+}
+
+.navbar-end {
+    align-items: center;
+}
+
+.navbar-item.dropdown {
+    padding-left: 0 !important;
+}
+
+.dropdown-item.is-disabled {
+    filter: grayscale(1);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .dropdown-trigger {
+        min-width: 280px;
+    }
+
+    .dropdown-trigger .filter {
+        float: right;
+    }
+}
+
+.navbar-item .table {
+    background-color: transparent !important;
+    color: white !important;
 }
 
 .hero {

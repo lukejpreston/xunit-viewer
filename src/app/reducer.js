@@ -162,11 +162,12 @@ export default (state, { type, payload }) => {
       update.testToggles.skipped.visible = payload.active
       update.testToggles.unknown.visible = payload.active
     } else {
-      if (update.testToggles.passed.visible ||
-            update.testToggles.failure.visible ||
-            update.testToggles.error.visible ||
-            update.testToggles.skipped.visible ||
+      if (update.testToggles.passed.visible &&
+            update.testToggles.failure.visible &&
+            update.testToggles.error.visible &&
+            update.testToggles.skipped.visible &&
             update.testToggles.unknown.visible) update.testToggles.all.visible = true
+      else update.testToggles.all.visible = false
     }
   }
   if (type === 'toggle-test-expanded') {
@@ -188,11 +189,12 @@ export default (state, { type, payload }) => {
       update.testToggles.skipped.expanded = payload.active
       update.testToggles.unknown.expanded = payload.active
     } else {
-      if (update.testToggles.passed.expanded ||
-            update.testToggles.failure.expanded ||
-            update.testToggles.error.expanded ||
-            update.testToggles.skipped.expanded ||
+      if (update.testToggles.passed.expanded &&
+            update.testToggles.failure.expanded &&
+            update.testToggles.error.expanded &&
+            update.testToggles.skipped.expanded &&
             update.testToggles.unknown.expanded) update.testToggles.all.expanded = true
+      else update.testToggles.all.expanded = false
     }
   }
   if (type === 'toggle-test-raw') {
@@ -214,13 +216,75 @@ export default (state, { type, payload }) => {
       update.testToggles.skipped.raw = payload.active
       update.testToggles.unknown.raw = payload.active
     } else {
-      if (update.testToggles.passed.raw ||
-            update.testToggles.failure.raw ||
-            update.testToggles.error.raw ||
-            update.testToggles.skipped.raw ||
+      if (update.testToggles.passed.raw &&
+            update.testToggles.failure.raw &&
+            update.testToggles.error.raw &&
+            update.testToggles.skipped.raw &&
             update.testToggles.unknown.raw) update.testToggles.all.raw = true
     }
   }
+
+  if (type === 'hero-burger') {
+    const { burger } = state.hero
+    update.hero = update.hero || {}
+    update.hero.burger = !burger
+  }
+
+  if (type === 'hero-dropdown') {
+    const { dropdown } = state.hero
+    update.hero = update.hero || {}
+    update.hero.dropdown = !dropdown
+  }
+
+  if (type === 'hero-print-mode') {
+    const { printMode } = state
+    update.printMode = !printMode
+  }
+
+  if (type === 'print-mode') {
+    update.printMode = payload.printMode
+  }
+
+  if (type === 'hero-fast-filter') {
+    update.hero = update.hero || {}
+    update.hero.dropdown = false
+    update.testToggles = update.testToggles || {}
+    update.testToggles.all = update.testToggles.all || {}
+    update.testToggles.passed = update.testToggles.passed || {}
+    update.testToggles.skipped = update.testToggles.skipped || {}
+    update.testToggles.failure = update.testToggles.failure || {}
+    update.testToggles.error = update.testToggles.error || {}
+    update.testToggles.unknown = update.testToggles.unknown || {}
+
+    update.testToggles.all.visible = payload.fastFilter === 2
+    update.testToggles.passed.visible = payload.fastFilter === 2 || payload.fastFilter === 1
+    update.testToggles.skipped.visible = payload.fastFilter === 2 || payload.fastFilter === 1
+    update.testToggles.failure.visible = payload.fastFilter === 2 || payload.fastFilter === 0
+    update.testToggles.error.visible = payload.fastFilter === 2 || payload.fastFilter === 0
+    update.testToggles.unknown.visible = payload.fastFilter === 2 || payload.fastFilter === 0
+  }
+
+  state = merge.recursive(true, state, update)
+
+  if (state.testToggles.all.visible) {
+    update.hero = update.hero || {}
+    update.hero.fastFilter = 2
+  } else if (state.testToggles.passed.visible && state.testToggles.skipped.visible) {
+    update.hero = update.hero || {}
+    update.hero.fastFilter = 1
+  } else if (state.testToggles.error.visible && state.testToggles.failure.visible && state.testToggles.unknown.visible) {
+    update.hero = update.hero || {}
+    update.hero.fastFilter = 0
+  } else {
+    update.hero = update.hero || {}
+    update.hero.fastFilter = 3
+  }
+
+  Object.values(update.currentSuites).forEach(suite => {
+    Object.values(suite.tests).forEach(test => {
+      test.visible = state.testToggles.all.visible || state.testToggles[test.status].visible
+    })
+  })
 
   state = merge.recursive(true, state, update)
 

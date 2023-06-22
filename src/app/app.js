@@ -18,6 +18,16 @@ const App = ({ files, title, brand }) => {
     if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
   }, [files, state.suites])
 
+  useEffect(() => {
+    window.onbeforeprint = () => {
+      dispatch({ type: 'print-mode', payload: { printMode: true } })
+    }
+
+    window.onafterprint = () => {
+      dispatch({ type: 'print-mode', payload: { printMode: false } })
+    }
+  }, [])
+
   let currentPropertiesCount = 0
   let propertiesTotal = 0
   Object.entries(state.currentSuites).forEach(([key, suite]) => {
@@ -64,7 +74,18 @@ const App = ({ files, title, brand }) => {
   })
 
   return <div>
-    <Hero active={state.menuActive} onClick={() => { dispatch({ type: 'toggle-menu' }) }} title={title} brand={brand} />
+    <Hero
+      active={state.menuActive}
+      onFilterClick={() => { dispatch({ type: 'toggle-menu' }) }}
+      title={title}
+      brand={brand}
+      printMode={state.printMode}
+      fastFilter={state.hero.fastFilter}
+      burger={state.hero.burger}
+      dropdown={state.hero.dropdown}
+      dispatch={dispatch}
+      suites={state.currentSuites}
+    />
     <header className={`is-${!state.menuActive ? 'hidden' : 'shown'}`}>
       <div className='container'>
         <SuiteOptions
@@ -105,7 +126,15 @@ const App = ({ files, title, brand }) => {
                 if (left.name > right.name) return 1
                 return 0
               })
-              .map(suite => <Suite key={suite.id} {...suite} visible={suite._visible} dispatch={dispatch} />)
+              .map(suite => (
+                <Suite
+                  key={suite.id}
+                  {...suite}
+                  visible={suite._visible}
+                  dispatch={dispatch}
+                  printMode={state.printMode}
+                />
+              ))
           }
         </div>
         }
