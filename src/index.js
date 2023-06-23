@@ -1,10 +1,14 @@
+import '@fortawesome/fontawesome-free/js/all.js'
+import 'bulma/css/bulma.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'bulma/css/bulma.css'
-import '@fortawesome/fontawesome-free/js/all.js'
+import {
+  createBrowserRouter,
+  RouterProvider
+} from 'react-router-dom'
 
-import './app/index.css'
 import App from './app/app.js'
+import './app/index.css'
 
 import LZUTF8 from 'lzutf8'
 
@@ -80,9 +84,18 @@ files = files.map(({ file, contents }) => ({
   contents: LZUTF8.decompress(contents, { inputEncoding: 'Base64' })
 }))
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
-  <React.StrictMode>
-    <App files={files} title={title} brand={brand} />
-  </React.StrictMode>
-)
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App files={files} title={title} brand={brand} />,
+    errorElement: <App files={files} title={title} brand={brand} />
+  }
+])
+
+ReactDOM
+  .createRoot(document.getElementById('root'))
+  .render(
+        <React.StrictMode>
+            <RouterProvider router={router} />
+        </React.StrictMode>
+  )

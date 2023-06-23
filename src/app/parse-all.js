@@ -1,10 +1,10 @@
 import merge from 'merge'
 import parse from './parse.js'
 
-export default async (dispatch, files, suites) => {
+export default async (dispatch, files, suites, filters = { passed: false, skipped: false, unknown: true, failure: true, error: true }) => {
   for (const { file, contents } of files) {
     try {
-      const parsed = await parse(contents, { passed: false, skipped: false, unknown: true, failure: true, error: true })
+      const parsed = await parse(contents, filters)
       if (Object.keys(parsed.suites).length === 0) {
         dispatch({
           type: 'parse-error',

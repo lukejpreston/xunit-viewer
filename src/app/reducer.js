@@ -266,19 +266,19 @@ export default (state, { type, payload }) => {
 
   state = merge.recursive(true, state, update)
 
-  if (state.testToggles.all.visible) {
-    update.hero = update.hero || {}
-    update.hero.fastFilter = 2
-  } else if (state.testToggles.passed.visible && state.testToggles.skipped.visible) {
-    update.hero = update.hero || {}
-    update.hero.fastFilter = 1
-  } else if (state.testToggles.error.visible && state.testToggles.failure.visible && state.testToggles.unknown.visible) {
-    update.hero = update.hero || {}
-    update.hero.fastFilter = 0
-  } else {
-    update.hero = update.hero || {}
-    update.hero.fastFilter = 3
-  }
+  const {
+    passed: { visible: passed },
+    error: { visible: error },
+    failure: { visible: failure },
+    skipped: { visible: skipped },
+    unknown: { visible: unknown }
+  } = state.testToggles
+  let fastFilter = 3
+  if (passed && skipped && error && failure && unknown) fastFilter = 2
+  else if (passed && skipped && !error && !failure && !unknown) fastFilter = 1
+  else if (!passed && !skipped && error && failure && unknown) fastFilter = 0
+  update.hero = update.hero || {}
+  update.hero.fastFilter = fastFilter
 
   Object.values(update.currentSuites).forEach(suite => {
     Object.values(suite.tests).forEach(test => {

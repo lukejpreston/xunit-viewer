@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
 // import Files from './files'
 import Hero from './hero.js'
-import initialState from './initial-state.json'
+import initialState from './initial-state.js'
 import parseAll from './parse-all.js'
 import PropertiesOptions from './properties-options.js'
 import reducer from './reducer.js'
@@ -10,13 +10,18 @@ import SuiteOptions from './suite-options.js'
 import TestOptions from './test-options.js'
 import Error from './error.js'
 import Loading from './loading.js'
+import { useSearchParams } from 'react-router-dom'
+import queryString from 'query-string'
 
 const App = ({ files, title, brand }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = queryString.parse(searchParams.toString(), { parseBooleans: true })
+
+  const [state, dispatch] = useReducer(reducer, initialState(query))
 
   useEffect(() => {
-    if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {})
-  }, [files, state.suites])
+    if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {}, query)
+  })
 
   useEffect(() => {
     window.onbeforeprint = () => {
@@ -27,6 +32,17 @@ const App = ({ files, title, brand }) => {
       dispatch({ type: 'print-mode', payload: { printMode: false } })
     }
   }, [])
+
+  const {
+    passed: { visible: passed },
+    error: { visible: error },
+    failure: { visible: failure },
+    skipped: { visible: skipped },
+    unknown: { visible: unknown }
+  } = state.testToggles
+  useEffect(() => {
+    setSearchParams({ passed, error, failure, skipped, unknown })
+  }, [passed, error, failure, skipped, unknown, setSearchParams])
 
   let currentPropertiesCount = 0
   let propertiesTotal = 0
