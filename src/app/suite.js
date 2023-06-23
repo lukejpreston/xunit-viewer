@@ -2,7 +2,7 @@ import React from 'react'
 import X from 'react-render-if-visible'
 import Toggle from './toggle.js'
 import SuiteCount from './suite-count.js'
-import Y from 'react-linkify'
+import Y, { linkify } from 'react-linkify'
 const Linkify = Y.default
 
 const RenderIfVisible = X.default
