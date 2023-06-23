@@ -18,10 +18,17 @@ Have a look at the [demo](https://lukejpreston.github.io/xunit-viewer/)
 * Start a server with WebSockets to keep the browser in sync with the data
 * Add files to the web app without having to re-run xunit viewer
 * Adds the metadata to the header so you can share the URL in places such as slack, for example
+* Use the query parameter to filter tests
 
 ![Example](https://raw.githubusercontent.com/lukejpreston/xunit-viewer/master/example-header.png)
 
 Xunit Viewer supports node LTS version but should work on node 10+
+
+## URL filtering
+
+You can filter by test status to save time on refreshes, and update the query params
+
+`FILE|ROUTE/?passed=true&error=false&failure=false&skipped=true&unknown=false`
 
 ## Usage, CLI
 
@@ -167,11 +174,9 @@ To help debug any issues please provide the following info
 
 TODO
 
-1. Add react router for filtering
-2. Release v10
-3. Fix CLI filtering
-4. Release v11
-5. Refactorings
+1. Fix CLI filtering
+2. Release v11
+3. Refactorings
     * Split components into files
     * Split reducer into files
     * Test all the things
