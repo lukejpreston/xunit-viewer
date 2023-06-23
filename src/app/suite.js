@@ -2,7 +2,8 @@ import React from 'react'
 import X from 'react-render-if-visible'
 import Toggle from './toggle.js'
 import SuiteCount from './suite-count.js'
-import Y, { linkify } from 'react-linkify'
+import Y from 'react-linkify'
+import linkify from 'linkify-html'
 const Linkify = Y.default
 
 const RenderIfVisible = X.default
@@ -64,7 +65,7 @@ const RawContent = ({ messages }) => <div className='raw-content'>
 </div>
 
 const PrettyContent = ({ messages }) => <div className='pretty-content'>
-  {messages.map((message, index) => <Linkify key={`test-message-${index}`}><div dangerouslySetInnerHTML={{ __html: message }} /></Linkify>)}
+  {messages.map((message, index) => <Linkify key={`test-message-${index}`}><div dangerouslySetInnerHTML={{ __html: linkify(message) }} /></Linkify>)}
 </div>
 
 const PrettyIcon = () => <span className='icon'>
