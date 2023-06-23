@@ -2,6 +2,8 @@ import React from 'react'
 import X from 'react-render-if-visible'
 import Toggle from './toggle.js'
 import SuiteCount from './suite-count.js'
+import Y from 'react-linkify'
+const Linkify = Y.default
 
 const RenderIfVisible = X.default
 const RenderAlways = (props) => <div {...props} />
@@ -58,11 +60,11 @@ const Properties = ({ properties, active = true, dispatch, suite, test = null })
 }
 
 const RawContent = ({ messages }) => <div className='raw-content'>
-  {messages.map((message, index) => <pre key={`test-message-${index}`}>{message}</pre>)}
+  {messages.map((message, index) => <Linkify key={`test-message-${index}`}><pre>{message}</pre></Linkify>)}
 </div>
 
 const PrettyContent = ({ messages }) => <div className='pretty-content'>
-  {messages.map((message, index) => <div key={`test-message-${index}`} dangerouslySetInnerHTML={{ __html: message }} />)}
+  {messages.map((message, index) => <Linkify key={`test-message-${index}`}><div dangerouslySetInnerHTML={{ __html: message }} /></Linkify>)}
 </div>
 
 const PrettyIcon = () => <span className='icon'>

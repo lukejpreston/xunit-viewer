@@ -44,6 +44,9 @@ if (process.env.NODE_ENV === 'development') {
             <testcase assertions="0" classname="SUITE ONE" name="the third test" time="0.012">
                 <passed message="I ignore" type="this anyway">For some reason a passing message</passed>
             </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the test has a link and an email" time="0.012">
+                <passed message="I ignore" type="this anyway">This message has a link github.com/lukejpreston/xunit-viewer and an email example@gmail.com</passed>
+            </testcase>
             <testcase assertions="0" classname="SUITE ONE" name="the fouth test" time="0.001">
                 <error message="There was a error 1" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error 1</error>
                 <error message="There was a error 2" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error 2</error>
@@ -74,7 +77,6 @@ if (process.env.NODE_ENV === 'development') {
             </testcase>
         </testsuite>
     </testsuites>
-
 `, { outputEncoding: 'Base64' })
   }]
 }
