@@ -541,3 +541,180 @@ body,
 .pretty-content {
     margin: 20px;
 }
+
+.card,
+.card-header {
+    box-shadow: none !important;
+}
+
+.card .card {
+    border: solid 1px rgba(10, 10, 10, 0.1) !important;
+}
+
+.card-header {
+    border-bottom: solid 1px #ccc !important;
+}
+
+.card.is-inactive .card-header {
+    border: none !important;
+    border-radius: 4px;
+}
+
+.options {
+    border-radius: 0;
+}
+
+.options:last-child {
+    border-radius: 4px;
+    border-bottom: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body,
+    html {
+        background-color: #051221;
+    }
+
+    .card {
+        background-color: #2C3E50;
+        color: white !important;
+        /* box-shadow: 0 0.5em 1em -0.125em rgba(255, 255, 255, 0.1), 0 0px 0 1px rgba(255, 255, 255, 0.02) !important; */
+    }
+
+    .card .card {
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .card-header svg path {
+        color: white !important;
+        fill: white !important;
+    }
+
+    .card-header {
+        color: white !important;
+        border-color: white !important;
+        /* box-shadow: 0 0.125em 0.25em rgba(255, 255, 255, 0.1); */
+    }
+
+    .card-header-title {
+        color: white !important;
+    }
+
+    .card-header:hover,
+    .card-header:active,
+    .card-header:focus {
+        background-color: #17202a !important;
+    }
+
+    .table {
+        background-color: #4d6784;
+        color: white;
+    }
+
+    th {
+        color: white !important;
+    }
+
+    .toggle {
+        background-color: transparent;
+        color: white !important;
+    }
+
+    .toggle-rail {
+        background-color: #17202a;
+    }
+
+    .raw-content pre {
+        background-color: #17202a;
+        color: white !important;
+    }
+
+    .dropdown-content,
+    .dropdown-item {
+        background-color: #17202a;
+        color: white;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:active,
+    .dropdown-item:focus {
+        background-color: #030d17 !important;
+        color: white !important;
+    }
+
+    .input {
+        background-color: transparent !important;
+        color: white !important;
+        border-color: white !important;
+    }
+
+    .input::placeholder {
+        color: rgb(136, 136, 136) !important;
+    }
+
+    .options-inputs {
+        color: white !important;
+    }
+
+    .test-options-toggle-row-label,
+    .properties-options-toggle-label {
+        color: white !important;
+    }
+
+    .test.is-empty>.card-header,
+    .test>.card-header {
+        background-color: #4B85FA !important;
+    }
+
+    .test.is-populated>.card-header:hover,
+    .test.is-populated>.card-header:active,
+    .test.is-populated>.card-header:focus {
+        background-color: #2f5bb4 !important;
+    }
+
+    .test.is-passed>.card-header {
+        background-color: #0DBF1F !important;
+    }
+
+    .test.is-populated.is-passed>.card-header:hover,
+    .test.is-populated.is-passed>.card-header:active,
+    .test.is-populated.is-passed>.card-header:focus {
+        background-color: #25a132 !important;
+    }
+
+    .test.is-failure>.card-header {
+        background-color: #B32010 !important;
+    }
+
+    .test.test.is-populated.is-failure>.card-header:hover,
+    .test.test.is-populated.is-failure>.card-header:active,
+    .test.test.is-populated.is-failure>.card-header:focus {
+        background-color: #963126 !important;
+    }
+
+    .test.is-error>.card-header {
+        background-color: #E5CB05 !important;
+    }
+
+
+    .test.is-populated.is-error>.card-header:hover,
+    .test.is-populated.is-error>.card-header:active,
+    .test.is-populated.is-error>.card-header:focus {
+        background-color: #c7b319 !important;
+    }
+
+    .test.is-skipped>.card-header {
+        background-color: #adb2b6 !important;
+    }
+
+    .test.is-populated.is-skipped>.card-header:hover,
+    .test.is-populated.is-skipped>.card-header:active,
+    .test.is-populated.is-skipped>.card-header:focus {
+        background-color: #828588 !important;
+    }
+
+    .options,
+    .options .card-header {
+        background-color: transparent !important;
+    }
+}

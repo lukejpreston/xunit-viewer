@@ -65,6 +65,9 @@ if (process.env.NODE_ENV === 'development') {
             <testcase assertions="0" classname="SUITE TWO" name="the second test" time="0.001">
                 <skipped></skipped>
             </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="an unknown" time="0.001">
+                <unknown></unknown>
+            </testcase>
             <testcase assertions="0" classname="SUITE TWO" name="the third test" time="0.012">
                 <failure></failure>
             </testcase>
