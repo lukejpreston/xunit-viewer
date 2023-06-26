@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="48" assertions="121" errors="0" warnings="0" failures="0" skipped="0" time="6.719176">
+    <testsuite name="Project Test Suite" tests="48" assertions="121" errors="0" warnings="0" failures="0" skipped="0" time="6.719176">
+      <testsuite name="AppTestsFeatureControllerApiChargerCreateChargeControllerTest" file="/var/www/tests/Feature/Controller/Api/Charger/CreateChargeControllerTest.php" tests="1" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="3.007336">
+<testcase name="testShouldCreateAnCharge" class="AppTestsFeatureControllerApiChargerCreateChargeControllerTest" classname="App.Tests.Feature.Controller.Api.Charger.CreateChargeControllerTest" file="/var/www/tests/Feature/Controller/Api/Charger/CreateChargeControllerTest.php" line="37" assertions="5" time="3.007336"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -179,7 +179,7 @@ const extract = (output, testsuites, defaultVisibility) => {
   if (!Array.isArray(testsuites)) testsuites = [testsuites]
   testsuites.forEach(testsuite => {
     extractSuite(output, testsuite, defaultVisibility)
-    if (typeof testsuite.testsuite !== 'undefined') extract(output, testsuite.testsuite)
+    if (typeof testsuite.testsuite !== 'undefined') extract(output, testsuite.testsuite, defaultVisibility)
   })
 }
 

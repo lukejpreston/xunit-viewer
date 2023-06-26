@@ -25,7 +25,8 @@ export default async (dispatch, files, suites, filters = { passed: false, skippe
       })
     }
   }
-  if (Object.keys(suites.suites).length > 0) {
+
+  if ('suites' in suites && Object.keys(suites.suites).length > 0) {
     dispatch({
       type: 'parse-suites',
       payload: {

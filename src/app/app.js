@@ -21,7 +21,8 @@ const App = ({ files, title, brand }) => {
 
   useEffect(() => {
     if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {}, query)
-  })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     window.onbeforeprint = () => {
