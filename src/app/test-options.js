@@ -1,5 +1,6 @@
 import React from 'react'
 import Toggle from './toggle.js'
+import useVisibility from './visible.js'
 
 const icons = {
   passed: 'check',
@@ -72,64 +73,74 @@ const StatusTotal = ({ testCounts, status }) => {
   return fromTestCounts(testCounts, status, 'total') > 0 ? <Total count={fromTestCounts(testCounts, status, 'count')} total={fromTestCounts(testCounts, status, 'total')} icon={status} /> : null
 }
 
-const ToggleRow = ({ status, label, dispatch, visible = true, expanded = true, raw = true }) => <div className='test-options-toggle-row'>
-  <div className='test-options-toggle-row-label'>
-    {status !== 'all'
-      ? <span className='icon'>
-        <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
-      </span>
-      : <span className='icon'>
-        <i className='far fa-circle' aria-hidden='true' />
-      </span>}
-    <span>{label}</span>
+const ToggleRow = ({ status, label, dispatch, visible = true, expanded = true, raw = true }) => {
+  const { query, setSearchParams } = useVisibility()
+  return <div className='test-options-toggle-row'>
+    <div className='test-options-toggle-row-label'>
+      {status !== 'all'
+        ? <span className='icon'>
+          <i className={`fas fa-${icons[status] || icons.unknown}`} aria-hidden='true' />
+        </span>
+        : <span className='icon'>
+          <i className='far fa-circle' aria-hidden='true' />
+        </span>}
+      <span>{label}</span>
+    </div>
+    <Toggle
+      onChange={() => {
+        if (status !== 'all') {
+          setSearchParams({
+            ...query,
+            [status]: !visible
+          })
+        } else {
+          const anyFalse = Object.values(query).some(visible => visible === false)
+          setSearchParams({
+            passed: anyFalse,
+            skipped: anyFalse,
+            failure: anyFalse,
+            error: anyFalse,
+            unknown: anyFalse
+          })
+        }
+      }}
+      active={visible}
+      onLabel='Visible'
+      offLabel='Hidden'
+      onIcon={<EyeIcon />}
+      offIcon={<EyeSlashIcon />} />
+    <Toggle
+      onChange={() => {
+        dispatch({
+          type: 'toggle-test-expanded',
+          payload: {
+            status,
+            active: !expanded
+          }
+        })
+      }}
+      active={expanded}
+      onLabel='Expanded'
+      offLabel='Contracted'
+      onIcon={<ChevronDownIcon />}
+      offIcon={<ChevronUpIcon />} />
+    <Toggle
+      onChange={() => {
+        dispatch({
+          type: 'toggle-test-raw',
+          payload: {
+            status,
+            active: !raw
+          }
+        })
+      }}
+      active={raw}
+      onLabel='Raw'
+      offLabel='Pretty'
+      onIcon={<CodeIcon />}
+      offIcon={<PrettyIcon />} />
   </div>
-  <Toggle
-    onChange={() => {
-      dispatch({
-        type: 'toggle-test-visibility',
-        payload: {
-          status,
-          active: !visible
-        }
-      })
-    }}
-    active={visible}
-    onLabel='Visible'
-    offLabel='Hidden'
-    onIcon={<EyeIcon />}
-    offIcon={<EyeSlashIcon />} />
-  <Toggle
-    onChange={() => {
-      dispatch({
-        type: 'toggle-test-expanded',
-        payload: {
-          status,
-          active: !expanded
-        }
-      })
-    }}
-    active={expanded}
-    onLabel='Expanded'
-    offLabel='Contracted'
-    onIcon={<ChevronDownIcon />}
-    offIcon={<ChevronUpIcon />} />
-  <Toggle
-    onChange={() => {
-      dispatch({
-        type: 'toggle-test-raw',
-        payload: {
-          status,
-          active: !raw
-        }
-      })
-    }}
-    active={raw}
-    onLabel='Raw'
-    offLabel='Pretty'
-    onIcon={<CodeIcon />}
-    offIcon={<PrettyIcon />} />
-
-</div>
+}
 
 const Options = ({
   testCounts = {},
@@ -139,6 +150,8 @@ const Options = ({
   dispatch,
   active = false
 }) => {
+  const { all, query: { passed, failure, error, skipped, unknown } } = useVisibility()
+
   return <div className={`options card ${active ? 'is-active' : 'is-inactive'}`}>
     <header className='card-header'>
       <Search label='Tests' dispatch={dispatch} />
@@ -161,12 +174,12 @@ const Options = ({
     <div className='card-content options-toggles'>
       {active
         ? <>
-          <ToggleRow status='all' label='All' dispatch={dispatch} {...testToggles.all} />
-          <ToggleRow status='passed' label='Passed' dispatch={dispatch} {...testToggles.passed} />
-          <ToggleRow status='failure' label='Failure' dispatch={dispatch} {...testToggles.failure} />
-          <ToggleRow status='error' label='Error' dispatch={dispatch} {...testToggles.error} />
-          <ToggleRow status='skipped' label='Skipped' dispatch={dispatch} {...testToggles.skipped} />
-          <ToggleRow status='unknown' label='Unknown' dispatch={dispatch} {...testToggles.unknown} />
+          <ToggleRow status='all' label='All' dispatch={dispatch} {...testToggles.all} visible={all} />
+          <ToggleRow status='passed' label='Passed' dispatch={dispatch} {...testToggles.passed} visible={passed} />
+          <ToggleRow status='failure' label='Failure' dispatch={dispatch} {...testToggles.failure} visible={failure} />
+          <ToggleRow status='error' label='Error' dispatch={dispatch} {...testToggles.error} visible={error} />
+          <ToggleRow status='skipped' label='Skipped' dispatch={dispatch} {...testToggles.skipped} visible={skipped} />
+          <ToggleRow status='unknown' label='Unknown' dispatch={dispatch} {...testToggles.unknown} visible={unknown} />
         </>
         : null}
     </div>

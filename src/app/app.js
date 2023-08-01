@@ -1,26 +1,21 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useEffect, useReducer } from 'react'
 // import Files from './files'
+import Error from './error.js'
 import Hero from './hero.js'
 import initialState from './initial-state.js'
+import Loading from './loading.js'
 import parseAll from './parse-all.js'
 import PropertiesOptions from './properties-options.js'
 import reducer from './reducer.js'
-import Suite from './suite.js'
 import SuiteOptions from './suite-options.js'
+import Suite from './suite.js'
 import TestOptions from './test-options.js'
-import Error from './error.js'
-import Loading from './loading.js'
-import { useSearchParams } from 'react-router-dom'
-import queryString from 'query-string'
 
 const App = ({ files, title, brand }) => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const query = queryString.parse(searchParams.toString(), { parseBooleans: true })
-
-  const [state, dispatch] = useReducer(reducer, initialState(query))
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    if (Object.keys(state.suites).length === 0) parseAll(dispatch, files, {}, query)
+    if (Object.keys(state.suites).length === 0) parseAll(dispatch, files)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -33,17 +28,6 @@ const App = ({ files, title, brand }) => {
       dispatch({ type: 'print-mode', payload: { printMode: false } })
     }
   }, [])
-
-  const {
-    passed: { visible: passed },
-    error: { visible: error },
-    failure: { visible: failure },
-    skipped: { visible: skipped },
-    unknown: { visible: unknown }
-  } = state.testToggles
-  useEffect(() => {
-    setSearchParams({ passed, error, failure, skipped, unknown })
-  }, [passed, error, failure, skipped, unknown, setSearchParams])
 
   let currentPropertiesCount = 0
   let propertiesTotal = 0
@@ -97,7 +81,6 @@ const App = ({ files, title, brand }) => {
       title={title}
       brand={brand}
       printMode={state.printMode}
-      fastFilter={state.hero.fastFilter}
       burger={state.hero.burger}
       dropdown={state.hero.dropdown}
       dispatch={dispatch}

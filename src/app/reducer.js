@@ -39,7 +39,6 @@ export default (state, { type, payload }) => {
       error: payload.error,
       file: payload.file
     })
-    return state
   }
 
   if (type === 'parse-suites') {
@@ -49,7 +48,6 @@ export default (state, { type, payload }) => {
     Object.values(state.currentSuites).forEach(suite => {
       if (Object.keys(suite.tests).length > 0 || Object.keys(suite.properties).length > 0) suite.active = true
     })
-    return state
   }
 
   if (type === 'search-suites') {
@@ -143,33 +141,7 @@ export default (state, { type, payload }) => {
   if (type === 'toggle-test-mode') {
     update.currentSuites[payload.suite].tests[payload.id].raw = payload.raw
   }
-  if (type === 'toggle-test-visibility') {
-    update.testToggles = state.testToggles
-    update.testToggles[payload.status].visible = payload.active
 
-    Object.values(update.currentSuites).forEach(suite => {
-      Object.values(suite.tests).forEach(test => {
-        if (payload.status === 'all') test.visible = payload.active
-        else if (payload.status === test.status) test.visible = payload.active
-        else if (typeof test.status === 'undefined' && payload.status === 'unknown') test.visible = payload.active
-      })
-    })
-
-    if (payload.status === 'all') {
-      update.testToggles.passed.visible = payload.active
-      update.testToggles.failure.visible = payload.active
-      update.testToggles.error.visible = payload.active
-      update.testToggles.skipped.visible = payload.active
-      update.testToggles.unknown.visible = payload.active
-    } else {
-      if (update.testToggles.passed.visible &&
-            update.testToggles.failure.visible &&
-            update.testToggles.error.visible &&
-            update.testToggles.skipped.visible &&
-            update.testToggles.unknown.visible) update.testToggles.all.visible = true
-      else update.testToggles.all.visible = false
-    }
-  }
   if (type === 'toggle-test-expanded') {
     update.testToggles = state.testToggles
     update.testToggles[payload.status].expanded = payload.active
@@ -197,6 +169,7 @@ export default (state, { type, payload }) => {
       else update.testToggles.all.expanded = false
     }
   }
+
   if (type === 'toggle-test-raw') {
     update.testToggles = state.testToggles
     update.testToggles[payload.status].raw = payload.active
@@ -245,46 +218,7 @@ export default (state, { type, payload }) => {
     update.printMode = payload.printMode
   }
 
-  if (type === 'hero-fast-filter') {
-    update.hero = update.hero || {}
-    update.hero.dropdown = false
-    update.testToggles = update.testToggles || {}
-    update.testToggles.all = update.testToggles.all || {}
-    update.testToggles.passed = update.testToggles.passed || {}
-    update.testToggles.skipped = update.testToggles.skipped || {}
-    update.testToggles.failure = update.testToggles.failure || {}
-    update.testToggles.error = update.testToggles.error || {}
-    update.testToggles.unknown = update.testToggles.unknown || {}
-
-    update.testToggles.all.visible = payload.fastFilter === 2
-    update.testToggles.passed.visible = payload.fastFilter === 2 || payload.fastFilter === 1
-    update.testToggles.skipped.visible = payload.fastFilter === 2 || payload.fastFilter === 1
-    update.testToggles.failure.visible = payload.fastFilter === 2 || payload.fastFilter === 0
-    update.testToggles.error.visible = payload.fastFilter === 2 || payload.fastFilter === 0
-    update.testToggles.unknown.visible = payload.fastFilter === 2 || payload.fastFilter === 0
-  }
-
   state = merge.recursive(true, state, update)
-
-  const {
-    passed: { visible: passed },
-    error: { visible: error },
-    failure: { visible: failure },
-    skipped: { visible: skipped },
-    unknown: { visible: unknown }
-  } = state.testToggles
-  let fastFilter = 3
-  if (passed && skipped && error && failure && unknown) fastFilter = 2
-  else if (passed && skipped && !error && !failure && !unknown) fastFilter = 1
-  else if (!passed && !skipped && error && failure && unknown) fastFilter = 0
-  update.hero = update.hero || {}
-  update.hero.fastFilter = fastFilter
-
-  Object.values(update.currentSuites).forEach(suite => {
-    Object.values(suite.tests).forEach(test => {
-      test.visible = state.testToggles.all.visible || state.testToggles[test.status].visible
-    })
-  })
 
   state = merge.recursive(true, state, update)
 

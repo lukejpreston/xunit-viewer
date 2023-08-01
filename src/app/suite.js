@@ -4,6 +4,7 @@ import Toggle from './toggle.js'
 import SuiteCount from './suite-count.js'
 import Y from 'react-linkify'
 import linkify from 'linkify-html'
+import useVisibility from './visible.js'
 const Linkify = Y.default
 
 const RenderIfVisible = X.default
@@ -172,7 +173,9 @@ const Suite = ({
 
   const Wrapper = printMode ? RenderAlways : RenderIfVisible
 
-  const hasTests = Object.keys(tests).length > 0 && Object.values(tests).some(test => test.visible)
+  const { query } = useVisibility()
+
+  const hasTests = Object.keys(tests).length > 0 && Object.values(tests).some(test => query[test.status])
   const hasProperties = '_visible' in properties && properties._visible && Object.keys(properties).filter(key => key !== '_active' && key !== '_visible').length > 0
   const containsSomething = hasTests || hasProperties
   return (
@@ -209,7 +212,7 @@ const Suite = ({
               <div>
                 {
                   Object.entries(tests)
-                    .filter(([key, test]) => test.visible)
+                    .filter(([key, test]) => query[test.status])
                     .sort((left, right) => {
                       let leftStatus = statusRank.indexOf(left[1].status)
                       let rightStatus = statusRank.indexOf(right[1].status)
