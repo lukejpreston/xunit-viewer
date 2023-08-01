@@ -10,7 +10,7 @@ const logger = {
 }
 
 test('get suites', async () => {
-  const files = getFiles(logger, { results: path.resolve(__dirname, '../../data') })
+  const files = await getFiles(logger, { results: path.resolve(__dirname, '../../data') })
   const suites = await getSuites(logger, files)
   expect(suites).toEqual(expected)
 })

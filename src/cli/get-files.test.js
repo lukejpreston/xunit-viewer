@@ -24,6 +24,7 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/multi_error_test_with_system_out.xml'),
   path.resolve(__dirname, '../../data/multi_suite.xml'),
   path.resolve(__dirname, '../../data/name.has.dots.xml'),
+  path.resolve(__dirname, '../../data/nested-nested.xml'),
   path.resolve(__dirname, '../../data/no_class_name.xml'),
   path.resolve(__dirname, '../../data/passing_suite.xml'),
   path.resolve(__dirname, '../../data/properties_in_test_meta.xml'),
@@ -35,13 +36,14 @@ const expectedFiles = [
   path.resolve(__dirname, '../../data/suite-system-out.xml'),
   path.resolve(__dirname, '../../data/test-system-out.xml'),
   path.resolve(__dirname, '../../data/test.xml'),
+  path.resolve(__dirname, '../../data/utf-16.xml'),
   path.resolve(__dirname, '../../data/with_html.xml'),
   path.resolve(__dirname, '../../data/xunit-2-2.xml'),
   path.resolve(__dirname, '../../data/xunit-2.xml')
 ]
 
-test('get files', () => {
-  const files = getFiles({
+test('get files', async () => {
+  const files = await getFiles({
     warning: (input) => input,
     file: (input) => input
   }, { results: path.resolve(__dirname, '../../data'), ignore: ['_thingy'] })

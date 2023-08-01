@@ -153,7 +153,7 @@ const extractTests = (output, suite, testcases, defaultVisibility) => {
     test.visible = defaultVisibility[test.status]
     suite.tests[id] = test
     if (typeof testcase.testcase !== 'undefined') extractTests(output, suite, testcase.testcase, defaultVisibility)
-    if (typeof testcase.testsuite !== 'undefined') extractSuite(output, testcase.testsuite)
+    if (typeof testcase.testsuite !== 'undefined') extractSuite(output, testcase.testsuite, defaultVisibility)
   })
 }
 
