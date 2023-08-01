@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import languageEncoding from 'detect-file-encoding-and-language'
 
 const getFiles = (logger, ignore, folder, files = []) => {
   if (fs.lstatSync(folder).isDirectory()) {
@@ -16,10 +17,16 @@ const getFiles = (logger, ignore, folder, files = []) => {
   return Array.from(new Set(files))
 }
 
-export default (logger, { results, ignore = [] }) => {
+export default async (logger, { results, ignore = [] }) => {
   const files = getFiles(logger, ignore, results)
-  return files.map(file => ({
-    file,
-    contents: fs.readFileSync(file).toString()
-  }))
+  const readFiles = []
+  for (const file of files) {
+    const { encoding } = await languageEncoding(file)
+    readFiles.push({
+      file,
+      contents: fs.readFileSync(file).toString((encoding || 'utf8').toLowerCase().replace(/-/g, ''))
+    })
+  }
+
+  return readFiles
 }

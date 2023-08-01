@@ -21,7 +21,7 @@ export default async (args) => {
   }
 
   const runXunitViewer = async () => {
-    const files = getFiles(logger, args)
+    const files = await getFiles(logger, args)
     const suites = await getSuites(logger, files)
     const description = getDescription(suites)
     if (args.console) terminal(suites, logger, description, args)
