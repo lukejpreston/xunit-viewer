@@ -15,7 +15,7 @@ export default async (logger, args) => {
   const io = new Server(http)
 
   app.get('/', async (req, res) => {
-    const files = getFiles(logger, args)
+    const files = await getFiles(logger, args)
     const suites = await getSuites(logger, files)
     const description = getDescription(suites)
 
