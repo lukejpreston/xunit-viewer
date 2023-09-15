@@ -1,7 +1,7 @@
 {
   "name": "xunit-viewer",
   "type": "module",
-  "version": "10.4.2",
+  "version": "10.5.0",
   "description": "parses xunit xml into xunit viewer",
   "repository": {
     "url": "https://github.com/lukejpreston/xunit-viewer.git",
