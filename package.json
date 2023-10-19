@@ -62,6 +62,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@fortawesome/fontawesome-free": "^6.4.0",
     "bulma": "^0.9.4",
     "eslint": "^8.43.0",
