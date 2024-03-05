@@ -5,8 +5,8 @@ const useVisibility = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const query = queryString.parse(searchParams.toString(), { parseBooleans: true })
 
-  const passed = ('passed' in query && query.passed)
-  const skipped = ('skipped' in query && query.skipped)
+  const passed = ('passed' in query ? query.passed : true)
+  const skipped = ('skipped' in query ? query.skipped : true)
   const error = 'error' in query ? query.error : true
   const failure = 'failure' in query ? query.failure : true
   const unknown = 'unknown' in query ? query.unknown : true
