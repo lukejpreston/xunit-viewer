@@ -20,7 +20,7 @@
   ],
   "author": "lukejpreston <lukejpreston@gmail.com>",
   "license": "MIT",
-  "main": "xunit-viewer",
+  "main": "xunit-viewer.js",
   "bin": {
     "xunit-viewer": "bin/xunit-viewer.js"
   },
