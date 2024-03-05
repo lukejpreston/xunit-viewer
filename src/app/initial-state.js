@@ -27,16 +27,16 @@ export default {
   },
   testToggles: {
     all: {
-      expanded: false,
-      raw: false
+      expanded: true,
+      raw: true
     },
     passed: {
-      expanded: false,
-      raw: false
+      expanded: true,
+      raw: true
     },
     skipped: {
-      expanded: false,
-      raw: false
+      expanded: true,
+      raw: true
     },
     failure: {
       expanded: true,
